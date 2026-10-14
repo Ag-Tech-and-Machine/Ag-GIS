@@ -1,5 +1,13 @@
 # Work log and verification status
 
+## 15 October 2026 — Native QGIS writer and complete plugin package, 0.3.1
+
+- Replaced direct OGR farm-table creation with PyQGIS memory layers/features and `QgsVectorFileWriter.writeAsVectorFormatV3`, using QGIS's bundled provider and transform context. Read-only SQLite structural checks remain; no GIS operations are implemented through SQLite.
+- Bundled the canonical user guide in the plugin ZIP and required every runtime module/resource in package validation.
+- Added exact archive-byte/content checks and source-independent tests against an extracted ZIP. Source and extracted-package lifecycle, farm creation, move/reopen and rejection checks passed on QGIS 3.44.14.
+- Recorded the packaging and native-QGIS requirement in AGENTS.md and tooling instructions. Planned import/export/conversion features must use native providers, coordinate transforms and Processing as appropriate; they are not implemented yet.
+- Installed 0.3.1 in the default profile and reopened QGIS. Live GUI verification passed for plugin startup, bundled guide, action registration, native farm creation/opening, correct identity/CRS and New Farm dialog cancellation. Simple view remained selected. Existing farm data was not modified.
+
 ## 15 October 2026 — GeoPackage farm foundation, version 0.3.0
 
 - Added New/Open Farm Project under Plugins → Ag Tech Tooling. Creation writes a registered GeoPackage attributes table for UUID, name, schema version, CRS and creation time, plus a matching companion map.

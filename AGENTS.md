@@ -6,6 +6,8 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 - Plugin source is in `plugins/ag_tech_tooling`; keep GIS datasets outside this repository.
 - Import Qt classes through `qgis.PyQt`, and use the Python runtime supplied with QGIS for integration checks.
+- Ship every runtime feature inside the plugin ZIP, including its modules/resources and user guide. Verify workflows against the extracted package, not only the source checkout.
+- Use native PyQGIS project/layer/provider/writer APIs and QGIS Processing/coordinate transforms for GIS operations. Use QGIS's bundled providers; do not add a separate GIS engine or external command-line dependency for an operation QGIS supports. Document any justified exception before introducing it.
 - Keep `initGui()` and `unload()` paired so reloading leaves no duplicate actions or signal connections.
 - Run `tools/check_plugin.py`, the PyQGIS smoke check and `tools/build_plugin.py` after changing plugin behaviour.
 - Do not add passwords, tokens, local account caches or machine-specific settings to Git.

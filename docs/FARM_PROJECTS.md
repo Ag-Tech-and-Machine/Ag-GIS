@@ -4,6 +4,8 @@ Status: GeoPackage selected as the core farm data format, 15 October 2026. Versi
 
 ## Implemented foundation — 0.3.0
 
+Version 0.3.1 keeps this farm schema and file layout unchanged, and writes the GeoPackage through native PyQGIS layers/features and `QgsVectorFileWriter`, using QGIS's bundled provider. All farm runtime code and the user guide ship inside the plugin ZIP. No standalone GIS runtime or companion program is required.
+
 New Farm Project creates only `<Farm name>/Farm.qgz` and `<Farm name>/Data/farm.gpkg`. The map starts empty; no paddock geometry schema is assumed. The GeoPackage contains a registered nonspatial attributes table, `agtech_farm`, with one row: integer `fid` primary key plus text fields `farm_id` (UUID), `farm_name`, `schema_version` (`1`), `crs_authid` and `created_utc` (UTC ISO timestamp). Farm settings are recorded at creation; editing them through the plugin is not yet available.
 
 The QGZ stores the same farm ID and schema version, the relative database location and the selected working CRS. Open Farm Project selects `Data/farm.gpkg`, validates its table, schema, matching map settings and map-layer availability, then opens the companion map. This opens Ag Tech farm workspaces only; it is not a general GeoPackage importer. The database is the core store, but the current workspace requires both files. Keep/copy the whole farm folder together.

@@ -17,7 +17,7 @@ Farmers should be able to spend more time on the job they are trying to complete
 
 ## Current implementation
 
-The QGIS plugin foundation, packaging, installation and development checks exist. Version 0.3.0 provides New/Open Farm Project with a versioned farm information table in GeoPackage and a companion QGIS map. Its optional Simple view switch keeps only map and Layers in the primary workspace and can restore the full layout. Agricultural layer schemas, import/export, settings editing and conversion automation remain future work.
+The QGIS plugin foundation, packaging, installation and development checks exist. Version 0.3.1 provides New/Open Farm Project with a versioned farm information table in GeoPackage and a companion QGIS map. Its optional Simple view switch keeps only map and Layers in the primary workspace and can restore the full layout. Agricultural layer schemas, import/export, settings editing and conversion automation remain future work.
 
 The source is GPL-2.0-or-later, with the full GPL version 2 license text in the repository and plugin package. The source is currently in local Git; public hosting and release publication remain future work.
 

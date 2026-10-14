@@ -2,7 +2,7 @@
 name=Ag Tech Tooling
 description=Farmer-friendly tools to simplify workflows and automate GIS work.
 about=Open-source agricultural tooling for QGIS, with Simple view and New/Open Farm Project using a versioned GeoPackage foundation. Import/export and conversion workflows are under development.
-version=0.3.0
+version=0.3.1
 qgisMinimumVersion=3.28
 author=Michael
 email=admin@agtechandmachine.com

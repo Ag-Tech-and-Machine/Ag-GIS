@@ -1,4 +1,4 @@
-"""Package only plugin source files into a QGIS-installable archive."""
+"""Package plugin runtime files and the user guide into a QGIS-installable archive."""
 import argparse
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -16,10 +16,13 @@ def main():
         for source in sorted(PLUGIN.iterdir()):
             if source.is_file() and (source.suffix in {".py", ".txt", ".svg"} or source.name == "LICENSE"):
                 archive.write(source, f"ag_tech_tooling/{source.name}")
+        archive.write(ROOT / "docs" / "USER_GUIDE.md", "ag_tech_tooling/USER_GUIDE.txt")
     with ZipFile(output) as archive:
         if archive.testzip() is not None:
             raise ValueError("Invalid plugin archive")
-        required = {"ag_tech_tooling/__init__.py", "ag_tech_tooling/metadata.txt", "ag_tech_tooling/plugin.py", "ag_tech_tooling/LICENSE"}
+        required = {f"ag_tech_tooling/{name}" for name in (
+            "__init__.py", "metadata.txt", "plugin.py", "LICENSE", "icon.svg",
+            "simple_view.py", "farm_dialog.py", "farm_project.py", "USER_GUIDE.txt")}
         if not required.issubset(archive.namelist()):
             raise ValueError("Archive is missing required files")
     print(f"Plugin ZIP ready: {output}")

@@ -9,8 +9,11 @@ import sqlite3
 import tempfile
 import uuid
 
-from osgeo import ogr
-from qgis.core import Qgis, QgsCoordinateReferenceSystem, QgsProject
+from qgis.PyQt.QtCore import QVariant
+from qgis.core import (
+    Qgis, QgsCoordinateReferenceSystem, QgsFeature, QgsField,
+    QgsProject, QgsVectorFileWriter, QgsVectorLayer,
+)
 
 SCHEMA_VERSION = 1
 TABLE = "agtech_farm"
@@ -37,33 +40,32 @@ def create_farm(parent, name, crs):
     if destination.exists():
         raise ValueError("That farm folder already exists. Choose another name or open it instead.")
     staging = Path(tempfile.mkdtemp(prefix=".agtech-create-", dir=str(parent)))
-    db = layer = feature = None
     try:
         data = staging / "Data"
         data.mkdir()
-        db = ogr.GetDriverByName("GPKG").CreateDataSource(str(data / "farm.gpkg"))
-        if db is None:
-            raise ValueError("Could not create the farm GeoPackage.")
-        layer = db.CreateLayer(TABLE, geom_type=ogr.wkbNone,
-                               options=["ASPATIAL_VARIANT=GPKG_ATTRIBUTES"])
-        if layer is None:
-            raise ValueError("Could not create the farm information table.")
         values = {
             "farm_id": str(uuid.uuid4()), "farm_name": name,
             "schema_version": str(SCHEMA_VERSION), "crs_authid": crs.authid(),
             "created_utc": datetime.now(timezone.utc).isoformat(),
         }
-        for key in values:
-            if layer.CreateField(ogr.FieldDefn(key, ogr.OFTString)) != 0:
-                raise ValueError("Could not define the farm information fields.")
-        feature = ogr.Feature(layer.GetLayerDefn())
-        for key, value in values.items():
-            feature.SetField(key, value)
-        if layer.CreateFeature(feature) != 0:
-            raise ValueError("Could not save farm information.")
-        feature = None
-        layer = None
-        db = None
+        layer = QgsVectorLayer("None", TABLE, "memory")
+        provider = layer.dataProvider()
+        if not provider.addAttributes([QgsField(key, QVariant.String) for key in values]):
+            raise ValueError("Could not define the farm information fields.")
+        layer.updateFields()
+        feature = QgsFeature(layer.fields())
+        feature.setAttributes(list(values.values()))
+        if not provider.addFeatures([feature])[0]:
+            raise ValueError("Could not prepare farm information.")
+        options = QgsVectorFileWriter.SaveVectorOptions()
+        options.driverName = "GPKG"
+        options.layerName = TABLE
+        options.fileEncoding = "UTF-8"
+        options.layerOptions = ["ASPATIAL_VARIANT=GPKG_ATTRIBUTES"]
+        result = QgsVectorFileWriter.writeAsVectorFormatV3(
+            layer, str(data / "farm.gpkg"), QgsProject.instance().transformContext(), options)
+        if result[0] != QgsVectorFileWriter.NoError:
+            raise ValueError(f"QGIS could not write the farm GeoPackage: {result[1]}")
         project = QgsProject()
         project.setTitle(name)
         project.setCrs(crs)
@@ -80,10 +82,9 @@ def create_farm(parent, name, crs):
         staging.rename(destination)
         return destination
     finally:
-        feature = None
-        layer = None
-        db = None
         if staging.exists():
+            if staging.resolve().parent != parent or not staging.name.startswith(".agtech-create-"):
+                raise RuntimeError("Refusing to clean an unexpected staging location.")
             shutil.rmtree(staging)
 
 

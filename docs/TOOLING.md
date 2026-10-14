@@ -79,6 +79,22 @@ The setting is stored in the QGIS profile, outside Git. A saved full-layout snap
 4. Retain the GPL-2.0-or-later license in source and plugin packages. Confirm public project/support URLs and QGIS version compatibility before publishing to the public plugin repository. Public hosting and publishing decisions are not yet complete.
 5. Create a release tag only after a release has been verified. Publication, GitHub remote creation and release automation are not implemented in this starter.
 
+## Native QGIS and packaging requirements
+
+Every runtime control, module and resource ships in the Ag Tech Tooling ZIP. `docs/USER_GUIDE.md` is bundled as `ag_tech_tooling/USER_GUIDE.txt`; source/development scripts are not required on a user's machine. Farm data remains outside the plugin directory and outside Git.
+
+GeoPackage creation uses `QgsVectorLayer`, the memory provider, `QgsFeature` and `QgsVectorFileWriter.writeAsVectorFormatV3`, with QGIS's transform context and bundled OGR provider. Project IO uses `QgsProject`; interface controls use QGIS's `iface` and `qgis.PyQt`. Read-only Python SQLite queries check the farm database's structure and identity; they do not implement GIS transformations or writes.
+
+Future imports/exports and conversions must use QGIS data providers/writers, `QgsCoordinateTransform` and the QGIS Processing framework as appropriate. Use processing context, feedback/cancellation and explicit output destinations. These workflows are planned; no Processing algorithm is currently run by the farm foundation. Do not introduce a separate GIS installation or shell utility when QGIS supports the operation.
+
+1. Run `scripts/check.ps1` using the installed QGIS runtime.
+2. Confirm source lifecycle/farm tests and ZIP build pass.
+3. Confirm `tools/package_test.py` passes: it checks exact archive content/bytes and runs lifecycle and farm tests from an extracted ZIP.
+4. Install the built ZIP, restart QGIS and verify the controls in the installed profile.
+5. For missing modules or resources, fix the package and rebuild; do not ask users to copy files from the repository manually.
+
+References: [QGIS vector writer API](https://api.qgis.org/api/classQgsVectorFileWriter.html), [QGIS 3.44 Processing](https://docs.qgis.org/3.44/en/docs/user_manual/processing/console.html).
+
 ## Documentation responsibilities
 
 The manager maintains installation instructions, tool usage, verification evidence, known failures and next steps during development. A feature is not complete until its relevant instructions match the implementation. Documentation-only edits need editorial review and link/path checks; they do not require rerunning unchanged code tests.

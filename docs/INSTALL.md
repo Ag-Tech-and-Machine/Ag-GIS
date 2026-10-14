@@ -132,7 +132,7 @@ The script checks and builds the ZIP, verifies the extracted files, installs the
 
 Alternatively, use QGIS's ZIP installation dialog:
 
-1. Run the checks to build `dist\ag_tech_tooling-0.3.0.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.3.1.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -140,9 +140,9 @@ Alternatively, use QGIS's ZIP installation dialog:
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
-Version 0.3.0 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
+Version 0.3.1 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
 
-### Create and open a farm — 0.3.0
+### Create and open a farm — 0.3.1
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Choose **Plugins → Ag Tech Tooling → New Farm Project…**.
@@ -178,6 +178,12 @@ Creating a Git repository on disk does not register it in the desktop app's Proj
 Sidebar registration is pending. The current assistant tools can list and manage existing projects but do not expose creation of a local folder project, so adding it requires the app control.
 
 Official guidance: https://learn.chatgpt.com/docs/projects
+
+### What the plugin package includes
+
+Version 0.3.1 includes Simple view, New/Open Farm Project, all supporting Python modules, icon, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
+
+The local installer and the QGIS **Install from ZIP** workflow both install the bundled guide beside the plugin modules. The source checks now also execute farm/lifecycle tests from the extracted release ZIP.
 
 ## Known setup problems
 

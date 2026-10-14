@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "plugins"))
+sys.path.insert(0, os.environ.get("AGTECH_TEST_PLUGIN_ROOT", str(Path(__file__).resolve().parents[1] / "plugins")))
 from qgis.core import QgsApplication, QgsProject
 from qgis.PyQt.QtWidgets import QMainWindow
 from qgis.PyQt.QtWidgets import QDockWidget, QToolBar, QLabel, QStackedWidget, QWidget

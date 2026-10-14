@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "plugins"))
+sys.path.insert(0, os.environ.get("AGTECH_TEST_PLUGIN_ROOT", str(Path(__file__).resolve().parents[1] / "plugins")))
 from qgis.core import QgsApplication, QgsCoordinateReferenceSystem, QgsProject, QgsVectorLayer
 from qgis.PyQt.QtWidgets import QMainWindow, QMessageBox, QDialog
 from ag_tech_tooling.farm_project import create_farm, validate_farm, validate_name
