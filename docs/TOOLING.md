@@ -87,6 +87,8 @@ Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/
 
 ## Ready for the first tool
 
+The proposed data foundation is documented in [Farm projects](FARM_PROJECTS.md). It defines a managed farm directory, jobs, standard formats and planned validation/backup controls. These are design proposals; the current plugin does not manage farm data yet.
+
 1. Describe the farming task in the user's words.
 2. Identify the sample input files or layers, units and coordinate reference system where relevant.
 3. Agree the expected output and where to save it.

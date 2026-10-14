@@ -1,5 +1,13 @@
 # Work log and verification status
 
+## 15 October 2026 — Farm project structure proposal
+
+- Documented a proposed directory per farm, with QGZ map setup, GeoPackage records, supporting data and job-specific work.
+- Compared GeoPackage project storage with separate project/data storage; recommended a managed directory for mixed data and ZIP for transfer/backup.
+- Defined planned import, path, schema, units, overwrite, local-editing and verified-restore controls, plus staged acceptance checks.
+- Checked QGIS 3.44, OGC GeoPackage and SQLite primary documentation. No plugin code changed; integration tests were not repeated.
+- Farm management remains proposed. No farm datasets were created, moved or modified. Next step: agree the initial structure and implement New/Open Farm Project.
+
 ## 15 October 2026 — Map and Layers only, version 0.2.1
 
 - Restricted the Simple view primary workspace to the map and Layers, as requested. Browser, welcome/recent projects, news/templates and other dock panels are hidden.

@@ -10,6 +10,7 @@ See [project purpose and design principles](docs/PURPOSE.md).
 
 - [Installation and setup](docs/INSTALL.md)
 - [Development and tooling](docs/TOOLING.md)
+- [Farm project structure proposal](docs/FARM_PROJECTS.md) (not yet implemented)
 - [Work log and verification status](docs/WORK_LOG.md)
 
 These instructions are updated alongside the tooling, rather than only at release time.
