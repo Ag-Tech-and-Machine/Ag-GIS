@@ -25,11 +25,11 @@ The interface foundation provides optional Simple view and reports a layer count
 
 1. Install/enable Ag Tech Tooling as described in `INSTALL.md`.
 2. Check **Simple view** in QGIS's bottom-right status bar.
-3. Use the Project toolbar to create/open/save maps, the Map Navigation toolbar to move/zoom, Browser to find data, and Layers to control visible data. QGIS menus remain available.
+3. Use the Project toolbar to create/open/save maps, the Map Navigation toolbar to move/zoom, and Layers to control visible data. The main area contains only the map and Layers. Add data through **Layer → Add Layer**, or turn Simple view off if you need Browser. QGIS menus remain available.
 4. Uncheck **Simple view** when you need the previous full workspace. Its toolbar/panel layout is restored.
 5. The profile remembers your choice. Turning off the plugin restores the workspace and removes the switch.
 
-The setting is stored in the QGIS profile, outside Git. A saved full-layout snapshot supports restoration across plugin reloads and restarts. The switch does not simplify individual dialog contents or remove advanced features from QGIS.
+The setting is stored in the QGIS profile, outside Git. A saved full-layout snapshot supports restoration across plugin reloads and restarts. Simple view keeps Layers available and prevents other dock panels and welcome pages from reappearing. It does not simplify individual dialog contents or remove advanced features from QGIS; turn it off to use the full workspace.
 
 ## Work through each tooling change
 

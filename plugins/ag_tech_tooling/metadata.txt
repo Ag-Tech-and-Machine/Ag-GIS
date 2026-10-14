@@ -2,7 +2,7 @@
 name=Ag Tech Tooling
 description=Farmer-friendly tools to simplify workflows and automate GIS work.
 about=Open-source agricultural tooling for QGIS, with a reversible Simple view switch for a cleaner interface. Farming workflow automation is under development.
-version=0.2.0
+version=0.2.1
 qgisMinimumVersion=3.28
 author=Michael
 email=admin@agtechandmachine.com

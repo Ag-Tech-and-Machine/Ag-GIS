@@ -132,7 +132,7 @@ The script checks and builds the ZIP, verifies the extracted files, installs the
 
 Alternatively, use QGIS's ZIP installation dialog:
 
-1. Run the checks to build `dist\ag_tech_tooling-0.2.0.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.2.1.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -140,17 +140,19 @@ Alternatively, use QGIS's ZIP installation dialog:
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
-Ag Tech Tooling 0.2.0 is installed and enabled in the normal `default` profile. QGIS 3.44.14 successfully loaded that installed copy and exercised its action, Simple view switch, layout restoration and unload/reload lifecycle on 15 October 2026.
+Ag Tech Tooling 0.2.1 is installed and enabled in the normal `default` profile. QGIS 3.44.14 successfully loaded the installed copy and exercised its action, Simple view switch, map-only central page, panel restrictions, layout restoration and unload/reload lifecycle on 15 October 2026.
 
 ### Choose Simple view
 
 1. Find **Simple view** at the bottom right of QGIS, beside the existing scale/coordinate controls.
-2. Check it to show the basic Project and Map Navigation toolbars and the Layers and Browser panels. Advanced main-window toolbars and panels are hidden. The map, menus and status controls remain available.
+2. Check it to show only the map and Layers in the primary workspace. Browser, welcome/recent-project/news/template views and other main-window panels are hidden. Basic Project and Map Navigation toolbars, QGIS menus and status controls remain available.
 3. Uncheck it to restore the layout from before Simple view was selected, including panels that were previously hidden.
 4. The choice is saved per QGIS profile. It is off until first selected; the current default profile has been switched on for review.
 5. Disabling or reloading Ag Tech Tooling restores the full layout while the plugin is absent. Re-enabling it remembers the selected mode.
 
-Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Plugins enabled later can add new controls; switch Simple view off and back on to simplify newly added toolbars/panels.
+Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Layers stays visible while Simple view is on. Other dock panels are hidden even if you try to reopen them, and new panels are detected and hidden. Switch Simple view off to use Browser or advanced panels. Plugins enabled later can add toolbars; switch Simple view off and back on to simplify those toolbars.
+
+Switching off restores the previous central view only if the project has not changed. If you opened or changed a map while using Simple view, the map stays in front rather than returning to an old welcome screen.
 
 ## 7. Add the project to the desktop app
 

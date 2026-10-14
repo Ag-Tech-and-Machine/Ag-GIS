@@ -1,5 +1,14 @@
 # Work log and verification status
 
+## 15 October 2026 — Map and Layers only, version 0.2.1
+
+- Restricted the Simple view primary workspace to the map and Layers, as requested. Browser, welcome/recent projects, news/templates and other dock panels are hidden.
+- Guarded panel visibility: Layers remains available, other existing/new panels cannot reappear while Simple view is on.
+- Found the map's central Qt page and kept it selected without creating, clearing or replacing the user's QGIS project.
+- Preserved full-layout restoration. If the project changes while in Simple view, switching off leaves the map in front rather than returning to the old welcome page.
+- Qt/PyQGIS checks passed for hidden/reopened/new panels, welcome-page exclusion, layout restoration, project-change handling and reload.
+- Installed in the default profile; real-QGIS API verification confirmed a map-and-Layers workspace, hidden welcome page, Browser exclusion, unchanged layers and restoration. Captured and inspected the actual interface.
+
 ## 15 October 2026 — Simple view, version 0.2.0
 
 - Added a single **Simple view** checkbox in the bottom-right status bar, alongside the existing scale/coordinate controls, as requested.
