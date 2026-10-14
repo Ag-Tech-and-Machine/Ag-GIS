@@ -12,7 +12,13 @@ Edit `plugins/qgis_plugin_work/plugin.py` for functionality and `metadata.txt` f
 
 ## Check and package
 
-With Python 3 installed:
+Use the installed QGIS Python runtime to run all checks and build the ZIP:
+
+```powershell
+.\scripts\check.ps1
+```
+
+For syntax checks and packaging only, an ordinary Python 3 runtime also works:
 
 ```powershell
 python tools/check_plugin.py
