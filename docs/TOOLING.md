@@ -105,6 +105,8 @@ Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/
 
 Before expanding the farm schema, use the researched [Organisation/Farm/Field proposal](FARM_DATA_MODEL.md). It recommends a simple three-level interface, separate season/job relationships and optional Client/Grower interoperability. Design the toolbar context selectors and management dialog before schema migration. The current version 1 farm schema and installed 0.4.0 controls remain unchanged.
 
+Within each field, use the agreed **Whole Field / Seasons** organisation. Master guidance/boundaries and reusable references belong to Whole Field; crop-cycle plans, operations and results belong to Seasons. Keep reference data available while filtering a season. Preserve the specific guidance/boundary revisions used by historical work. The UI and storage for this grouping remain to be implemented.
+
 Interface optimisation takes precedence over expanding the feature set. For each increment:
 
 1. Identify the farmer's task and the native QGIS capability to reuse.

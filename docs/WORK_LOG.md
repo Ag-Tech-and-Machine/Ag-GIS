@@ -1,5 +1,12 @@
 # Work log and verification status
 
+## 15 October 2026 — Whole Field and seasonal data
+
+- Recorded the user's direction to divide each field into Whole Field reference data and crop/season data.
+- Documented master guidance lines, boundaries, terrain and infrastructure under Whole Field; plans, operations, observations and results under Seasons. Proposed handling for multiple crops/cycles and revision references preserves history without copying fields annually.
+- Kept the toolbar/map-and-Layers interface priority. This is a model clarification only: installed plugin 0.4.0 and schema version 1 remain unchanged.
+- Documentation diff check passed; no unchanged runtime tests were repeated.
+
 ## 15 October 2026 — Organisation/Farm/Field research
 
 - Reviewed primary Deere, Ag Leader SMS and PTx FarmENGAGE documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.

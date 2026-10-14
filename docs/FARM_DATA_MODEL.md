@@ -35,6 +35,38 @@ If contractor multi-client work becomes an immediate requirement, settle whether
 
 ## Land, time and work are related dimensions
 
+### Within each field: Whole Field and Seasons
+
+The user confirmed this organising direction: reusable field data belongs under **Whole Field**, while crop/season-specific data belongs under **Seasons**. These are interface groupings over related records, not separate copies of the field or a requirement for one database table per branch.
+
+```text
+Field: North 40
+  Whole Field
+    Boundaries
+    Guidance Lines
+    Terrain & Drainage
+    Infrastructure & Reference Data
+  Seasons
+    2026 — Winter
+      Wheat
+        Plans & Prescriptions
+        Operations & Jobs
+        Observations & Results
+    2027 — Winter
+      Canola
+        Plans & Prescriptions
+        Operations & Jobs
+        Observations & Results
+```
+
+**Whole Field** holds reusable spatial/reference data: boundary revisions, master AB/guidance lines and patterns, terrain/surveys, drainage/infrastructure and baseline reference layers. Whole Field describes the data's field-wide/reusable scope, not a promise that it never changes or covers every square metre. Preserve dates, sources and revisions where appropriate. A dated soil test or imagery capture can remain a dated observation even when used as a reference across seasons.
+
+**Seasons** holds named crop cycles, associated crops or crop areas, plans/prescriptions, planting/application/harvest records, scouting/observations, jobs and results. Use season IDs plus dates/labels rather than making calendar year the only key. Support more than one crop cycle per year and more than one crop/crop area within a field; a single-crop field should still look simple. The illustrative crop branch can be collapsed for the common single-crop case. Field/season-level work need not be assigned to a crop when that would be misleading.
+
+Master guidance lines belong to Whole Field. A season/job can select a particular guidance revision and record its working offset, implement width or other setup. Changes must not silently replace the master or alter historical work. Similarly, preserve which boundary revision was used for a prescription or operation. Make deliberate promotion of a season-specific improvement into reusable field data recoverable.
+
+When viewing one season, Whole Field reference data should remain available alongside that season's data. An **All seasons** view can compare history without duplicating reference layers. Present these choices through the toolbar/context controls and the existing Layers area while keeping the map central. This structure is agreed in principle; its UI and storage relationships are not implemented yet.
+
 - Keep field identity independent of seasons and geometry. A renamed field retains its ID.
 - Store boundary revisions against a field, with validity/source details. Splits and merges need lineage rather than silently reusing an old identity.
 - Relate seasons/crop cycles to fields; do not duplicate field records every calendar year. Season labels and dates must allow local cropping practices.
