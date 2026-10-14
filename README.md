@@ -2,6 +2,14 @@
 
 A fresh Python plugin project for QGIS 3.x LTR. The starter adds a toolbar/menu action that reports the current layer count. No previous project files or company sign-in settings are included.
 
+## Maintained instructions
+
+- [Installation and setup](docs/INSTALL.md)
+- [Development and tooling](docs/TOOLING.md)
+- [Work log and verification status](docs/WORK_LOG.md)
+
+These instructions are updated alongside the tooling, rather than only at release time.
+
 ## Develop
 
 Run `scripts/launch-qgis.ps1` in PowerShell. It finds an installed QGIS launcher, sets `QGIS_PLUGINPATH` to this repository's `plugins` directory, and opens the isolated `qgis-plugin-work-dev` profile.
