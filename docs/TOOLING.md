@@ -6,10 +6,10 @@ Last updated: 15 October 2026.
 
 | Item | Purpose |
 | --- | --- |
-| `plugins/qgis_plugin_work/__init__.py` | QGIS `classFactory` entry point |
-| `plugins/qgis_plugin_work/plugin.py` | Starter action and clean load/unload lifecycle |
-| `plugins/qgis_plugin_work/metadata.txt` | Name, version, author and compatibility metadata |
-| `plugins/qgis_plugin_work/icon.svg` | Toolbar/menu icon |
+| `plugins/ag_tech_tooling/__init__.py` | QGIS `classFactory` entry point |
+| `plugins/ag_tech_tooling/plugin.py` | Starter action and clean load/unload lifecycle |
+| `plugins/ag_tech_tooling/metadata.txt` | Name, version, author and compatibility metadata |
+| `plugins/ag_tech_tooling/icon.svg` | Toolbar/menu icon |
 | `scripts/launch-qgis.ps1` | Start QGIS with source plugin discovery and an isolated profile |
 | `scripts/check.ps1` | Run syntax/metadata checks, Qt/PyQGIS smoke check and ZIP build |
 | `tools/check_plugin.py` | Check Python syntax and mandatory metadata |
@@ -48,7 +48,7 @@ The starter reports a layer count. No domain-specific tools, processing algorith
 
 1. Follow `INSTALL.md` to launch the development profile and enable the plugin.
 2. Open a QGIS project or add layers.
-3. Run **QGIS Plugin Work** from its menu or toolbar.
+3. Run **Ag Tech Tooling** from its menu or toolbar.
 4. Read the layer-count message. The starter does not alter the project or layer data.
 
 ## Build an installable ZIP

@@ -13,5 +13,5 @@ if(-not(Test-Path -LiteralPath $launcher)){throw 'QGIS launcher not found in the
 $previousPluginPath=$env:QGIS_PLUGINPATH
 try{
     $env:QGIS_PLUGINPATH=Join-Path $repoRoot 'plugins'
-    & $launcher --profiles-path (Join-Path $repoRoot '.dev-profiles') --profile qgis-plugin-work-dev
+    & $launcher --profiles-path (Join-Path $repoRoot '.dev-profiles') --profile ag-tech-tooling-dev
 }finally{$env:QGIS_PLUGINPATH=$previousPluginPath}

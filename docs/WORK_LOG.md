@@ -1,11 +1,19 @@
 # Work log and verification status
 
+## 15 October 2026 — Naming update
+
+- Adopted the temporary project and displayed plugin name **Ag Tech Tooling**.
+- Renamed the repository folder to `ag-tech-tooling` and the Python plugin package to `ag_tech_tooling`, retaining Git history.
+- Updated the menu/action title, metadata, development profile name, build names, scripts and instructions together.
+- Re-ran `scripts\check.ps1` on QGIS 3.44.14: syntax/metadata, Qt/PyQGIS lifecycle and ZIP checks passed.
+- Desktop sidebar registration remains pending; use **Ag Tech Tooling** as the app project name and attach the renamed repository folder.
+
 ## 15 October 2026 — Initial development environment
 
 ### Completed
 
 - Configured Git author Michael `<admin@agtechandmachine.com>` and default branch `main`.
-- Created the local `qgis-plugin-work` repository and committed the starter.
+- Created the local `ag-tech-tooling` repository and committed the starter.
 - Installed QGIS 3.44.14 LTR using WinGet; installer hash verification and installation succeeded.
 - Added source discovery through `QGIS_PLUGINPATH` and an isolated development profile launcher.
 - Added syntax/metadata checks, Qt/PyQGIS smoke checking and ZIP packaging.

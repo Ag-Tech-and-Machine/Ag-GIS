@@ -7,7 +7,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "plugins"))
 from qgis.core import QgsApplication
 from qgis.PyQt.QtWidgets import QMainWindow
-from qgis_plugin_work import classFactory
+from ag_tech_tooling import classFactory
 
 
 class Interface:

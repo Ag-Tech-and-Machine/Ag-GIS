@@ -4,7 +4,7 @@ import configparser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "qgis_plugin_work"
+PLUGIN = ROOT / "plugins" / "ag_tech_tooling"
 
 
 def check():

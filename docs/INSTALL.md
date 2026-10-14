@@ -7,7 +7,7 @@ Last updated: 15 October 2026.
 - Windows workstation, local account Michael.
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
-- Repository: `C:\Users\Michael\Documents\Projects\repos\qgis-plugin-work`.
+- Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.
 - Git author: Michael `<admin@agtechandmachine.com>`.
 
 QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate system Python is optional for syntax checks and packaging; it does not replace the QGIS runtime.
@@ -71,7 +71,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 1. For this machine, open the existing repository; do not initialise it again:
 
    ```powershell
-   Set-Location 'C:\Users\Michael\Documents\Projects\repos\qgis-plugin-work'
+   Set-Location 'C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling'
    git status
    ```
 
@@ -111,10 +111,10 @@ The smoke check uses real Qt/PyQGIS with an interface adapter. It does not repla
 
    Or pass `-QgisRoot 'C:\Program Files\QGIS 3.44.14'` to select that installation.
 
-2. QGIS should open with the isolated `qgis-plugin-work-dev` profile. The profile is stored under `.dev-profiles`, outside Git tracking. The launcher exposes the repository's `plugins` directory using `QGIS_PLUGINPATH`.
+2. QGIS should open with the isolated `ag-tech-tooling-dev` profile. The profile is stored under `.dev-profiles`, outside Git tracking. The launcher exposes the repository's `plugins` directory using `QGIS_PLUGINPATH`.
 3. In QGIS, open **Plugins → Manage and Install Plugins → Installed**.
-4. Enable **QGIS Plugin Work**.
-5. Use its toolbar action or **Plugins → QGIS Plugin Work** menu action.
+4. Enable **Ag Tech Tooling**.
+5. Use its toolbar action or **Plugins → Ag Tech Tooling** menu action.
 6. Expected: a message reading `Starter plugin is running. Project layers: N.` where N is the number of layers in the project.
 7. Disable the plugin and confirm its menu/toolbar action disappears. Re-enable it and confirm only one action is present.
 
@@ -122,7 +122,7 @@ QGIS startup and the automated smoke check were verified on 15 October 2026. Man
 
 ## 6. Install a packaged plugin for use
 
-1. Run the checks to build `dist\qgis_plugin_work-0.1.0.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.1.0.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -134,8 +134,8 @@ Use the isolated development profile for source development and a separate norma
 
 Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
 
-1. Use the app's **Add new project** control and create a local project named **QGIS Plugin Work**.
-2. Attach `C:\Users\Michael\Documents\Projects\repos\qgis-plugin-work` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
+1. Use the app's **Add new project** control and create a local project named **Ag Tech Tooling**.
+2. Attach `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
 3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
 4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
 

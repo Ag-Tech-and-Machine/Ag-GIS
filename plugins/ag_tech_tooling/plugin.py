@@ -7,20 +7,20 @@ from pathlib import Path
 from qgis.core import Qgis, QgsProject
 
 
-class PluginWork:
+class AgTechTooling:
     """Minimal plugin with a clean menu/toolbar lifecycle."""
 
     def __init__(self, iface):
         self.iface = iface
         self.action = None
-        self.menu = "QGIS Plugin Work"
+        self.menu = "Ag Tech Tooling"
 
     def initGui(self):
         if self.action is not None:
             return
         icon = QIcon(str(Path(__file__).with_name("icon.svg")))
-        self.action = QAction(icon, "QGIS Plugin Work", self.iface.mainWindow())
-        self.action.setObjectName("qgis_plugin_work_action")
+        self.action = QAction(icon, "Ag Tech Tooling", self.iface.mainWindow())
+        self.action.setObjectName("ag_tech_tooling_action")
         self.action.triggered.connect(self.run)
         self.iface.addPluginToMenu(self.menu, self.action)
         self.iface.addToolBarIcon(self.action)
@@ -28,7 +28,7 @@ class PluginWork:
     def run(self):
         layer_count = len(QgsProject.instance().mapLayers())
         self.iface.messageBar().pushMessage(
-            "QGIS Plugin Work",
+            "Ag Tech Tooling",
             f"Starter plugin is running. Project layers: {layer_count}.",
             level=Qgis.Info,
             duration=5,

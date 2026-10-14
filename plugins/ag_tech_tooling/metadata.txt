@@ -1,5 +1,5 @@
 [general]
-name=QGIS Plugin Work
+name=Ag Tech Tooling
 description=Starter workspace for developing QGIS plugins.
 about=Adds a simple action reporting the layer count; replace it with your plugin functionality.
 version=0.1.0
