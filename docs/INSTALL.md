@@ -130,6 +130,19 @@ QGIS startup and the automated smoke check were verified on 15 October 2026. Man
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
+## 7. Add the project to the desktop app
+
+Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
+
+1. Use the app's **Add new project** control and create a local project named **QGIS Plugin Work**.
+2. Attach `C:\Users\Michael\Documents\Projects\repos\qgis-plugin-work` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
+3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
+4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
+
+Sidebar registration is pending. The current assistant tools can list and manage existing projects but do not expose creation of a local folder project, so adding it requires the app control.
+
+Official guidance: https://learn.chatgpt.com/docs/projects
+
 ## Known setup problems
 
 - **`winget` is not recognised:** install or update Microsoft's App Installer, then reopen the shell, or use the official Git/QGIS installers. On the tested workstation the App Installer package executable was available even though the command alias was missing.

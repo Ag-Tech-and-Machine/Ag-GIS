@@ -21,6 +21,7 @@
 
 ### Pending
 
+- Add the local repository to the desktop app's Projects sidebar and move the tooling chat into it. The repository exists, but the app's saved project list was empty when checked.
 - Manual enable/disable and toolbar/menu checks in QGIS's plugin manager.
 - ZIP installation check in a separate QGIS profile.
 - Definition of the first useful domain-specific tool.
