@@ -4,6 +4,13 @@
 
 Build farmer-friendly, open-source tooling that simplifies agricultural workflows and automates GIS work. Follow `docs/PURPOSE.md`: use farming language, sensible defaults, visible results and safe handling of users' original data. Keep instructions in step with the tools.
 
+## Development priority
+
+- Interface optimisation is priority one. Refine the farmer-facing layout, navigation, wording and task flow before expanding the data/conversion feature set.
+- Simple view keeps map and Layers as the primary workspace, with its switch in the bottom-right status rail. Keep advanced QGIS tools accessible through reversible full-view restoration.
+- Prefer existing QGIS actions, widgets, dialogs and Processing tools wherever practical. Add a small farmer-friendly interface around native capabilities when their standard interface is too complex; avoid duplicating supported GIS behaviour.
+- Before each feature, identify the native QGIS capability to reuse and the interface simplification it provides. Verify discoverability, clear outcomes, cancellation, saved work and unload/reload behaviour with the implemented workflow.
+
 - Plugin source is in `plugins/ag_tech_tooling`; keep GIS datasets outside this repository.
 - Import Qt classes through `qgis.PyQt`, and use the Python runtime supplied with QGIS for integration checks.
 - Ship every runtime feature inside the plugin ZIP, including its modules/resources and user guide. Verify workflows against the extracted package, not only the source checkout.

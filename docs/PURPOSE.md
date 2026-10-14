@@ -6,6 +6,10 @@ Farmers should be able to spend more time on the job they are trying to complete
 
 ## Design principles
 
+**Interface optimisation is priority one.** Focus the next development work on a clear farmer-facing layout, understandable controls and short task flows. Expand data management and conversions in steps that fit that interface.
+
+Use native QGIS tooling wherever practical: reuse its actions, widgets, dialogs, providers, writers, coordinate transformations and Processing algorithms. Ag Tech Tooling supplies simple farming language, defaults and workflow guidance around those capabilities. Custom GIS implementations need a documented reason when QGIS already supports the operation.
+
 - Describe tasks using language farmers use. Explain unavoidable GIS terms where they appear.
 - Use sensible defaults, clear units and straightforward controls.
 - Automate repetitive work while showing what will happen and where results will be saved.
@@ -22,5 +26,7 @@ The QGIS plugin foundation, packaging, installation and development checks exist
 The source is GPL-2.0-or-later, with the full GPL version 2 license text in the repository and plugin package. The source is currently in local Git; public hosting and release publication remain future work.
 
 ## First development cycle
+
+The immediate priority is the interface: make New/Open Farm discoverable within Simple view, settle consistent control placement and wording, and verify that common tasks preserve the map-and-Layers workspace and users' work. These refinements are planned; the current controls remain under the plugin menu. Then develop imports, exports, settings and conversions around the agreed task flows.
 
 For the first tool, agree the farming task, sample inputs, desired output and success criteria. Build and verify that workflow, document its exact operating steps, then improve it using feedback from practical use. Record decisions and checks in the work log.

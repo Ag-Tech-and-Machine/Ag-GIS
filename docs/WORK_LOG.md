@@ -1,5 +1,12 @@
 # Work log and verification status
 
+## 15 October 2026 — Interface-first priority confirmed
+
+- Recorded the user's requirement to optimise the interface as priority one and use native QGIS tooling wherever possible.
+- Updated AGENTS.md, purpose and development guidance to prioritise clear task flows, existing QGIS controls and reversible Simple view behaviour before feature expansion.
+- Identified discoverable New/Open Farm controls as the next interface increment; no placement change has been implemented yet.
+- Documentation-only change, reviewed with `git diff --check`. Installed plugin remains 0.3.1; no runtime/package changes or repeated integration tests were needed.
+
 ## 15 October 2026 — Native QGIS writer and complete plugin package, 0.3.1
 
 - Replaced direct OGR farm-table creation with PyQGIS memory layers/features and `QgsVectorFileWriter.writeAsVectorFormatV3`, using QGIS's bundled provider and transform context. Read-only SQLite structural checks remain; no GIS operations are implemented through SQLite.

@@ -103,6 +103,16 @@ Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/
 
 ## Ready for the first tool
 
+Interface optimisation takes precedence over expanding the feature set. For each increment:
+
+1. Identify the farmer's task and the native QGIS capability to reuse.
+2. Define where the control belongs, its plain-language wording and the shortest understandable task flow.
+3. Prefer existing QGIS actions/widgets/dialogs; add focused controls where these improve usability.
+4. Verify that Simple view retains map and Layers, advanced tools remain recoverable, and cancellation protects existing work.
+5. Implement the underlying data/processing step using QGIS APIs and keep its instructions and packaging aligned.
+
+The next interface refinement is discoverable New/Open Farm controls with consistent placement and feedback. Its design and implementation remain pending; no interface changes are made by this priority update.
+
 The data foundation is documented in [Farm projects](FARM_PROJECTS.md). GeoPackage is the selected core format. Version 0.3.0 creates/opens a minimal farm workspace and validates its versioned farm information. Agricultural schemas, imports, exports, settings editing, conversions and backup controls remain to be designed and implemented. Follow the New/Open operating steps in `INSTALL.md`. `scripts/check.ps1` includes `tools/farm_project_test.py` using disposable data with GDAL and PyQGIS.
 
 1. Describe the farming task in the user's words.
