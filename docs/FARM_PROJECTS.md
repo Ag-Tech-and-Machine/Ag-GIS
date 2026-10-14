@@ -30,6 +30,8 @@ Develop these incrementally using representative source files and expected outpu
 
 ## Recommendation
 
+The newer [Organisation/Farm/Field proposal](FARM_DATA_MODEL.md) revises the initial one-directory-per-farm assumption below: a workspace should be able to contain an organisation with several farms and fields. The current implementation is unchanged, and the following directory tree remains an earlier illustration rather than the agreed future schema.
+
 Present one **Farm Project** to the farmer. Use one managed directory per farm, with permanent records and dated jobs inside it. Use standard formats accessible without Ag Tech Tooling, and an ordinary ZIP for backup/transfer. Unpack before editing.
 
 A QGIS `.qgz` stores map setup and references to datasets; it does not normally embed those datasets. GeoPackage is an open SQLite container for features and attributes, with raster tile support. QGIS can also store its project inside a GeoPackage, which is useful for a contained vector workflow. For general mixed farm data, recommend a separate QGZ entry point, GeoPackage records and supporting files for original imports, imagery, elevation, LiDAR and documents.

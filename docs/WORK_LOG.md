@@ -1,5 +1,13 @@
 # Work log and verification status
 
+## 15 October 2026 — Organisation/Farm/Field research
+
+- Reviewed primary Deere, Ag Leader SMS and PTx FarmENGAGE documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
+- Documented a proposed Organisation → Farm → Field interface, optional Client/Grower handling, stable identities, boundary revisions and separate season/job relationships. Proposed multi-farm organisation workspaces revise the earlier one-farm packaging illustration.
+- Kept the installed 0.4.0 plugin and schema version 1 unchanged. No migrations, imports, production datasets or new hierarchy controls were created.
+- Confirmed the live QGIS accessibility tree contains the dedicated toolbar and seven controls. The 0.4.0 installed-build capture shows native icons above their labels; fresh Windows screenshot capture timed out, so the capture is prior verification evidence, not a fresh screenshot.
+- Reviewed documentation with `git diff --check`; unchanged plugin integration tests were not repeated.
+
 ## 15 October 2026 — Dedicated farmer toolbar, version 0.4.0
 
 - Added the top Ag Tech Tooling toolbar with labelled New Farm, Open Farm, Save Map, Move Map, Zoom In, Zoom Out and Whole Map buttons. New/Open share plugin-menu actions; save/navigation share native QGIS actions and enabled/checked states.

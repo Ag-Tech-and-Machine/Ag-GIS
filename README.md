@@ -12,6 +12,7 @@ See [project purpose and design principles](docs/PURPOSE.md).
 - [Bundled user guide](docs/USER_GUIDE.md)
 - [Development and tooling](docs/TOOLING.md)
 - [Farm data foundation and structure proposal](docs/FARM_PROJECTS.md) (minimal New/Open implemented)
+- [Organisation, Farm and Field model](docs/FARM_DATA_MODEL.md) (researched proposal)
 - [Work log and verification status](docs/WORK_LOG.md)
 
 These instructions are updated alongside the tooling, rather than only at release time.

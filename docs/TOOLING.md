@@ -103,6 +103,8 @@ Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/
 
 ## Ready for the first tool
 
+Before expanding the farm schema, use the researched [Organisation/Farm/Field proposal](FARM_DATA_MODEL.md). It recommends a simple three-level interface, separate season/job relationships and optional Client/Grower interoperability. Design the toolbar context selectors and management dialog before schema migration. The current version 1 farm schema and installed 0.4.0 controls remain unchanged.
+
 Interface optimisation takes precedence over expanding the feature set. For each increment:
 
 1. Identify the farmer's task and the native QGIS capability to reuse.
