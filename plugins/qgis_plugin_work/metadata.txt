@@ -1,0 +1,13 @@
+[general]
+name=QGIS Plugin Work
+description=Starter workspace for developing QGIS plugins.
+about=Adds a simple action reporting the layer count; replace it with your plugin functionality.
+version=0.1.0
+qgisMinimumVersion=3.28
+author=Michael
+email=admin@agtechandmachine.com
+category=Plugins
+icon=icon.svg
+experimental=True
+deprecated=False
+hasProcessingProvider=False
