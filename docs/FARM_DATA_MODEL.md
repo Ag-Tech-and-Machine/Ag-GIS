@@ -1,6 +1,16 @@
 # Organisation, Client, Farm and Field — data model
 
-15 October 2026. Proposed model, not a schema migration or implemented feature. Current plugin: 0.4.0, with one farm-information row in schema version 1. Existing data remains unchanged.
+15 October 2026. Version 0.5.0 implements the hierarchy foundation in schema 2. Remaining workflow/history design is labelled below. Existing schema 1 projects stay readable and are upgraded through a separate copy, not an in-place migration.
+
+## Implemented in 0.5.0
+
+- Native QGIS attribute tables: `agtech_organisations`, `agtech_clients`, `agtech_farms`, `agtech_fields`, `agtech_seasons`, `agtech_crops`. Each has stable `id` and `name`; children carry their parent's ID. Seasons also have optional ISO start/end dates.
+- Native shared spatial layers: `agtech_boundaries` (MultiPolygon), `agtech_guidance` (MultiLineString), `agtech_infrastructure` (Point), with `id`, `field_id`, `name` and `revision`. IDs have unique indexes; parent links and nonempty identities are guarded by database triggers installed via the QGIS provider connection. Hierarchy names are unique within their parent (case-insensitive checks).
+- New Project setup with confirmed Organisation/Client/first Farm and optional first Field. Manage Data supports add/rename, a full icon-labelled hierarchy, Whole Field/Seasons grouping, season/crop records and selected-field native layer filtering.
+- Schema 1 upgrade-copy support uses a SQLite storage snapshot, native QGIS schema creation/writes and validation. The original is retained unchanged; reserved table conflicts are refused. The original farm UUID becomes the first farm ID, and remains the workspace identity for compatibility.
+- Unrelated map layers are retained; three shared reference layers are reused across fields and after moving/reopening the project. Map context is saved through QGIS Save Map. Hierarchy changes save immediately to GeoPackage.
+
+Seasonal dataset editors, terrain storage/import, jobs/prescriptions, automatic revision history, external-ID mapping workflows, toolbar dropdown selectors, deletion/reparenting and multi-user locking are not implemented. Planning/operations/results rows currently organise the tree; they do not imply those dataset tools exist. Show Field displays Whole Field references, not a season-specific dataset filter.
 
 ## Direction
 
@@ -71,7 +81,7 @@ Field: North 40
 
 Master guidance lines belong to Whole Field. A season/job can select a particular guidance revision and record its working offset, implement width or other setup. Changes must not silently replace the master or alter historical work. Similarly, preserve which boundary revision was used for a prescription or operation. Make deliberate promotion of a season-specific improvement into reusable field data recoverable.
 
-When viewing one season, Whole Field reference data should remain available alongside that season's data. An **All seasons** view can compare history without duplicating reference layers. Present these choices through the toolbar/context controls and the existing Layers area while keeping the map central. This structure is agreed in principle; its UI and storage relationships are not implemented yet.
+Whole Field/Seasons and season/crop records are implemented in the Manage Data tree. When seasonal dataset workflows are added, Whole Field references should remain available alongside the selected season. An **All seasons** comparison view and historical revision links remain planned. Keep the map central.
 
 - Keep field identity independent of seasons and geometry. A renamed field retains its ID.
 - Store boundary revisions against a field, with validity/source details. Splits and merges need lineage rather than silently reusing an old identity.
@@ -83,7 +93,7 @@ When viewing one season, Whole Field reference data should remain available alon
 
 Use shared tables/layers with stable IDs and explicit relationships, rather than a table or file for every field or year. Candidate entities are organisations, clients, farms, fields, field-boundary revisions, seasons/crop cycles, jobs, job-field links, datasets and external identifier mappings. These names and columns are provisional.
 
-Use a single managed GeoPackage for the selected organisation workspace initially; allow multiple clients and farms inside it. Keep the relationship model independent of later selected-client/farm sharing packages. Decide the final package name and supporting raster/LiDAR/original-file locations before migration. A GeoPackage can be the core store while the full workspace still contains QGZ and supporting files.
+Schema 2 uses one managed GeoPackage per workspace and can hold multiple organisations, each with clients, farms and fields. New Project starts with one organisation; Manage Data can add more. Keep this relationship model independent of later selected-organisation/client/farm sharing packages. The GeoPackage is the core store while the full workspace still contains QGZ and supporting files.
 
 Store external platform IDs separately from internal UUIDs, keyed by platform, external account/organisation, entity type and external ID. Import matching must distinguish IDs, names and geometry; show unresolved or conflicting matches for review. Export presets must explicitly map Organisation/Client/Grower/Farm/Field terms and report unsupported content.
 
@@ -102,13 +112,13 @@ Keep map and Layers as the primary workspace. Proposed controls belong in the ex
 
 All clients/farms/fields are viewing/filtering options, not database records. Require an explicit target for writes/imports rather than assigning new data to an aggregate selection. Changing a parent selection must reset incompatible child selections and make the active context visible.
 
-Selection should make the active context clear and filter or zoom without changing source data. Use native QGIS controls where practical. Avoid creating a separate permanent management panel in Simple view or one QGIS layer per individual field. Use readable labels with appropriate icons; the current 0.4.0 toolbar already uses native QGIS icons above its action labels.
+Selection should make the active context clear and filter or zoom without changing source data. Use native QGIS controls where practical. Avoid creating a separate permanent management panel in Simple view or one QGIS layer per individual field. Version 0.5.0 implements the focused management dialog, with readable labels/icons and native field filtering; dropdown selectors remain a future interface refinement.
 
 ## Next increment and checks
 
-The four-level model is agreed in principle. Design the selectors/dialog and exact relationships before implementing schema version 2. Create and verify a backup before migrating any existing farm workspace. Preserve its farm ID and source files; require confirmed Organisation and Client assignments rather than inventing ownership.
+Schema 2 and the management dialog now implement the four-level foundation. Future work should build import/export and season-data flows around this interface. Keep original workspaces and confirmed Organisation/Client assignments in the upgrade-copy workflow.
 
-Acceptance examples: two clients can each have a Home Farm with a North 40 field without collisions; renaming does not break links; changing Client resets an incompatible Farm/Field selection; writes cannot target All clients; a multi-field job works; historical boundary references survive changes; imported external names do not cause silent merging; a moved/restored package reopens; cancelled selection/import/migration leaves data unchanged. These behaviours are proposed and have not been implemented or tested.
+Verified automated foundation checks cover same-named farms/fields under different clients, duplicate/orphan rejection (including native provider writes), renamed parents retaining links, season dates/crops, add-dialog cancellation, icons, native field filtering without duplicate/unrelated layer removal, project move/reopen and upgrade-copy source preservation/failed-copy cleanup. Remaining acceptance work includes toolbar selectors, multi-field jobs, historical boundary links and import conflict resolution; those workflows are not implemented.
 
 ## Primary sources reviewed
 

@@ -5,11 +5,12 @@ try:
 except ImportError:
     from qgis.PyQt.QtWidgets import QAction
 from pathlib import Path
-from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtCore import Qt, QSize
 from qgis.PyQt.QtWidgets import QLabel, QToolButton
 from qgis.core import Qgis, QgsProject
 from .simple_view import SimpleView
 from .farm_dialog import FarmActions
+from .ui_icons import icon as ui_icon
 
 
 class FarmToolButton(QToolButton):
@@ -22,6 +23,7 @@ class FarmToolButton(QToolButton):
         self.setText(label)
         self.setAccessibleName(label)
         self.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        self.setIconSize(QSize(28, 28))
 
     def actionEvent(self, event):
         super().actionEvent(event)
@@ -59,8 +61,9 @@ class AgTechTooling:
         brand = QLabel("  Ag Tech Tooling  ", self.toolbar)
         self.toolbar.addWidget(brand)
         for title, label, action_icon, callback in (
-                ("New Farm Project…", "New Farm", self.iface.actionNewProject().icon(), self.farms.new),
-                ("Open Farm Project…", "Open Farm", self.iface.actionOpenProject().icon(), self.farms.open)):
+                ("New Project…", "New Project", self.iface.actionNewProject().icon(), self.farms.new),
+                ("Open Project…", "Open Project", self.iface.actionOpenProject().icon(), self.farms.open),
+                ("Manage Farm Data…", "Manage Data", ui_icon("organisation"), self.farms.manage)):
             action = QAction(action_icon, title, self.iface.mainWindow())
             action.triggered.connect(callback)
             self.iface.addPluginToMenu(self.menu, action)

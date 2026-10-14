@@ -3,6 +3,7 @@
 from qgis.PyQt.QtCore import QByteArray, Qt, QTimer, QObject, QEvent
 from qgis.PyQt.QtWidgets import QCheckBox, QDockWidget, QToolBar, QWidget, QHBoxLayout, QStackedWidget
 from qgis.core import QgsSettings, QgsProject
+from .ui_icons import icon
 
 
 class SimpleView(QObject):
@@ -29,6 +30,7 @@ class SimpleView(QObject):
         self.switch = QCheckBox("Simple view", self.container)
         self.switch.setObjectName("ag_tech_tooling_simple_view_switch")
         self.switch.setAccessibleName("Simple view")
+        self.switch.setIcon(icon("whole"))
         self.switch.setToolTip("Show only the map and Layers. Turn off to restore your previous QGIS layout.")
         layout.addWidget(self.switch)
         self.window.statusBar().addPermanentWidget(self.container)

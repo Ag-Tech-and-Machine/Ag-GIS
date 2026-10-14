@@ -22,7 +22,10 @@ def main():
             raise ValueError("Invalid plugin archive")
         required = {f"ag_tech_tooling/{name}" for name in (
             "__init__.py", "metadata.txt", "plugin.py", "LICENSE", "icon.svg",
-            "simple_view.py", "farm_dialog.py", "farm_project.py", "USER_GUIDE.txt")}
+            "simple_view.py", "farm_dialog.py", "farm_project.py", "hierarchy.py",
+            "hierarchy_dialog.py", "ui_icons.py", "USER_GUIDE.txt",
+            "agtech_organisation.svg", "agtech_client.svg", "agtech_farm.svg",
+            "agtech_field.svg", "agtech_season.svg", "agtech_crop.svg")}
         if not required.issubset(archive.namelist()):
             raise ValueError("Archive is missing required files")
     print(f"Plugin ZIP ready: {output}")

@@ -2,6 +2,8 @@
 
 Status: GeoPackage selected as the core farm data format, 15 October 2026. Version 0.3.0 implements the minimal New/Open foundation below. Agricultural schemas, imports, exports, conversions, editable settings and backup/restore remain proposed. No existing farm data has been moved.
 
+**Current release: 0.5.0.** The [data model](FARM_DATA_MODEL.md) now documents implemented schema 2 hierarchy tables, season/crop records, native field reference layers, icon-labelled management controls and a separate-copy schema 1 upgrade. Follow [USER_GUIDE.md](USER_GUIDE.md) for current operation. The 0.3.x foundation and directory illustration below are retained as earlier design context.
+
 ## Implemented foundation — 0.3.0
 
 Version 0.3.1 keeps this farm schema and file layout unchanged, and writes the GeoPackage through native PyQGIS layers/features and `QgsVectorFileWriter`, using QGIS's bundled provider. All farm runtime code and the user guide ship inside the plugin ZIP. No standalone GIS runtime or companion program is required.

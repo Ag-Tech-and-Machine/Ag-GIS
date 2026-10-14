@@ -21,12 +21,12 @@ Use native QGIS tooling wherever practical: reuse its actions, widgets, dialogs,
 
 ## Current implementation
 
-The QGIS plugin foundation, packaging, installation and development checks exist. Version 0.4.0 provides New/Open Farm Project with a versioned farm information table in GeoPackage and a companion QGIS map. Its optional Simple view switch keeps only map and Layers in the primary workspace and can restore the full layout. Agricultural layer schemas, import/export, settings editing and conversion automation remain future work.
+The QGIS plugin foundation, packaging, installation and development checks exist. Version 0.5.0 provides New/Open Project and Manage Data for Organisation → Client → Farm → Field, with Season/Crop records and Whole Field reference layers in GeoPackage schema 2. A separate-copy upgrade preserves older projects. Icon-labelled controls use native QGIS data APIs; Simple view keeps our toolbar, map and Layers. Seasonal dataset editing, import/export, full settings editing, revision history and conversion automation remain future work.
 
 The source is GPL-2.0-or-later, with the full GPL version 2 license text in the repository and plugin package. The source is currently in local Git; public hosting and release publication remain future work.
 
 ## First development cycle
 
-The immediate priority is the interface. Version 0.4.0 makes New/Open Farm and native save/navigation tools discoverable in a dedicated top toolbar, including Simple view. Refine task grouping, wording and feedback while preserving the map-and-Layers workspace and users' work. Then develop imports, exports, settings and conversions around the agreed task flows.
+The immediate priority is the interface. Version 0.5.0 makes New/Open Farm and native save/navigation tools discoverable in a dedicated top toolbar, including Simple view. Refine task grouping, wording and feedback while preserving the map-and-Layers workspace and users' work. Then develop imports, exports, settings and conversions around the agreed task flows.
 
 For the first tool, agree the farming task, sample inputs, desired output and success criteria. Build and verify that workflow, document its exact operating steps, then improve it using feedback from practical use. Record decisions and checks in the work log.

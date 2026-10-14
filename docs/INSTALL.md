@@ -132,7 +132,7 @@ The script checks and builds the ZIP, verifies the extracted files, installs the
 
 Alternatively, use QGIS's ZIP installation dialog:
 
-1. Run the checks to build `dist\ag_tech_tooling-0.4.0.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.5.0.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -140,17 +140,21 @@ Alternatively, use QGIS's ZIP installation dialog:
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
-Version 0.4.0 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
+Version 0.5.0 adds hierarchy management and schema 2 projects to the existing Simple view/top-toolbar foundation. See the work log for installation and verification status.
 
-### Create and open a farm — 0.4.0
+### Create, open and manage a project — 0.5.0
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
-2. Choose **Plugins → Ag Tech Tooling → New Farm Project…**.
-3. Enter the farm name and choose an existing parent folder using **Browse…**. Confirm the **Farm coordinate system** for your location and intended work; its initial value comes from the current map and may need changing.
-4. Click **Create Farm**. Expected result: a new farm folder containing `Farm.qgz` and `Data/farm.gpkg`, with farm identity, schema version and coordinate system recorded. The map starts empty. Existing farm folders are never overwritten.
+2. Click **New Project** on the toolbar (also **Plugins → Ag Tech Tooling → New Project…**).
+3. Enter the project name, Organisation, Client / Grower and First farm; optionally enter a first field. Choose an existing local parent folder using **Browse…**. Confirm the **Farm coordinate system** for your location and intended work; its initial value comes from the current map and may need changing.
+4. Click **Create Project**. Expected result: a new folder containing `Farm.qgz` and `Data/farm.gpkg`, with schema 2 hierarchy tables and native reference layers. The map starts empty and **Manage Farm Data** opens after the project loads. Existing folders are never overwritten.
 5. Finish layer edits before switching maps. If prompted about unsaved map changes, choose **Save**, **Discard** or **Cancel**. Cancelling a switch keeps the current map; a newly created farm is retained at the reported location for later opening.
-6. Later choose **Plugins → Ag Tech Tooling → Open Farm Project…** and select that farm's `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
-7. Save map changes using QGIS's normal **Save** control. Keep both files and their relative structure together when moving the farm. The database alone is not the entire current workspace. Imports, exports, conversion tools, settings editing and automated backup are not available yet.
+6. Later click **Open Project** and select `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
+7. Click **Manage Data**. Select the parent, then use the icon-labelled Organisation/Client/Farm/Field/Season/Crop add buttons. Select a named record to **Rename**. Changes save immediately; cancelling an Add/Rename dialog makes no change.
+8. Select a field or a branch beneath it and click **Show Field on Map**. Expected result: native Boundaries, Guidance Lines and Infrastructure layers, filtered to that field, with unrelated map layers retained. Whole Field and Seasons remain separate in the management tree. Seasonal datasets and terrain imports are not yet implemented.
+9. Save map changes using **Save Map**. Keep both files and their relative structure together when moving the project. The database alone is not the entire current workspace. Imports, exports, conversions, full settings editing and automated backup are not available yet.
+
+For a schema 1 project, **Manage Data** opens **Upgrade Project Copy**. Confirm Organisation/Client names and a new destination outside the original. The plugin snapshots the database, copies supporting files, creates/validates schema 2 and opens the new copy. The original remains unchanged. If upgrading fails, correct the reported problem and retry; a failed staged copy is cleaned up and existing destinations are refused. Resolve any reserved-table name conflict in a separate reviewed copy; the upgrade does not overwrite those tables. This does not package external data dependencies.
 
 If a folder already exists, open it or choose another name. If validation reports missing files, restore the whole farm folder from a known backup. If it reports a newer schema, use a compatible plugin; do not edit the version field to bypass the check. For a failed creation, resolve the reported path/permission problem and retry; no existing farm is replaced. Choose a local working location; NAS backup and shared-editing controls are not implemented.
 
@@ -164,10 +168,10 @@ If a folder already exists, open it or choose another name. If validation report
 
 Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Layers and the Ag Tech Tooling toolbar stay visible while Simple view is on. Other dock panels and toolbars are hidden even if QGIS restores or you try to reopen them; new panels/toolbars are detected and hidden. Switch Simple view off to use Browser or advanced tools.
 
-### Use the top toolbar — 0.4.0
+### Use the top toolbar — 0.5.0
 
 1. After installing/restarting, find **Ag Tech Tooling** at the top of QGIS.
-2. Use **New Farm** or **Open Farm** for the farm controls described above.
+2. Use **New Project**, **Open Project** and **Manage Data** for the controls described above. Input lines, hierarchy/grouping rows and plugin buttons have icons; toolbar icons are 28 pixels with text labels.
 3. Use **Save Map** to invoke QGIS's native project save, **Move Map** to pan, **Zoom In / Zoom Out** for interactive zoom and **Whole Map** for full extent. The latter follows QGIS's layer extent and availability rules.
 4. Expect clear labels beneath theme icons, with enabled/checked states inherited from QGIS. No GIS computations are duplicated by the toolbar.
 5. In full view, recover a hidden toolbar using **View → Toolbars → Ag Tech Tooling**. Simple view keeps it visible. Disable/re-enable the plugin to recover its registration if necessary; unloading removes only the plugin's widgets/actions and preserves borrowed native QGIS actions.
@@ -189,7 +193,7 @@ Official guidance: https://learn.chatgpt.com/docs/projects
 
 ### What the plugin package includes
 
-Version 0.4.0 includes Simple view, New/Open Farm Project, all supporting Python modules, icon, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
+Version 0.5.0 includes Simple view, New/Open Project, Manage Data, all supporting Python modules, semantic SVG icons, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
 
 The local installer and the QGIS **Install from ZIP** workflow both install the bundled guide beside the plugin modules. The source checks now also execute farm/lifecycle tests from the extracted release ZIP.
 

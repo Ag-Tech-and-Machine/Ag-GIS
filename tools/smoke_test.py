@@ -115,12 +115,12 @@ app.processEvents()
 plugin = classFactory(iface)
 plugin.initGui()
 plugin.initGui()
-assert len(iface.menu_actions) == 3 and not iface.toolbar_actions
+assert len(iface.menu_actions) == 4 and not iface.toolbar_actions
 toolbar = plugin.toolbar
 assert iface.window.toolBarArea(toolbar) == Qt.TopToolBarArea
 assert not toolbar.isMovable() and not toolbar.isFloatable()
 buttons = {button.text(): button for button in toolbar.findChildren(QToolButton) if button.defaultAction()}
-assert set(buttons) == {"New Farm", "Open Farm", "Save Map", "Move Map", "Zoom In", "Zoom Out", "Whole Map"}
+assert set(buttons) == {"New Project", "Open Project", "Manage Data", "Save Map", "Move Map", "Zoom In", "Zoom Out", "Whole Map"}
 assert buttons["Save Map"].defaultAction() is iface.actionSaveProject()
 buttons["Save Map"].click()
 assert iface.native_calls == ["save"]

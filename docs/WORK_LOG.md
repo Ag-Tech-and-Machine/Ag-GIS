@@ -1,5 +1,16 @@
 # Work log and verification status
 
+## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
+
+- Implemented Organisation → Client → Farm → Field, Season/Crop records and Whole Field/Seasons management grouping in GeoPackage schema 2, using native QGIS layers/writers/providers.
+- Added Manage Data to the top toolbar, with persistent add/rename, parent-aware controls and field selection. Added icons to input lines, dialog buttons and all tree rows, and larger 28-pixel toolbar icons. Bundled six semantic SVG icons with QGIS theme/fallback support.
+- Added native shared Boundaries/Guidance/Infrastructure layers filtered by field, retaining unrelated map data and stable workspace identities after move/reopen. Seasonal dataset, terrain, job and history tools remain future work; category rows do not represent implemented editors.
+- Added separate-copy schema 1 upgrades with confirmed Organisation/Client names, consistent SQLite database snapshot, native schema updates, validation, original-file preservation and failed-stage cleanup. Reserved table conflicts and existing/nested destinations are refused.
+- Foundation tests exercise persistence, duplicate names across clients, invalid parent rejection through a native provider, date validation, rename links, UI add/cancel, every row/button icon, native field filtering and move/reopen without duplicate layers. Copy-upgrade tests compare original file hashes and verify ID/supporting-file retention and failure cleanup.
+- Updated canonical/bundled setup and operating instructions. Syntax/metadata, source lifecycle/farm/hierarchy checks, ZIP build and the same workflows against the extracted ZIP all passed on QGIS 3.44.14. The expected invalid-parent test emits a provider rejection and is asserted as a passing protection check.
+- Installed 0.5.0 in the default profile, with prior plugin/settings backups. Actual QGIS GUI verification exercised New Project, Add Client/Farm/Field/Season/Crop dialogs, native Show Field and Save Map. Verified eight toolbar icons, 28-pixel sizing, all tree-row/button/input icons and Simple view. Captured and visually inspected the hierarchy and new-project dialog.
+- Live verification used a temporary workspace, cleared it and removed its test data afterward. QGIS remains open with an empty map. Existing user projects were not migrated or changed. The first live test needed a timing adjustment to wait for the management dialog after project creation; this affected the verification harness only.
+
 ## 15 October 2026 — Four-level hierarchy confirmed
 
 - User selected Organisation → Client → Farm → Field from the outset, superseding the earlier three-level default and deferred Client suggestion.

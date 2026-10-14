@@ -22,6 +22,6 @@ with tempfile.TemporaryDirectory(prefix="agtech-package-test-") as temporary:
         archive.extractall(temporary)  # Entry names validated against the explicit expected set above.
     environment = os.environ.copy()
     environment["AGTECH_TEST_PLUGIN_ROOT"] = temporary
-    for script in ("smoke_test.py", "farm_project_test.py"):
+    for script in ("smoke_test.py", "farm_project_test.py", "hierarchy_test.py"):
         subprocess.run([sys.executable, str(ROOT / "tools" / script)], env=environment, check=True)
 print("Extracted plugin ZIP passed lifecycle and farm workflow checks")

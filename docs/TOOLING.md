@@ -103,9 +103,9 @@ Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/
 
 ## Ready for the first tool
 
-Before expanding the farm schema, follow the agreed [Organisation/Client/Farm/Field model](FARM_DATA_MODEL.md). Support all four levels from the outset, with separate season/job relationships and external Grower/Client mappings. Design the toolbar context selectors and management dialog before schema migration. The current version 1 farm schema and installed 0.4.0 controls remain unchanged.
+Follow the [Organisation/Client/Farm/Field model](FARM_DATA_MODEL.md). Version 0.5.0 implements schema 2 hierarchy/season/crop records and the focused Manage Data tree, with native field-filtered reference layers. Schema 1 stays readable; upgrading creates a separate validated copy with confirmed ownership. Toolbar dropdown selectors, seasonal datasets, jobs and external Grower/Client mapping workflows remain future work. See INSTALL.md and USER_GUIDE.md for exact steps.
 
-Within each field, use the agreed **Whole Field / Seasons** organisation. Master guidance/boundaries and reusable references belong to Whole Field; crop-cycle plans, operations and results belong to Seasons. Keep reference data available while filtering a season. Preserve the specific guidance/boundary revisions used by historical work. The UI and storage for this grouping remain to be implemented.
+Within each field, the management tree implements **Whole Field / Seasons** grouping. Three shared native spatial tables store field reference features; season/crop records are nonspatial tables. Planning/operations/results and terrain rows are organisational categories, not implemented dataset editors. Automated revision history and historical job references remain to be built.
 
 Interface optimisation takes precedence over expanding the feature set. For each increment:
 
@@ -115,9 +115,9 @@ Interface optimisation takes precedence over expanding the feature set. For each
 4. Verify that Simple view retains map and Layers, advanced tools remain recoverable, and cancellation protects existing work.
 5. Implement the underlying data/processing step using QGIS APIs and keep its instructions and packaging aligned.
 
-Version 0.4.0 provides the dedicated top Ag Tech Tooling toolbar as the main farmer-facing entry point. New/Open Farm use the same actions as the plugin menu; Save Map, Move Map, zoom and Whole Map reuse QGIS's QAction instances with locally labelled buttons. Do not modify shared native QAction labels or ownership. Simple view keeps this toolbar and hides other existing QGIS toolbars; unloading removes the plugin toolbar and retains native actions. Further workflows should be added here when implemented, using clear task groups and native capabilities.
+Version 0.5.0 uses the dedicated top Ag Tech Tooling toolbar as the main farmer-facing entry point. New/Open Project and Manage Data share actions with the plugin menu; Save Map, Move Map, zoom and Whole Map reuse QGIS's QAction instances with locally labelled buttons. Do not modify shared native QAction labels or ownership. Simple view keeps this toolbar and hides other existing QGIS toolbars; unloading removes the plugin toolbar and retains native actions. Further workflows should be added here when implemented, using clear task groups and native capabilities.
 
-The data foundation is documented in [Farm projects](FARM_PROJECTS.md). GeoPackage is the selected core format. Version 0.3.0 creates/opens a minimal farm workspace and validates its versioned farm information. Agricultural schemas, imports, exports, settings editing, conversions and backup controls remain to be designed and implemented. Follow the New/Open operating steps in `INSTALL.md`. `scripts/check.ps1` includes `tools/farm_project_test.py` using disposable data with GDAL and PyQGIS.
+The data foundation is documented in [Farm projects](FARM_PROJECTS.md). GeoPackage is the selected core format. Version 0.5.0 creates/opens schema 2 workspaces and manages the four-level hierarchy, seasons/crops and reference layers. Follow `INSTALL.md` and `USER_GUIDE.md`. `scripts/check.ps1` includes both legacy farm checks and `tools/hierarchy_test.py` using disposable data and native QGIS providers.
 
 1. Describe the farming task in the user's words.
 2. Identify the sample input files or layers, units and coordinate reference system where relevant.

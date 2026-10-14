@@ -9,7 +9,7 @@ if(-not $QgisRoot){
 if(-not $QgisRoot){throw 'Install QGIS LTR or supply -QgisRoot.'}
 $pythonRunner=Join-Path $QgisRoot 'bin\python-qgis-ltr.bat'
 if(-not(Test-Path -LiteralPath $pythonRunner)){$pythonRunner=Join-Path $QgisRoot 'bin\python-qgis.bat'}
-foreach($checkScript in @('check_plugin.py','smoke_test.py','farm_project_test.py','build_plugin.py','package_test.py')){
+foreach($checkScript in @('check_plugin.py','smoke_test.py','farm_project_test.py','hierarchy_test.py','build_plugin.py','package_test.py')){
     & $pythonRunner (Join-Path $repoRoot ('tools\'+$checkScript))
     if($LASTEXITCODE -ne 0){throw "$checkScript failed with exit code $LASTEXITCODE"}
 }

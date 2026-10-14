@@ -2,7 +2,7 @@
 
 Ag Tech Tooling builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
 
-The project uses QGIS 3.x LTR. Version 0.4.0 provides a dedicated **Ag Tech Tooling** top toolbar: New Farm, Open Farm, Save Map, Move Map, Zoom In, Zoom Out and Whole Map. Save/navigation reuse native QGIS actions. Farm creation uses a versioned GeoPackage information table and a companion QGIS map. The bottom-right **Simple view** switch keeps our toolbar plus map and Layers, with menus and status controls available; switching off restores the fuller layout. Agricultural schemas, imports/exports, settings editing and conversions remain under development. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
+The project uses QGIS 3.x LTR. Version 0.5.0 provides a dedicated **Ag Tech Tooling** toolbar with New Project, Open Project and Manage Data. Manage Organisation → Client → Farm → Field and Season/Crop records in GeoPackage, with icon-labelled rows/controls and field-filtered native reference layers. Save/navigation reuse native QGIS actions. The bottom-right **Simple view** switch keeps our toolbar plus map and Layers. Schema 1 upgrades create a separate validated copy. Seasonal datasets, imports/exports, full settings editing, history and conversions remain under development. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
 
 See [project purpose and design principles](docs/PURPOSE.md).
 
@@ -12,7 +12,7 @@ See [project purpose and design principles](docs/PURPOSE.md).
 - [Bundled user guide](docs/USER_GUIDE.md)
 - [Development and tooling](docs/TOOLING.md)
 - [Farm data foundation and structure proposal](docs/FARM_PROJECTS.md) (minimal New/Open implemented)
-- [Organisation, Client, Farm and Field model](docs/FARM_DATA_MODEL.md) (agreed direction; not implemented)
+- [Organisation, Client, Farm and Field model](docs/FARM_DATA_MODEL.md) (implemented foundation and remaining design)
 - [Work log and verification status](docs/WORK_LOG.md)
 
 These instructions are updated alongside the tooling, rather than only at release time.
@@ -46,7 +46,7 @@ python tools/build_plugin.py
 
 If the `python` command is a Windows Store alias, use the full path to an installed Python executable. PyQGIS is bundled with QGIS; do not install a package called `qgis` from pip.
 
-The build produces `dist/ag_tech_tooling-0.4.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
+The build produces `dist/ag_tech_tooling-0.5.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
 
 `tools/smoke_test.py` checks the actual Qt/PyQGIS plugin lifecycle. Run it with QGIS's Python interpreter after setting up the QGIS environment; ordinary system Python cannot import PyQGIS.
 
