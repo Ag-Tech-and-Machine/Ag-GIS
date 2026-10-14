@@ -8,6 +8,7 @@ Last updated: 15 October 2026.
 | --- | --- |
 | `plugins/ag_tech_tooling/__init__.py` | QGIS `classFactory` entry point |
 | `plugins/ag_tech_tooling/plugin.py` | Starter action and clean load/unload lifecycle |
+| `plugins/ag_tech_tooling/simple_view.py` | Bottom-right Simple view control, profile preference and full-layout restoration |
 | `plugins/ag_tech_tooling/metadata.txt` | Name, version, author and compatibility metadata |
 | `plugins/ag_tech_tooling/icon.svg` | Toolbar/menu icon |
 | `scripts/launch-qgis.ps1` | Start QGIS with source plugin discovery and an isolated profile |
@@ -18,7 +19,17 @@ Last updated: 15 October 2026.
 | `scripts/install-plugin.ps1` | Check, build, install and enable the packaged plugin in an existing normal QGIS profile |
 | `tools/install_plugin.py` | Validate ZIP paths, back up existing files/settings and install the built package |
 
-The starter reports a layer count. No domain-specific tools, processing algorithms, automatic updater or remote Git repository exist yet.
+The interface foundation provides optional Simple view and reports a layer count. No domain-specific tools, processing algorithms, automatic updater or remote Git repository exist yet.
+
+## Use Simple view
+
+1. Install/enable Ag Tech Tooling as described in `INSTALL.md`.
+2. Check **Simple view** in QGIS's bottom-right status bar.
+3. Use the Project toolbar to create/open/save maps, the Map Navigation toolbar to move/zoom, Browser to find data, and Layers to control visible data. QGIS menus remain available.
+4. Uncheck **Simple view** when you need the previous full workspace. Its toolbar/panel layout is restored.
+5. The profile remembers your choice. Turning off the plugin restores the workspace and removes the switch.
+
+The setting is stored in the QGIS profile, outside Git. A saved full-layout snapshot supports restoration across plugin reloads and restarts. The switch does not simplify individual dialog contents or remove advanced features from QGIS.
 
 ## Work through each tooling change
 

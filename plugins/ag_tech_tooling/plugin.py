@@ -6,15 +6,17 @@ except ImportError:
     from qgis.PyQt.QtWidgets import QAction
 from pathlib import Path
 from qgis.core import Qgis, QgsProject
+from .simple_view import SimpleView
 
 
 class AgTechTooling:
-    """Minimal plugin with a clean menu/toolbar lifecycle."""
+    """Farmer-friendly interface foundation with a clean plugin lifecycle."""
 
     def __init__(self, iface):
         self.iface = iface
         self.action = None
         self.menu = "Ag Tech Tooling"
+        self.simple_view = None
 
     def initGui(self):
         if self.action is not None:
@@ -25,6 +27,7 @@ class AgTechTooling:
         self.action.triggered.connect(self.run)
         self.iface.addPluginToMenu(self.menu, self.action)
         self.iface.addToolBarIcon(self.action)
+        self.simple_view = SimpleView(self.iface)
 
     def run(self):
         layer_count = len(QgsProject.instance().mapLayers())
@@ -38,6 +41,9 @@ class AgTechTooling:
     def unload(self):
         if self.action is None:
             return
+        if self.simple_view is not None:
+            self.simple_view.close()
+            self.simple_view = None
         self.iface.removePluginMenu(self.menu, self.action)
         self.iface.removeToolBarIcon(self.action)
         self.action.triggered.disconnect(self.run)

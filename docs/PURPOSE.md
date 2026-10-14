@@ -17,7 +17,7 @@ Farmers should be able to spend more time on the job they are trying to complete
 
 ## Current implementation
 
-The QGIS plugin foundation, packaging and development checks exist. Its current action reports the number of project layers. It does not yet automate a farming workflow or modify GIS data.
+The QGIS plugin foundation, packaging, installation and development checks exist. Version 0.2.0 adds an optional Simple view switch in QGIS's bottom-right status bar, with full-layout restoration. The starter action also reports the number of project layers. It does not yet automate a farming workflow or modify GIS data.
 
 The source is GPL-2.0-or-later, with the full GPL version 2 license text in the repository and plugin package. The source is currently in local Git; public hosting and release publication remain future work.
 
