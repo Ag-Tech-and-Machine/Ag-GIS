@@ -1,25 +1,25 @@
 # Ag Tech Tooling — user guide
 
-Version 0.3.1. Requires QGIS; tested with QGIS 3.44.14 LTR on Windows.
+Version 0.4.0. Requires QGIS; tested with QGIS 3.44.14 LTR on Windows.
 
 ## Install
 
 1. In QGIS, choose Plugins → Manage and Install Plugins → Install from ZIP.
-2. Select ag_tech_tooling-0.3.1.zip and install it.
+2. Select ag_tech_tooling-0.4.0.zip and install it.
 3. Under Installed, enable Ag Tech Tooling. Restart QGIS when updating an already loaded version.
-4. Find the controls under Plugins → Ag Tech Tooling. No separate Python installation, pip packages or companion app is required.
+4. Find the Ag Tech Tooling toolbar at the top. The farm controls are also under Plugins → Ag Tech Tooling. No separate Python installation, pip packages or companion app is required.
 
 The plugin ZIP includes all current runtime modules, icon, metadata, license and this guide. Farm datasets are created separately in a location you choose; they are not bundled with the plugin.
 
 ## Simple view
 
 1. Check Simple view in the bottom-right status bar.
-2. Use the map and Layers in the primary workspace.
+2. Use the map and Layers in the primary workspace. The Ag Tech Tooling toolbar remains at the top; other QGIS toolbars are hidden.
 3. Uncheck it to restore the full interface when you need advanced panels.
 
 ## New farm
 
-1. Choose Plugins → Ag Tech Tooling → New Farm Project….
+1. Click New Farm on the top Ag Tech Tooling toolbar (also available under Plugins → Ag Tech Tooling → New Farm Project…).
 2. Enter the farm name and browse to an existing local parent folder outside the plugin/source directory.
 3. Confirm the farm coordinate system. The initial value comes from the current map; choose one appropriate for the farm's location and intended work.
 4. Choose Create Farm. A new farm folder contains Farm.qgz and Data/farm.gpkg. The map starts empty; the database records farm ID, name, schema version, coordinate system and creation time.
@@ -29,12 +29,22 @@ Existing folders are not overwritten. If creation fails, resolve the reported na
 
 ## Open farm
 
-1. Choose Plugins → Ag Tech Tooling → Open Farm Project….
+1. Click Open Farm on the top toolbar (also under Plugins → Ag Tech Tooling → Open Farm Project…).
 2. Select Data/farm.gpkg inside an Ag Tech farm folder.
 3. The plugin validates the database and companion map, then opens Farm.qgz using QGIS.
 4. Save map changes with QGIS's normal Save control. Keep the complete folder together when moving or manually backing it up.
 
 This opens Ag Tech farm workspaces, not arbitrary GeoPackages. Restore missing files from a known backup. A newer schema requires a compatible plugin; do not alter version fields to bypass validation.
+
+## Top toolbar
+
+- New Farm / Open Farm: create or open a managed farm workspace.
+- Save Map: QGIS's native Save Project action, including its Save As dialog for an unsaved map. Save pending layer edits through QGIS before switching farms.
+- Move Map: QGIS's native pan tool.
+- Zoom In / Zoom Out: QGIS's native interactive zoom tools.
+- Whole Map: QGIS's native full-extent action. It follows QGIS's layer/extent behaviour and may be unavailable when no layers exist.
+
+Buttons show readable labels beneath QGIS theme icons. Native action availability and checked state remain controlled by QGIS. The toolbar is fixed at the top. In full view it can be restored through View → Toolbars → Ag Tech Tooling if hidden. Simple view keeps it visible; disabling the plugin removes it without removing QGIS's own actions.
 
 ## Native QGIS foundation
 

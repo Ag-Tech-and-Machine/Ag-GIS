@@ -111,7 +111,7 @@ Interface optimisation takes precedence over expanding the feature set. For each
 4. Verify that Simple view retains map and Layers, advanced tools remain recoverable, and cancellation protects existing work.
 5. Implement the underlying data/processing step using QGIS APIs and keep its instructions and packaging aligned.
 
-The next interface refinement is discoverable New/Open Farm controls with consistent placement and feedback. Its design and implementation remain pending; no interface changes are made by this priority update.
+Version 0.4.0 provides the dedicated top Ag Tech Tooling toolbar as the main farmer-facing entry point. New/Open Farm use the same actions as the plugin menu; Save Map, Move Map, zoom and Whole Map reuse QGIS's QAction instances with locally labelled buttons. Do not modify shared native QAction labels or ownership. Simple view keeps this toolbar and hides other existing QGIS toolbars; unloading removes the plugin toolbar and retains native actions. Further workflows should be added here when implemented, using clear task groups and native capabilities.
 
 The data foundation is documented in [Farm projects](FARM_PROJECTS.md). GeoPackage is the selected core format. Version 0.3.0 creates/opens a minimal farm workspace and validates its versioned farm information. Agricultural schemas, imports, exports, settings editing, conversions and backup controls remain to be designed and implemented. Follow the New/Open operating steps in `INSTALL.md`. `scripts/check.ps1` includes `tools/farm_project_test.py` using disposable data with GDAL and PyQGIS.
 

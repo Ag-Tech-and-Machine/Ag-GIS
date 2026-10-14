@@ -8,6 +8,7 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 - Interface optimisation is priority one. Refine the farmer-facing layout, navigation, wording and task flow before expanding the data/conversion feature set.
 - Simple view keeps map and Layers as the primary workspace, with its switch in the bottom-right status rail. Keep advanced QGIS tools accessible through reversible full-view restoration.
+- The dedicated Ag Tech Tooling toolbar at the top is the main entry point for farmer workflows. Keep it visible in Simple view, use clear labels and reuse native QGIS actions without altering their shared labels or ownership.
 - Prefer existing QGIS actions, widgets, dialogs and Processing tools wherever practical. Add a small farmer-friendly interface around native capabilities when their standard interface is too complex; avoid duplicating supported GIS behaviour.
 - Before each feature, identify the native QGIS capability to reuse and the interface simplification it provides. Verify discoverability, clear outcomes, cancellation, saved work and unload/reload behaviour with the implemented workflow.
 

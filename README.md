@@ -2,7 +2,7 @@
 
 Ag Tech Tooling builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
 
-The project uses QGIS 3.x LTR. Version 0.3.1 adds **New Farm Project** and **Open Farm Project**, with a versioned farm information table in GeoPackage and a companion QGIS map. Agricultural schemas, imports/exports, settings editing and conversion workflows are still under development. The reversible **Simple view** switch at the bottom right keeps only map and Layers in the primary workspace, with basic toolbars, menus and status controls available. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
+The project uses QGIS 3.x LTR. Version 0.4.0 provides a dedicated **Ag Tech Tooling** top toolbar: New Farm, Open Farm, Save Map, Move Map, Zoom In, Zoom Out and Whole Map. Save/navigation reuse native QGIS actions. Farm creation uses a versioned GeoPackage information table and a companion QGIS map. The bottom-right **Simple view** switch keeps our toolbar plus map and Layers, with menus and status controls available; switching off restores the fuller layout. Agricultural schemas, imports/exports, settings editing and conversions remain under development. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
 
 See [project purpose and design principles](docs/PURPOSE.md).
 
@@ -45,7 +45,7 @@ python tools/build_plugin.py
 
 If the `python` command is a Windows Store alias, use the full path to an installed Python executable. PyQGIS is bundled with QGIS; do not install a package called `qgis` from pip.
 
-The build produces `dist/ag_tech_tooling-0.3.1.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
+The build produces `dist/ag_tech_tooling-0.4.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
 
 `tools/smoke_test.py` checks the actual Qt/PyQGIS plugin lifecycle. Run it with QGIS's Python interpreter after setting up the QGIS environment; ordinary system Python cannot import PyQGIS.
 

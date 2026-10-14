@@ -5,9 +5,27 @@ try:
 except ImportError:
     from qgis.PyQt.QtWidgets import QAction
 from pathlib import Path
+from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtWidgets import QLabel, QToolButton
 from qgis.core import Qgis, QgsProject
 from .simple_view import SimpleView
 from .farm_dialog import FarmActions
+
+
+class FarmToolButton(QToolButton):
+    """Keep a plain-language label while a shared native action changes state."""
+
+    def __init__(self, action, label, parent):
+        super().__init__(parent)
+        self.label = label
+        self.setDefaultAction(action)
+        self.setText(label)
+        self.setAccessibleName(label)
+        self.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+
+    def actionEvent(self, event):
+        super().actionEvent(event)
+        self.setText(self.label)
 
 
 class AgTechTooling:
@@ -20,6 +38,7 @@ class AgTechTooling:
         self.simple_view = None
         self.farm_actions = []
         self.farms = FarmActions(iface)
+        self.toolbar = None
 
     def initGui(self):
         if self.action is not None:
@@ -29,13 +48,38 @@ class AgTechTooling:
         self.action.setObjectName("ag_tech_tooling_action")
         self.action.triggered.connect(self.run)
         self.iface.addPluginToMenu(self.menu, self.action)
-        self.iface.addToolBarIcon(self.action)
-        self.simple_view = SimpleView(self.iface)
-        for title, callback in (("New Farm Project…", self.farms.new), ("Open Farm Project…", self.farms.open)):
-            action = QAction(title, self.iface.mainWindow())
+        self.toolbar = self.iface.addToolBar("Ag Tech Tooling")
+        self.toolbar.setObjectName("ag_tech_tooling_toolbar")
+        self.iface.mainWindow().addToolBar(Qt.TopToolBarArea, self.toolbar)
+        if self.iface.mainWindow().toolBarArea(self.iface.fileToolBar()) == Qt.TopToolBarArea:
+            self.iface.mainWindow().insertToolBar(self.iface.fileToolBar(), self.toolbar)
+            self.iface.mainWindow().insertToolBarBreak(self.iface.fileToolBar())
+        self.toolbar.setMovable(False)
+        self.toolbar.setFloatable(False)
+        brand = QLabel("  Ag Tech Tooling  ", self.toolbar)
+        self.toolbar.addWidget(brand)
+        for title, label, action_icon, callback in (
+                ("New Farm Project…", "New Farm", self.iface.actionNewProject().icon(), self.farms.new),
+                ("Open Farm Project…", "Open Farm", self.iface.actionOpenProject().icon(), self.farms.open)):
+            action = QAction(action_icon, title, self.iface.mainWindow())
             action.triggered.connect(callback)
             self.iface.addPluginToMenu(self.menu, action)
             self.farm_actions.append((action, callback))
+            self._add_button(action, label)
+        self._add_button(self.iface.actionSaveProject(), "Save Map")
+        self.toolbar.addSeparator()
+        for action, label in (
+                (self.iface.actionPan(), "Move Map"),
+                (self.iface.actionZoomIn(), "Zoom In"),
+                (self.iface.actionZoomOut(), "Zoom Out"),
+                (self.iface.actionZoomFullExtent(), "Whole Map")):
+            self._add_button(action, label)
+        self.simple_view = SimpleView(self.iface, self.toolbar)
+
+    def _add_button(self, action, label):
+        # Reuse the native QAction without changing its labels elsewhere in QGIS.
+        button = FarmToolButton(action, label, self.toolbar)
+        self.toolbar.addWidget(button)
 
     def run(self):
         layer_count = len(QgsProject.instance().mapLayers())
@@ -58,7 +102,10 @@ class AgTechTooling:
             action.deleteLater()
         self.farm_actions.clear()
         self.iface.removePluginMenu(self.menu, self.action)
-        self.iface.removeToolBarIcon(self.action)
+        self.iface.mainWindow().removeToolBar(self.toolbar)
+        self.toolbar.hide()
+        self.toolbar.deleteLater()
+        self.toolbar = None
         self.action.triggered.disconnect(self.run)
         self.action.deleteLater()
         self.action = None

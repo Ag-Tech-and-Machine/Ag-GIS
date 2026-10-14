@@ -1,5 +1,16 @@
 # Work log and verification status
 
+## 15 October 2026 — Dedicated farmer toolbar, version 0.4.0
+
+- Added the top Ag Tech Tooling toolbar with labelled New Farm, Open Farm, Save Map, Move Map, Zoom In, Zoom Out and Whole Map buttons. New/Open share plugin-menu actions; save/navigation share native QGIS actions and enabled/checked states.
+- Kept labels local to toolbar buttons, including when native QAction state/text changes. Toolbar is fixed at the top; no placeholder import/export/conversion controls were added.
+- Simple view now keeps our toolbar instead of native Project/Navigation bars, plus map and Layers. Full-view restoration remains available. Toolbar is removed on unload, with native actions retained.
+- Updated packaged user instructions and development guidance. Verification and installation results follow below.
+- Source and extracted-ZIP checks passed on QGIS 3.44.14 for toolbar placement, seven labels, shared native save action, stable button labels after QAction changes, Simple view visibility, layout restoration and unload/reload without duplicate toolbars. Existing farm workflow tests also passed.
+- Installed 0.4.0 in the default profile; the installer retained backups of the previous plugin/settings.
+- The first live startup check exposed native toolbar restoration after Simple view applied. Added toolbar visibility guards and dynamic registration; source/extracted-package checks now cover attempted reopening and toolbars added later.
+- Final live QGIS verification passed: all seven native icons/labels, top placement, shared native action identity, zoom/pan activation, native save, toolbar visibility restrictions, full-view toggle, farm identity/CRS and New Farm dialog/cancellation. Captured and inspected the toolbar; QGIS remains open in Simple view. Tests used disposable farm data only.
+
 ## 15 October 2026 — Interface-first priority confirmed
 
 - Recorded the user's requirement to optimise the interface as priority one and use native QGIS tooling wherever possible.

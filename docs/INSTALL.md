@@ -132,7 +132,7 @@ The script checks and builds the ZIP, verifies the extracted files, installs the
 
 Alternatively, use QGIS's ZIP installation dialog:
 
-1. Run the checks to build `dist\ag_tech_tooling-0.3.1.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.4.0.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -140,9 +140,9 @@ Alternatively, use QGIS's ZIP installation dialog:
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
-Version 0.3.1 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
+Version 0.4.0 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
 
-### Create and open a farm — 0.3.1
+### Create and open a farm — 0.4.0
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Choose **Plugins → Ag Tech Tooling → New Farm Project…**.
@@ -157,12 +157,20 @@ If a folder already exists, open it or choose another name. If validation report
 ### Choose Simple view
 
 1. Find **Simple view** at the bottom right of QGIS, beside the existing scale/coordinate controls.
-2. Check it to show only the map and Layers in the primary workspace. Browser, welcome/recent-project/news/template views and other main-window panels are hidden. Basic Project and Map Navigation toolbars, QGIS menus and status controls remain available.
+2. Check it to show only the map and Layers in the primary workspace. Browser, welcome/recent-project/news/template views and other main-window panels are hidden. The Ag Tech Tooling top toolbar, QGIS menus and status controls remain available; other QGIS toolbars are hidden.
 3. Uncheck it to restore the layout from before Simple view was selected, including panels that were previously hidden.
 4. The choice is saved per QGIS profile. It is off until first selected; the current default profile has been switched on for review.
 5. Disabling or reloading Ag Tech Tooling restores the full layout while the plugin is absent. Re-enabling it remembers the selected mode.
 
-Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Layers stays visible while Simple view is on. Other dock panels are hidden even if you try to reopen them, and new panels are detected and hidden. Switch Simple view off to use Browser or advanced panels. Plugins enabled later can add toolbars; switch Simple view off and back on to simplify those toolbars.
+Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Layers and the Ag Tech Tooling toolbar stay visible while Simple view is on. Other dock panels and toolbars are hidden even if QGIS restores or you try to reopen them; new panels/toolbars are detected and hidden. Switch Simple view off to use Browser or advanced tools.
+
+### Use the top toolbar — 0.4.0
+
+1. After installing/restarting, find **Ag Tech Tooling** at the top of QGIS.
+2. Use **New Farm** or **Open Farm** for the farm controls described above.
+3. Use **Save Map** to invoke QGIS's native project save, **Move Map** to pan, **Zoom In / Zoom Out** for interactive zoom and **Whole Map** for full extent. The latter follows QGIS's layer extent and availability rules.
+4. Expect clear labels beneath theme icons, with enabled/checked states inherited from QGIS. No GIS computations are duplicated by the toolbar.
+5. In full view, recover a hidden toolbar using **View → Toolbars → Ag Tech Tooling**. Simple view keeps it visible. Disable/re-enable the plugin to recover its registration if necessary; unloading removes only the plugin's widgets/actions and preserves borrowed native QGIS actions.
 
 Switching off restores the previous central view only if the project has not changed. If you opened or changed a map while using Simple view, the map stays in front rather than returning to an old welcome screen.
 
@@ -181,7 +189,7 @@ Official guidance: https://learn.chatgpt.com/docs/projects
 
 ### What the plugin package includes
 
-Version 0.3.1 includes Simple view, New/Open Farm Project, all supporting Python modules, icon, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
+Version 0.4.0 includes Simple view, New/Open Farm Project, all supporting Python modules, icon, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
 
 The local installer and the QGIS **Install from ZIP** workflow both install the bundled guide beside the plugin modules. The source checks now also execute farm/lifecycle tests from the extracted release ZIP.
 

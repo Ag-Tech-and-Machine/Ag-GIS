@@ -9,14 +9,16 @@ class SimpleView(QObject):
     ENABLED_KEY = "AgTechTooling/simple_view/enabled"
     STATE_KEY = "AgTechTooling/simple_view/full_layout"
 
-    def __init__(self, iface):
+    def __init__(self, iface, primary_toolbar=None):
         super().__init__(iface.mainWindow())
         self.iface = iface
         self.window = iface.mainWindow()
+        self.primary_toolbar = primary_toolbar
         self.settings = QgsSettings()
         self.saved_state = None
         self.closed = False
         self.tracked_docks = {}
+        self.tracked_toolbars = {}
         self.map_stack, self.map_page = self._find_map_page()
         self.previous_page = None
         self.project_before = None
@@ -33,6 +35,7 @@ class SimpleView(QObject):
         self.switch.toggled.connect(self.set_enabled)
         self.window.installEventFilter(self)
         self._register_docks()
+        self._register_toolbars()
         if self.map_stack is not None:
             self.map_stack.currentChanged.connect(self._ensure_map_page)
         if self.settings.value(self.ENABLED_KEY, False, type=bool):
@@ -45,6 +48,30 @@ class SimpleView(QObject):
     def managed_toolbars(self):
         return [bar for bar in self.window.findChildren(QToolBar)
                 if self.window.toolBarArea(bar) != Qt.NoToolBarArea]
+
+    def _essential_toolbars(self):
+        return ({self.primary_toolbar} if self.primary_toolbar is not None
+                else {self.iface.fileToolBar(), self.iface.mapNavToolToolBar()})
+
+    def _register_toolbars(self):
+        if self.closed:
+            return
+        for toolbar in self.managed_toolbars():
+            if toolbar not in self.tracked_toolbars:
+                callback = lambda visible, bar=toolbar: self._guard_toolbar(bar, visible)
+                toolbar.visibilityChanged.connect(callback)
+                self.tracked_toolbars[toolbar] = callback
+            if self.switch.isChecked():
+                self._guard_toolbar(toolbar)
+
+    def _guard_toolbar(self, toolbar, visible=None):
+        if self.closed or not self.switch.isChecked():
+            return
+        essential = toolbar in self._essential_toolbars()
+        if essential and toolbar.isHidden():
+            toolbar.show()
+        elif not essential and not toolbar.isHidden():
+            toolbar.hide()
 
     def managed_docks(self):
         return [dock for dock in self.window.findChildren(QDockWidget)
@@ -86,6 +113,7 @@ class SimpleView(QObject):
     def eventFilter(self, watched, event):
         if not self.closed and event.type() == QEvent.ChildAdded:
             QTimer.singleShot(0, self._register_docks)
+            QTimer.singleShot(0, self._register_toolbars)
         return False
 
     def _ensure_map_page(self, index=None):
@@ -116,7 +144,7 @@ class SimpleView(QObject):
                 if self.map_stack is not None:
                     self.previous_page = self.map_stack.currentWidget()
                     self.project_before = self._project_signature()
-            essential = {self.iface.fileToolBar(), self.iface.mapNavToolToolBar()}
+            essential = self._essential_toolbars()
             for toolbar in self.managed_toolbars():
                 toolbar.setVisible(toolbar in essential)
             for dock in self.managed_docks():
@@ -125,6 +153,7 @@ class SimpleView(QObject):
                     dock.raise_()
             self._ensure_map_page()
             self._register_docks()
+            self._register_toolbars()
         elif self.saved_state is not None:
             if not self.window.restoreState(self.saved_state):
                 raise RuntimeError("QGIS could not restore the saved full layout")
@@ -147,6 +176,12 @@ class SimpleView(QObject):
             except (RuntimeError, TypeError):
                 pass
         self.tracked_docks.clear()
+        for toolbar, callback in self.tracked_toolbars.items():
+            try:
+                toolbar.visibilityChanged.disconnect(callback)
+            except (RuntimeError, TypeError):
+                pass
+        self.tracked_toolbars.clear()
         # Restore the UI on plugin disable/reload; retain the user's mode preference
         # and full-layout snapshot so a restart cannot snapshot a simplified UI.
         if self.saved_state is not None:
