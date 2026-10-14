@@ -86,7 +86,7 @@ app.processEvents()
 plugin = classFactory(iface)
 plugin.initGui()
 plugin.initGui()
-assert len(iface.menu_actions) == len(iface.toolbar_actions) == 1
+assert len(iface.menu_actions) == 3 and len(iface.toolbar_actions) == 1
 plugin.action.trigger()
 assert len(iface.messages) == 1
 assert "Project layers: 0" in iface.messages[0][0][1]

@@ -7,6 +7,7 @@ except ImportError:
 from pathlib import Path
 from qgis.core import Qgis, QgsProject
 from .simple_view import SimpleView
+from .farm_dialog import FarmActions
 
 
 class AgTechTooling:
@@ -17,6 +18,8 @@ class AgTechTooling:
         self.action = None
         self.menu = "Ag Tech Tooling"
         self.simple_view = None
+        self.farm_actions = []
+        self.farms = FarmActions(iface)
 
     def initGui(self):
         if self.action is not None:
@@ -28,6 +31,11 @@ class AgTechTooling:
         self.iface.addPluginToMenu(self.menu, self.action)
         self.iface.addToolBarIcon(self.action)
         self.simple_view = SimpleView(self.iface)
+        for title, callback in (("New Farm Project…", self.farms.new), ("Open Farm Project…", self.farms.open)):
+            action = QAction(title, self.iface.mainWindow())
+            action.triggered.connect(callback)
+            self.iface.addPluginToMenu(self.menu, action)
+            self.farm_actions.append((action, callback))
 
     def run(self):
         layer_count = len(QgsProject.instance().mapLayers())
@@ -44,6 +52,11 @@ class AgTechTooling:
         if self.simple_view is not None:
             self.simple_view.close()
             self.simple_view = None
+        for action, callback in self.farm_actions:
+            self.iface.removePluginMenu(self.menu, action)
+            action.triggered.disconnect(callback)
+            action.deleteLater()
+        self.farm_actions.clear()
         self.iface.removePluginMenu(self.menu, self.action)
         self.iface.removeToolBarIcon(self.action)
         self.action.triggered.disconnect(self.run)

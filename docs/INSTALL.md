@@ -132,7 +132,7 @@ The script checks and builds the ZIP, verifies the extracted files, installs the
 
 Alternatively, use QGIS's ZIP installation dialog:
 
-1. Run the checks to build `dist\ag_tech_tooling-0.2.1.zip`.
+1. Run the checks to build `dist\ag_tech_tooling-0.3.0.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
 3. Open **Plugins → Manage and Install Plugins → Install from ZIP**.
 4. Select the generated ZIP and install it, then enable the plugin.
@@ -140,7 +140,19 @@ Alternatively, use QGIS's ZIP installation dialog:
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
 
-Ag Tech Tooling 0.2.1 is installed and enabled in the normal `default` profile. QGIS 3.44.14 successfully loaded the installed copy and exercised its action, Simple view switch, map-only central page, panel restrictions, layout restoration and unload/reload lifecycle on 15 October 2026.
+Version 0.3.0 adds New/Open Farm Project to the existing Simple view foundation. See the work log for installation and verification status.
+
+### Create and open a farm — 0.3.0
+
+1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
+2. Choose **Plugins → Ag Tech Tooling → New Farm Project…**.
+3. Enter the farm name and choose an existing parent folder using **Browse…**. Confirm the **Farm coordinate system** for your location and intended work; its initial value comes from the current map and may need changing.
+4. Click **Create Farm**. Expected result: a new farm folder containing `Farm.qgz` and `Data/farm.gpkg`, with farm identity, schema version and coordinate system recorded. The map starts empty. Existing farm folders are never overwritten.
+5. Finish layer edits before switching maps. If prompted about unsaved map changes, choose **Save**, **Discard** or **Cancel**. Cancelling a switch keeps the current map; a newly created farm is retained at the reported location for later opening.
+6. Later choose **Plugins → Ag Tech Tooling → Open Farm Project…** and select that farm's `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
+7. Save map changes using QGIS's normal **Save** control. Keep both files and their relative structure together when moving the farm. The database alone is not the entire current workspace. Imports, exports, conversion tools, settings editing and automated backup are not available yet.
+
+If a folder already exists, open it or choose another name. If validation reports missing files, restore the whole farm folder from a known backup. If it reports a newer schema, use a compatible plugin; do not edit the version field to bypass the check. For a failed creation, resolve the reported path/permission problem and retry; no existing farm is replaced. Choose a local working location; NAS backup and shared-editing controls are not implemented.
 
 ### Choose Simple view
 

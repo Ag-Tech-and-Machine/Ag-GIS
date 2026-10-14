@@ -1,6 +1,16 @@
 # Farm projects — structure proposal
 
-Status: GeoPackage selected as the core farm data format, 15 October 2026. The detailed schema, supporting file layout and workflows remain proposed. Farm management is not implemented. No existing farm data has been moved.
+Status: GeoPackage selected as the core farm data format, 15 October 2026. Version 0.3.0 implements the minimal New/Open foundation below. Agricultural schemas, imports, exports, conversions, editable settings and backup/restore remain proposed. No existing farm data has been moved.
+
+## Implemented foundation — 0.3.0
+
+New Farm Project creates only `<Farm name>/Farm.qgz` and `<Farm name>/Data/farm.gpkg`. The map starts empty; no paddock geometry schema is assumed. The GeoPackage contains a registered nonspatial attributes table, `agtech_farm`, with one row: integer `fid` primary key plus text fields `farm_id` (UUID), `farm_name`, `schema_version` (`1`), `crs_authid` and `created_utc` (UTC ISO timestamp). Farm settings are recorded at creation; editing them through the plugin is not yet available.
+
+The QGZ stores the same farm ID and schema version, the relative database location and the selected working CRS. Open Farm Project selects `Data/farm.gpkg`, validates its table, schema, matching map settings and map-layer availability, then opens the companion map. This opens Ag Tech farm workspaces only; it is not a general GeoPackage importer. The database is the core store, but the current workspace requires both files. Keep/copy the whole farm folder together.
+
+Creation uses a temporary sibling directory and validates before renaming it into place. Existing destinations are refused. Validation opens the database read-only; unsupported schemas are rejected without migration. Switching requires layer editing to be finished and offers Save/Discard/Cancel for unsaved map changes. Cancelling after creation retains the new farm and the current map.
+
+The minimal empty workspace has been tested for creation, validation, duplicate protection, failed-creation cleanup and unsupported-schema rejection. A real temporary spatial layer was added for move/reopen testing, and switch cancellation/edit-session protection were checked with real Qt/PyQGIS. This does not establish portability for arbitrary external datasets or a safe multi-user locking/backup system.
 
 ## Confirmed direction
 
@@ -44,7 +54,7 @@ Create optional directories only when needed. Job results must not silently repl
 
 ## Planned farmer-facing steps
 
-These are proposed controls, not instructions for the current plugin.
+The following describes the broader target workflow. New/Open have the limited foundation described above; other controls are proposed.
 
 1. **New Farm Project**: enter a farm name, choose a local destination and confirm location/working units. Expected result: validated project, standard empty layers and sensible styles. Reject duplicate destinations without altering existing data; clean up incomplete creation on failure.
 2. **Add Data**: copy complete source datasets into Originals, check type/CRS/units, then create managed layers where appropriate. Expected result: local data with provenance and unchanged originals. Missing CRS and invalid inputs need actionable errors and no half-imported layers.
@@ -76,4 +86,4 @@ Verify sample creation, reopening, folder rename/move and reopening with every l
 - [OGC GeoPackage](https://www.geopackage.org/): open container capabilities and lack of built-in security controls.
 - [SQLite over a network](https://sqlite.org/useovernet.html): network filesystem reliability and client/server alternatives.
 
-This is a documented recommendation. The farm-management behaviours above have not been implemented or tested.
+The broader layout and controls remain a design proposal. Only the foundation explicitly described above is implemented.

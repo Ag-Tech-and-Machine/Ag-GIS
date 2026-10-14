@@ -1,5 +1,15 @@
 # Work log and verification status
 
+## 15 October 2026 — GeoPackage farm foundation, version 0.3.0
+
+- Added New/Open Farm Project under Plugins → Ag Tech Tooling. Creation writes a registered GeoPackage attributes table for UUID, name, schema version, CRS and creation time, plus a matching companion map.
+- Kept agricultural layers unspecified. Added destination protection, staged creation/cleanup, read-only preflight, matching identity/CRS/schema checks, invalid-layer rejection and unsaved/edit-session protection.
+- QGIS 3.44.14 checks passed: syntax/metadata, existing Simple view lifecycle, actual GDAL/PyQGIS farm creation, real spatial layer move/reopen, duplicate protection, failed-creation cleanup, newer-schema rejection, dialog construction, edit-session protection and cancelled switch. ZIP build passed.
+- Fixed a Windows file-lock failure found by the first portability test by explicitly closing SQLite validation connections.
+- Installed and enabled 0.3.0 in the normal default profile, with the previous plugin/settings backed up by the installer.
+- Verified the installed copy in the actual QGIS GUI: New/Open actions registered, a disposable farm opened with the correct title/CRS/identity, Simple view kept the map visible, and the actual New Farm dialog opened and cancelled. Captured and visually checked its layout. Removed only disposable test data and returned QGIS to an empty map.
+- Updated setup, operation, purpose and data-structure docs. Imports/exports, editable settings, conversions, agricultural schemas, database integrity repair, comprehensive external-path packaging, multi-user locks and automated backup remain future work. Only QGIS 3.44.14 was tested.
+
 ## 15 October 2026 — GeoPackage direction confirmed
 
 - Recorded the user's choice of GeoPackage as the core farm data format.

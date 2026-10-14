@@ -2,7 +2,7 @@
 
 Ag Tech Tooling builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
 
-The project uses QGIS 3.x LTR. Version 0.2.1 provides a reversible **Simple view** switch at the bottom right, alongside QGIS's scale and coordinate controls. The primary workspace contains only the map and Layers; Browser, welcome/news/templates and other panels are hidden. Basic map toolbars, menus and status controls remain available. The starter also reports a project's layer count; agricultural workflow automation will be developed next. Source code is licensed under GPL-2.0-or-later. A public Git repository has not yet been created.
+The project uses QGIS 3.x LTR. Version 0.3.0 adds **New Farm Project** and **Open Farm Project**, with a versioned farm information table in GeoPackage and a companion QGIS map. Agricultural schemas, imports/exports, settings editing and conversion workflows are still under development. The reversible **Simple view** switch at the bottom right keeps only map and Layers in the primary workspace, with basic toolbars, menus and status controls available. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
 
 See [project purpose and design principles](docs/PURPOSE.md).
 
@@ -10,7 +10,7 @@ See [project purpose and design principles](docs/PURPOSE.md).
 
 - [Installation and setup](docs/INSTALL.md)
 - [Development and tooling](docs/TOOLING.md)
-- [Farm data direction and structure proposal](docs/FARM_PROJECTS.md) (GeoPackage selected; not yet implemented)
+- [Farm data foundation and structure proposal](docs/FARM_PROJECTS.md) (minimal New/Open implemented)
 - [Work log and verification status](docs/WORK_LOG.md)
 
 These instructions are updated alongside the tooling, rather than only at release time.
@@ -44,7 +44,7 @@ python tools/build_plugin.py
 
 If the `python` command is a Windows Store alias, use the full path to an installed Python executable. PyQGIS is bundled with QGIS; do not install a package called `qgis` from pip.
 
-The build produces `dist/ag_tech_tooling-0.2.1.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
+The build produces `dist/ag_tech_tooling-0.3.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
 
 `tools/smoke_test.py` checks the actual Qt/PyQGIS plugin lifecycle. Run it with QGIS's Python interpreter after setting up the QGIS environment; ordinary system Python cannot import PyQGIS.
 
