@@ -7,6 +7,7 @@
 - Saved the previous full layout per profile and implemented restoration when the switch is turned off or the plugin is unloaded. The profile remembers the selected mode on reload/restart.
 - Added Qt/PyQGIS checks for visibility, restoration of originally hidden panels, saved preference and removal of the switch during unload.
 - Installed 0.2.0 in the normal default profile. Live QGIS API checks passed for control placement, essential controls, full-layout restoration, unchanged project layers and unload/reload with one visible switch.
+- Restarted QGIS and verified that Simple view remains selected. Visually checked the bottom-right switch beside the coordinate, scale, rotation and CRS controls.
 - Simple mode is enabled in the current QGIS session for review. This is interface simplification, not agricultural workflow automation.
 
 ## 15 October 2026 — Purpose and installed development foundation
