@@ -1,21 +1,25 @@
-# Organisation, Farm and Field — researched design proposal
+# Organisation, Client, Farm and Field — data model
 
 15 October 2026. Proposed model, not a schema migration or implemented feature. Current plugin: 0.4.0, with one farm-information row in schema version 1. Existing data remains unchanged.
 
 ## Direction
 
-Use **Organisation → Farm → Field** as the default farmer-facing hierarchy. Organisation means the farming business whose data is being managed. Farm means a named property or management grouping; Field means a persistent working land unit (which may be labelled Paddock for local users).
+The user selected **Organisation → Client → Farm → Field** as the hierarchy to support from the outset. All four are first-class entities in the planned model. Organisation means the business managing the workspace; Client means the grower/customer whose farms are managed. Farm means a named property or management grouping; Field means a persistent working land unit (which may be labelled Paddock for local users).
 
 ```text
-Organisation: Smith Farming
-  Farm: Home Farm
-    Field: North 40
-    Field: Creek Paddock
-  Farm: River Block
-    Field: East Pivot
+Organisation: Ag Tech
+  Client: Smith Farming
+    Farm: Home Farm
+      Field: North 40
+      Field: Creek Paddock
+    Farm: River Block
+      Field: East Pivot
+  Client: Jones Farming
+    Farm: Home Farm
+      Field: North 40
 ```
 
-One organisation can contain several farms; one farm can contain several fields. Do not equate a software project/package with one physical farm. A project is the workspace the farmer opens. The current one-farm workspace is a foundation and will need a deliberate, versioned migration before managing this hierarchy.
+One organisation can contain several clients; one client can contain several farms; one farm can contain several fields. Do not equate a software project/package with one physical farm. A project is the workspace the farmer opens. The current one-farm workspace is a foundation and will need a deliberate, versioned migration before managing this hierarchy.
 
 ## What the reference platforms show
 
@@ -29,9 +33,11 @@ This is a comparison of public documentation, not a reverse-engineered database 
 
 ## Client/Grower support
 
-For a farmer managing their own business, three visible levels are enough. Treat Client/Grower as an optional later business relationship for contractors/advisers or external import/export mappings. Do not silently equate a Deere organisation ID with its client ID, or collapse several external growers into one record because names match.
+Client is required in the planned core model from the outset, rather than deferred to a contractor add-on. Grower is an external-platform term to map to Client as appropriate. Do not silently equate a Deere organisation ID with its client ID, or collapse several external growers into one record because names match.
 
-If contractor multi-client work becomes an immediate requirement, settle whether a project contains separate client organisations or a distinct Client entity before creating production data. An Ag Tech workspace is not itself an authentication or permission boundary.
+For an owner-operator, Organisation and Client may have the same display name but remain separate records with stable IDs. A simplified setup can prefill the client name for confirmation; it must not remove this level or silently assign ownership. A default selection can save repeated navigation for single-client users. An Ag Tech workspace is not itself an authentication or permission boundary, and this local hierarchy does not implement user access controls.
+
+Use explicit parent links: Client → Organisation, Farm → Client and Field → Farm. Names are labels rather than identifiers; farms/fields with identical names under different clients must remain distinct. Preserve external account/client identifiers separately. Client reassignment, sharing and transfers need deliberate rules before implementation so historical work is not silently reattributed.
 
 ## Land, time and work are related dimensions
 
@@ -75,9 +81,9 @@ When viewing one season, Whole Field reference data should remain available alon
 
 ## Proposed GeoPackage approach
 
-Use shared tables/layers with stable IDs and explicit relationships, rather than a table or file for every field or year. Candidate entities are organisations, farms, fields, field-boundary revisions, seasons/crop cycles, jobs, job-field links, datasets and external identifier mappings. These names and columns are provisional.
+Use shared tables/layers with stable IDs and explicit relationships, rather than a table or file for every field or year. Candidate entities are organisations, clients, farms, fields, field-boundary revisions, seasons/crop cycles, jobs, job-field links, datasets and external identifier mappings. These names and columns are provisional.
 
-Use a single managed GeoPackage for the selected organisation workspace initially; allow multiple farms inside it. Keep the relationship model independent of later selected-farm sharing packages. Decide the final package name and supporting raster/LiDAR/original-file locations before migration. A GeoPackage can be the core store while the full workspace still contains QGZ and supporting files.
+Use a single managed GeoPackage for the selected organisation workspace initially; allow multiple clients and farms inside it. Keep the relationship model independent of later selected-client/farm sharing packages. Decide the final package name and supporting raster/LiDAR/original-file locations before migration. A GeoPackage can be the core store while the full workspace still contains QGZ and supporting files.
 
 Store external platform IDs separately from internal UUIDs, keyed by platform, external account/organisation, entity type and external ID. Import matching must distinguish IDs, names and geometry; show unresolved or conflicting matches for review. Export presets must explicitly map Organisation/Client/Grower/Farm/Field terms and report unsupported content.
 
@@ -88,18 +94,21 @@ Use native QGIS layers/providers/writers, relations and forms for editing and pr
 Keep map and Layers as the primary workspace. Proposed controls belong in the existing top toolbar or focused dialogs:
 
 1. Organisation selector, defaulted for single-business users.
-2. Farm selector, including All farms.
-3. Field selector/search, filtered by farm, including All fields.
-4. A focused Manage Farms & Fields dialog for the hierarchy.
-5. Separate season/job filters when those workflows exist.
+2. Client selector/search, filtered by organisation, including All clients for overview tasks.
+3. Farm selector, filtered by client, including All farms within the selected context.
+4. Field selector/search, filtered by farm, including All fields within the selected context.
+5. A focused management dialog for organisations, clients, farms and fields.
+6. Separate season/job filters when those workflows exist. Whole Field and Seasons remain beneath Field.
+
+All clients/farms/fields are viewing/filtering options, not database records. Require an explicit target for writes/imports rather than assigning new data to an aggregate selection. Changing a parent selection must reset incompatible child selections and make the active context visible.
 
 Selection should make the active context clear and filter or zoom without changing source data. Use native QGIS controls where practical. Avoid creating a separate permanent management panel in Simple view or one QGIS layer per individual field. Use readable labels with appropriate icons; the current 0.4.0 toolbar already uses native QGIS icons above its action labels.
 
 ## Next increment and checks
 
-Agree the three-level model and optional Client/Grower behaviour, then design the selectors/dialog before implementing schema version 2. Create and verify a backup before migrating any existing farm workspace. Preserve its farm ID and source files; do not invent organisation ownership without user input.
+The four-level model is agreed in principle. Design the selectors/dialog and exact relationships before implementing schema version 2. Create and verify a backup before migrating any existing farm workspace. Preserve its farm ID and source files; require confirmed Organisation and Client assignments rather than inventing ownership.
 
-Acceptance examples: two farms with identically named fields remain distinct; renaming does not break links; a multi-field job works; historical boundary references survive changes; imported external names do not cause silent merging; a moved/restored package reopens; cancelled selection/import/migration leaves data unchanged. These behaviours are proposed and have not been implemented or tested.
+Acceptance examples: two clients can each have a Home Farm with a North 40 field without collisions; renaming does not break links; changing Client resets an incompatible Farm/Field selection; writes cannot target All clients; a multi-field job works; historical boundary references survive changes; imported external names do not cause silent merging; a moved/restored package reopens; cancelled selection/import/migration leaves data unchanged. These behaviours are proposed and have not been implemented or tested.
 
 ## Primary sources reviewed
 

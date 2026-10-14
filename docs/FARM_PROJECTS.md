@@ -30,7 +30,7 @@ Develop these incrementally using representative source files and expected outpu
 
 ## Recommendation
 
-The newer [Organisation/Farm/Field proposal](FARM_DATA_MODEL.md) revises the initial one-directory-per-farm assumption below: a workspace should be able to contain an organisation with several farms and fields. The current implementation is unchanged, and the following directory tree remains an earlier illustration rather than the agreed future schema.
+The newer [Organisation/Client/Farm/Field model](FARM_DATA_MODEL.md) revises the initial one-directory-per-farm assumption below: a workspace should be able to contain an organisation with multiple clients, farms and fields. The current implementation is unchanged, and the following directory tree remains an earlier illustration rather than the agreed future schema.
 
 Present one **Farm Project** to the farmer. Use one managed directory per farm, with permanent records and dated jobs inside it. Use standard formats accessible without Ag Tech Tooling, and an ordinary ZIP for backup/transfer. Unpack before editing.
 

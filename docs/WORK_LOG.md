@@ -1,5 +1,12 @@
 # Work log and verification status
 
+## 15 October 2026 — Four-level hierarchy confirmed
+
+- User selected Organisation → Client → Farm → Field from the outset, superseding the earlier three-level default and deferred Client suggestion.
+- Updated the model, developer rules and linked documentation: distinct Client entity, explicit parent relationships, same-name isolation, dependent selectors and confirmed ownership for migration. Whole Field/Seasons remains beneath Field.
+- This records the agreed design only. Plugin 0.4.0 and schema version 1 remain unchanged; no runtime controls, access-control system or migration were implemented.
+- Documentation diff check passed; unchanged runtime tests were not repeated.
+
 ## 15 October 2026 — Whole Field and seasonal data
 
 - Recorded the user's direction to divide each field into Whole Field reference data and crop/season data.
