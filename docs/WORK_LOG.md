@@ -1,5 +1,12 @@
 # Work log and verification status
 
+## 15 October 2026 — GeoPackage direction confirmed
+
+- Recorded the user's choice of GeoPackage as the core farm data format.
+- Captured upcoming design areas: file/data structure, import/export setups, settings and conversion tooling.
+- Kept schema, supporting file layout, project storage and supported formats explicitly undecided. No data-management code or datasets changed.
+- Reviewed documentation changes with `git diff --check`; unchanged plugin tests were not repeated.
+
 ## 15 October 2026 — Farm project structure proposal
 
 - Documented a proposed directory per farm, with QGZ map setup, GeoPackage records, supporting data and job-specific work.

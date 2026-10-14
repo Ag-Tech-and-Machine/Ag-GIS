@@ -1,6 +1,20 @@
 # Farm projects — structure proposal
 
-Status: proposed, 15 October 2026. Farm management is not implemented. No existing farm data has been moved.
+Status: GeoPackage selected as the core farm data format, 15 October 2026. The detailed schema, supporting file layout and workflows remain proposed. Farm management is not implemented. No existing farm data has been moved.
+
+## Confirmed direction
+
+The user selected GeoPackage for farm data. The next design work covers the file/data structure, import and export setups, settings and conversion tooling. Do not treat the illustrative folder layout below as a final schema or assume all supporting files must be embedded in one database. Decide QGIS project storage and supporting-file packaging during that design work.
+
+Plan the following connected areas:
+
+1. **Data structure**: farm/job relationships, layer and table definitions, stable IDs, required fields, units, CRS and schema versions.
+2. **Settings**: distinguish application preferences, farm/project settings and reusable import/export presets. Define precedence and portability before implementation.
+3. **Imports**: supported source formats, field mapping, validation, duplicate handling, provenance and preservation of originals.
+4. **Conversions**: coordinate and unit transformations, geometry/raster operations and explicit output destinations. Preview consequential changes and preserve source data.
+5. **Exports**: target formats and machine requirements, reusable presets, validation and clear reports of any information lost in conversion.
+
+Develop these incrementally using representative source files and expected output examples. Supported formats and machine compatibility are not yet agreed or implemented.
 
 ## Recommendation
 
