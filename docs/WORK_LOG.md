@@ -1,5 +1,16 @@
 # Work log and verification status
 
+## 15 October 2026 — Purpose and installed development foundation
+
+- Recorded the purpose: build farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work.
+- Added design principles in `PURPOSE.md` and required them in project working instructions.
+- Selected GPL-2.0-or-later, included the full license in source and the installable ZIP, and added SPDX identifiers to plugin source.
+- Added repeatable installation scripts with profile-settings backups and protection against overwriting unrelated plugins.
+- Installed and enabled version 0.1.0 in the normal QGIS `default` profile.
+- Verified in a real QGIS 3.44.14 GUI session: installed-module path, automatic loading, toolbar action, layer-count message and plugin-manager unload/reload without duplicate toolbar actions.
+- The source remains local; no public remote or release has been published. Farmer-specific automation has not yet been implemented.
+- Ready for the first tool's task description, sample inputs and expected outputs.
+
 ## 15 October 2026 — Naming update
 
 - Adopted the temporary project and displayed plugin name **Ag Tech Tooling**.
@@ -30,11 +41,10 @@
 ### Pending
 
 - Add the local repository to the desktop app's Projects sidebar and move the tooling chat into it. The repository exists, but the app's saved project list was empty when checked.
-- Manual enable/disable and toolbar/menu checks in QGIS's plugin manager.
-- ZIP installation check in a separate QGIS profile.
+- Manual interaction with the plugin-manager checkbox and ZIP-install dialog, if those UI workflows need separate acceptance testing. Installed ZIP content, enabled startup, actual toolbar action and lifecycle are now verified via QGIS APIs in the normal profile.
 - Definition of the first useful domain-specific tool.
 - Remote Git repository and backup/publication workflow, if requested.
-- Licensing and public project/support URLs before public release.
+- Public project/support URLs before public release. GPL-2.0-or-later is now selected and packaged.
 
 ### Known setup findings
 
@@ -44,4 +54,4 @@
 
 ### Next step
 
-Confirm the starter's manual QGIS action check, then define and implement the first real tool. Add its operating instructions and validation evidence with the implementation.
+Define and implement the first real farming workflow. Add its operating instructions and validation evidence with the implementation.

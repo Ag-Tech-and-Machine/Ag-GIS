@@ -118,9 +118,19 @@ The smoke check uses real Qt/PyQGIS with an interface adapter. It does not repla
 6. Expected: a message reading `Starter plugin is running. Project layers: N.` where N is the number of layers in the project.
 7. Disable the plugin and confirm its menu/toolbar action disappears. Re-enable it and confirm only one action is present.
 
-QGIS startup and the automated smoke check were verified on 15 October 2026. Manual plugin-manager enable/disable and toolbar use are pending verification; record the result in the work log when completed.
+QGIS startup and the automated smoke check were verified on 15 October 2026. The packaged plugin was subsequently installed in the normal `default` profile: automatic loading, the real toolbar action and its message, and plugin-manager unload/reload were verified through QGIS's APIs in the actual GUI session. These checks did not involve clicking the plugin-manager checkboxes manually.
 
 ## 6. Install a packaged plugin for use
+
+For this workstation, close QGIS and run from the repository root:
+
+```powershell
+.\scripts\install-plugin.ps1
+```
+
+The script checks and builds the ZIP, verifies the extracted files, installs them into `%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\ag_tech_tooling`, and enables the plugin. It backs up profile settings and any existing Ag Tech Tooling installation under ignored `dist/install-backups`. It refuses to run while QGIS is open or overwrite an unrelated plugin. Restart QGIS normally after it finishes. To choose another existing profile, pass `-Profile profile_name`.
+
+Alternatively, use QGIS's ZIP installation dialog:
 
 1. Run the checks to build `dist\ag_tech_tooling-0.1.0.zip`.
 2. Launch QGIS normally, using the profile in which you want the plugin installed.
@@ -129,6 +139,8 @@ QGIS startup and the automated smoke check were verified on 15 October 2026. Man
 5. Repeat the action and disable/re-enable checks from step 5.
 
 Use the isolated development profile for source development and a separate normal profile for ZIP installation checks. This avoids confusing an installed copy with the source copy.
+
+Ag Tech Tooling 0.1.0 is now installed and enabled in the normal `default` profile. QGIS 3.44.14 successfully loaded that installed copy and exercised its action and unload/reload lifecycle on 15 October 2026.
 
 ## 7. Add the project to the desktop app
 

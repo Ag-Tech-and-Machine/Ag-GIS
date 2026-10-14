@@ -15,6 +15,8 @@ Last updated: 15 October 2026.
 | `tools/check_plugin.py` | Check Python syntax and mandatory metadata |
 | `tools/smoke_test.py` | Exercise entry point, action, duplicate-init prevention and unload using Qt/PyQGIS |
 | `tools/build_plugin.py` | Produce and validate a QGIS plugin ZIP |
+| `scripts/install-plugin.ps1` | Check, build, install and enable the packaged plugin in an existing normal QGIS profile |
+| `tools/install_plugin.py` | Validate ZIP paths, back up existing files/settings and install the built package |
 
 The starter reports a layer count. No domain-specific tools, processing algorithms, automatic updater or remote Git repository exist yet.
 
@@ -63,7 +65,7 @@ The starter reports a layer count. No domain-specific tools, processing algorith
 1. Change the version in `metadata.txt` when preparing a release.
 2. Document new behaviour and any migration/install changes.
 3. Run automated and manual checks appropriate to that release.
-4. Confirm licensing, public project/support URLs and QGIS version compatibility before publishing to the public plugin repository. Those publishing decisions are not yet complete.
+4. Retain the GPL-2.0-or-later license in source and plugin packages. Confirm public project/support URLs and QGIS version compatibility before publishing to the public plugin repository. Public hosting and publishing decisions are not yet complete.
 5. Create a release tag only after a release has been verified. Publication, GitHub remote creation and release automation are not implemented in this starter.
 
 ## Documentation responsibilities
@@ -71,3 +73,13 @@ The starter reports a layer count. No domain-specific tools, processing algorith
 The manager maintains installation instructions, tool usage, verification evidence, known failures and next steps during development. A feature is not complete until its relevant instructions match the implementation. Documentation-only edits need editorial review and link/path checks; they do not require rerunning unchanged code tests.
 
 Reference: https://docs.qgis.org/3.44/en/docs/pyqgis_developer_cookbook/plugins/plugins.html
+
+## Ready for the first tool
+
+1. Describe the farming task in the user's words.
+2. Identify the sample input files or layers, units and coordinate reference system where relevant.
+3. Agree the expected output and where to save it.
+4. Specify what an acceptable result looks like and which inputs should produce helpful errors.
+5. Implement, test on the sample data and document the workflow together.
+
+The default-profile installation is for using the built plugin. The isolated development launcher is for editing the repository source. Rebuild/reinstall after changes to refresh the normal-profile copy.

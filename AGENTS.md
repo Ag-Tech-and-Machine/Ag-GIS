@@ -1,5 +1,9 @@
 # QGIS plugin development
 
+## Purpose
+
+Build farmer-friendly, open-source tooling that simplifies agricultural workflows and automates GIS work. Follow `docs/PURPOSE.md`: use farming language, sensible defaults, visible results and safe handling of users' original data. Keep instructions in step with the tools.
+
 - Plugin source is in `plugins/ag_tech_tooling`; keep GIS datasets outside this repository.
 - Import Qt classes through `qgis.PyQt`, and use the Python runtime supplied with QGIS for integration checks.
 - Keep `initGui()` and `unload()` paired so reloading leaves no duplicate actions or signal connections.

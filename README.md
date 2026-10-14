@@ -1,6 +1,10 @@
 # Ag Tech Tooling
 
-A fresh Python plugin project for QGIS 3.x LTR. The starter adds a toolbar/menu action that reports the current layer count. No previous project files or company sign-in settings are included.
+Ag Tech Tooling builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
+
+The project uses QGIS 3.x LTR. The installed starter currently reports a project's layer count; agricultural workflow tools will be developed next. Source code is licensed under GPL-2.0-or-later. A public Git repository has not yet been created.
+
+See [project purpose and design principles](docs/PURPOSE.md).
 
 ## Maintained instructions
 
@@ -9,6 +13,10 @@ A fresh Python plugin project for QGIS 3.x LTR. The starter adds a toolbar/menu 
 - [Work log and verification status](docs/WORK_LOG.md)
 
 These instructions are updated alongside the tooling, rather than only at release time.
+
+## Install locally
+
+Close QGIS and run `scripts/install-plugin.ps1`. It checks and builds the plugin, installs it into the existing `default` QGIS profile, backs up the profile settings, and enables Ag Tech Tooling. Restart QGIS normally to use the installed copy. Use `-Profile` to choose another existing user profile.
 
 ## Develop
 
@@ -45,4 +53,4 @@ The repository starts on `main`. Commit identity is Michael `<admin@agtechandmac
 
 ## Publishing
 
-The starter metadata marks this plugin experimental. Choose the final plugin name, description, licensing and public project/support URLs before publishing. It is not yet a public release.
+The starter metadata marks this plugin experimental. The source uses GPL-2.0-or-later, with the license included in plugin ZIPs. Confirm the final plugin name, public project/support URLs and compatibility checks before publishing. It is not yet a public release.

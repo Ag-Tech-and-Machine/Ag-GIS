@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
 from qgis.PyQt.QtGui import QIcon
 try:
     from qgis.PyQt.QtGui import QAction

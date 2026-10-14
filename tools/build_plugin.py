@@ -14,12 +14,12 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:
         for source in sorted(PLUGIN.iterdir()):
-            if source.is_file() and source.suffix in {".py", ".txt", ".svg"}:
+            if source.is_file() and (source.suffix in {".py", ".txt", ".svg"} or source.name == "LICENSE"):
                 archive.write(source, f"ag_tech_tooling/{source.name}")
     with ZipFile(output) as archive:
         if archive.testzip() is not None:
             raise ValueError("Invalid plugin archive")
-        required = {"ag_tech_tooling/__init__.py", "ag_tech_tooling/metadata.txt", "ag_tech_tooling/plugin.py"}
+        required = {"ag_tech_tooling/__init__.py", "ag_tech_tooling/metadata.txt", "ag_tech_tooling/plugin.py", "ag_tech_tooling/LICENSE"}
         if not required.issubset(archive.namelist()):
             raise ValueError("Archive is missing required files")
     print(f"Plugin ZIP ready: {output}")
