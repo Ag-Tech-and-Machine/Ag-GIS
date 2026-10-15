@@ -32,3 +32,8 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 - Record dated changes, completed checks, limitations and next steps in `docs/WORK_LOG.md`. Distinguish verified behaviour from proposed or untested behaviour.
 - Before reporting a change complete, ensure the relevant instructions describe the actual implementation. Run checks appropriate to code changes; documentation-only edits do not need a repeated integration test.
 - Keep one canonical set of instructions in this repository. Export user-facing copies when useful; update them from the canonical sources.
+
+
+## Product name and release compatibility
+
+The user renamed the product Ag-GIS on 15 October 2026. Use Ag-GIS for new visible labels and documentation. Retain the ag_tech_tooling plugin ID and existing farm-data paths. Private releases live in JamRov/Ag-GIS. Package recorded tested snapshots while shared source work is in progress; do not implicitly include later unverified edits in an existing release.
