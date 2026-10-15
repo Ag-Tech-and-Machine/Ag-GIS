@@ -1,59 +1,27 @@
 # Ag-GIS
 
-Ag-GIS builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
+Farmer-friendly tools powered by QGIS to simplify agricultural mapping and data workflows. People should own and control their data, understand what the software does, and be able to help improve it.
 
-The project uses QGIS 3.x LTR. Version 0.7.0 provides a dedicated **Ag-GIS** toolbar with New Project, Open Project, Manage Data and Data In. New Project generates a starter workspace in Documents → Ag-GIS → Projects. Browse Organisation → Client → Farm → Field → Season as separate short levels in Layers. Manage these records in GeoPackage, with icon-labelled rows/controls and field-filtered native reference layers. Save/navigation reuse native QGIS actions. The bottom-right **Simple view** switch keeps our toolbar plus map and Layers. Schema 1 upgrades create a separate validated copy. Seasonal datasets, imports/exports, full settings editing, history and conversions remain under development. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
+This repository and its releases are public under **GPL-2.0-or-later**. Forks and pull requests are welcome; maintainers review proposed changes.
 
-See [project purpose and design principles](docs/PURPOSE.md).
+## Downloads and current status
 
-## Maintained instructions
+Get installers, plugin ZIPs, exact source and verification evidence from [Releases](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases). The latest published installer is **v0.8.1**, an experimental Windows distribution using QGIS 3.44.14 LTR. Extract the complete Windows bundle before running Setup.exe. Existing QGIS users can install the plugin ZIP with Plugins → Manage and Install Plugins → Install from ZIP.
 
-- [Installation and setup](docs/INSTALL.md)
-- [Bundled user guide](docs/USER_GUIDE.md)
-- [Development and tooling](docs/TOOLING.md)
-- [Farm data foundation and structure proposal](docs/FARM_PROJECTS.md) (minimal New/Open implemented)
-- [Organisation, Client, Farm and Field model](docs/FARM_DATA_MODEL.md) (implemented foundation and remaining design)
-- [Work log and verification status](docs/WORK_LOG.md)
+Read release notes for limitations, including the unsigned launcher and pending clean-machine acceptance checks. Local development can be ahead of published source and installers; public visibility does not publish every in-progress feature.
 
-These instructions are updated alongside the tooling, rather than only at release time.
+Cloud backups, mobile access, team synchronisation and hosted workspaces are future candidates. No paid cloud service has launched.
 
-## Install locally
+## Help improve Ag-GIS
 
-Close QGIS and run `scripts/install-plugin.ps1`. It checks and builds the plugin, installs it into the existing `default` QGIS profile, backs up the profile settings, and enables Ag-GIS. Restart QGIS normally to use the installed copy. Use `-Profile` to choose another existing user profile.
+Report problems and ideas in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues), which remains separate so existing report links work. Code and documentation pull requests belong here.
 
-## Develop
+Use synthetic examples. Reports, pull requests and attachments are public: never include private farm/customer datasets or credentials. Discuss substantial changes first, read AGENTS.md, use native QGIS APIs, and include relevant tests and documentation. Submit only material you have the right to share under the project licence; contributors retain their copyright. Community input informs priorities without guaranteeing a feature or delivery date.
 
-Run `scripts/launch-qgis.ps1` in PowerShell. It finds an installed QGIS launcher, sets `QGIS_PLUGINPATH` to this repository's `plugins` directory, and opens the isolated `ag-tech-tooling-dev` profile.
+## Development
 
-In QGIS, open **Plugins → Manage and Install Plugins → Installed**, then enable **Ag-GIS**. Use its toolbar or Plugins menu action. Restart QGIS after changing Python code, or use the optional Plugin Reloader plugin.
+Read [AGENTS.md](AGENTS.md), [installation](docs/INSTALL.md), [tooling](docs/TOOLING.md), [user guide](docs/USER_GUIDE.md) and [work log](docs/WORK_LOG.md). Older documents describe the earlier private setup; the current owner is Ag-Tech-and-Machine and public downloads require no repository membership.
 
-Edit `plugins/ag_tech_tooling/plugin.py` for functionality and `metadata.txt` for plugin details. Keep GIS datasets outside Git; this repository ignores common dataset formats.
+Use QGIS bundled Python/PyQGIS and run scripts/check.ps1 for source and extracted-package checks. Ordinary Python can run tools/check_plugin.py and tools/build_plugin.py for syntax/packaging, but does not replace PyQGIS integration testing. Keep datasets, local profiles and generated packages outside commits.
 
-## Check and package
-
-Use the installed QGIS Python runtime to run all checks and build the ZIP:
-
-```powershell
-.\scripts\check.ps1
-```
-
-For syntax checks and packaging only, an ordinary Python 3 runtime also works:
-
-```powershell
-python tools/check_plugin.py
-python tools/build_plugin.py
-```
-
-If the `python` command is a Windows Store alias, use the full path to an installed Python executable. PyQGIS is bundled with QGIS; do not install a package called `qgis` from pip.
-
-The build produces `dist/ag_tech_tooling-0.7.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
-
-`tools/smoke_test.py` checks the actual Qt/PyQGIS plugin lifecycle. Run it with QGIS's Python interpreter after setting up the QGIS environment; ordinary system Python cannot import PyQGIS.
-
-## Git
-
-The repository starts on `main`. Commit identity is Michael `<admin@agtechandmachine.com>`. It is local: no GitHub repository or remote is created automatically.
-
-## Publishing
-
-The starter metadata marks this plugin experimental. The source uses GPL-2.0-or-later, with the license included in plugin ZIPs. Confirm the final plugin name, public project/support URLs and compatibility checks before publishing. It is not yet a public release.
+Ag-GIS retains upstream credits and licences. It is a separate project, not an official QGIS distribution.
