@@ -1,5 +1,5 @@
 {
-  "capturedUtc": "20261015T002236Z",
+  "capturedUtc": "20261015T002626Z",
   "gitHead": "e139ad1010237689fb03937307257aa889070934",
   "workingTreeIncluded": true,
   "sourceFiles": {
@@ -16,7 +16,7 @@
     "docs/WORK_LOG.md": "83ad454d89ab044ffe33c156a6c49daddc1e352d15fa3048ce436aeff67c0bb6",
     "installer/Install.ps1": "c2ead5e7fa326ce5b86f58ab36564e1a4f03b242a2912960b221d3ee80d3edca",
     "installer/install_profile.py": "fd9d9053f394a1789d5e7407d4250124aece6c1aff5e3690358833cefb61fc38",
-    "installer/Setup.cs": "ca2ceb36f32fb2d9f891435ecd0ee5c7c31632226df06955db30a64a9a51ad0a",
+    "installer/Setup.cs": "9999a48ab9095e9ec780957ddbb2c1a1cddb7a8abb8127ce3d3c06814688d95b",
     "LICENSE": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
     "plugins/ag_tech_tooling/__init__.py": "c01dbbf9945419eff6a48a2c5e12d8e53f48e82e54e55a8d3008266734ac027a",
     "plugins/ag_tech_tooling/agtech_client.svg": "6d3432ab7a4b1a583d82e2af5d4c86c2dfa4ffb546391e370dc8ee9ca3da51e6",
@@ -52,7 +52,7 @@
     "scripts/install-plugin.ps1": "a060b16403e2748dec7e71e56cc2daa7efbee88551ae6439f00f66adcd43bac8",
     "scripts/launch-qgis.ps1": "1ab558a6daa37c6a0e4a7999f54074e8d21676c64cf5e5150b37b7429f6737dc",
     "tools/build_plugin.py": "ec529dd6c320f1b18cd0a92fd883a7d64aad7e767349f6f7c14b01168655b5d4",
-    "tools/build_windows_installer.py": "39450d41942fb504bce5b31edff4667084792be360abeb487758fa84d1b4625d",
+    "tools/build_windows_installer.py": "a116c71ba311c2607902f62d5efb4b87521426be9a32a3cefe5f3ca0640fc002",
     "tools/check_plugin.py": "a544e21a18e7773733e1398fc2cfcedb231f27057af52d960c266a4c72be3d14",
     "tools/data_in_test.py": "00db503a495fc84612b9d10e3377af99c775a2c4d04f2d53f2271fb6551f6e63",
     "tools/deere_preview.py": "ab0264852f6053439b7f7026306fb8ca0440988a50376bc95bd8847748e2b216",
@@ -67,5 +67,7 @@
     "tools/package_test.py": "51704226574e44a4e38d408dc91f2dfac421de9a523df9478e80a7b794964502",
     "tools/smoke_test.py": "95a95e4bf14d5f450d06d381c11ab42ee8493ca28c934f5d1c8757410cdbebf1",
     "tools/updates_test.py": "0c2efb045e6f4fe9a0a3b2116d16715e716914f8df6c3b2963e8bf4bb16a5220"
-  }
+  },
+  "sourceSnapshotBase": "C:\\Users\\Michael\\Documents\\Projects\\repos\\ag-tech-tooling\\dist\\windows\\20261015T002236Z\\source",
+  "pluginValidationReusedFrom": "C:\\Users\\Michael\\Documents\\Projects\\repos\\ag-tech-tooling\\dist\\windows\\20261015T002236Z"
 }

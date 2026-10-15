@@ -28,6 +28,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--qgis-root", type=Path, default=Path(r"C:\Program Files\QGIS 3.44.14"))
     parser.add_argument("--msi", type=Path, default=ROOT / "dist/vendor" / QGIS_FILE)
+    parser.add_argument("--validation-from", type=Path, help="Reuse successful plugin checks only when every input except this builder and Setup.cs is byte-identical")
+    parser.add_argument("--source-from", type=Path, help="Use a recorded source snapshot instead of the moving shared checkout; refresh only builder and launcher")
     args = parser.parse_args()
     if sha(args.msi) != QGIS_SHA256:
         raise ValueError("Official QGIS installer SHA-256 does not match the pinned upstream manifest")
@@ -35,33 +37,60 @@ def main():
     build = ROOT / "dist/windows" / stamp
     snapshot = build / "source"
     snapshot.mkdir(parents=True)
-    roots = [ROOT / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
+    source_root = args.source_from.resolve() if args.source_from else ROOT
+    if args.source_from and not (source_root / "SOURCE-SNAPSHOT.json").is_file():
+        raise ValueError("--source-from requires a recorded source snapshot")
+    roots = [source_root / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
     sources = sorted([p for directory in roots for p in directory.rglob("*")
                       if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
-                     + [ROOT / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore")])
-    before = {str(p.relative_to(ROOT)).replace("\\", "/"): sha(p) for p in sources}
+                     + [source_root / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore")])
+    before = {str(p.relative_to(source_root)).replace("\\", "/"): sha(p) for p in sources}
     for source in sources:
         if source.is_symlink():
             raise ValueError(f"Linked source: {source}")
-        target = snapshot / source.relative_to(ROOT)
+        target = snapshot / source.relative_to(source_root)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
     copied = {name: sha(snapshot / name) for name in before}
-    after = {name: sha(ROOT / name) for name in before}
+    after = {name: sha(source_root / name) for name in before}
     if before != copied or before != after:
         raise RuntimeError("Source changed during capture. Retry; nothing was packaged.")
+    if args.source_from:
+        for name in ("installer/Setup.cs", "tools/build_windows_installer.py"):
+            shutil.copy2(ROOT / name, snapshot / name)
+            copied[name] = sha(snapshot / name)
     git = shutil.which("git") or str(Path(os.environ["LOCALAPPDATA"]) / "Programs/Git/cmd/git.exe")
     record = {"capturedUtc": stamp, "gitHead": subprocess.check_output([git, "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
               "workingTreeIncluded": True, "sourceFiles": copied}
+    if args.source_from:
+        record["sourceSnapshotBase"] = str(source_root)
     (snapshot / "SOURCE-SNAPSHOT.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
     # All checks run against the frozen files, including the extracted plugin package.
     environment = {key: value for key, value in os.environ.items() if key.upper() != "PSMODULEPATH"}
-    result = subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(snapshot / "scripts/check.ps1"),
-                             "-QgisRoot", str(args.qgis_root)], capture_output=True, text=True, env=environment)
-    (build / "validation.log").write_text(result.stdout + result.stderr, encoding="utf-8")
-    print(result.stdout, flush=True)
-    if result.returncode:
-        raise RuntimeError(f"Snapshot validation failed. See {build / 'validation.log'}")
+    if args.validation_from:
+        prior = args.validation_from.resolve()
+        prior_record = json.loads((prior / "source/SOURCE-SNAPSHOT.json").read_text(encoding="utf-8"))
+        exclude = {"installer/Setup.cs", "tools/build_windows_installer.py"}
+        relevant = lambda files: {name: digest for name, digest in files.items() if name not in exclude}
+        if relevant(prior_record["sourceFiles"]) != relevant(copied):
+            raise ValueError("Validation reuse refused: plugin or test inputs changed. Run without --validation-from.")
+        prior_log = (prior / "validation.log").read_text(encoding="utf-8")
+        if "Extracted plugin ZIP passed lifecycle and farm workflow checks" not in prior_log:
+            raise ValueError("Previous plugin checks were not successful")
+        record["pluginValidationReusedFrom"] = str(prior)
+        (snapshot / "SOURCE-SNAPSHOT.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
+        (build / "validation.log").write_text("Identical plugin/test inputs; validation reused from " + str(prior) + "\n" + prior_log, encoding="utf-8")
+        (snapshot / "dist").mkdir()
+        for package in (prior / "source/dist").glob("ag_tech_tooling-*.zip"):
+            shutil.copy2(package, snapshot / "dist" / package.name)
+        print("Reused successful source/extracted-plugin checks: all plugin and test inputs are byte-identical", flush=True)
+    else:
+        result = subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(snapshot / "scripts/check.ps1"),
+                                 "-QgisRoot", str(args.qgis_root)], capture_output=True, text=True, env=environment)
+        (build / "validation.log").write_text(result.stdout + result.stderr, encoding="utf-8")
+        print(result.stdout, flush=True)
+        if result.returncode:
+            raise RuntimeError(f"Snapshot validation failed. See {build / 'validation.log'}")
     meta = configparser.ConfigParser()
     meta.read(snapshot / "plugins/ag_tech_tooling/metadata.txt", encoding="utf-8")
     version = meta["general"]["version"]

@@ -6,7 +6,8 @@ class Setup {
     static int Main() {
         try {
             string root = AppDomain.CurrentDomain.BaseDirectory;
-            var info = new ProcessStartInfo("powershell.exe", "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(root, "Install.ps1") + "\"");
+            string powershell = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"WindowsPowerShell\v1.0\powershell.exe");
+            var info = new ProcessStartInfo(powershell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(root, "Install.ps1") + "\"");
             info.UseShellExecute = false;
             var process = Process.Start(info);
             process.WaitForExit();
