@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+*.qgz
+*.qgs
+*.gpkg
+*.tif
+*.tiff
+*.las
+*.laz
+.dev-profiles/
