@@ -268,3 +268,16 @@ Define and implement the first real farming workflow. Add its operating instruct
 - Added Windows offline setup launcher, hash verification, official QGIS MSI payload, staged per-user plugin installation with recovery backups, and in-plugin browser/private-release plus native QGIS ZIP update runner. No credentials are bundled. Version 0.8.1 identifies this installer/updater build.
 - Official QGIS 3.44.14 MSI downloaded from QGIS: 583,143,424 bytes; SHA-256 matches pinned upstream WinGet manifest; Authenticode reports Valid with THE OPEN SOURCE GEOSPATIAL FOUNDATION signer.
 - Source/extracted-package validation, bundle path, cleanup evidence and publication result will be recorded after the snapshot build. Clean-machine MSI wizard/UAC/reboot and live private-release update acceptance are not yet verified. Existing open QGIS session is not restarted or modified by packaging.
+
+
+## Published Ag-GIS 0.8.1 — 15 October 2026
+
+Private release: https://github.com/JamRov/Ag-GIS/releases/tag/v0.8.1 . Download Ag-GIS-0.8.1-Windows-20261015T003810Z.zip (583,391,412 bytes), extract ALL files, save/close QGIS, then run Setup.exe as the normal user. SHA-256: `0d74f1f65960ba441aed03790952e0eb313baba6443ec981c38acb663cfa5157`.
+
+The in-plugin Check for Updates runner opens the private releases/latest URL in the user's signed-in browser, then delegates ZIP installation to QGIS. Private repository access is required. Existing farm paths and the internal ag_tech_tooling ID remain stable after the Ag-GIS rename.
+
+Source and extracted-package PyQGIS tests passed on the recorded source. Windows assembly run https://github.com/JamRov/Ag-GIS/actions/runs/38661044397 verified the identical source/plugin package, official QGIS MSI signature/checksum and offline bundle before uploading. Release tag v0.8.1 points to tested source commit 3f1f4ed000b5b5af9d01f308f7238f74494fd83d. Packaging reused those exact-input plugin tests; QGIS was not installed on the hosted runner.
+
+Downloaded the published plugin and full installer through the current authorized browser account: plugin bytes, installer SHA-256/CRC, all payload hashes, VerifyOnly and the compiled launcher's open-QGIS refusal passed. Clean-machine Windows MSI wizard/UAC/reboot and another authorized user's install/update remain pending. The launcher is unsigned.
+
+Local published archive: `dist/windows/Ag-GIS-0.8.1-Windows-20261015T003810Z.zip`; extracted launcher: `dist/windows/published-0.8.1/Ag-GIS-0.8.1-Windows/Setup.exe`. Fifteen obsolete generated files were removed (about 1.75 GB); source snapshots, recovery backups and farm data were retained. Exact cleanup paths/hashes and published-download evidence are in local ignored dist/windows/cleanup.json and published-verification.json. Newer in-progress feature edits remain in the shared local checkout and are excluded from this tested release.
