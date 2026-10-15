@@ -1,0 +1,21 @@
+name: Feedback triage
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, reopened, closed, labeled]
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: feedback-${{ github.event.issue.number || 'setup' }}
+  cancel-in-progress: false
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v9
+        with:
+          script: |
+            const {manage} = require('./.github/scripts/feedback-triage.cjs');
+            await manage({github, context, core});
