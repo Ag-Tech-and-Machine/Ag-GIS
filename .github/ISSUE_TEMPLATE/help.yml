@@ -1,0 +1,22 @@
+name: I need help
+description: Tell us where you got stuck or which step is confusing.
+title: "[Help] "
+labels: [question, feedback]
+body:
+  - type: markdown
+    attributes:
+      value: "Describe the job and the step where you got stuck. We can help and use your report to improve the tool and instructions. Do not include private farm data or account details."
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: Paste your Ag-GIS feedback report, or describe what you tried and what help you need.
+    validations:
+      required: true
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Review before sharing
+      options:
+        - label: I have removed private farm information, passwords and account details from this report and any attachments.
+          required: true
