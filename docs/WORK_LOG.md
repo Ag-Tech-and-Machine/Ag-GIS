@@ -1,5 +1,20 @@
 # Work log and verification status
 
+## 19 October 2026 — Farmer-facing repository presentation
+
+- Reworked README with original Ag-GIS banner artwork, clear entry links, farming
+  benefits and an explicit experimental-status notice. Kept technical attribution.
+- Added a real local-development desktop screenshot of four generated in-memory
+  paddocks, captured in a scratch-only QGIS profile without customer data or an
+  online basemap. This is not a claim of parity with an older published installer.
+- Added the Qt artwork builder and REPOSITORY_PRESENTATION.md; updated installation
+  and tooling notes. No runtime features, installer or release changes included.
+- Checks passed: real QGIS scratch-profile capture (exit 0), visual review,
+  development repository checks, publication README links/images (14 targets),
+  builder syntax, SVG XML, PNG dimensions and Windows-EOL-aware diff whitespace.
+  No runtime change or repeated full plugin/installer acceptance is claimed.
+  GitHub settings and social-preview upload remain distinct from committed artwork.
+
 ## 15 October 2026 — Semantic icons in the left browser, 0.8.0
 
 - Added farm-browser presentation over the existing QgsLayerTreeView, using the same Organisation/Client/Farm/Field/Season/Crop icons as Manage Data and distinct Whole Field/Plans/Operations/Results icons. Increased icon/row sizes, reduced indentation and added type/name tooltips. The panel is titled Farm Data for farm workspaces.

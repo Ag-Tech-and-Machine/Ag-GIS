@@ -1,5 +1,13 @@
 # Installation and setup
 
+## Repository presentation — 19 October 2026
+
+The README now separates the development screenshot from experimental downloads.
+Choose a release and read its own installation notes; new repository artwork does
+not update an installed application or rebuild an installer. See
+[repository presentation](REPOSITORY_PRESENTATION.md) for asset provenance and
+rebuild/recovery steps. No new installation dependency is introduced.
+
 Last updated: 15 October 2026.
 
 ## Tested workstation
