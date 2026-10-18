@@ -1,27 +1,51 @@
-# Ag-GIS
+![Ag-GIS — Farming in view. Your farm maps. Your data. Your control. Built on open source tools.](assets/brand/ag-gis-banner.png)
 
-Farmer-friendly tools powered by QGIS to simplify agricultural mapping and data workflows. People should own and control their data, understand what the software does, and be able to help improve it.
+<p align="center">
+  <a href="https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases"><strong>Experimental downloads</strong></a>
+  &nbsp; · &nbsp;
+  <a href="docs/INSTALL.md">Getting started</a>
+  &nbsp; · &nbsp;
+  <a href="docs/USER_GUIDE.md">User guide</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/JamRov/Ag-GIS-Feedback/issues">Feedback &amp; ideas</a>
+</p>
 
-This repository and its releases are public under **GPL-2.0-or-later**. Forks and pull requests are welcome; maintainers review proposed changes.
+## Farm maps, without the runaround.
 
-## Downloads and current status
+Ag-GIS brings farm maps and data into practical desktop workflows: organise farm information, see it on a map and spend less time on repetitive GIS work.
 
-Get installers, plugin ZIPs, exact source and verification evidence from [Releases](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases). The latest published installer is **v0.8.1**, an experimental Windows distribution using QGIS 3.44.14 LTR. Extract the complete Windows bundle before running Setup.exe. Existing QGIS users can install the plugin ZIP with Plugins → Manage and Install Plugins → Install from ZIP.
+**Farming in view. Built on open source tools.**
 
-Read release notes for limitations, including the unsigned launcher and pending clean-machine acceptance checks. Local development can be ahead of published source and installers; public visibility does not publish every in-progress feature.
+> **In development — not release-ready.** Downloads are experimental snapshots. Read the release notes before installing; the current development interface may be ahead of a published installer.
 
-Cloud backups, mobile access, team synchronisation and hosted workspaces are future candidates. No paid cloud service has launched.
+![Ag-GIS development desktop showing four synthetic paddocks and the Farm Data browser.](assets/brand/ag-gis-desktop.png)
 
-## Help improve Ag-GIS
+*A real development desktop with generated demonstration boundaries. No customer data or online imagery. This shows local development, not a promise that an older download has the same interface.*
 
-Report problems and ideas in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues), which remains separate so existing report links work. Code and documentation pull requests belong here.
+## A clearer place for farm information
 
-Use synthetic examples. Reports, pull requests and attachments are public: never include private farm/customer datasets or credentials. Discuss substantial changes first, read AGENTS.md, use native QGIS APIs, and include relevant tests and documentation. Submit only material you have the right to share under the project licence; contributors retain their copyright. Community input informs priorities without guaranteeing a feature or delivery date.
+**Keep the farm structure clear.** Organisation → Client → Farm → Field, with reusable Whole Field references separate from seasonal work. See the [farm data model](docs/FARM_DATA_MODEL.md) for what is implemented and what remains planned.
 
-## Development
+**Work from the map.** A simplified workspace brings farm tasks together while keeping the underlying mapping tools accessible. The [user guide](docs/USER_GUIDE.md) describes the workflows in each source snapshot.
 
-Read [AGENTS.md](AGENTS.md), [installation](docs/INSTALL.md), [tooling](docs/TOOLING.md), [user guide](docs/USER_GUIDE.md) and [work log](docs/WORK_LOG.md). Older documents describe the earlier private setup; the current owner is Ag-Tech-and-Machine and public downloads require no repository membership.
+**Keep control of your data.** Preserving originals, useful local operation and deliberate sharing guide the project. Optional online services are future candidates, not a requirement or a launched product.
 
-Use QGIS bundled Python/PyQGIS and run scripts/check.ps1 for source and extracted-package checks. Ordinary Python can run tools/check_plugin.py and tools/build_plugin.py for syntax/packaging, but does not replace PyQGIS integration testing. Keep datasets, local profiles and generated packages outside commits.
+## Try it, or help shape it
 
-Ag-GIS retains upstream credits and licences. It is a separate project, not an official QGIS distribution.
+**Trying Ag-GIS?** Start with the [installation guide](docs/INSTALL.md), choose an [experimental download](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) and use a copy of your data for evaluation. Extract the complete Windows bundle before running Setup.exe. Each release has its own source and verification limits.
+
+**Have a farming task we should simplify?** Share the task and a safe example in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Reports and attachments are public: never include private farm/customer data or credentials.
+
+**Want to contribute?** Fork this repository and propose a focused pull request. Start with [AGENTS.md](AGENTS.md) and the [tooling notes](docs/TOOLING.md). Maintainers review changes; ideas and votes inform priorities without guaranteeing a feature or delivery date.
+
+---
+
+### Development, foundations and credits
+
+The current desktop implementation uses QGIS/PyQGIS and its bundled tools. Ag-GIS is a separate project, built on open source tools, with upstream credits and licences retained and no implied endorsement. A broader toolkit is the direction, not a claim of other implemented integrations.
+
+Read the [installation](docs/INSTALL.md), [tooling](docs/TOOLING.md) and [work log](docs/WORK_LOG.md) for prerequisites and verification. Ordinary Python can run `tools/check_plugin.py` and `tools/build_plugin.py`; real PyQGIS checks use QGIS's bundled runtime through `scripts/check.ps1`.
+
+Cloud backup, mobile access, team synchronisation and hosted workspaces are future candidates. No paid cloud service has launched. Public source, local development and installed packages can differ.
+
+[GPL-2.0-or-later](LICENSE) · [Repository artwork and provenance](docs/REPOSITORY_PRESENTATION.md)
