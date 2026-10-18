@@ -1,5 +1,13 @@
 # Development and tooling
 
+## Repository artwork — 19 October 2026
+
+`tools/build_repository_artwork.py` uses QGIS's bundled Qt and Windows Segoe UI
+fonts to regenerate the outlined banner and PNG/social exports. It does not alter
+plugin or installer assets. Follow [repository presentation](REPOSITORY_PRESENTATION.md)
+for exact commands, screenshot privacy/provenance and remote read-back checks.
+GitHub About/topics/social-preview settings are separate from committed files.
+
 Last updated: 15 October 2026.
 
 ## What exists now
