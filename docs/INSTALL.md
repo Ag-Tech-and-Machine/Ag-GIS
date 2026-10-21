@@ -1,5 +1,13 @@
 # Installation and setup
 
+## Follow development and fixes — 21 October 2026
+
+The homepage now links to the [development plan & pipeline](DEVELOPMENT_PLAN.md).
+Use it to follow reported and confirmed issues, handovers and verification. A fix
+in source or a developer's local installation is not necessarily in your download;
+check the selected release's notes. This documentation update changes no plugin,
+installer, profile setting or installation prerequisite.
+
 ## Repository presentation — 19 October 2026
 
 The README now separates the development screenshot from experimental downloads.

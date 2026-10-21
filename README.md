@@ -8,6 +8,8 @@
   <a href="docs/USER_GUIDE.md">User guide</a>
   &nbsp; · &nbsp;
   <a href="https://github.com/JamRov/Ag-GIS-Feedback/issues">Feedback &amp; ideas</a>
+  &nbsp; · &nbsp;
+  <a href="docs/DEVELOPMENT_PLAN.md">Development plan &amp; pipeline</a>
 </p>
 
 ## Farm maps, without the runaround.
@@ -37,6 +39,8 @@ Ag-GIS brings farm maps and data into practical desktop workflows: organise farm
 **Have a farming task we should simplify?** Share the task and a safe example in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Reports and attachments are public: never include private farm/customer data or credentials.
 
 **Want to contribute?** Fork this repository and propose a focused pull request. Start with [AGENTS.md](AGENTS.md) and the [tooling notes](docs/TOOLING.md). Maintainers review changes; ideas and votes inform priorities without guaranteeing a feature or delivery date.
+
+**What are we working towards?** Follow the [development plan & pipeline](docs/DEVELOPMENT_PLAN.md): our goals, reported versus confirmed problems, current priorities, developer handovers and the checks needed before a fix is called done. Confirmed bugs take priority over feature expansion.
 
 ---
 

@@ -1,5 +1,23 @@
 # Work log and verification status
 
+## 21 October 2026 — Public development plan and issue pipeline
+
+- Added a homepage navigation entry and DEVELOPMENT_PLAN.md covering goals,
+  reported/confirmed lanes, confirmed-bug-first priority, public issue views,
+  feedback-to-development handover, developer ownership and acceptance gates.
+- Seeded public-safe development issues #2 (reported independent field visibility),
+  #3 (outstanding normal combined acceptance) and #4 (confirmed tooling readback
+  blocker). Created/read back separate triage/type/blocker labels without replacing
+  existing basic status automation. No product fix or active worker is asserted.
+- The issue-list views are live; a separate GitHub Project board/timeline is not
+  configured. Confirmation and handovers remain maintainer responsibilities, not
+  a new autonomous monitoring or cross-repository synchronisation service.
+- Publication uses an isolated checkout of current public main; unrelated local
+  runtime edits, farm data and private operational records are excluded. This is
+  documentation/issue publication, not an application release or installation.
+- Check results and remote publication readback are recorded in the publication
+  receipt; no repeated PyQGIS/runtime/installer acceptance is claimed.
+
 ## 19 October 2026 — Farmer-facing repository presentation
 
 - Reworked README with original Ag-GIS banner artwork, clear entry links, farming

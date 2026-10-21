@@ -1,5 +1,14 @@
 # Development and tooling
 
+## Development plan and issue handovers — 21 October 2026
+
+Use the [development plan & pipeline](DEVELOPMENT_PLAN.md) for public issue views,
+reported-versus-confirmed triage, priority rules and the handover checklist. Read
+the issue's latest evidence before claiming work; preserve one implementation
+owner and distinguish source tests, delivered builds and normal-session acceptance.
+The live views use Issues and labels; a separate GitHub Project board/timeline is
+not configured by this documentation change. No new runtime dependency is added.
+
 ## Repository artwork — 19 October 2026
 
 `tools/build_repository_artwork.py` uses QGIS's bundled Qt and Windows Segoe UI
