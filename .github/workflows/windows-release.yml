@@ -1,0 +1,102 @@
+name: Assemble verified Windows installer
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: Existing draft release ID
+        required: true
+        default: '413297272'
+      source_commit:
+        description: Immutable tested source commit
+        required: true
+        default: '3f1f4ed000b5b5af9d01f308f7238f74494fd83d'
+permissions:
+  contents: write
+concurrency:
+  group: installer-release-${{ inputs.release_id }}
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      RELEASE_ID: ${{ inputs.release_id }}
+    steps:
+      - name: Preserve source bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_commit }}
+          persist-credentials: false
+      - name: Read validated plugin and test evidence from the draft
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const release_id = Number(process.env.RELEASE_ID);
+            if (!Number.isSafeInteger(release_id) || release_id <= 0) throw new Error('Invalid release ID');
+            const result = await github.rest.repos.getRelease({...context.repo, release_id});
+            if (!result.data.draft) throw new Error('Expected an unpublished draft');
+            fs.mkdirSync('dist/cloud-validation/source/dist', {recursive:true});
+            for (const name of ['validation.log', 'ag_tech_tooling-0.8.1.zip']) {
+              const asset = result.data.assets.find(a => a.name === name && a.state === 'uploaded');
+              if (!asset) throw new Error('Missing validated asset: ' + name);
+              const response = await github.rest.repos.getReleaseAsset({...context.repo, asset_id:asset.id, headers:{accept:'application/octet-stream'}});
+              const target = name.endsWith('.zip') ? path.join('dist/cloud-validation/source/dist', name) : path.join('dist/cloud-validation', name);
+              fs.writeFileSync(target, Buffer.from(response.data));
+            }
+      - name: Reconstruct and verify the tested snapshot
+        shell: pwsh
+        run: |
+          @'
+          from pathlib import Path
+          import hashlib,json,shutil
+          from zipfile import ZipFile
+          root=Path.cwd()
+          record=json.loads((root/'SOURCE-SNAPSHOT.json').read_text(encoding='utf-8'))
+          target=root/'dist/cloud-validation/source'
+          for name,digest in record['sourceFiles'].items():
+              source=root/name
+              if hashlib.sha256(source.read_bytes()).hexdigest()!=digest:
+                  raise ValueError('Source hash mismatch: '+name)
+              destination=target/name
+              destination.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copy2(source,destination)
+          shutil.copy2(root/'SOURCE-SNAPSHOT.json',target/'SOURCE-SNAPSHOT.json')
+          with ZipFile(target/'dist/ag_tech_tooling-0.8.1.zip') as archive:
+              expected={'ag_tech_tooling/'+p.name:p.read_bytes() for p in (target/'plugins/ag_tech_tooling').iterdir() if p.is_file() and (p.suffix in {'.py','.txt','.svg'} or p.name=='LICENSE')}
+              expected['ag_tech_tooling/USER_GUIDE.txt']=(target/'docs/USER_GUIDE.md').read_bytes()
+              assert set(archive.namelist())==set(expected)
+              assert all(archive.read(name)==data for name,data in expected.items())
+          print('All recorded source hashes and all plugin package entries match the tested snapshot.')
+          '@ | python -
+          if($LASTEXITCODE -ne 0){throw 'Snapshot reconstruction failed'}
+      - name: Download official pinned QGIS MSI
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist/vendor | Out-Null
+          curl.exe --fail --location --retry 3 --output dist/vendor/QGIS-OSGeo4W-3.44.14-1.msi https://download.qgis.org/downloads/QGIS-OSGeo4W-3.44.14-1.msi
+          if($LASTEXITCODE -ne 0){throw 'QGIS download failed'}
+          $signature=Get-AuthenticodeSignature -LiteralPath dist/vendor/QGIS-OSGeo4W-3.44.14-1.msi
+          if($signature.Status -ne 'Valid'){throw 'Official MSI signature is not valid'}
+      - name: Assemble and verify offline installer
+        shell: pwsh
+        run: |
+          python tools/build_windows_installer.py --source-from dist/cloud-validation/source --validation-from dist/cloud-validation
+          if($LASTEXITCODE -ne 0){throw 'Installer assembly failed'}
+      - name: Attach installer and checksum to the draft
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const release_id=Number(process.env.RELEASE_ID);
+            const filename=fs.readFileSync('dist/windows/LATEST.txt','utf8').trim();
+            for(const file of [filename,filename+'.sha256']) {
+              const bytes=fs.readFileSync(file);
+              const asset=await github.rest.repos.uploadReleaseAsset({...context.repo,release_id,name:path.basename(file),data:bytes,headers:{'content-type':'application/octet-stream','content-length':bytes.length},request:{timeout:600000}});
+              if(asset.data.size!==bytes.length || asset.data.state!=='uploaded') throw new Error('Uploaded asset verification failed');
+              core.info('Verified release asset: '+asset.data.name+' ('+asset.data.size+' bytes)');
+            }

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Save or email a report without GitHub
+    url: https://github.com/JamRov/Ag-GIS-Feedback/blob/main/docs/FEEDBACK.md
+    about: Use Ag-GIS Feedback to save/copy a report or open an email draft. No GitHub account is needed for these options.
