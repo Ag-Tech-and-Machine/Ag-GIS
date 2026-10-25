@@ -181,7 +181,7 @@ saving retains earlier completed imports; closing before import adds none.
 ## Create a project
 
 1. Click New Project. No setup form is required. Finish layer edits first and respond to any native Save/Discard/Cancel prompt for the current map. Cancel creates no new workspace.
-2. The plugin creates My Farm Data under your system Documents → Ag Tech Tooling → Projects and opens its map. On this machine the parent is C:\Users\Michael\Documents\Ag Tech Tooling\Projects. Existing folders are preserved: subsequent projects use My Farm Data 2, My Farm Data 3 and so on.
+2. The plugin creates My Farm Data under your system Documents → Ag Tech Tooling → Projects and opens its map. Existing folders are preserved: subsequent projects use My Farm Data 2, My Farm Data 3 and so on.
 3. In Layers, expand Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1. Whole Field contains native Boundaries, Guidance Lines and Infrastructure views. Seasons contains Season 1 with Plans, Operations and Results branches. These are starter names; no year, crop or geometry is invented.
 4. Click Manage Data to rename the starter records and add further organisations, clients, farms, fields, seasons and crops as needed. All clients/farms/fields live within this workspace's GeoPackage; creating another workspace is optional.
 5. Select a field or one of its branches in Layers to browse without changing other visibility checks. For the shared native reference editing view use Manage Data → Show Field on Map explicitly. Short labels stay at each separate hierarchy level.
