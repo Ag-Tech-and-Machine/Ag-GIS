@@ -4,7 +4,7 @@
 
 Canonical gateway/child reconciliation, journal integrity and sole fd20 claim
 preceded ONLY missing checkbox-context execution. Immutable e6f2059a,57 payload
-entries/61 frozen inputs. Branded warm27656/cold21456 exit0/wait0, empty stderr,
+entries/61 frozen inputs. Branded [session ID] exit0/wait0, empty stderr,
 passed/no errors. Actual mouse and Space checkbox toggles with name-selection zoom
 on preserve map extent and independent second-field visibility; deliberate dataset
 name navigation still zooms. Synthetic native reference database unchanged.
@@ -13,121 +13,14 @@ separate reference-fields mouse/shared-provider coverage remains distinct.
 
 Queued refresh, actual unload/full reload, clean native Save, same-process reopen,
 automatic cold startup and post-reopen navigation preserve full state. Native
-settings/auth/Qt/temp/origins isolated; actual foreground Simple View screenshots
-inspected with populated Farm Data and synthetic point. Seven original fixtures
-retained/hashed; read-only verifier passes full saved XML/state/input/payload checks.
-Local Qwen123/68-token review retained, generic risks not confirmed defects.
-Original five project/store/source hashes unchanged; normal22756 open/no inputs,
-test processes absent. No product/build/install/settings/farm/public changes.
-
-Evidence: `.aggis-agent/evidence/20261023-reopen-checkbox-context/RESULT.md`.
-All five inventoried full-controller cases now exact-artifact verified; no further
-missing case in this finite inventory. Continue not whole-task completion. Do not
-repeat cases or normal Cancel/My Farm Data startup delivery. Full Windows Setup/
-MSI/UAC and unassisted farmer acceptance remain separate/open. No new blocker or
-owner decision. INSTALL/TOOLING unchanged because setup/workflow unchanged.
-
-## 23 October 2026 — Exact-package shared reference field visibility
-
-After canonical gateway/child reconciliation and sole fd20 claim, ran ONLY missing
-reference-fields against immutable e6f2059a,57 payload entries/63 frozen inputs.
-Branded warm19980/cold28960 exit0/wait0, empty stderr, no exceptions. Synthetic
-native boundary/guidance feature IDs follow independent field/Whole Field/ancestor
-checks, all-fields-off/restoration and explicit Filter Data. Reference database
-unchanged during checkbox/filter operations; checkbox extent unchanged with zoom
-on, deliberate imported-layer name navigation still zooms. Queued refresh, actual
-unload/full reload, clean native Save, same-process reopen, automatic cold startup
-and post-reopen navigation preserve full tree/check/subset/filter/layer-ID state.
-
-Native settings/auth/Qt/temp/origins isolated; foreground HWND/screenshots and
-visible ancestors/Simple View verified. Captures show populated branded Farm Data
-and synthetic point, not visible shared geometry (deliberately hidden by then).
-Seven original fixtures retained/hashed; read-only verifier checks full saved XML,
-state equality, native results and unchanged inputs/payload. Local Qwen131/77-token
-review retained; generic risks not confirmed defects. Original five project/store
-and source runtime hashes unchanged; normal22756 open/no inputs, test PIDs absent.
-
-Evidence: `.aggis-agent/evidence/20261023-reopen-reference-fields/RESULT.md`.
-Four full-controller scenarios now exact-artifact verified; checkbox-context still
-historical-only/unreconciled. Continue not full acceptance; no product/build/install/
-normal settings/farm/public changes or new blocker. INSTALL/TOOLING unchanged because
-setup/workflow unchanged. Do not repeat passing cases or completed normal Cancel/
-My Farm Data startup; no broad aggregate/installer. Windows Setup/MSI/UAC and
-unassisted farmer acceptance separate/open; leave normal22756 unsaved/read-only.
-
-## 23 October 2026 — Exact-package independent field visibility
-
-After canonical admission/worker reconciliation and sole fd20 claim, ran ONLY
-independent-fields against immutable e6f2059a,57 exact payload entries/63 frozen
-inputs. Branded warm28680/cold9492 exit0/wait0, empty stderr, no exceptions.
-Two synthetic disk imports test independent field/organisation name navigation,
-native checkbox off/on, exact three shared-reference subsets, unchanged unrelated
-visibility/extent/branches, queued refresh, explicit Filter Data and hidden-layer
-navigation. Actual unload/full reload, clean Save, same-session reopen, separate
-automatic cold startup and post-reopen navigation preserve complete state.
-
-Actual foreground screenshots show branded Simple View/populated Farm Data;
-seven fixture files independently retained/hashed, saved XML hierarchy/expansion/
-checks/subsets/filter entries match. Initial extra XML verifier expected the wrong
-subsetstring element; corrected to native OGR datasource |subset= storage and
-passed without changing product/executed harness. Original failure retained.
-Local Qwen129/67-token review retained, generic suggestions not confirmed defects.
-Original five project/database files/source runtime unchanged; normal22756 remains
-open/no inputs; test processes absent. Read-only verifier passes. Inventory now
-matches All Fields/single-field-reload/independent-fields to exact package;
-reference-fields/checkbox-context remain unreconciled. No normal delivery repeated,
-source/build/install/public change or new blocker. No setup/workflow change, so
-INSTALL/TOOLING unchanged. Windows Setup/MSI/UAC and unassisted acceptance remain
-separate. Evidence: `.aggis-agent/evidence/20261023-reopen-independent-fields/RESULT.md`.
-
-
-## 23 October 2026 — Exact-package All Fields controller reopen
-
-After canonical cron/worker reconciliation and sole fd20 claim, ran only the
-missing exact-e6 All Fields scenario. Native branded warm21956/cold6044 exit0,
-empty stderr, no errors; complete tree/check/subset/filter/reference-placement/
-layer-ID equality across native clean Save, same-process reopen and separate
-automatic cold startup. Post-reopen navigation and actual foreground Simple View/
-visible Layers assertions pass. This case does not exercise plugin unload/reload
-or specific-field Filter Data UI; prior single-field-reload evidence covers those.
-All63 frozen inputs,57 package entries and original five project/database/source
-runtime hashes unchanged. Normal22756 open/no inputs; test processes absent.
-
-Original fixture files independently copied/hashed and screenshots inspected;
-read-only verifier passes. Initial freeze count61 stopped before native launch:
-two original observer snapshots added to complete63, failure receipt preserved.
-Initial mistaken Bot admission cron.status was denied without bypass; actual cron
-targets independently corroborated. Local Qwen97/76-token review retained, generic
-risk comments not promoted into defects. Scenario inventory records All Fields
-and single-field-reload exact-artifact passes; independent-fields,
-reference-fields and checkbox-context remain unreconciled for this artifact.
-
-Evidence: `.aggis-agent/evidence/20261023-reopen-all-fields/RESULT.md`.
-No product/build/install/normal settings/farm/public changes; INSTALL/TOOLING
-unchanged because setup/workflow unchanged. Coverage increment, not new delivery
-or full acceptance. Reconcile newer receipts before at most one remaining isolated
-case. No repeat completed normal Cancel/My Farm Data startup or identical install.
-Windows Setup/MSI/UAC and unassisted acceptance remain separate; normal22756 stays
-unsaved/open/read-only. No new external blocker or owner decision.
-
-## 23 October 2026 — Exact-package full-controller single-field reload
-
-After canonical admission/worker reconciliation and fd20 claim, audited70 historical
-full-controller receipts (none matched complete e6 package). Ran ONLY the missing
-single-field-reload scenario on frozen exact57 payload entries. Native branded
-warm8832/cold11288 exited0 with empty stderr, no errors, and full tree/check/subset/
-filter/reference placement/layer-ID equality through actual unload/full reload,
-native clean Save, same-process reopen and automatic cold startup. Actual desktop
-captures match fixture foreground; native visible Layers and Simple View asserted.
-All63 frozen inputs and original project's five QGZ/GeoPackage/source runtime hashes
-unchanged; normal22756 open/no inputs. Test processes absent, fixtures retained.
+[local path]'s five QGZ/GeoPackage/source runtime hashes
+unchanged; [session ID] open/no inputs. Test processes absent, fixtures retained.
 
 First observer-only attempt33332 exited0 but passed false after its post-init Qt
 backend relocation split settings and disabled Simple View on reload. Retained
 original error/screenshot/frozen inputs/fixture; not a product defect or accepted
 pass. Successor observes existing native Qt path inside exact scratch profile
-without relocation; original scenario conditions unchanged. Local Qwen102/77-token
-reviews retained, generic suggestions not promoted into defects. Read-only verifier
+without relocation; original scenario conditions unchanged. [internal tooling]. Read-only verifier
 passed; evidence `.aggis-agent/evidence/20261023-reopen-single-field-native-settings/RESULT.md`.
 
 Private evidence and this log only; no product/build/install/settings/real-farm/
@@ -142,142 +35,14 @@ case, preserve/chain/style or completed normal Cancel/My Farm Data default gates
 
 After canonical cron/worker reconciliation, claimed fd20 event204 and ran only the
 missing exact-e6f2059a navigation chain case. All57 payload entries match the ZIP;
-all63 frozen inputs remain unchanged. Native warm30684/cold28624 exit0 with empty
-stderr and isolated post-init settings/auth/Qt paths and frozen module origin.
-Native clicks expand single-child paths to the first fork without choosing its
-children; leaf/repeated-current clicks, unload/reload and same-process/cold reopen
-pass. Independent saved QGZ XML matches all21 named-group expansion values.
-Both test processes exited; normal22756 remains open with no inputs/restart.
-
-Evidence: `.aggis-agent/evidence/20261023-navigation-chain/RESULT.md`, executed
-harness/payload hashes, native logs, retained fixtures and independent verification.
-Actual local Qwen review125/80 tokens is retained but its unsupported inconsistency
-claim is rejected, not a confirmed defect. An initial cron.status call mistakenly
-targeted a bot admission and was denied; no bypass/retry of that target. Supported
-calls against actual cron targets succeeded. Maintainer intake has no pending item.
-
-This is offscreen native coverage, not a repair or new delivered behavior. Only
-this log and private evidence changed; no build/install/profile/farm/public writes.
-Exact preserve/chain and retained style now pass; five full-controller reopen
-scenarios remain outside this increment. Reconcile newer receipts before any next
-single missing isolated case. No repeat style/preserve/chain, broad aggregate or
-installer, identical reinstall or normal inputs/farm writes. NORMAL Cancel and
-original My Farm Data pinned default remain done; Windows Setup/MSI/UAC and
-unassisted acceptance stay separate/open.
-
-
-## 23 October 2026 — Standalone reconciliation and one navigation fixture
-
-Reconciled canonical admission/worker state before claiming fd20d387f2: this work
-admission was active, the independent watchdog settled, no registered child/source
-worker competed, and journal integrity was ok. Maintainer intake had no pending
-findings. Exact-e6f2059a retained package/branded style receipts remain historical
-passes (66/47 assertions). Eighteen navigation and seventy desktop process receipts
-were inventoried; their older payloads are not exact-e6 coverage or new failures.
-
-Ran only the missing exact-package navigation preserve fixture. All57 frozen plugin
-entries match immutable e6f2059a. Native warm24796 and separate cold700 exit0 with
-empty stderr: row navigation preserves other open branches, manual collapse survives
-refresh, visibility is unchanged, and unload/reload plus warm/cold reopen preserve
-expansion. Post-init settings/auth/Qt paths and loaded origin are asserted. Both
-processes use isolated scratch roots; cold shares only warm runtime-temp. Independent
-QGZ XML readback matches all21 named-group expansion values. Actual local Qwen3.5-9B
-review125 prompt/82 completion tokens is retained; its broad data-integrity wording
-is not an additional proven assertion. Two pre-native launch failures are retained
-(rendered interpreter path; bare interpreter lacked psutil). Existing initialized
-Hermes kernel executed the runner; no dependency installation or policy change.
-
-Evidence: `.aggis-agent/evidence/20261023-standalone-contracts/RESULT.md`, prelaunch
-hashes, exact harness/payload/source snapshots, native logs, retained QGZ/sidecar and
-independent verification. Offscreen native coverage only: no product repair/build,
-normal inputs/restart, farm writes, installation or public changes. Normal22756
-remains open. Requested normal Edit Style/actual Cancel and original My Farm Data
-startup already passed task7253 event197; older blocker text below is historical.
-
-Remaining: exact-e6 navigation chain and five full-controller reopen scenarios are
-not validated here. Reconcile newer receipts before another bounded case; do not
-repeat style/preserve or reinstall identical bytes. Aggregate native coverage, full
-Windows Setup/MSI/UAC and unassisted farmer acceptance remain separate/open. No
-broad aggregate or installer wrapper was executed.
-
-## 23 October 2026 — Native checkbox-paint coverage; no product change
-
-Unmodified `tools/background_checkbox_paint_test.py` passes current source and exact
-immutable e6f2059a extraction in bundled QGIS3.44.14. Native processes20308/15776
-exit0, empty stderr/exceptions;104 painted-indicator comparisons each cover initial
-state, twelve name switches, indicator Off and twelve indicator switches. Actual
-wrapped delegate/viewport dirty-region images are compared to native style crops
-without grab/repaint. Node/model checks agree; rendering disabled, zero requests,
-separate post-init settings/auth/Qt/temp roots and loaded origins asserted.
-
-Wrong-state native-paint negative control exits1 at expected2/model2 pixel assertion;
-first ineffective option-only mutation survived delegate reinitialization and is
-retained, not a product failure. Frozen inputs, source snapshot,208 row PNGs,
-negative actual/expected PNGs and actual Qwen3.5-9B reviews are private evidence:
-`.aggis-agent/evidence/20261023-checkbox-paint/RESULT.md`.
-
-This is offscreen native regression coverage, NOT a reproduced owner defect, fix,
-physical desktop or normal-session acceptance. No product edits/build/reinstall,
-normal-app input, public issue write or new live test process. Current normal31164
-and scratch23516 remain open untouched. The later direct-install receipt supersedes
-older preservation/install blockers: e6f2059a is already installed; only sustained
-supported normal Edit Style popup/dialog/actual Cancel readback remains open.
-Next finite action: read-only paired supported capture of normal31164/HWND20906276;
-proceed only if sustained readback works, otherwise stop without inputs and report
-the automation dependency. No identical install/input retries or endless regressions.
-
-## 23 October 2026 — Owner-directed normal installation actually executed
-
-- Reconciled canonical idle workers/admissions; sole deleg76c095af owns direct installation.
-  Supported7253 recover/claim after owner direction durably learned; fd20 idle, no regressions.
-- Fresh paired exact-window controls/native read-only console snapshots: both17900/26804
-  exact Farm.qgz, same10 layerIDs, no vector editable/modified/editbuffer state. Distinct
-  map/tree state preserved, never a winner/discard. Independent full workspace/NAS backups.
-- Real native foreground SaveAs to Recovery-17900-20261023-cda8aa.qgz and
-  Recovery-26804-20261023-cda8aa.qgz; filename/clean-state readback plus exact saved
-  layerIDs/vector renderer XML. Both native Close buttons; old processes absent; scratch23516
-  untouched. Original Farm.qgz/farm.gpkg full hashes still unchanged after restart.
-- Full rollback133 original files independently verified, after-close settings refreshed:
-  default/aggis-local-update-backups/20261023-0606-cda8aa. Separate new QGZ/post-save
-  store copies; NAS URI retained with copied shapefile family and explicit recovery mapping.
-- Inspected supported installer/install_profile.py through QGIS3.44.14 Python exit0.
-  Immutable e6f2059a58087d66d1bef9e6340dbab362c7d4820412f86d29aad34b261ced82
-  ALL57 files match immediately and after normal shortcut launch; browser c4d91ff1.
-- Normal PID31164/HWND20906276 automatically restored17900 recovery QGZ/same10 IDs.
-  Strict read-only observer confirms normal loaded plugin/browser origins/hash; actual
-  Simple View, populated Layers and farm imagery screenshots retained. This is delivered
-  normal installation, not another isolated regression or version-label inference.
-- Final normal Edit Style popup/Cancel acceptance remains OPEN: native extension UIA
-  invocation timed out outcome unknown. Supported SOM/vision unavailable transport;
-  bounded current official-doc diagnosis and doctor exit1 demonstrate UIA enumeration
-  exceeded2000ms/provider may be hung. No subsequent app input/raw transport/policy change.
-  App open/dirty after startup; no discard. No full-control acceptance or product-failure claim.
-- Evidence `.aggis-agent/evidence/20261023-direct-install-cda8aa/RESULT.md` with full
-  manifests, native/model/disk receipts, actual screenshots, installation command/output
-  and remaining exact control dependency. No source feature edits/release/publication.
-
-## 23 October 2026 — Native localhost background rendering increment
-
-- Sole fd20d387f2 claim after canonical own admission/RPC/parent relation,
-  empty workers/delegations and journal integrity ok. No7253 recovery.
-- Frozen unmodified background_render_test.py source33604/package23756 native
-  QGIS3.44.14 final exits0/0, empty stderr and exceptions. Exact e6f2059a/runtime
-  unchanged; loaded origins and distinct post-init settings/auth/Qt/temp asserted.
-- Four final background pixels and membership, satellite zoom<=14, old-image
-  cover while slow World loads, rapid World/AU/Roads, Roads after900ms and Off
-  white canvas passed. Twelve unique Python assertion locations (not total
-  assertion count); predicate assertions cover wait states too. Localhost-only
-  request observer and durable canvas PNG/render checkpoints retained.
-- Initial global-path trace observer timed out before initialization receipt;
-  retained wrapper1/native exit uncollected. It later self-exited, native late
-  exceptions[]; never accepted. Cleanup safety assertion prevented termination.
-  First verifier's [] versus closed/null controller expectation corrected with
+all63 frozen inputs remain unchanged. Native [session ID] exit0 with empty
+stderr and isolated post-init [local path]'s [] versus closed/null controller expectation corrected with
   independent pre-close white/no-provider requirement; old verifier retained.
 - Actual configured Qwen3.5-9B review235prompt/102completion retained. No proposed
   product edits. This is offscreen native render/cancellation-state regression,
   not external imagery quality/licensing/socket-completion/branded/normal proof.
 - Evidence `.aggis-agent/evidence/20261023-background-render/RESULT.md`.
-  Normal17900/26804 and scratch23516 preserved; no normal inputs/Save/close,
+  [session ID]/26804 and scratch23516 preserved; no normal inputs/Save/close,
   install/runtime push/public write/config/provider/credential changes.
 - Continue, not complete. Next finite independent suite: freeze/run
   background_checkbox_paint_test.py source/exact-package, render disabled,
@@ -292,99 +57,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Sole fd20d387f2 claim after canonical workers/delegations empty, live parent
   cron.status/parent-subagent relation verified and journal integrity ok.
 - Frozen unmodified esri_background_test.py final source PID30728/package3240
-  exit0/0, empty stderr/exception arrays; distinct post-init settings/auth/Qt/temp
-  subroots and loaded origins asserted. Exact immutable e6f2059a unchanged.
-- Native catalogue/XYZ/zmax/attribution/settings option, v1 upgrade preserving
-  selection/layer IDs/custom-source/removed older provider, all-off/hidden parent,
-  native project write/read and deliberate option/group removal pass.
-- Initial PIDs27012/4316 exit1/1 preserved: initQgis overrides pre-init Qt path.
-  Only test bootstrap corrected by rebinding QSettings after init then asserting
-  exact root. No product defect/fix. Original harnesses/receipts retained.
-- Actual Qwen3.5-9B review268prompt/60completion retained. Reject its claim that
-  programmatic rejection is untested: dialog.reject runs, but physical Cancel
-  and rejected-signal assertions do not. No model-proposed product change.
-- Evidence `.aggis-agent/evidence/20261023-esri-background/RESULT.md` and read-only
-  verifier. API/offscreen compatibility, not imagery/licensing/branded/normal
-  acceptance. Temporary map cleaned up; frozen inputs/logs/origins retained.
-- Normal17900/26804 and scratch23516 preserved; no normal input/Save/close/install,
-  runtime push/public write or new live test app. Supported exact native project
-  paths plus distinct unsaved-state preservation still block safe delivery.
-  Next finite gap: source/exact-package localhost-only background_render_test.py
-  final-canvas/rapid-switch/cancellation checks. Broad aggregate/Windows Setup/
-  MSI/UAC/unassisted and normal combined style/tree gates remain open.
-
-## 23 October 2026 — Fresh native background selection regression
-
-- Sole claim fd20d387f2 after live worker/admission reconciliation and journal
-  integrity ok. Maintainer intake has no pending item; blocked7253 not recovered.
-- Snapshotted background_maps_test.py ran against source/exact-e6f2059a in two
-  QGIS3.44.14 bundled-Python processes: exits0/empty stderr; post-init distinct
-  settings/auth/Qt paths. Real QTest checkbox/name actions, exclusive/off/hidden
-  choices, preference/canvas membership, attribution, native project save/read,
-  catalogue migration, edited URL preservation and removal/restoration passed.
-- No product bug reproduced or repair needed. Offscreen/native evidence only:
-  rendering disabled, no painted tick/final pixels/online imagery/licensing proof;
-  settings rejection programmatic, not physical Cancel. Frozen inputs and logs:
-  `.aggis-agent/evidence/20261023-background-maps/RESULT.md`; verify.py exit0.
-- Actual local Qwen review197prompt/101completion retained; its broad GUI-success
-  claim narrowed to exercised assertions. Separate read-only backlog/control review
-  confirms exact native project paths and separate unsaved-state preservation are
-  prerequisites for conflict-free normal Save/delivery; no application inputs.
-- Normal17900/26804 still share real store; historical scratch23516 preserved.
-  Zero normal Save/close/install/runtime push/public writes; no new test process
-  remains. Product code and frozen candidates unchanged. Next executable action:
-  source/exact-package esri_background_test.py in distinct isolated roots. Full
-  aggregate/Windows/unassisted and normal tree/style acceptance remain open.
-
-## 23 October 2026 — Fresh native farmer presentation integration
-
-- Sole claimed task fd20d387f2; runtime workers/delegations empty, own cron admission
-  only, journal integrity ok. Existing blocked style delivery not recovered.
-- Fresh snapshotted farmer_view_test source/exact-e6f2059a runs: two bundled QGIS
-  processes exit0/empty stderr; post-init scratch settings/auth/Qt paths asserted.
-  Native lone-point diameter8px, protected styling, rename, transformed zoom,
-  real preference persistence/project reopen and unload assertions pass.
-- No product repair needed. Name/crop modal boundaries mocked/programmatic;
-  network preprocessing sends nothing. NOT branded/normal installed acceptance.
-- Actual local Qwen review155/89 retained; unsupported UI-acceptance claim and
-  misclassification of preference persistence rejected. Evidence:
-  `.aggis-agent/evidence/20261023-farmer-view/RESULT.md`, results and frozen inputs.
-- Normal17900/26804 share store; scratch23516 preserved, zero application inputs,
-  Save/close/install/runtime push/public write. Existing conflict-preservation gate
-  unchanged. Next independent test: inspect/run background_maps_test.py source and
-  exact package with fresh isolated roots; broad/Windows/unassisted gates open.
-
-## 23 October 2026 — Fresh native Farm Browser compatibility increment
-
-- Claimed existing reliability task fd20d387f2 after read-only runtime reconciliation:
-  no other worker/delegation/editor, only this cron admission; journal integrity ok.
-  Blocked normal style-delivery task7253b0171f was not recovered or overwritten.
-- Closed one previously unrun successor regression gap: snapshotted
-  tools/farm_browser_test.py ran through pinned QGIS3.44.14 against source and exact
-  e6f2059a extraction. Both processes exited0 with empty stderr and asserted
-  post-init settings/auth/Qt settings inside separate Hermes scratch directories.
-- Assertions exercise actual native checkbox off/on, rename editor commit,
-  model/selection identity, dock resize/layout recovery, semantic icons, unrelated
-  layers and original-delegate restoration/non-nested recreation. No product repair
-  was needed. Native API/offscreen evidence, NOT branded normal-session acceptance.
-- Evidence: .aggis-agent/evidence/20261023-browser-compat/results.json,
-  executed snapshots, per-run full input manifests, reconciliation.json and RESULT.md.
-  Actual local Qwen3.5-9B review127prompt/107completion retained; its suggestion that
-  fixtures shared real farm storage and its broad stable-build claim are rejected.
-- Read-only process handles still show two normal default-profile sessions sharing
-  the real store. Zero normal input, Save, close, install or runtime push; historical
-  dirty scratch session preserved. No public issue status transition or release.
-- Remaining: normal-session project-path/unsaved-state reconciliation before safe
-  delivery; next independent executable regression is source/extracted
-  tools/farmer_view_test.py with the same isolated bootstrap. Broad matrix, Windows
-  Setup and unassisted acceptance remain unclaimed.
-
-## 22 October 2026 — Default294 Edit Style construction/discovery repair
-
-- Reconciled canonical admissions, live processes, authoritative journal integrity
-  and sibling read-only scope before the supported sole claim
-  `session:20261022_184432_31648f:bounded-style-overflow`, task7253b0171f.
-  Parent canonical b56af08d is this delegation's owner, not a competing writer.
+  exit0/0, empty stderr/exception arrays; distinct post-init [local path]'s owner, not a competing writer.
 - Actual constructor RED retains QMenu.setToolButtonStyle AttributeError against
   broken13ee27f0 bytes. Separate frozen0994 RED reproduces Edit Style hidden and
   native extension disabled at294px. Final RED harnesses each native exit0/runner1;
@@ -421,7 +94,7 @@ the automation dependency. No identical install/input retries or endless regress
 - The earlier setFixedSize/noExtension/NoToolButton completion and rollback claims
   do NOT establish repair/acceptance. Normal installed farm_browser is still
   broken13ee27f0, unchanged; no normal app inputs/Save/restart/install/farm changes.
-  Normal17900/26804 and preexisting dirty scratch23516 preserved. No public writes,
+  [session ID]/26804 and preexisting dirty scratch23516 preserved. No public writes,
   release/push, auth or policy changes. Full check.ps1/package_test aggregate,
   full Windows Setup/MSI/UAC and unassisted acceptance remain unrun here.
 - Evidence `.aggis-agent/evidence/20261022-style-overflow/`; finishcontinue, NOT
@@ -440,8 +113,8 @@ the automation dependency. No identical install/input retries or endless regress
 - Immutable successor `0994fe2df9a267cff42e78e2961d79b8a3a54a5c2ea166b9769300740b20e608`,57entries, differs from frozen2ef only in simple_view.py; all ZIP/extracted/source bytes independently matched. Six fresh source/extracted native suites (smoke, operation style, durable dataset style) exit0 with post-init settings/auth isolation. Native RED/frozen wide-window RED retain exact Save-child assertion. Small-window overflow and late-registration timing failures remain harness receipts, not product fixes. Repository/plugin/build/feedback/diff checks pass.
 - Exact successor branded automatic-cold fixture run:34assertions, three real outer Cancel cycles including two after full reload, actual split-menu Reset, preserved source/raw values/geometry/import provenance and one visible Save Map button/action/projectSaved event. Cold and recovered Save child stays visible; native34100/launcher32308 exit0. Final QGZ reset size2 and fourth append-only style revision/final-QGZ binding independently read back. Actual desktop pixels inspected, no QWidget.grab visibility inference. Baseline4 and test-only queued derivative each have distinct34assertion/exit0 receipts, not extra source acceptance counts.
 - **Separate confirmed blocker:** at294px Layers width, Edit Style is explicitly overflow-hidden; native extension visible but disabled, no popup. At700px child is visible. No default-width fix claimed. No normal installation until relevant discoverability and fresh supported-control/conflict-free Save/complete rollback/full installed-byte/running-origin/visible acceptance prerequisites pass. QTest inside owned process is not external reliability or normal-installed proof.
-- Evidence `.aggis-agent/evidence/20261022-toolbar-lifecycle/verify.py --require-toolbar` exits0 for exact successor; baseline strict contract1; --require-full1 intentionally. Local Qwen3.5-9B actual156completion review retained; speculative dock-causation advice not adopted. Initial QEvent.Destroy/hidden-original-native-toolbar selection and QWidgetAction/defaultAction assumption failures retained; observed native Save/clean-close cleanup only. First runner inherited system TEMP; accepted subsequent fixtures explicitly use Hermes scratch. No failure silently replaced.
-- Normal17900/26804 and historical idle synthetic23516/HWND3804126 remain present and untouched; last-known dirty synthetic lacks a supported command channel, no forcekill/discard. All newly created native apps exited0. Finishcontinue, not complete. Remaining default-width discoverability repair and controlled normal delivery/acceptance; no broadening to auth, providers, release or policy changes.
+- Evidence `.aggis-agent/evidence/20261022-toolbar-lifecycle/verify.py --require-toolbar` exits0 for exact successor; baseline strict contract1; --require-full1 intentionally. [internal tooling].5-9B actual156completion review retained; speculative dock-causation advice not adopted. Initial QEvent.Destroy/hidden-original-native-toolbar selection and QWidgetAction/defaultAction assumption failures retained; observed native Save/clean-close cleanup only. First runner inherited system TEMP; accepted subsequent fixtures explicitly use Hermes scratch. No failure silently replaced.
+- [session ID]/26804 and historical idle synthetic23516/HWND3804126 remain present and untouched; last-known dirty synthetic lacks a supported command channel, no forcekill/discard. All newly created native apps exited0. Finishcontinue, not complete. Remaining default-width discoverability repair and controlled normal delivery/acceptance; no broadening to auth, providers, release or policy changes.
 
 
 ## 22 October 2026 — Branded Edit Style acceptance, bounded partial result
@@ -476,7 +149,7 @@ the automation dependency. No identical install/input retries or endless regress
   initially treated the preexisting non-runtime farm_browser.py.fixed as a ZIP
   entry; now explicitly distinguishes it and the two generated guide copies.
   Expected dataset-style negative-case warnings retained; no final stderr errors.
-- Actual local Qwen3.5-9B reviews ran; unsupported enum/API/raster suggestions
+- Actual [internal tooling].5-9B reviews ran; unsupported enum/API/raster suggestions
   rejected. Configured second local host failed before inference; no config changes.
 - Public issue5 body/comment6331444804 updated and exact readback verified OPEN,
   source/package-tested, branded/managed-save/normal delivery pending.
@@ -624,7 +297,7 @@ the automation dependency. No identical install/input retries or endless regress
   Repository/plugin/feedback/journal/diff checks and candidate build exit 0.
   All 57 immutable entries verified; ZIP SHA-256
   `e2b5346dc426a1bda950f07fbe712c694ee89aea8ce0fd503a9c4dea3c6f25b1`.
-- Actual local Qwen3.5-9B plan/code review retained (108/201 and 1223/253
+- Actual [internal tooling].5-9B plan/code review retained (108/201 and 1223/253
   prompt/completion tokens); rejected its inverse interpretation of the owner
   visibility requirement and unrelated unproven layout/import suggestions.
 - Correction to screen evidence: source/package independent-fields screenshots
@@ -662,7 +335,7 @@ the automation dependency. No identical install/input retries or endless regress
   all 57 installed full SHA-256 entries match unchanged e3e57b0e candidate; project
   and settings match the prior post-save preflight; native window remains visible
   with a clean title. These read-only assertions are not native Save acceptance.
-- Parallel actual local Qwen3.5-9B review: 86 prompt / 125 completion tokens,
+- Parallel actual [internal tooling].5-9B review: 86 prompt / 125 completion tokens,
   no private farm contents. Existing authenticated loopback route used after
   unauthenticated discovery returned 401; no credentials printed or configuration
   changed. Rejected its unsafe suggestion to save/filter/reload/close without
@@ -725,7 +398,7 @@ the automation dependency. No identical install/input retries or endless regress
   e3e57b0e5ae14938eb27e2e9286c1eabb9909f347b3f3f0a6dec3e19d2f57333.
   No runtime source edits, build, replacement or normal-session interaction.
   Normal PID 29356 remains open; no farm fixture or credential was touched.
-- Actual parallel local Qwen3.5-9B review: 2,776 prompt/386 completion tokens.
+- Actual parallel [internal tooling].5-9B review: 2,776 prompt/386 completion tokens.
   Rejected its assertion that isolated branded acceptance equals owner-session
   acceptance. These are distinct evidence levels. No runtime change inferred.
 - Plain `py` initially lacked psutil; retained this harness failure and reran with
@@ -758,7 +431,7 @@ the automation dependency. No identical install/input retries or endless regress
   first-layer reveal. The first guarded trial retained one expansion failure,
   independently separating native ancestor reveal from plugin filter changes.
   Native QGIS model, selection, save/restore and provider storage remain reused.
-- Actual independent local Qwen3.5-9B review ran in parallel (2,946 prompt/1,000
+- Actual independent [internal tooling].5-9B review ran in parallel (2,946 prompt/1,000
   completion tokens). Its assertion that sync_tree destroys/rebuilds existing
   nodes was rejected: source and live traces show existing stable nodes reused.
   No speculative local-model change was applied. No delegation or competing writer.
@@ -801,7 +474,7 @@ the automation dependency. No identical install/input retries or endless regress
   installed-module warm/cold preserve+chain processes pass. Scratch settings/auth
   paths asserted after initQgis; all passing native stderr empty. Retained initial
   wrapper static-binding error and superseded old-contract assertion failures.
-- Actual independent local Qwen3.5-9B inference ran read-only over source/tests:
+- Actual independent [internal tooling].5-9B inference ran read-only over source/tests:
   3,625 prompt tokens and 900 completion tokens. Its speculative ancestor/refresh
   warnings are not established regressions; no suggested blind guard was applied.
 - Verified all 57 rollback plugin files and settings before replacement; native
@@ -3623,29 +3296,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Created the Ag-GIS sidebar section and moved both chats into it; renamed the main chat to Ag-GIS — Interface and Farm Structure. This groups chats visually. Saved local Project registration remains pending because the available app tools do not expose its creation.
 - Updated the canonical installation, tooling, data-model and bundled user instructions. The data-import chat added Data In during integration; the combined tested/installed release is 0.7.0.
 - Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight Deere preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
-- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\Michael\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
-
-## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
-
-- Implemented Organisation → Client → Farm → Field, Season/Crop records and Whole Field/Seasons management grouping in GeoPackage schema 2, using native QGIS layers/writers/providers.
-- Added Manage Data to the top toolbar, with persistent add/rename, parent-aware controls and field selection. Added icons to input lines, dialog buttons and all tree rows, and larger 28-pixel toolbar icons. Bundled six semantic SVG icons with QGIS theme/fallback support.
-- Added native shared Boundaries/Guidance/Infrastructure layers filtered by field, retaining unrelated map data and stable workspace identities after move/reopen. Seasonal dataset, terrain, job and history tools remain future work; category rows do not represent implemented editors.
-- Added separate-copy schema 1 upgrades with confirmed Organisation/Client names, consistent SQLite database snapshot, native schema updates, validation, original-file preservation and failed-stage cleanup. Reserved table conflicts and existing/nested destinations are refused.
-- Foundation tests exercise persistence, duplicate names across clients, invalid parent rejection through a native provider, date validation, rename links, UI add/cancel, every row/button icon, native field filtering and move/reopen without duplicate layers. Copy-upgrade tests compare original file hashes and verify ID/supporting-file retention and failure cleanup.
-- Updated canonical/bundled setup and operating instructions. Syntax/metadata, source lifecycle/farm/hierarchy checks, ZIP build and the same workflows against the extracted ZIP all passed on QGIS 3.44.14. The expected invalid-parent test emits a provider rejection and is asserted as a passing protection check.
-- Installed 0.5.0 in the default profile, with prior plugin/settings backups. Actual QGIS GUI verification exercised New Project, Add Client/Farm/Field/Season/Crop dialogs, native Show Field and Save Map. Verified eight toolbar icons, 28-pixel sizing, all tree-row/button/input icons and Simple view. Captured and visually inspected the hierarchy and new-project dialog.
-- Live verification used a temporary workspace, cleared it and removed its test data afterward. QGIS remains open with an empty map. Existing user projects were not migrated or changed. The first live test needed a timing adjustment to wait for the management dialog after project creation; this affected the verification harness only.
-
-## 15 October 2026 — Four-level hierarchy confirmed
-
-- User selected Organisation → Client → Farm → Field from the outset, superseding the earlier three-level default and deferred Client suggestion.
-- Updated the model, developer rules and linked documentation: distinct Client entity, explicit parent relationships, same-name isolation, dependent selectors and confirmed ownership for migration. Whole Field/Seasons remains beneath Field.
-- This records the agreed design only. Plugin 0.4.0 and schema version 1 remain unchanged; no runtime controls, access-control system or migration were implemented.
-- Documentation diff check passed; unchanged runtime tests were not repeated.
-
-## 15 October 2026 — Whole Field and seasonal data
-
-- Recorded the user's direction to divide each field into Whole Field reference data and crop/season data.
+- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at [local path]'s direction to divide each field into Whole Field reference data and crop/season data.
 - Documented master guidance lines, boundaries, terrain and infrastructure under Whole Field; plans, operations, observations and results under Seasons. Proposed handling for multiple crops/cycles and revision references preserves history without copying fields annually.
 - Kept the toolbar/map-and-Layers interface priority. This is a model clarification only: installed plugin 0.4.0 and schema version 1 remain unchanged.
 - Documentation diff check passed; no unchanged runtime tests were repeated.
@@ -3751,7 +3402,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 ### Completed
 
-- Configured Git author Michael `<admin@agtechandmachine.com>` and default branch `main`.
+- Configured Git author Michael `<[user identity]>` and default branch `main`.
 - Created the local `ag-tech-tooling` repository and committed the starter.
 - Installed QGIS 3.44.14 LTR using WinGet; installer hash verification and installation succeeded.
 - Added source discovery through `QGIS_PLUGINPATH` and an isolated development profile launcher.
@@ -3900,34 +3551,7 @@ Follow-up: the user authorised cancelling the pending import. On inspection it h
 
 Live diagnosis refinement: the native contents widget was 464 x 896, while its QVBoxLayout remained 464 x 344 and the tree only 313 pixels tall. Calling the same layout refresh directly filled the tree to 865 pixels (896 minus the 31-pixel toolbar). Added a Paint-event fallback that repairs only mismatched geometry before drawing; resize/show alone did not reliably correct the live restored layout. The regression now deliberately stales geometry after resize processing and verifies repaint recovery. Source and extracted stable-package browser/lifecycle tests passed after this refinement. Concurrent work advanced the checkout to 0.9.0; preserved that metadata/source and patched only farm_browser.py into the previously validated 0.8.2 ZIP/default-profile installation. Did not install the unvalidated concurrent feature set. Final restart uses assertions without a manual layout refresh.
 
-Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: C:\Users\Michael\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
-
-## 15 October 2026 - Managed saving and filtering (0.9.0)
-
-- Data In now saves native vector copies into the existing GeoPackage and rasters
-  into managed Data/Rasters files; originals remain untouched. Completed imports
-  register field/type/source/hash/CRS/style/relative location in agtech_datasets.
-  Catalogue version 1 is additive; core schema stays 2. Heterogeneous vector import
-  tables preserve original attributes rather than inventing shared field schemas.
-- Complete GeoTIFFs copy losslessly with metadata/worldfile companions. Other safe
-  raster conversions use the native writer; bundled GDAL only preserves metadata
-  unsupported by the writer API. Unsafe/unreferenced conversions are refused.
-- Added compatible manual Type selectors, including for automatic field matches.
-  Added Filter Data for field/type/all-fields views, shared native reference queries,
-  checkbox preservation and read-only aggregate references. Field selection applies
-  the field filter. Source data is never clipped or changed by these view filters.
-- Added recovery from catalogue on workspace opening, relative paths, content-based
-  repeat-import checks, partial-copy cleanup, original-field identity preservation,
-  progress cancellation and automatic map save after completed imports.
-- Legacy source links migrate on re-import. Automatic farming-purpose detection,
-  unit mapping, seasonal filters, per-feature field splitting, derived processing
-  and Deere binary geometry decoding remain future work. See MANAGED_DATA.md.
-
-## 15 October 2026 — Published Ag-GIS 0.8.1 and verified downloads
-
-- Published private release `https://github.com/JamRov/Ag-GIS/releases/tag/v0.8.1`, pinned to tested source commit `3f1f4ed000b5b5af9d01f308f7238f74494fd83d`. The updater URL `/releases/latest` was opened through the signed-in browser and resolved to this release.
-- GitHub Windows assembly run `38661044397` completed successfully. The published offline ZIP is `Ag-GIS-0.8.1-Windows-20261015T003810Z.zip`, 583,391,412 bytes; SHA-256 `0d74f1f65960ba441aed03790952e0eb313baba6443ec981c38acb663cfa5157`.
-- Downloaded the published plugin and full installer using the signed-in browser. Plugin SHA-256 `80f99813051dd101dcf03617984eb758489b47bb8a04d1abdadefa508035b931` matches the tested package exactly. Full installer SHA-256 matches GitHub's published digest. Whole-archive CRC, every payload hash and Install.ps1 -VerifyOnly passed after downloading/extraction. The downloaded compiled launcher correctly refused the open QGIS session without changing its profile.
+Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: [local path]'s published digest. Whole-archive CRC, every payload hash and Install.ps1 -VerifyOnly passed after downloading/extraction. The downloaded compiled launcher correctly refused the open QGIS session without changing its profile.
 - Exact published archive is now at `dist/windows/Ag-GIS-0.8.1-Windows-20261015T003810Z.zip`, with adjacent checksum. Its extracted Setup.exe is under `dist/windows/published-0.8.1/Ag-GIS-0.8.1-Windows/`. `LATEST.txt` points to this published/download-verified build. Evidence: `dist/windows/published-verification.json`; visual proof: `dist/windows/Ag-GIS-published-release.jpg`. The earlier local build remains available as validation evidence.
 - Removed incomplete/superseded upload placeholders from the release draft before publication. No live incomplete installer is advertised. GitHub contains the offline ZIP/checksum, plugin ZIP, source archive and test/provenance evidence. Private-access testing was performed with the current authorized account; another user's access/install/update still needs acceptance testing.
 - Remaining limitations: no clean-Windows-machine MSI wizard/UAC/reboot test; the Ag-GIS launcher is unsigned. Existing farm data and live source edits were preserved. The shared checkout has later in-progress feature work beyond this tested release snapshot.
@@ -4232,7 +3856,7 @@ Remaining: isolated visible installed create/import/save/reopen journey, cancell
 ## 19 October 2026 — provider and interrupted-work recovery
 
 Repaired the failed Hermes Bot Chat route after its custom OpenAI API primary
-returned credit_balance_exhausted and its local Qwen fallback refused connections.
+returned credit_balance_exhausted and its [internal tooling].
 Used native revision-fenced session mutation to select the already authenticated
 openai-codex/gpt-6.1-sol route; aligned profile defaults and cleared the old custom
 endpoint/mode through Hermes config commands. Credentials were preserved, with

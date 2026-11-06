@@ -59,7 +59,7 @@ Without GitHub access or connectivity:
 
 1. Choose **Save report…** to save a Markdown file
 2. Choose **Copy report** to copy to clipboard
-3. Choose **Email draft…** to open your email app addressed to `admin@agtechandmachine.com`
+3. Choose **Email draft…** to open your email app addressed to `[user identity]`
 4. Paste the saved/copied text into your preferred method
 5. A maintainer can log it to the tracker
 
