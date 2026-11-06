@@ -46,7 +46,7 @@ def main():
     roots = [source_root / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
     sources = sorted([p for directory in roots for p in directory.rglob("*")
                       if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
-                     + [source_root / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore")])
+                     + [source_root / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore", "START_HERE.md")])
     before = {str(p.relative_to(source_root)).replace("\\", "/"): sha(p) for p in sources}
     for source in sources:
         if source.is_symlink():
