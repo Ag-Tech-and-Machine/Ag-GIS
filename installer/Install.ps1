@@ -20,10 +20,27 @@ $python=Join-Path $qgisRoot 'bin\python-qgis-ltr.bat'
 if(-not(Test-Path -LiteralPath $python)){
     $msi=Join-Path $PSScriptRoot $manifest.qgisFile
     $log=Join-Path $env:TEMP ('AgTech-QGIS-'+[guid]::NewGuid().ToString()+'.log')
-    Write-Output 'Installing QGIS. Follow its setup wizard; Windows may request administrator approval.'
-    $process=Start-Process msiexec.exe -ArgumentList @('/i',('"'+$msi+'"'),'/norestart','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
+    Write-Verbose "QGIS not found at $qgisRoot. Installing QGIS 3.44.14 silently (admin approval may be required)."
+    $process=Start-Process msiexec.exe -ArgumentList @('/i',('"'+$msi+'"'),'/qn','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
     if($process.ExitCode -eq 3010){throw "QGIS requires a restart. Restart Windows and run Setup.exe again. Log: $log"}
-    if($process.ExitCode -ne 0){throw "QGIS installation cancelled or failed ($($process.ExitCode)). Log: $log"}
+    if($process.ExitCode -ne 0){throw "QGIS installation failed with exit code $($process.ExitCode). Log: $log"}
+    Write-Verbose "QGIS installed successfully to $qgisRoot"
+}
+# Check QGIS version - must be exactly 3.44.14
+$versionFile=Join-Path $qgisRoot 'version'
+if(Test-Path -LiteralPath $versionFile){
+    $version=Get-Content -LiteralPath $versionFile
+    $expected='3.44.14-Solothurn'
+    if($version -ne $expected){
+        Write-Verbose "QGIS version mismatch: found '$version', expected '$expected'. Installing correct version."
+        # Reinstall the correct version
+        $process=Start-Process msiexec.exe -ArgumentList @('/i',('"'+$msi+'"'),'/qn','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
+        if($process.ExitCode -ne 0){throw "QGIS version fix failed with exit code $($process.ExitCode). Log: $log"}
+    }
+} else {
+    Write-Verbose "QGIS version file not found. Installing QGIS 3.44.14."
+    $process=Start-Process msiexec.exe -ArgumentList @('/i',('"'+$msi+'"'),'/qn','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
+    if($process.ExitCode -ne 0){throw "QGIS installation failed with exit code $($process.ExitCode). Log: $log"}
 }
 if(-not(Test-Path -LiteralPath $python)){throw 'QGIS Python was not found after setup. Repair QGIS and retry.'}
 & $python (Join-Path $PSScriptRoot 'install_profile.py') --package (Join-Path $PSScriptRoot $manifest.pluginFile) --profile $Profile

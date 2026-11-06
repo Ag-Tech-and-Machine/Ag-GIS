@@ -118,8 +118,8 @@ def main():
         f"Ag-GIS {version} offline Windows installer\nFarming in view. Built on open source tools.\n\n"
         "1. Extract ALL files to a local folder. Keep Setup.exe beside the other files.\n"
         "2. Save your map and close QGIS. Double-click Setup.exe as your normal user.\n"
-        "3. If QGIS 3.44.14 is missing, complete its official wizard and administrator prompt.\n"
-        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile.\n\n"
+        "3. If QGIS 3.44.14 is missing or has the wrong version, the installer will download and install it automatically (admin approval may be required).\n"
+        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile (QGIS was installed silently if needed).\n",
         "Other profile: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -Profile profile_name\n"
         "Verify without installing: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -VerifyOnly\n"
         "Recovery copies: %APPDATA%\\QGIS\\QGIS3\\profiles\\<profile>\\ag-tech-install-backups.\n"
