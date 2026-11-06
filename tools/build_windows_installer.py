@@ -54,6 +54,7 @@ def main():
         target = snapshot / source.relative_to(source_root)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
+        print(f"Copied: {source}")
     copied = {name: sha(snapshot / name) for name in before}
     after = {name: sha(source_root / name) for name in before}
     if before != copied or before != after:
@@ -102,24 +103,26 @@ def main():
     plugin_file = f"ag_tech_tooling-{version}.zip"
     shutil.copy2(snapshot / "dist" / plugin_file, bundle / plugin_file)
     shutil.copy2(args.msi, bundle / QGIS_FILE)
+    (bundle / "installer").mkdir(parents=True, exist_ok=True)
     for name in ("Install.ps1", "install_profile.py", "Setup.cs", "Launch.cs", "Ag-GIS.ico"):
-        shutil.copy2(snapshot / "installer" / name, bundle / name)
+        shutil.copy2(snapshot / "installer" / name, bundle / "installer" / name)
+    # Also copy icon to bundle root for Setup.exe and Ag-GIS.exe compilation
+    shutil.copy2(snapshot / "installer" / "Ag-GIS.ico", bundle / "Ag-GIS.ico")
     compiler = Path(r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe")
-    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", f"/win32icon:{bundle / 'Ag-GIS.ico'}", str(bundle / "Setup.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", f"/win32icon:{bundle / 'Ag-GIS.ico'}", str(bundle / "installer/Setup.cs")], check=True)
     subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll",
-                    f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
+                    f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "installer/Launch.cs")], check=True)
     shutil.copy2(snapshot / "LICENSE", bundle / "LICENSE.txt")
     shutil.copy2(snapshot / "SOURCE-SNAPSHOT.json", bundle / "SOURCE-SNAPSHOT.json")
     with ZipFile(bundle / "Ag-GIS-source.zip", "w", ZIP_DEFLATED) as archive:
         for name in copied:
             archive.write(snapshot / name, name)
         archive.write(snapshot / "SOURCE-SNAPSHOT.json", "SOURCE-SNAPSHOT.json")
-    (bundle / "README.txt").write_text(
-        f"Ag-GIS {version} offline Windows installer\nFarming in view. Built on open source tools.\n\n"
+    readme_content = (f"Ag-GIS {version} offline Windows installer\nFarming in view. Built on open source tools.\n\n"
         "1. Extract ALL files to a local folder. Keep Setup.exe beside the other files.\n"
         "2. Save your map and close QGIS. Double-click Setup.exe as your normal user.\n"
         "3. If QGIS 3.44.14 is missing or has the wrong version, the installer will download and install it automatically (admin approval may be required).\n"
-        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile (QGIS was installed silently if needed).\n",
+        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile (QGIS was installed silently if needed).\n"
         "Other profile: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -Profile profile_name\n"
         "Verify without installing: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -VerifyOnly\n"
         "Recovery copies: %APPDATA%\\QGIS\\QGIS3\\profiles\\<profile>\\ag-tech-install-backups.\n"
@@ -132,13 +135,30 @@ def main():
         "QGIS installer: https://download.qgis.org/downloads/" + QGIS_FILE + "\n"
         "QGIS project/source and bundled component licensing: https://qgis.org/ and https://github.com/qgis/QGIS/tree/final-3_44_14\n"
         "Ag-GIS GPL-2.0-or-later source is included in Ag-GIS-source.zip.\n"
-        "Validated on an existing QGIS workstation; clean-machine wizard/UAC checks remain pending.\n", encoding="utf-8")
+        "Validated on an existing QGIS workstation; clean-machine wizard/UAC checks remain pending.\n")
+    (bundle / "README.txt").write_text(readme_content, encoding="utf-8")
+    # Copy Ag-GIS-source.zip to installer folder so Install.ps1 can find it
+    shutil.copy2(bundle / "Ag-GIS-source.zip", bundle / "installer/Ag-GIS-source.zip")
+    # Copy compiled executables to installer folder so Install.ps1 can find them
+    shutil.copy2(bundle / "Setup.exe", bundle / "installer/Setup.exe")
+    shutil.copy2(bundle / "Ag-GIS.exe", bundle / "installer/Ag-GIS.exe")
+    # Copy plugin ZIP to installer folder so Install.ps1 can find it
+    shutil.copy2(bundle / plugin_file, bundle / f"installer/{plugin_file}")
+    # Copy remaining files to installer folder so Install.ps1 can find them
+    for name in ("LICENSE.txt", "README.txt"):
+        shutil.copy2(bundle / name, bundle / f"installer/{name}")
+    # Copy QGIS MSI to installer folder so Install.ps1 can find it
+    shutil.copy2(bundle / QGIS_FILE, bundle / f"installer/{QGIS_FILE}")
+    # Copy SOURCE-SNAPSHOT.json to installer folder so Install.ps1 can find it
+    shutil.copy2(snapshot / "SOURCE-SNAPSHOT.json", bundle / f"installer/SOURCE-SNAPSHOT.json")
     manifest = {"version": version, "qgisFile": QGIS_FILE, "pluginFile": plugin_file,
                 "qgisUrl": "https://download.qgis.org/downloads/" + QGIS_FILE,
                 "qgisHashSource": "https://github.com/microsoft/winget-pkgs/blob/master/manifests/o/OSGeo/QGIS_LTR/3.44.14/OSGeo.QGIS_LTR.installer.yaml",
-                "files": [{"path": p.name, "sha256": sha(p)} for p in sorted(bundle.iterdir())]}
+                "files": [{"path": p.name, "sha256": sha(p)} for p in sorted(bundle.iterdir()) if p.is_file()]}
     (bundle / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(bundle / "Install.ps1"), "-VerifyOnly"], check=True, env=environment)
+    # Copy manifest.json to installer folder so Install.ps1 can find it
+    shutil.copy2(bundle / "manifest.json", bundle / "installer/manifest.json")
+    subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(bundle / "installer/Install.ps1"), "-VerifyOnly"], check=True, env=environment)
     output = build.parent / f"{bundle.name}-{stamp}.zip"
     with ZipFile(output, "w", ZIP_STORED) as archive:
         for path in sorted(bundle.iterdir()):
