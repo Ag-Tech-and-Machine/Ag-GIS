@@ -8,7 +8,119 @@ exit0, empty stderr/exceptions;104 painted-indicator comparisons each cover init
 state, twelve name switches, indicator Off and twelve indicator switches. Actual
 wrapped delegate/viewport dirty-region images are compared to native style crops
 without grab/repaint. Node/model checks agree; rendering disabled, zero requests,
-separate post-init [local path]'s primary click still opens Symbology.
+separate post-init settings/auth/Qt/temp roots and loaded origins asserted.
+
+Wrong-state native-paint negative control exits1 at expected2/model2 pixel assertion;
+first ineffective option-only mutation survived delegate reinitialization and is
+retained, not a product failure. Frozen inputs, source snapshot,208 row PNGs,
+negative actual/expected PNGs and actual Qwen3.5-9B reviews are private evidence:
+`.aggis-agent/evidence/20261023-checkbox-paint/RESULT.md`.
+
+This is offscreen native regression coverage, NOT a reproduced owner defect, fix,
+physical desktop or normal-session acceptance. No product edits/build/reinstall,
+normal-app input, public issue write or new live test process. Current normal31164
+and scratch23516 remain open untouched. The later direct-install receipt supersedes
+older preservation/install blockers: e6f2059a is already installed; only sustained
+supported normal Edit Style popup/dialog/actual Cancel readback remains open.
+Next finite action: read-only paired supported capture of normal31164/HWND20906276;
+proceed only if sustained readback works, otherwise stop without inputs and report
+the automation dependency. No identical install/input retries or endless regressions.
+
+## 23 October 2026 — Direct normal installation delivered; final control readback open
+
+Owner-directed immutable candidate `e6f2059a58087d66d1bef9e6340dbab362c7d4820412f86d29aad34b261ced82`
+is installed in the normal default profile through the inspected supported QGIS-Python
+profile installer (exit0). All57 files match before and after normal shortcut launch.
+Both dirty normal sessions were independently inspected (same exact Farm.qgz,
+no vector editbuffers), preserved with separate native SaveAs recovery QGZs and
+independently verified workspace/NAS dependencies, then cleanly closed; no winner,
+overwrite or discard. Original Farm.qgz/farm.gpkg remain byte-unchanged.
+
+Full verified rollback: `default/aggis-local-update-backups/20261023-0606-cda8aa`
+under QGIS profiles, with after-close settings and separate session recovery sets.
+NAS source URI is retained in native QGZs; copied shapefile family and source mapping
+are included for deliberate recovery. Online background imagery is not embedded.
+The prior-plugin rollback includes its historical broken module; it is not a known-good build.
+
+Normal branded PID31164 automatically reopened the separately preserved17900 recovery
+project with10 layers; actual loaded plugin/farm_browser origins and correct SHA verified.
+Simple View, populated Layers and imagery were inspected visibly. Final extension/actual
+Edit Style/Cancel check is OPEN: UIA Invoke timed out outcome unknown; current doctor
+fails UIA enumeration2000ms and supported capture reports unavailable transport. Leave
+app open; do not repeat installation or claim native popup/Cancel success. Scratch23516
+is untouched. Exact evidence, recovery paths and remaining action:
+`.aggis-agent/evidence/20261023-direct-install-cda8aa/RESULT.md`.
+
+## 23 October 2026 — Localhost native canvas regression; no installation
+
+Unmodified background_render_test.py passes source/exact-e6f2059a in native
+QGIS3.44.14: four coloured final backgrounds, satellite zoom limits, transition
+cover, rapid World → AU → Roads switching, delayed stale tiles and Off/white
+canvas assertions. Final processes33604/23756 exit0, empty stderr/exceptions.
+Only local coloured fixtures: no external imagery quality, licensing, branded
+or normal-session acceptance. No product fix or installation. Original observer
+timeout retained, not accepted; it later exited itself with exit uncollected.
+Normal17900/26804 and scratch23516 unchanged; preservation gate still blocks
+normal delivery. Evidence `.aggis-agent/evidence/20261023-background-render/RESULT.md`.
+
+
+## 23 October 2026 — Esri compatibility; no installation
+
+Unmodified esri_background_test.py passes source/exact-e6f2059a native catalogue,
+v1 upgrade, custom-source, all-off/hidden/deleted choices and project write/read.
+Final native exits0/0, empty stderr and exception arrays; settings/auth/Qt/temp
+roots asserted separately after init. Original harness isolation failures1/1
+retained; only bootstrap corrected, no product defect/fix. No normal input,
+installation or runtime push; no imagery quality/licensing/branded/normal
+acceptance. Two-session preservation blocker unchanged. Evidence:
+`.aggis-agent/evidence/20261023-esri-background/RESULT.md`.
+
+## 23 October 2026 — Background selection regression, no installation
+
+Fresh source/exact-e6f2059a native offscreen checks pass checkbox/name selection,
+exclusive/off/hidden-group choices, attribution, preference/project reopen,
+catalogue migration and custom-source/removal preservation. Both processes exit0
+with empty stderr and post-init isolated settings/auth/Qt paths. Rendering was
+disabled: this is not painted-tick/imagery quality or normal delivery acceptance.
+No product repair, normal input or installation occurred. The two-session
+unsaved-state preservation blocker remains. Evidence:
+`.aggis-agent/evidence/20261023-background-maps/RESULT.md`.
+
+## 23 October 2026 — Native farmer presentation evidence, no installation
+
+Fresh source/exact-e6f2059a offscreen integration now also passes farmer defaults,
+protected styling, transformed zoom, rename, preference persistence and unload
+checks; the lone-point renderer measures 8 pixels. This is not normal/branded
+acceptance or delivery. Normal sessions and installation remain untouched, with
+the existing shared-store/unsaved-state reconciliation blocker unchanged.
+Evidence: `.aggis-agent/evidence/20261023-farmer-view/RESULT.md`.
+
+## 23 October 2026 — Additional compatibility evidence, no installation
+
+The current e6f2059a candidate now also passes fresh source/extracted native Farm
+Browser checkbox, rename, layout and delegate-restoration regression checks.
+These offscreen synthetic checks do not update the normal installation or prove
+visible Simple View acceptance. Two normal sessions still hold the same farm store;
+reconcile their project paths and separately preserve unsaved states before any
+conflict-free Save or controlled update. No normal input or installation occurred.
+Evidence: `.aggis-agent/evidence/20261023-browser-compat/RESULT.md`.
+
+## 22 October 2026 — Default-width Edit Style repair (current local candidate)
+
+The earlier `setFixedSize`/`noExtension`/`NoToolButton` overflow claim was false:
+actual QGIS 3.44.14 construction raises `AttributeError` on `QMenu.setToolButtonStyle`.
+The untouched normal installed module still contains that broken edit; **do not
+restart/reload it or copy this changing checkout over it as part of testing**.
+No normal installation, restart, Save or other normal-app input occurred here.
+
+The new immutable 57-entry candidate `e6f2059a58087d66d1bef9e6340dbab362c7d4820412f86d29aad34b261ced82`
+replaces only `farm_browser.py` relative to tested successor `0994fe2d`.
+It uses a native toolbar-owned QAction, not an overflow-ineligible addWidget control.
+
+1. Select a vector dataset. At the normal **294px** Farm Data width, open the
+   native toolbar **»** extension, then **Edit Style… → Edit Style…**.
+   The submenu also retains **Reset to Classification Style…** and **Save Style…**.
+   At wider widths the ordinary split button's primary click still opens Symbology.
 2. Native **Cancel** rejects unapplied edits. Reset deliberately restores the
    classification style; Save Style prepares the existing catalogue observer,
    then **Save Map** writes the map and its saved-style revision.
@@ -1336,8 +1448,32 @@ Last updated: 15 October 2026.
 - Windows workstation, local account Michael.
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
-- Repository: `[local path]"Michael"
-   git config --global user.email "[user identity]"
+- Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.
+- Git author: Michael `<admin@agtechandmachine.com>`.
+
+QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate system Python is optional for syntax checks and packaging; it does not replace the QGIS runtime.
+
+## 1. Install Git
+
+1. Install Git for Windows from https://git-scm.com/downloads/win. If WinGet is available, use:
+
+   ```powershell
+   winget install --id Git.Git --exact --source winget
+   ```
+
+2. Open a new PowerShell window and verify:
+
+   ```powershell
+   git --version
+   ```
+
+   Expected: a Git version, rather than a command-not-found error. Git was already installed on the tested workstation.
+
+3. Configure the author for this workstation:
+
+   ```powershell
+   git config --global user.name "Michael"
+   git config --global user.email "admin@agtechandmachine.com"
    git config --global init.defaultBranch main
    ```
 
@@ -1376,7 +1512,7 @@ Last updated: 15 October 2026.
 1. For this machine, open the existing repository; do not initialise it again:
 
    ```powershell
-   Set-Location '[local path]'
+   Set-Location 'C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling'
    git status
    ```
 
@@ -1451,7 +1587,33 @@ Version 0.6.0 adds hierarchy management and schema 2 projects to the existing Si
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Click **New Project** on the toolbar (also **Plugins → Ag-GIS → New Project…**).
-3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `[local path]'s native project save, **Move Map** to pan, **Zoom In / Zoom Out** for interactive zoom and **Whole Map** for full extent. The latter follows QGIS's layer extent and availability rules.
+3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `C:\Users\Michael\Documents\Ag Tech Tooling\Projects`.
+4. Expected result: `Farm.qgz` and `Data/farm.gpkg`, with **Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1** in Layers. Each field has **Whole Field** and **Seasons**; the starter season is **Season 1**, with **Plans / Operations / Results**. There is no invented crop, year or geometry. Select fields in Layers to reuse the three native reference views.
+5. Finish layer edits before switching. Save/discard/cancel any unsaved current map when prompted; cancelling quick creation makes no new workspace. Use **Manage Data** to rename placeholders or add more clients, farms, fields and seasons within the same GeoPackage. For explicit location/names/CRS before creation, use **Plugins → Ag-GIS → New Project with Options…**. Quick creation inherits the map CRS or falls back to EPSG:4326; it does not determine a local survey projection or vertical datum.
+6. Later click **Open Project** and select `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
+7. Click **Manage Data**. Select the parent, then use the icon-labelled Organisation/Client/Farm/Field/Season/Crop add buttons. Select a named record to **Rename**. Changes save immediately; cancelling an Add/Rename dialog makes no change.
+8. Select a field or a branch beneath it and click **Show Field on Map**. Expected result: native Boundaries, Guidance Lines and Infrastructure layers, filtered to that field, with unrelated map layers retained. Whole Field and Seasons remain separate in the management tree. Seasonal datasets and terrain imports are not yet implemented.
+9. Save map changes using **Save Map**. Keep both files and their relative structure together when moving the project. The database alone is not the entire current workspace. Imports, exports, conversions, full settings editing and automated backup are not available yet.
+
+For a schema 1 project, **Manage Data** opens **Upgrade Project Copy**. Confirm Organisation/Client names and a new destination outside the original. The plugin snapshots the database, copies supporting files, creates/validates schema 2 and opens the new copy. The original remains unchanged. If upgrading fails, correct the reported problem and retry; a failed staged copy is cleaned up and existing destinations are refused. Resolve any reserved-table name conflict in a separate reviewed copy; the upgrade does not overwrite those tables. This does not package external data dependencies.
+
+If a folder already exists, open it or choose another name. If validation reports missing files, restore the whole farm folder from a known backup. If it reports a newer schema, use a compatible plugin; do not edit the version field to bypass the check. For a failed creation, resolve the reported path/permission problem and retry; no existing farm is replaced. Choose a local working location; NAS backup and shared-editing controls are not implemented.
+
+### Choose Simple view
+
+1. Find **Simple view** at the bottom right of QGIS, beside the existing scale/coordinate controls.
+2. Check it to show only the map and Layers in the primary workspace. Browser, welcome/recent-project/news/template views and other main-window panels are hidden. The Ag-GIS top toolbar, QGIS menus and status controls remain available; other QGIS toolbars are hidden.
+3. Uncheck it to restore the layout from before Simple view was selected, including panels that were previously hidden.
+4. The choice is saved per QGIS profile. It is off until first selected; the current default profile has been switched on for review.
+5. Disabling or reloading Ag-GIS restores the full layout while the plugin is absent. Re-enabling it remembers the selected mode.
+
+Simple view changes interface layout only; it does not change project layers, coordinate reference systems, datasets or processing settings. Layers and the Ag-GIS toolbar stay visible while Simple view is on. Other dock panels and toolbars are hidden even if QGIS restores or you try to reopen them; new panels/toolbars are detected and hidden. Switch Simple view off to use Browser or advanced tools.
+
+### Use the top toolbar — 0.6.0
+
+1. After installing/restarting, find **Ag-GIS** at the top of QGIS.
+2. Use **New Project**, **Open Project** and **Manage Data** for the controls described above. Input lines, hierarchy/grouping rows and plugin buttons have icons; toolbar icons are 28 pixels with text labels.
+3. Use **Save Map** to invoke QGIS's native project save, **Move Map** to pan, **Zoom In / Zoom Out** for interactive zoom and **Whole Map** for full extent. The latter follows QGIS's layer extent and availability rules.
 4. Expect clear labels beneath theme icons, with enabled/checked states inherited from QGIS. No GIS computations are duplicated by the toolbar.
 5. In full view, recover a hidden toolbar using **View → Toolbars → Ag-GIS**. Simple view keeps it visible. Disable/re-enable the plugin to recover its registration if necessary; unloading removes only the plugin's widgets/actions and preserves borrowed native QGIS actions.
 
@@ -1462,11 +1624,23 @@ Switching off restores the previous central view only if the project has not cha
 Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
 
 1. Use the app's **Add new project** control and create a local project named **Ag-GIS**.
-2. Attach `[local path]'s **Edit project → Add folder** controls and **Make primary** for this folder.
+2. Attach `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
 3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
 4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
 
-The saved Codex project is **Ag-GIS**, with `[local path]'s plugin manager and restart.
+The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+
+Official guidance: https://learn.chatgpt.com/docs/projects
+
+### What the plugin package includes
+
+Version 0.6.0 includes Simple view, New/Open Project, Manage Data, all supporting Python modules, semantic SVG icons, metadata, license and `USER_GUIDE.txt`. Install the ZIP through QGIS; no repository checkout, standalone Python, pip packages or companion application is required for end users. QGIS supplies PyQGIS, Qt and its geospatial providers. Use QGIS 3.44.14 LTR for the currently verified environment. Detailed import/export and conversion controls remain under development.
+
+The local installer and the QGIS **Install from ZIP** workflow both install the bundled guide beside the plugin modules. The source checks now also execute farm/lifecycle tests from the extracted release ZIP.
+
+### Farm browser presentation — 0.8.0
+
+1. Close QGIS after saving your map, then run `scripts/install-plugin.ps1` or install the current ZIP through QGIS's plugin manager and restart.
 2. Open `Farm.qgz`. Expected result: the left-hand panel reads **Farm Data**, with matching Organisation/Client/Farm/Field/Season/Crop icons, larger rows and less indentation. Whole Field and Seasons remain separate.
 3. Native checkboxes, map symbols and field selection work as before. Use Manage Data for persistent record renames. Unload/reload restores and reapplies the presentation without replacing the native layer-tree model.
 4. If icons are missing after an update, restart QGIS and verify the installed ZIP includes `farm_browser.py`, `ui_icons.py` and all `agtech_*.svg` assets. Reinstall the complete ZIP if files are missing; no extra dependency is required.
@@ -1506,7 +1680,12 @@ at this stage; current installed Data In behaviour remains as described above.
 
 ## Ag-GIS offline Windows installer and updates — 0.8.1
 
-The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `[local path]'s `default` QGIS profile, creating it if necessary. An existing plugin and profile INI are retained under `%APPDATA%\QGIS\QGIS3\profiles\default\ag-tech-install-backups\<timestamp>`. Open QGIS normally and find **Ag-GIS** on the top toolbar.
+The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved Codex project name is managed in the app; repository work does not rename that registration.
+
+1. Prerequisite: Windows 64-bit. Obtain the complete `Ag-GIS-0.8.1-Windows-<timestamp>.zip` from the private `JamRov/Ag-GIS` GitHub release or your administrator. Repository access and GitHub sign-in are required for private downloads.
+2. Extract **all** files to a local folder. Save your work and close QGIS. Run `Setup.exe` as your normal Windows user. Keep every payload beside it. This launcher is unsigned.
+3. Setup verifies SHA-256 payload hashes. If the tested QGIS 3.44.14 LTR installation is absent, complete the bundled official QGIS MSI wizard and its administrator prompt. QGIS supplies Python, Qt, GDAL and providers; optional projection grids are not included. Cancellation stops setup; if a restart is requested, restart and rerun Setup.
+4. Setup installs/enables Ag-GIS in the current Windows user's `default` QGIS profile, creating it if necessary. An existing plugin and profile INI are retained under `%APPDATA%\QGIS\QGIS3\profiles\default\ag-tech-install-backups\<timestamp>`. Open QGIS normally and find **Ag-GIS** on the top toolbar.
 5. To choose a profile, run `powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Profile profile_name` from the extracted folder. Do not run the whole setup as a different administrator account; it would target that account's profile.
 6. To verify payloads without installing, run `powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -VerifyOnly`. If verification fails, extract a fresh copy. Hashes detect corruption; obtain the installer from your trusted administrator/release account.
 7. To update, save the map and use **Plugins → Ag-GIS → Check for Updates… → Open latest release**. Download the plugin ZIP in your signed-in browser, then return to **Install downloaded ZIP…** and select it in QGIS's native ZIP installation dialog. Restart QGIS. Cancel leaves the current installation intact. A 404 may mean no published release or insufficient private-repository access; it is not proof you are up to date.

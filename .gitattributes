@@ -3,3 +3,6 @@
 *.zip binary
 
 *.ico binary
+
+# Ignore docs_backup directory (old backups)
+*/docs_backup/*

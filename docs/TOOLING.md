@@ -8,7 +8,187 @@ exit0, empty stderr/exceptions;104 painted-indicator comparisons each cover init
 state, twelve name switches, indicator Off and twelve indicator switches. Actual
 wrapped delegate/viewport dirty-region images are compared to native style crops
 without grab/repaint. Node/model checks agree; rendering disabled, zero requests,
-separate post-init [local path]'s toolbar visibility signal guard fixes that isolated lifecycle: source `simple_view.py` SHA256 `5be37c30150554d0e4d67d308e0130664c2c207f97e0623742f402064888e27b`, successor ZIP `0994fe2d`/57 entries. Six fresh native API suites pass; exact successor branded run passes 34 assertions, three actual native Cancel cycles (two after reload), Reset, one actual Save Map click/action/projectSaved and normal native/launcher exits. `verify.py --require-toolbar` exits 0; baseline strict contract and `--require-full` exit 1 as intended. The latter retains the separate 294px disabled-overflow Edit Style gap and normal-delivery requirements. Native in-process QTest is NOT proof of external-control reliability, normal installed acceptance or the cause of the historical normal Save no-op. Original failures and old candidates remain intact.
+separate post-init settings/auth/Qt/temp roots and loaded origins asserted.
+
+Wrong-state native-paint negative control exits1 at expected2/model2 pixel assertion;
+first ineffective option-only mutation survived delegate reinitialization and is
+retained, not a product failure. Frozen inputs, source snapshot,208 row PNGs,
+negative actual/expected PNGs and actual Qwen3.5-9B reviews are private evidence:
+`.aggis-agent/evidence/20261023-checkbox-paint/RESULT.md`.
+
+This is offscreen native regression coverage, NOT a reproduced owner defect, fix,
+physical desktop or normal-session acceptance. No product edits/build/reinstall,
+normal-app input, public issue write or new live test process. Current normal31164
+and scratch23516 remain open untouched. The later direct-install receipt supersedes
+older preservation/install blockers: e6f2059a is already installed; only sustained
+supported normal Edit Style popup/dialog/actual Cancel readback remains open.
+Next finite action: read-only paired supported capture of normal31164/HWND20906276;
+proceed only if sustained readback works, otherwise stop without inputs and report
+the automation dependency. No identical install/input retries or endless regressions.
+
+## 23 October 2026 — Proven dual-session preservation and normal installation
+
+Fresh supported paired readback plus native QGIS Python Console snapshots resolved
+the exact destinations and absence of editable/modified vector buffers in BOTH sessions.
+Protect each full workspace and external shapefile family independently; verify every
+copied byte and SQLite quick_check. Native SaveAs to distinct previously absent QGZs
+in the same workspace retains correct relative managed-data URIs. Read back each native
+filename/dirty=false and independent QGZ layerIDs/renderer XML before native Close.
+Keep original QGZ/NAS URI and full recovery mapping; standalone QGZs do not embed NAS
+or online imagery. Preserve both, never choose the newer process by assumption.
+
+Executed profile installer `installer/install_profile.py --package <immutable ZIP>
+--profile default` through bundled QGIS Python, exit0; all57 files independently checked
+again after normal Start Menu shortcut launch. Read-only startup observer confirms
+normal module origin/hash and automatic project restoration, not an injected project load.
+Full versioned rollback includes after-close settings. Evidence and executed scripts:
+`.aggis-agent/evidence/20261023-direct-install-cda8aa/RESULT.md`.
+
+Current final acceptance dependency is NOT the old preservation/installation gate:
+normal extension UIA Invoke timed out with unknown outcome, then supported transport
+readback failed. Fresh `hermes computer-use doctor --json` exits1: UIA enumeration
+exceeded2000ms/provider may be hung, while D3D11/session checks pass. Current official
+Hermes Computer Use docs were fetched; no rawdriver/config/permission bypass attempted.
+Retain the actual last Simple View screenshot and installed origins; never equate
+those with an unobserved native popup/Cancel result or reinstall identical57 bytes.
+
+## 23 October 2026 — Localhost native canvas proof recipe
+
+1. Freeze unmodified tools/background_render_test.py, runner and bootstrap hashes
+   before launching source and exact-e6f2059a extraction in separate scratch roots.
+   Use the previous post-init settings/auth/Qt/temp assertions; observe routed
+   native requests and require127.0.0.1 after preprocessing.
+2. Require final pixels, bridge membership, supported satellite matrix, visible
+   stale-image cover, rapid-switch/delayed-tile stability and Off/white assertions;
+   final native exits0, empty stderr and structured exception arrays. Preserve
+   render checkpoints, canvas PNGs, full logs, loaded origins and manifests.
+3. Observer tracing must compare filenames cheaply and return None for other
+   files; never call Path.resolve for every imported Python line. Initial trace
+   timeout is retained, not product failure. That process later self-exited;
+   cleanup safety assertion stopped before any termination. Final native0/0.
+4. Read-only verification:
+   `python .aggis-agent/evidence/20261023-background-render/verify.py`.
+   First verifier expected [] after controller had closed; original retained.
+   Corrected verifier requires white/no-provider before close and white/null
+   controller afterwards. No native harness assertion was weakened.
+5. This is offscreen native rendering, not real desktop screenshot/normal delivery,
+   public provider quality/legal review or proof every cancelled socket completed.
+   Next finite independent gap: inspect/freeze background_checkbox_paint_test.py
+   source/exact-package actual delegate/viewport painted indicator checks with
+   rendering disabled and separate post-init roots; no normal-app inputs.
+
+
+## 23 October 2026 — Esri catalogue compatibility recipe
+
+1. Freeze tools/esri_background_test.py and the bundled-QGIS bootstrap in a NEW
+   private directory. Preserve original failure files/receipts, never overwrite.
+2. Use separate scratch settings/auth/Qt/temp subroots for source and exact
+   package. initQgis overrides pre-init Qt paths: reapply QSettings.setPath AFTER
+   init, then assert qgisSettingsDirPath, auth DB, QSettings().fileName() and
+   tempfile.gettempdir() against their exact subroots. Test-only correction.
+3. Require module origins, unchanged hashes, native exits0/empty stderr and
+   exception arrays plus catalogue/upgrade/visibility/custom URL/native map I/O
+   assertions. Initial harness failures1/1 retained in attempt1-isolation-failure;
+   corrected executed bootstrap and exits0/0 under final/. Read-only proof check:
+   `python .aggis-agent/evidence/20261023-esri-background/verify.py`.
+4. Not imagery/licensing/painted-checkbox/branded/normal/physical Cancel proof.
+   Temporary map removed by test. Next finite independent gap: inspect/freeze/run
+   tools/background_render_test.py source/exact-package with localhost-only tiles;
+   require final canvas/rapid-switch/cancellation assertions and native exit0.
+   Do not expand to online imagery or blocked normal inputs.
+
+## 23 October 2026 — Native background selection coverage
+
+1. Snapshot `tools/background_maps_test.py` and the inspected isolation bootstrap.
+   Run with bundled QGIS Python against source and exact candidate extraction,
+   using separate settings/auth/Qt/temp roots and post-init path assertions.
+2. Require actual checkbox/name-click selection, preference and canvas membership,
+   native save/reopen, migration/custom-source/removal assertions, exit0 and empty
+   stderr. Keep rendering disabled to avoid requesting public imagery.
+3. Fresh source/exact-e6f2059a evidence:
+   `.aggis-agent/evidence/20261023-background-maps/results.json`; `verify.py` exit0.
+   This does not establish painted ticks, final canvas rendering, imagery detail,
+   physical Cancel, branded acceptance or normal delivery. No runtime change.
+4. Next independent inventory suite: `tools/esri_background_test.py` with the same
+   distinct-root bootstrap. Inspect failed assertions before any repair; retain
+   failed logs separately. Normal farm sessions are never these fixtures.
+
+## 23 October 2026 — Farmer presentation integration coverage
+
+1. Use the same isolated bootstrap recipe below with a frozen copy of
+   `tools/farmer_view_test.py`; source and exact package require distinct scratch roots.
+2. Require post-init isolation, exit0/empty stderr and the final assertion summary.
+   Retain rendered point diameter and input manifests, not just process presence.
+3. Fresh source/exact-e6f2059a receipts are in
+   `.aggis-agent/evidence/20261023-farmer-view/results.json`; `verify.py` checks them.
+   Dialog acceptance/rejection includes simulated/programmatic boundaries; request
+   preprocessing sends nothing. These are native offscreen tests, not branded or
+   normal installed acceptance. Next independent suite: `background_maps_test.py`.
+
+## 23 October 2026 — Native Farm Browser compatibility coverage
+
+1. Prerequisites: pinned QGIS3.44.14, developer Python and a fresh private evidence
+   directory. Snapshot `tools/farm_browser_test.py` and the isolated bootstrap before
+   execution; use distinct scratch settings/auth/temp directories for each run.
+2. Run the snapshot once with `AGTECH_TEST_PLUGIN_ROOT` set to source `plugins`,
+   then once to the exact candidate extraction parent. Use bundled QGIS Python;
+   assert native settings/auth/Qt settings paths AFTER `initQgis`.
+3. Require exit0, empty stderr and actual checkbox/rename/layout/delegate assertions.
+   Preserve stdout, commands, snapshots and source/package manifests. Failed cases
+   must retain their own output paths; do not overwrite historical evidence.
+4. Fresh e6f2059a source/extracted runs passed in
+   `.aggis-agent/evidence/20261023-browser-compat/results.json`. This is native
+   offscreen compatibility, not branded/normal installed acceptance or a new repair.
+   On failure inspect the exact assertion before changing code; normal farm sessions
+   are not fixtures. The broad aggregate suite remains unrun for this candidate.
+
+## 22 October 2026 — Native default-width Edit Style regression (current)
+
+`farm_browser.py` now registers an ordinary toolbar-owned QAction. Its native
+QToolButton remains a split button at wide widths, and the native extension at
+294px exposes Edit Style → Edit Style / Reset to Classification Style / Save Style.
+The primary command is explicitly present in the submenu; a menu containing only
+Reset/Save would still lose editing when the button overflows. Preserve Popup
+window flags when parenting its menu to the generated tool button for cleanup.
+The invalid QMenu.setToolButtonStyle/Qt.ToolButtonPositionHint edit and its
+hash-only/print-only acceptance claim are withdrawn, not rehabilitated by a build.
+
+1. Run `python tools/run_style_toolbar_test.py --evidence <new-private-directory> --name source`.
+   Prerequisite: pinned Windows QGIS 3.44.14 and developer Python with existing
+   psutil. The runner snapshots the executed test and payload, uses Hermes scratch
+   settings/auth/temp paths and refuses an existing case directory.
+2. Build a **new** package with `py tools/build_plugin.py --output <new-candidate.zip>`;
+   never overwrite a frozen candidate. Extract it and repeat with
+   `--plugin-root <extraction/ag_tech_tooling> --name package` and the same evidence root.
+3. Require native exit0, passed=true, no exceptions and the actual assertion list:
+   default294 popup/submenu clicks, native Symbology edit/Cancel and OK, Reset,
+   managed Save Style/native Save button, exact final-QGZ style receipt, warm
+   reopening, browser recreation and wide primary-button cancellation.
+4. Retained complete increment: `.aggis-agent/evidence/20261022-style-overflow/`.
+   Constructor RED captures actual invalid-API AttributeError; frozen0994 RED
+   asserts disabled extension at294. Source/extracted final runs and six native
+   smoke/operation-style/dataset-style suites pass. Exact57 candidate
+   `e6f2059a58087d66d1bef9e6340dbab362c7d4820412f86d29aad34b261ced82`
+   also passes isolated branded automatic cold restoration/recovery/full reload,
+   real294 extension/submenu Cancel/Reset and native Save Map. Logs, executable
+   snapshots, desktop captures and immutable manifests remain retained.
+5. The first constructor reproduction hit an unrelated scratch Open Sans download
+   task during native close; it was retained as a failed harness cleanup and its
+   exact synthetic process terminated, not called exit0. Later scratch profiles
+   disable missing-font download and both final REDs exit native0/runner1.
+   Early menu reparenting without Popup flags failed native submenu assertions;
+   those receipts remain. Do not suppress such failures or retry normal apps.
+
+No normal app inputs/install/restart, auth/provider/policy changes or release.
+The normal installed farm_browser remains the broken13ee27f0 edit, unchanged.
+Broad check.ps1/package_test aggregate and full Windows/unassisted/normal-session
+acceptance were not run. In-process QTest is not external-driver reliability.
+Use the retained verifier for bounded evidence only; its full-acceptance mode must
+continue rejecting the missing normal delivery and broader acceptance gates.
+
+Earlier evidence below is retained history, not the current source identity.
+
+**Earlier 22 October toolbar-lifecycle source repair (historical):** `.aggis-agent/evidence/20261022-toolbar-lifecycle/` retains exact baseline/diagnostic/source-successor inputs, traces, native exits and disk fixtures. The original branded Save Map child was already invisible BEFORE catalogue recovery, remained so after 2000ms and width changes, and retained its native identity/default QAction and registered QWidgetAction. A controlled visible-to-hide reversal reproduced the loss. Deferring SimpleView's toolbar visibility signal guard fixes that isolated lifecycle: source `simple_view.py` SHA256 `5be37c30150554d0e4d67d308e0130664c2c207f97e0623742f402064888e27b`, successor ZIP `0994fe2d`/57 entries. Six fresh native API suites pass; exact successor branded run passes 34 assertions, three actual native Cancel cycles (two after reload), Reset, one actual Save Map click/action/projectSaved and normal native/launcher exits. `verify.py --require-toolbar` exits 0; baseline strict contract and `--require-full` exit 1 as intended. The latter retains the separate 294px disabled-overflow Edit Style gap and normal-delivery requirements. Native in-process QTest is NOT proof of external-control reliability, normal installed acceptance or the cause of the historical normal Save no-op. Original failures and old candidates remain intact.
 
 Earlier increment (preserved):
 
@@ -1542,7 +1722,31 @@ Last updated: 15 October 2026.
 
 ### Project identity and Hermes
 
-The saved Codex project is **Ag-GIS**, with `[local path]'s bottom-right status bar.
+The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+
+## What exists now
+
+| Item | Purpose |
+| --- | --- |
+| `plugins/ag_tech_tooling/__init__.py` | QGIS `classFactory` entry point |
+| `plugins/ag_tech_tooling/plugin.py` | Starter action and clean load/unload lifecycle |
+| `plugins/ag_tech_tooling/simple_view.py` | Bottom-right Simple view control, profile preference and full-layout restoration |
+| `plugins/ag_tech_tooling/metadata.txt` | Name, version, author and compatibility metadata |
+| `plugins/ag_tech_tooling/icon.svg` | Toolbar/menu icon |
+| `scripts/launch-qgis.ps1` | Start QGIS with source plugin discovery and an isolated profile |
+| `scripts/check.ps1` | Run syntax/metadata checks, Qt/PyQGIS smoke check and ZIP build |
+| `tools/check_plugin.py` | Check Python syntax and mandatory metadata |
+| `tools/smoke_test.py` | Exercise entry point, action, duplicate-init prevention and unload using Qt/PyQGIS |
+| `tools/build_plugin.py` | Produce and validate a QGIS plugin ZIP |
+| `scripts/install-plugin.ps1` | Check, build, install and enable the packaged plugin in an existing normal QGIS profile |
+| `tools/install_plugin.py` | Validate ZIP paths, back up existing files/settings and install the built package |
+
+The plugin provides Simple view, the dedicated toolbar, one-click starter creation, full native Layers hierarchy and GeoPackage hierarchy management. Processing algorithms, automatic updates and a remote Git repository remain future work.
+
+## Use Simple view
+
+1. Install/enable Ag-GIS as described in `INSTALL.md`.
+2. Check **Simple view** in QGIS's bottom-right status bar.
 3. Use the Ag-GIS toolbar to create/open/save maps and move/zoom; use Layers to browse the complete farm hierarchy and control visible data. The main area contains only the map and Layers. Add data through **Layer → Add Layer**, or turn Simple view off if you need Browser. QGIS menus remain available.
 4. Uncheck **Simple view** when you need the previous full workspace. Its toolbar/panel layout is restored.
 5. The profile remembers your choice. Turning off the plugin restores the workspace and removes the switch.
