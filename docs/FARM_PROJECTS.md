@@ -2,7 +2,7 @@
 
 Status: GeoPackage selected as the core farm data format, 15 October 2026. Version 0.3.0 implements the minimal New/Open foundation below. Agricultural schemas, imports, exports, conversions, editable settings and backup/restore remain proposed. No existing farm data has been moved.
 
-**Current release: 0.5.0.** The [data model](FARM_DATA_MODEL.md) now documents implemented schema 2 hierarchy tables, season/crop records, native field reference layers, icon-labelled management controls and a separate-copy schema 1 upgrade. Follow [USER_GUIDE.md](USER_GUIDE.md) for current operation. The 0.3.x foundation and directory illustration below are retained as earlier design context.
+**Current release: 0.6.0.** The [data model](FARM_DATA_MODEL.md) now documents implemented schema 2 hierarchy tables, season/crop records, native field reference layers, icon-labelled management controls and a separate-copy schema 1 upgrade. Follow [USER_GUIDE.md](USER_GUIDE.md) for current operation. The 0.3.x foundation and directory illustration below are retained as earlier design context. Current New Project needs no form: it creates My Farm Data (or the next free numbered name) in system Documents/Ag-GIS/Projects, with the full starter Organisation/Client/Farm/Field/Season tree. Rename and add records through Manage Data. New Project with Options remains available in the plugin menu.
 
 ## Implemented foundation — 0.3.0
 
@@ -34,7 +34,7 @@ Develop these incrementally using representative source files and expected outpu
 
 The newer [Organisation/Client/Farm/Field model](FARM_DATA_MODEL.md) revises the initial one-directory-per-farm assumption below: a workspace should be able to contain an organisation with multiple clients, farms and fields. The current implementation is unchanged, and the following directory tree remains an earlier illustration rather than the agreed future schema.
 
-Present one **Farm Project** to the farmer. Use one managed directory per farm, with permanent records and dated jobs inside it. Use standard formats accessible without Ag Tech Tooling, and an ordinary ZIP for backup/transfer. Unpack before editing.
+Present one **Farm Project** to the farmer. Use one managed directory per farm, with permanent records and dated jobs inside it. Use standard formats accessible without Ag-GIS, and an ordinary ZIP for backup/transfer. Unpack before editing.
 
 A QGIS `.qgz` stores map setup and references to datasets; it does not normally embed those datasets. GeoPackage is an open SQLite container for features and attributes, with raster tile support. QGIS can also store its project inside a GeoPackage, which is useful for a contained vector workflow. For general mixed farm data, recommend a separate QGZ entry point, GeoPackage records and supporting files for original imports, imagery, elevation, LiDAR and documents.
 

@@ -82,7 +82,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-farm-test-") as temporary:
     iface = Interface()
     actions = FarmActions(iface)
     dialog = NewFarmDialog(iface.window)
-    assert dialog.name.text() == ""
+    assert dialog.name.text() == "My Farm Data"
     assert isinstance(dialog, QDialog)
     dialog.close()
     assert actions.open_root(moved)
@@ -102,6 +102,32 @@ with tempfile.TemporaryDirectory(prefix="agtech-farm-test-") as temporary:
     assert len(iface.opened) == 1 and singleton.isDirty()
     QMessageBox.question = question
     singleton.clear()
+    # Open Project should accept the visible map, not require database knowledge.
+    with patch("ag_tech_tooling.farm_dialog.QFileDialog.getOpenFileName", return_value=(str(moved / "Farm.qgz"), "")), \
+            patch.object(QMessageBox, "warning") as warning:
+        actions.open()
+        assert not warning.called, "A valid farm map must open without a warning"
+    assert len(iface.opened) == 2, iface.opened
+    assert Path(singleton.fileName()).resolve() == Path(moved_info["project"]).resolve()
+    singleton.clear()
+    # Preserve the existing database route and refuse unrelated maps/databases.
+    with patch("ag_tech_tooling.farm_dialog.QFileDialog.getOpenFileName", return_value=(str(moved / "Data/farm.gpkg"), "")), \
+            patch.object(QMessageBox, "warning") as warning:
+        actions.open()
+        assert not warning.called
+    assert len(iface.opened) == 3
+    singleton.setDirty(True)
+    with patch("ag_tech_tooling.farm_dialog.QFileDialog.getOpenFileName", return_value=(str(moved / "Farm.qgz"), "")), \
+            patch.object(QMessageBox, "question", return_value=QMessageBox.Cancel):
+        actions.open()
+    assert len(iface.opened) == 3 and singleton.isDirty()
+    for selected in ("", str(moved / "Other.qgz"), str(moved / "Other.gpkg")):
+        with patch("ag_tech_tooling.farm_dialog.QFileDialog.getOpenFileName", return_value=(selected, "")), \
+                patch.object(QMessageBox, "warning") as warning:
+            actions.open()
+            assert warning.called == bool(selected)
+        assert len(iface.opened) == 3 and singleton.isDirty()
+    singleton.clear()
     with closing(sqlite3.connect(moved / "Data/farm.gpkg")) as connection, connection:
         connection.execute("UPDATE agtech_farm SET schema_version='999'")
     before = (moved / "Data/farm.gpkg").read_bytes()
@@ -111,6 +137,11 @@ with tempfile.TemporaryDirectory(prefix="agtech-farm-test-") as temporary:
         connection.execute("UPDATE agtech_farm SET schema_version='1'")
     (moved / "Farm.qgz").rename(moved / "Missing.qgz")
     rejected(lambda: validate_farm(moved))
+    with patch("ag_tech_tooling.farm_dialog.QFileDialog.getOpenFileName", return_value=(str(moved / "Data/farm.gpkg"), "")), \
+            patch.object(QMessageBox, "warning") as warning:
+        actions.open()
+        assert warning.called and "Restore missing files" in warning.call_args.args[2]
+    assert len(iface.opened) == 3
     iface.window.close()
-print("Farm creation, duplicate protection, schema rejection, move/reopen and cancel checks passed")
+print("Farm creation, duplicate protection, schema rejection, map/database open, move/reopen and cancel checks passed")
 app.exitQgis()

@@ -6,6 +6,10 @@ from qgis.PyQt.QtWidgets import QDialogButtonBox, QLineEdit
 from qgis.core import QgsApplication
 
 NAMES = {
+    "settings": "mActionOptions.svg", "background": "mIconWms.svg",
+    "filter": "mActionFilter2.svg",
+    "import": "mActionAddOgrLayer.svg", "folder": "mIconFolder.svg",
+    "search": "mActionSearch.svg", "notice": "mIconWarning.svg",
     "organisation": "mIconDbSchema.svg", "client": "mIconUser.svg",
     "farm": "mIconHome.svg", "field": "mActionAddPolygon.svg",
     "whole": "mActionZoomFullExtent.svg", "season": "mTemporal.svg",
@@ -16,6 +20,7 @@ NAMES = {
     "edit": "mActionToggleEditing.svg", "open": "mActionFileOpen.svg",
     "ok": "mActionSaveEdits.svg", "cancel": "mActionCancelAllEdits.svg",
     "crs": "mIconProjectionEnabled.svg", "name": "mActionTextAnnotation.svg",
+    "style": "mIconLayerStyled.svg",
 }
 
 

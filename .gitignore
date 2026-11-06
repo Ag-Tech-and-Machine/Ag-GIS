@@ -14,3 +14,4 @@ dist/
 *.las
 *.laz
 .dev-profiles/
+.aggis-agent/
