@@ -15,3 +15,6 @@ dist/
 *.laz
 .dev-profiles/
 .aggis-agent/
+evidence/
+build.log
+bug-*.json
