@@ -32,7 +32,7 @@ Pending - QGIS already present on system
 
 ### Plugin Location
 ```
-C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\ag_tech_tooling-0.12.2.zip
+[USER_PATH]\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\ag_tech_tooling-0.12.2.zip
 ```
 
 ## QA Test Plan

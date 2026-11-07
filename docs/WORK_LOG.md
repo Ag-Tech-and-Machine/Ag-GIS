@@ -3623,7 +3623,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Created the Ag-GIS sidebar section and moved both chats into it; renamed the main chat to Ag-GIS — Interface and Farm Structure. This groups chats visually. Saved local Project registration remains pending because the available app tools do not expose its creation.
 - Updated the canonical installation, tooling, data-model and bundled user instructions. The data-import chat added Data In during integration; the combined tested/installed release is 0.7.0.
 - Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight Deere preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
-- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\Michael\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
+- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at [USER_PATH]\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
 
 ## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
 
@@ -3900,7 +3900,7 @@ Follow-up: the user authorised cancelling the pending import. On inspection it h
 
 Live diagnosis refinement: the native contents widget was 464 x 896, while its QVBoxLayout remained 464 x 344 and the tree only 313 pixels tall. Calling the same layout refresh directly filled the tree to 865 pixels (896 minus the 31-pixel toolbar). Added a Paint-event fallback that repairs only mismatched geometry before drawing; resize/show alone did not reliably correct the live restored layout. The regression now deliberately stales geometry after resize processing and verifies repaint recovery. Source and extracted stable-package browser/lifecycle tests passed after this refinement. Concurrent work advanced the checkout to 0.9.0; preserved that metadata/source and patched only farm_browser.py into the previously validated 0.8.2 ZIP/default-profile installation. Did not install the unvalidated concurrent feature set. Final restart uses assertions without a manual layout refresh.
 
-Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: C:\Users\Michael\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
+Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: [USER_PATH]\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
 
 ## 15 October 2026 - Managed saving and filtering (0.9.0)
 
@@ -3966,7 +3966,7 @@ Full source and extracted 0.10.0 ZIP checks passed, including managed-data/raste
 
 Final 0.10.1 verification: the frozen snapshot dist/windows/20261015T010310Z/source passed its complete source suite, extracted ZIP workflows, fresh/upgrade/rollback installer checks and offline payload hash verification. Built dist/windows/Ag-GIS-0.10.1-Windows-20261015T010310Z.zip (not published by this chat). Installed that exact snapshot ZIP into the default profile; byte comparison passed. Recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-120527-487751.
 
-Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
+Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under [USER_PATH]/Documents/Codex/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
 
 Native network wire verification passed against localhost: QGIS first set its own header, then the installed host-scoped preprocessor sent the expected Ag-GIS User-Agent to a local test endpoint; HTTP 200, no production tile request made by this test. Evidence background-network-check.json. The human-visible production map rendered successfully; final restart reused cached tiles. Print-layout attribution remains a user responsibility; clean-machine QGIS MSI wizard/UAC testing is not claimed.
 
@@ -4071,7 +4071,7 @@ other tooling work and was left untouched.
 
 Final 0.12.1: the first frozen run hit a temporary project.write failure in the background test fixture; the unchanged test and then the entire frozen source/extracted-ZIP suite passed on retry. Preserved first-attempt and retry logs under dist/windows/20261015T012543Z. Offline rebuild reused validation only after checking all plugin/test inputs were byte-identical. Final installer: dist/windows/Ag-GIS-0.12.1-Windows-20261015T013035Z.zip; payload hashes and ZIP CRC passed. Installed runtime exactly matches the validated package; new bundle plugin contents match the installed older-snapshot ZIP entry-for-entry.
 
-Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
+Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under [USER_PATH]/Documents/Codex/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
 
 2026-10-15 wording approval: the user selected the exact supporting line “Built on open source tools”. Applied to About, toolbar tooltip, shortcut description, preview generator and canonical branding/setup/tooling instructions. Regenerated previews and plugin ZIP; focused source lifecycle and extracted branding checks passed. No release deployment performed.
 
@@ -4142,7 +4142,7 @@ IDs/selection and custom URLs. World imagery also caps requests at matrix 14 to 
 oversampling its historical 10 m content. At the same viewport after correction, all
 12 DEA and 12 EOX requested tiles returned 200 with no native render errors; inspected
 both map images. OSM displayed from the normal cache. Detailed local evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-render-diagnosis.json.
+[USER_PATH]/Documents/Codex/2026-10-14/un/outputs/background-render-diagnosis.json.
 
 Checkbox switching already passed repeated native interaction checks. Improved the
 name-click interaction so highlighting another background also selects it; checkbox
@@ -4170,7 +4170,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+[USER_PATH]/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.

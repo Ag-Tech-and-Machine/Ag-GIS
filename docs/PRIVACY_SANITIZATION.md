@@ -9,8 +9,8 @@ This document describes the sanitization strategy applied to make Ag-GIS source 
 **Why:** Exposes local filesystem paths that are machine-specific and could reveal user data.
 
 **Patterns Sanitized:**
-- `C:\Users\Michael\...` → `[local path]`
-- `C:\Users\...\AppData` → `[local path]`
+- `[USER_PATH]\...` → `[local path]`
+- `[USER_PATH]\AppData` → `[local path]`
 - `settings/auth/Qt/temp/origins` → `[local path]`
 
 **Examples:**

@@ -1722,7 +1722,7 @@ Last updated: 15 October 2026.
 
 ### Project identity and Hermes
 
-The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+The saved Codex project is **Ag-GIS**, with `[USER_PATH]\Documents\Projects\repos\Ag-GIS` as primary source and `[USER_PATH]\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
 ## What exists now
 
@@ -2164,7 +2164,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+[USER_PATH]nts/Codex/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
