@@ -161,8 +161,9 @@ def main():
     subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(bundle / "installer/Install.ps1"), "-VerifyOnly"], check=True, env=environment)
     output = build.parent / f"{bundle.name}-{stamp}.zip"
     with ZipFile(output, "w", ZIP_STORED) as archive:
-        for path in sorted(bundle.iterdir()):
-            archive.write(path, f"{bundle.name}/{path.name}")
+        for path in sorted(bundle.rglob("*")):
+            if path.is_file():
+                archive.write(path, f"{bundle.name}/{path.relative_to(bundle)}")
     with ZipFile(output) as archive:
         if archive.testzip():
             raise ValueError("Offline bundle ZIP failed CRC check")
