@@ -3,16 +3,32 @@ import os
 import sys
 import tempfile
 from pathlib import Path
+from unittest.mock import Mock, patch
+from importlib.abc import MetaPathFinder
+
+
+class UnsupportedAuthenticationGuard(MetaPathFinder):
+    """Local startup must not load the unsupported plaintext-token prototype."""
+
+    def find_spec(self, fullname, path=None, target=None):
+        if fullname == "ag_tech_tooling.feedback_submission":
+            raise AssertionError("Local startup must not import unsupported token authentication")
+        return None
+
+
+sys.meta_path.insert(0, UnsupportedAuthenticationGuard())
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 sys.path.insert(0, os.environ.get("AGTECH_TEST_PLUGIN_ROOT", str(Path(__file__).resolve().parents[1] / "plugins")))
 from qgis.core import QgsApplication, QgsProject
-from qgis.PyQt.QtWidgets import QMainWindow
+from qgis.PyQt.QtWidgets import QMainWindow, QApplication, QPushButton
 from qgis.PyQt.QtWidgets import QDockWidget, QToolBar, QLabel, QStackedWidget, QWidget
 from qgis.PyQt.QtCore import Qt, QSettings
+from qgis.PyQt.QtTest import QTest
 from qgis.PyQt.QtWidgets import QAction, QToolButton
 from ag_tech_tooling import classFactory
 from ag_tech_tooling import simple_view
+from ag_tech_tooling import plugin as plugin_module, updates, feedback
 
 
 class Interface:
@@ -109,21 +125,77 @@ app = QgsApplication([], False)
 app.initQgis()
 test_settings = tempfile.TemporaryDirectory(prefix="ag-tech-tooling-test-")
 simple_view.QgsSettings = lambda: QSettings(str(Path(test_settings.name) / "test.ini"), QSettings.IniFormat)
+update_network = Mock()
+update_network.get.side_effect = AssertionError("Default lifecycle must not contact the update service")
+plugin_module.UpdateActions = lambda iface: updates.UpdateActions(
+    iface, settings=QSettings(str(Path(test_settings.name) / "updates.ini"), QSettings.IniFormat),
+    network=update_network, cache_root=Path(test_settings.name) / "cache",
+    recovery_root=Path(test_settings.name) / "recovery")
 iface = Interface()
+iface.window.resize(1600, 900)  # Keep toolbar child visibility separate from overflow.
 iface.window.show()
 app.processEvents()
 plugin = classFactory(iface)
 plugin.initGui()
 plugin.initGui()
-assert len(iface.menu_actions) == 7 and not iface.toolbar_actions
+assert hasattr(plugin, "updates"), "Updates must have one lifecycle-owned controller"
+update_controller = plugin.updates
+assert update_controller is not None
+assert hasattr(plugin, 'github') and plugin.github is not None, 'One production GitHub controller must own the dialog lifecycle'
+github_controller = plugin.github
+github_actions = [a for a in iface.menu_actions if a.text() == 'GitHub Connection…']
+assert len(github_actions) == 1
+github_actions[0].trigger()
+app.processEvents()
+assert github_controller.dialog.isVisible() and not github_controller.dialog.connect_button.isEnabled()
+assert github_controller._fixture_factory is None and github_controller.flow is None
+assert 'ag_tech_tooling.github_transport' not in sys.modules
+github_controller.dialog.close()
+assert len(iface.menu_actions) == len(plugin.farm_actions) + 1 and not iface.toolbar_actions
+assert len({id(action) for action in iface.menu_actions}) == len(iface.menu_actions)
 toolbar = plugin.toolbar
 assert iface.window.toolBarArea(toolbar) == Qt.TopToolBarArea
 assert not toolbar.isMovable() and not toolbar.isFloatable()
 buttons = {button.text(): button for button in toolbar.findChildren(QToolButton) if button.defaultAction()}
-assert set(buttons) == {"New Project", "Open Project", "Manage Data", "Data In", "Save Map", "Move Map", "Zoom In", "Zoom Out", "Whole Map"}
+assert set(buttons) == {"New Project", "Open Project", "Manage Data", "Data In", "Filter Data", "Save Map", "Move Map", "Zoom In", "Zoom Out", "Whole Map", "View Settings", "Feedback"}
+with patch.object(feedback.QDesktopServices, "openUrl", return_value=False) as external, patch.object(
+        feedback.Path, "home", side_effect=AssertionError("Local feedback must not resolve account files")):
+    buttons["Feedback"].click()
+    dialog = plugin.feedback.dialog
+    assert dialog.isVisible()
+    controls = {button.text(): button for button in dialog.findChildren(QPushButton)}
+    dialog.tabs.setCurrentIndex(2)
+    controls["Copy agent instructions"].click()
+    assert QApplication.clipboard().text() == dialog.agent_guide.toPlainText()
+    assert "START HERE" in QApplication.clipboard().text()
+    dialog.title.setText("Offline synthetic draft")
+    dialog.details.setPlainText("A synthetic report kept locally; no farm data.")
+    dialog.include_versions.setChecked(False)
+    report = dialog.body()
+    controls["Copy report"].click()
+    assert QApplication.clipboard().text() == report
+    draft = Path(test_settings.name) / "offline-report.md"
+    with patch.object(feedback.QFileDialog, "getSaveFileName", return_value=("", "")):
+        controls["Save report…"].click()
+    assert not draft.exists() and dialog.body() == report
+    with patch.object(feedback.QFileDialog, "getSaveFileName", return_value=(str(draft), "Report (*.md)")):
+        controls["Save report…"].click()
+    assert draft.read_text(encoding="utf-8") == report
+    external.assert_not_called()  # Local copy/save/cancel are not connected submissions.
+    controls["Open GitHub form…"].click()
+    assert external.call_count == 1
+    assert external.call_args.args[0].host() == "github.com"
+    assert "Could not open" in dialog.status.text() and dialog.body() == report
+    controls["Close"].click()
+    assert not dialog.isVisible()
+    buttons["Feedback"].click()
+    assert plugin.feedback.dialog is dialog and dialog.body() == report
+    assert draft.read_text(encoding="utf-8") == report
+    controls["Close"].click()
+assert "ag_tech_tooling.feedback_submission" not in sys.modules
 buttons["Data In"].click()
 assert plugin.imports.dialog.isVisible()
-assert plugin.imports.dialog.windowTitle() == "Data In"
+assert plugin.imports.dialog.windowTitle() == "Ag-GIS — Data In"
 plugin.imports.dialog.reject()
 assert buttons["Save Map"].defaultAction() is iface.actionSaveProject()
 buttons["Save Map"].click()
@@ -144,17 +216,25 @@ assert not toolbar.isHidden()
 toolbar.hide()
 app.processEvents()
 assert not toolbar.isHidden(), "Farm toolbar must remain available in Simple view"
+assert buttons["Save Map"].isVisible(), "Native Save Map child must survive toolbar hide/restore"
+for _ in range(3):
+    toolbar.hide()
+    app.processEvents()
+    assert toolbar.isVisible() and buttons["Save Map"].isVisible(), "Repeated restoration must preserve native child visibility"
 iface.file_bar.show()
 iface.nav_bar.show()
+app.processEvents()  # Visibility policy runs after native child propagation.
 assert iface.file_bar.isHidden() and iface.nav_bar.isHidden(), "Native startup restoration must not reopen toolbars"
 late_bar = iface.window.addToolBar("Late plugin toolbar")
 late_bar.setObjectName("LatePluginToolbar")
+QTest.qWait(20)  # ChildAdded registration and queued visibility policy need event turns.
 app.processEvents()
 assert late_bar.isHidden(), "New plugin toolbars must be hidden in Simple view"
 assert not iface.layers.isHidden() and iface.browser.isHidden()
 iface.layers.hide()
 app.processEvents()
 assert not iface.layers.isHidden(), "Layers must remain available in Simple view"
+assert iface.layers.widget().isVisible(), "Native Layers contents must remain visible after dock hide/restore"
 assert iface.pages.currentWidget() is iface.canvas
 iface.pages.setCurrentWidget(iface.welcome)
 assert iface.pages.currentWidget() is iface.canvas, "Welcome page must stay hidden in Simple view"
@@ -169,8 +249,20 @@ assert iface.pages.currentWidget() is iface.welcome
 assert not iface.advanced_bar.isHidden() and not iface.advanced_dock.isHidden()
 assert iface.browser.isHidden(), "Original hidden Browser state must be restored"
 controller.switch.setChecked(True)
+from ag_tech_tooling.github_session import SessionDeviceFlow
+import time
+github_controller.flow = SessionDeviceFlow(time.monotonic)
+github_controller.flow.start('SYNTHETIC-UNLOAD-CLIENT')
+unload_flow = github_controller.flow
+github_controller.timer.start()
 plugin.unload()
 plugin.unload()
+assert plugin.github is None and github_controller.closed
+assert github_controller.dialog is None and not github_controller.timer.isActive()
+assert unload_flow.state == 'cancelled' and unload_flow.access_token() is None
+assert plugin.updates is None, "Unload must dispose of the update controller"
+assert update_controller.closed and update_controller.dialog is None
+assert not update_controller.daily_timer.isActive() and not update_controller.startup_timer.isActive()
 assert not iface.menu_actions and not iface.toolbar_actions
 assert not iface.advanced_bar.isHidden() and not iface.advanced_dock.isHidden()
 assert controller.container.isHidden()
@@ -194,6 +286,7 @@ assert iface.pages.currentWidget() is iface.canvas, "Do not return to welcome af
 plugin.unload()
 QgsProject.instance().setFileName("")
 print("QGIS plugin action, simple-view restoration and reload checks passed")
+update_network.get.assert_not_called()
 iface.window.close()
 app.exitQgis()
 test_settings.cleanup()

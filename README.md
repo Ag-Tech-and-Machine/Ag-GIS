@@ -34,13 +34,13 @@ Ag-GIS brings farm maps and data into practical desktop workflows: organise farm
 
 ## Try it, or help shape it
 
+**Connect your own agent:** [Start Here](START_HERE.md). Describe the farming problem in ordinary words; copy instructions for Codex, Claude Code, Hermes or another agent. Local drafting needs no sign-in; nothing is submitted without review and explicit consent.
+
 **Trying Ag-GIS?** Start with the [installation guide](docs/INSTALL.md), choose an [experimental download](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) and use a copy of your data for evaluation. Extract the complete Windows bundle before running Setup.exe. Each release has its own source and verification limits.
 
 **Have a farming task we should simplify?** Share the task and a safe example in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Reports and attachments are public: never include private farm/customer data or credentials.
 
 **Want to contribute?** Fork this repository and propose a focused pull request. Start with [AGENTS.md](AGENTS.md) and the [tooling notes](docs/TOOLING.md). Maintainers review changes; ideas and votes inform priorities without guaranteeing a feature or delivery date.
-
-**What are we working towards?** Follow the [development plan & pipeline](docs/DEVELOPMENT_PLAN.md): our goals, reported versus confirmed problems, current priorities, developer handovers and the checks needed before a fix is called done. Confirmed bugs take priority over feature expansion.
 
 ---
 

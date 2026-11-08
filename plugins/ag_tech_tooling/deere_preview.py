@@ -59,13 +59,25 @@ def _xml(path):
     return ET.fromstring(data)
 
 
-def inspect_export(folder, probe_native=False, cancelled=None):
-    """Return a JSON-compatible preview, keeping machine IDs and parent refs.
+def _xml_data(data):
+    if len(data) > XML_LIMIT:
+        raise ValueError("XML metadata exceeds the 10 MiB preview limit")
+    markup = data.replace(b"\x00", b"").upper()
+    if b"<!DOCTYPE" in markup or b"<!ENTITY" in markup:
+        raise ValueError("DTD/entity declarations are not accepted")
+    return ET.fromstring(data)
 
-    Accept the GS3_2630 folder, a profile, or its RCD folder. No source writes,
+
+def inspect_export(folder, probe_native=False, cancelled=None):
+    """Return JSON-compatible metadata for unpacked folders or GS3 ZIP files.
+
+    ZIP preview delegates to the bounded read-only archive adapter. No source writes,
     project changes, hierarchy inserts or geometry conversions are performed.
-    Native probing requires an initialised QgsApplication.
+    Native probing requires an initialised QgsApplication for unpacked folders.
     """
+    if Path(folder).suffix.lower() == '.zip':
+        from .deere_zip import inspect_zip
+        return inspect_zip(folder, probe_native, cancelled)
     root = Path(folder).resolve(strict=True)
     if not root.is_dir():
         raise ValueError("Select an unpacked Deere export folder")

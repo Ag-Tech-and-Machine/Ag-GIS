@@ -70,7 +70,7 @@ def create_farm(parent, name, crs, organisation=None, client=None, field=None, f
         result = QgsVectorFileWriter.writeAsVectorFormatV3(
             layer, str(data / "farm.gpkg"), QgsProject.instance().transformContext(), options)
         if result[0] != QgsVectorFileWriter.NoError:
-            raise ValueError(f"QGIS could not write the farm GeoPackage: {result[1]}")
+            raise ValueError(f"Ag-GIS could not write the farm GeoPackage: {result[1]}")
         if version == 2:
             from .hierarchy import initialise
             initialise(staging, organisation, client, farm or name, values["farm_id"], crs, field)
@@ -88,6 +88,18 @@ def create_farm(parent, name, crs, organisation=None, client=None, field=None, f
         project.writeEntry("AgTechTooling", "farm_id", values["farm_id"])
         project.writeEntry("AgTechTooling", "schema_version", version)
         project.writeEntry("AgTechTooling", "database", "Data/farm.gpkg")
+        if version == 2:
+            from .view_settings import initialise
+            from .background_maps import ensure_background
+            initialise(project)
+            ensure_background(project)
+            from qgis.core import QgsReferencedRectangle, QgsRectangle
+            area = crs.bounds()
+            if area.isNull() or area.isEmpty():
+                area = QgsRectangle(-180, -80, 180, 80)
+            else:
+                area = area.intersect(QgsRectangle(-180, -85, 180, 85))
+            project.viewSettings().setDefaultViewExtent(QgsReferencedRectangle(area, QgsCoordinateReferenceSystem("EPSG:4326")))
         if build_tree and version == 2:
             from .hierarchy_dialog import sync_tree
             sync_tree(staging, project=project)
@@ -183,7 +195,7 @@ def upgrade_copy(root, parent, name, organisation, client):
         layer = QgsVectorLayer(f"{staging / 'Data/farm.gpkg'}|layername={TABLE}", TABLE, "ogr")
         record = next(layer.getFeatures())
         if not layer.dataProvider().changeAttributeValues({record.id(): {layer.fields().indexFromName("schema_version"): "2"}}):
-            raise ValueError("QGIS could not update the copied workspace version.")
+            raise ValueError("Ag-GIS could not update the copied workspace version.")
         del record, layer
         project = QgsProject()
         if not project.read(str(staging / "Farm.qgz")):

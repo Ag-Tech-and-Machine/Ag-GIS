@@ -1,5 +1,6 @@
 """Boundary coverage, CRS, destination setup, cancellation and saved placement."""
 import os
+import gc
 from pathlib import Path
 import sys
 import tempfile
@@ -10,7 +11,7 @@ sys.path.insert(0, os.environ.get("AGTECH_TEST_PLUGIN_ROOT", str(Path(__file__).
 from qgis.core import (QgsApplication, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
     QgsFeature, QgsGeometry, QgsProject, QgsVectorLayer, QgsVectorFileWriter)
 from qgis.PyQt.QtWidgets import QMainWindow, QDialog
-from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtCore import Qt, QCoreApplication, QEvent
 from ag_tech_tooling import import_placement as routing, hierarchy as store
 from ag_tech_tooling.import_destination import DestinationDialog
 from ag_tech_tooling.import_dialog import ImportDialog
@@ -18,7 +19,7 @@ from ag_tech_tooling.farm_project import create_farm
 from ag_tech_tooling.import_sources import scan_local
 
 
-app = QgsApplication([], False)
+app = QgsApplication([], bool(os.environ.get("AGTECH_IMPORT_SCREENSHOT")))
 app.initQgis()
 
 
@@ -35,8 +36,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     root = create_farm(Path(temporary), "Farm", QgsCoordinateReferenceSystem("EPSG:4326"),
                        organisation="Org", client="Grower", farm="Home", field="North")
     project = QgsProject.instance()
-    project.setFileName(str(root / "Farm.qgz"))
-    project.writeEntry("AgTechTooling", "farm_id", store.workspace_id(root))
+    assert project.read(str(root / "Farm.qgz"))
     field_id = store.records(root)["field"][0]["id"]
     incoming = memory("POINT(1 1)")
     assert routing.match_field(root, incoming)["field_id"] is None
@@ -91,7 +91,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     del connection
     assert store.records(root) == before
     # Real generic shapefile: old loose layer is moved into an explicitly created
-    # hierarchy, while a cancelled batch does not place even its earlier matches.
+    # hierarchy, while an unresolved batch does not place even its earlier matches.
     polygon = memory("POLYGON((10 10,12 10,12 12,10 12,10 10))", "Polygon")
     path = Path(temporary) / "South.shp"
     options = QgsVectorFileWriter.SaveVectorOptions()
@@ -100,6 +100,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     del polygon
     loose = QgsVectorLayer(str(path), "South", "ogr")
     project.addMapLayer(loose)
+    loose_id = loose.id()
     point_path = Path(temporary) / "Known.geojson"
     options.driverName = "GeoJSON"
     assert QgsVectorFileWriter.writeAsVectorFormatV3(incoming, str(point_path), project.transformContext(), options)[0] == QgsVectorFileWriter.NoError
@@ -113,19 +114,98 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     importer = ImportDialog(Interface())
     importer.show_result(result)
     original_ids, original_rows = set(project.mapLayers()), store.records(root)
-    with patch.object(DestinationDialog, "exec", return_value=QDialog.Rejected):
-        importer.add_selected()
+    assert importer.tree.topLevelItem(0).text(3) == "Detected"
+    assert importer.tree.topLevelItem(1).text(3) == "Please set"
+    assert not importer.add_button.isEnabled()
+    importer.add_selected()
     assert set(project.mapLayers()) == original_ids and store.records(root) == original_rows
     assert project.layerTreeRoot().findLayer(loose.id()).parent() is project.layerTreeRoot()
     target = dict(organisation="Co-op", client="O'Brien", farm="East", field="South")
-    def choose_new(dialog):
-        for kind, name in target.items():
-            dialog.combos[kind].setEditText(name)
-        dialog.role.setCurrentIndex(1)
-        dialog.accept()
-        return dialog.result()
-    with patch.object(DestinationDialog, "exec", choose_new):
+    unknown_row = importer.tree.topLevelItem(1)
+    destination = importer.tree.itemWidget(unknown_row, 2)
+    assert destination is not None and destination.findText("Add new field…") >= 0
+    detected = importer.tree.itemWidget(importer.tree.topLevelItem(0), 2)
+    assert detected.currentData()["field_id"] == field_id
+    def select_destination(selector, index):
+        selector.setCurrentIndex(index)
+        selector.activated.emit(index)
+    # Existing fields apply directly from the row, retaining their actual IDs.
+    index = next(i for i in range(destination.count())
+                 if isinstance(destination.itemData(i), dict) and destination.itemData(i).get("field_id") == other_id)
+    select_destination(destination, index)
+    assert unknown_row.data(0, Qt.UserRole + 1)["field_id"] == other_id
+    assert unknown_row.text(2) == "Org / Other / Home / North"
+    assert unknown_row.text(3) == "Ready"
+    unknown_row.setData(0, Qt.UserRole + 1, None)
+    with patch.object(importer, "open_layer", return_value=missing_crs):
+        select_destination(destination, index)
+        assert not unknown_row.data(0, Qt.UserRole + 1), "A destination cannot establish missing coordinates"
+        assert unknown_row.text(3) == "Please set coordinate system"
+        assert not importer.add_button.isEnabled()
+        importer.editor.crs.setCrs(QgsCoordinateReferenceSystem("EPSG:4326"))
+        importer.apply_destination()
+        assert unknown_row.text(3) == "Ready"
+    # Add is inline, blanks the new field name and never writes on selection.
+    select_destination(destination, destination.findData("add"))
+    assert importer.editor.combos["field"].currentText() == ""
+    assert not importer.add_button.isEnabled()
+    assert store.records(root) == original_rows
+    importer.tree.setCurrentItem(unknown_row)
+    importer.editor.set_names(target)
+    importer.apply_destination()
+    importer.tree.itemWidget(unknown_row, 1).setCurrentIndex(1)
+    assert unknown_row.text(3) == "Ready"
+    assert unknown_row.text(2) == "Co-op / O'Brien / East / South"
+    assert store.records(root) == original_rows, "Inline setup only prepares plans"
+    assert importer.add_button.isEnabled()
+    pending = importer.tree.itemWidget(importer.tree.topLevelItem(0), 2)
+    assert pending.findText("Co-op / O'Brien / East / South") >= 0
+    select_destination(pending, pending.findText("Co-op / O'Brien / East / South"))
+    assert importer.tree.topLevelItem(0).data(0, Qt.UserRole + 1)["names"] == target
+    assert store.records(root) == original_rows
+    importer.detect_destination(importer.tree.topLevelItem(0))
+    importer.tree.setCurrentItem(unknown_row)
+    # Batch assignment must never spread one file's CRS to an unidentified file.
+    native_open = importer.open_layer
+    with patch.object(importer, "open_layer", side_effect=lambda row:
+                      missing_crs if row is importer.tree.topLevelItem(0) else native_open(row)):
+        old_plan = importer.tree.topLevelItem(0).data(0, Qt.UserRole + 1)
+        importer.apply_destination(True)
+        assert "individually" in importer.editor.error.text()
+        assert importer.tree.topLevelItem(0).data(0, Qt.UserRole + 1) == old_plan
+        assert store.records(root) == original_rows
+    # One explicit destination can be applied to the batch without changing types.
+    importer.apply_destination(True)
+    assert all(row.text(2) == unknown_row.text(2) for row in importer.rows())
+    assert importer.tree.itemWidget(importer.tree.topLevelItem(0), 1).currentData() == "data"
+    assert importer.tree.itemWidget(unknown_row, 1).currentData() == "boundary"
+    assert store.records(root) == original_rows
+    importer.detect_destination(importer.tree.topLevelItem(0))
+    # Unapplied edits cannot silently use an older destination. Row switching
+    # preserves drafts, while Import remains blocked until the draft is applied.
+    importer.editor.combos["field"].setEditText("Draft")
+    unknown_row.setCheckState(0, Qt.Unchecked)
+    assert importer.add_button.isEnabled(), "Unchecked drafts must not block ready files"
+    unknown_row.setCheckState(0, Qt.Checked)
+    assert not importer.add_button.isEnabled()
+    importer.tree.setCurrentItem(importer.tree.topLevelItem(0))
+    assert not importer.add_button.isEnabled()
+    importer.tree.setCurrentItem(unknown_row)
+    assert importer.editor.combos["field"].currentText() == "Draft"
+    importer.editor.set_names(target)
+    importer.apply_destination()
+    if os.environ.get("AGTECH_IMPORT_SCREENSHOT"):
+        from qgis.PyQt.QtGui import QFont
+        app.setFont(QFont("Segoe UI", 10))
+        importer.setAttribute(Qt.WA_DontShowOnScreen)
+        importer.show()
+        app.processEvents()
+        importer.grab().save(os.environ["AGTECH_IMPORT_SCREENSHOT"])
+    with patch.object(DestinationDialog, "exec", side_effect=AssertionError("No destination popups")):
         importer.add_selected()
+    assert loose_id not in project.mapLayers(), "The old source link must be replaced by the managed copy"
+    loose = next(layer for layer in project.mapLayers().values()
+                 if layer.customProperty("AgTechTooling/import_source") == str(path))
     new_id = loose.customProperty("AgTechTooling/import_field")
     assert routing.field_path(root, new_id) == target
     assert project.layerTreeRoot().findLayer(loose.id()).parent().name() == "Imported Data"
@@ -144,6 +224,8 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     assert routing.match_field(root, later)["field_id"] == new_id, "File-backed boundaries must still match after project reopen"
     del loaded
     project.clear()
+    QCoreApplication.sendPostedEvents(None, QEvent.DeferredDelete)
     del chooser, importer, parent, incoming, outline, edge, crossing, mercator, missing_crs, loose, later
+    gc.collect()
     app.exitQgis()
 print("Field matching, complete coverage, ambiguity, CRS transforms, atomic setup and saved placement checks passed")

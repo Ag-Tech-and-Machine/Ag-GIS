@@ -40,6 +40,9 @@ def main():
     source_root = args.source_from.resolve() if args.source_from else ROOT
     if args.source_from and not (source_root / "SOURCE-SNAPSHOT.json").is_file():
         raise ValueError("--source-from requires a recorded source snapshot")
+    for asset in ("installer/Launch.cs", "installer/Ag-GIS.ico", "plugins/ag_tech_tooling/branding.py"):
+        if not (source_root / asset).is_file():
+            raise ValueError("Snapshot predates branding assets; capture and validate a new source snapshot: " + asset)
     roots = [source_root / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
     sources = sorted([p for directory in roots for p in directory.rglob("*")
                       if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
@@ -99,10 +102,12 @@ def main():
     plugin_file = f"ag_tech_tooling-{version}.zip"
     shutil.copy2(snapshot / "dist" / plugin_file, bundle / plugin_file)
     shutil.copy2(args.msi, bundle / QGIS_FILE)
-    for name in ("Install.ps1", "install_profile.py", "Setup.cs"):
+    for name in ("Install.ps1", "install_profile.py", "Setup.cs", "Launch.cs", "Ag-GIS.ico"):
         shutil.copy2(snapshot / "installer" / name, bundle / name)
     compiler = Path(r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe")
-    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", str(bundle / "Setup.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", f"/win32icon:{bundle / 'Ag-GIS.ico'}", str(bundle / "Setup.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll",
+                    f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
     shutil.copy2(snapshot / "LICENSE", bundle / "LICENSE.txt")
     shutil.copy2(snapshot / "SOURCE-SNAPSHOT.json", bundle / "SOURCE-SNAPSHOT.json")
     with ZipFile(bundle / "Ag-GIS-source.zip", "w", ZIP_DEFLATED) as archive:
@@ -110,11 +115,11 @@ def main():
             archive.write(snapshot / name, name)
         archive.write(snapshot / "SOURCE-SNAPSHOT.json", "SOURCE-SNAPSHOT.json")
     (bundle / "README.txt").write_text(
-        f"Ag-GIS {version} offline Windows installer\n\n"
+        f"Ag-GIS {version} offline Windows installer\nFarming in view. Built on open source tools.\n\n"
         "1. Extract ALL files to a local folder. Keep Setup.exe beside the other files.\n"
         "2. Save your map and close QGIS. Double-click Setup.exe as your normal user.\n"
         "3. If QGIS 3.44.14 is missing, complete its official wizard and administrator prompt.\n"
-        "4. Open QGIS normally. The Ag-GIS toolbar is enabled in the default profile.\n\n"
+        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile.\n\n"
         "Other profile: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -Profile profile_name\n"
         "Verify without installing: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -VerifyOnly\n"
         "Recovery copies: %APPDATA%\\QGIS\\QGIS3\\profiles\\<profile>\\ag-tech-install-backups.\n"
