@@ -28,7 +28,8 @@ def validate_name(name):
     return name
 
 
-def create_farm(parent, name, crs, organisation=None, client=None, field=None, farm=None):
+def create_farm(parent, name, crs, organisation=None, client=None, field=None, farm=None,
+                default_season=None, build_tree=False):
     """Create in a sibling staging directory; never replace an existing farm."""
     name = validate_name(name)
     version = SCHEMA_VERSION if organisation is not None else 1
@@ -69,10 +70,16 @@ def create_farm(parent, name, crs, organisation=None, client=None, field=None, f
         result = QgsVectorFileWriter.writeAsVectorFormatV3(
             layer, str(data / "farm.gpkg"), QgsProject.instance().transformContext(), options)
         if result[0] != QgsVectorFileWriter.NoError:
-            raise ValueError(f"QGIS could not write the farm GeoPackage: {result[1]}")
+            raise ValueError(f"Ag-GIS could not write the farm GeoPackage: {result[1]}")
         if version == 2:
             from .hierarchy import initialise
             initialise(staging, organisation, client, farm or name, values["farm_id"], crs, field)
+            if default_season:
+                from . import hierarchy as store
+                fields = store.records(staging)["field"]
+                if not fields:
+                    raise ValueError("A default season needs a field.")
+                store.add_record(staging, "season", default_season, fields[0]["id"])
         project = QgsProject()
         project.setTitle(name)
         project.setCrs(crs)
@@ -81,8 +88,24 @@ def create_farm(parent, name, crs, organisation=None, client=None, field=None, f
         project.writeEntry("AgTechTooling", "farm_id", values["farm_id"])
         project.writeEntry("AgTechTooling", "schema_version", version)
         project.writeEntry("AgTechTooling", "database", "Data/farm.gpkg")
+        if version == 2:
+            from .view_settings import initialise
+            from .background_maps import ensure_background
+            initialise(project)
+            ensure_background(project)
+            from qgis.core import QgsReferencedRectangle, QgsRectangle
+            area = crs.bounds()
+            if area.isNull() or area.isEmpty():
+                area = QgsRectangle(-180, -80, 180, 80)
+            else:
+                area = area.intersect(QgsRectangle(-180, -85, 180, 85))
+            project.viewSettings().setDefaultViewExtent(QgsReferencedRectangle(area, QgsCoordinateReferenceSystem("EPSG:4326")))
+        if build_tree and version == 2:
+            from .hierarchy_dialog import sync_tree
+            sync_tree(staging, project=project)
         if not project.write():
             raise ValueError("Could not save the farm map project.")
+        project.clear()
         del project
         validate_farm(staging)
         # Windows rename refuses an existing destination, including an empty folder.
@@ -172,7 +195,7 @@ def upgrade_copy(root, parent, name, organisation, client):
         layer = QgsVectorLayer(f"{staging / 'Data/farm.gpkg'}|layername={TABLE}", TABLE, "ogr")
         record = next(layer.getFeatures())
         if not layer.dataProvider().changeAttributeValues({record.id(): {layer.fields().indexFromName("schema_version"): "2"}}):
-            raise ValueError("QGIS could not update the copied workspace version.")
+            raise ValueError("Ag-GIS could not update the copied workspace version.")
         del record, layer
         project = QgsProject()
         if not project.read(str(staging / "Farm.qgz")):

@@ -30,7 +30,7 @@ def main():
     if destination.exists():
         metadata = configparser.ConfigParser()
         metadata.read(destination / "metadata.txt", encoding="utf-8")
-        if metadata.get("general", "name", fallback="") != "Ag Tech Tooling":
+        if metadata.get("general", "name", fallback="") not in {"Ag-GIS", "Ag Tech Tooling"}:
             raise ValueError("Refusing to overwrite an unrelated plugin")
         shutil.copytree(destination, backup / "ag_tech_tooling")
     settings_file = profile / "QGIS/QGIS3.ini"
@@ -56,7 +56,7 @@ def main():
     settings.sync()
     if settings.status() != QSettings.NoError:
         raise RuntimeError("Could not save the enabled-plugin setting")
-    print(f"Installed and enabled Ag Tech Tooling {version}: {destination}")
+    print(f"Installed and enabled Ag-GIS {version}: {destination}")
     print(f"Settings backup: {backup}")
 
 

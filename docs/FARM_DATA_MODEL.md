@@ -1,12 +1,12 @@
 # Organisation, Client, Farm and Field — data model
 
-15 October 2026. Version 0.5.0 implements the hierarchy foundation in schema 2. Remaining workflow/history design is labelled below. Existing schema 1 projects stay readable and are upgraded through a separate copy, not an in-place migration.
+15 October 2026. Version 0.6.0 implements the hierarchy foundation in schema 2. Remaining workflow/history design is labelled below. Existing schema 1 projects stay readable and are upgraded through a separate copy, not an in-place migration.
 
-## Implemented in 0.5.0
+## Implemented in 0.6.0
 
 - Native QGIS attribute tables: `agtech_organisations`, `agtech_clients`, `agtech_farms`, `agtech_fields`, `agtech_seasons`, `agtech_crops`. Each has stable `id` and `name`; children carry their parent's ID. Seasons also have optional ISO start/end dates.
 - Native shared spatial layers: `agtech_boundaries` (MultiPolygon), `agtech_guidance` (MultiLineString), `agtech_infrastructure` (Point), with `id`, `field_id`, `name` and `revision`. IDs have unique indexes; parent links and nonempty identities are guarded by database triggers installed via the QGIS provider connection. Hierarchy names are unique within their parent (case-insensitive checks).
-- New Project setup with confirmed Organisation/Client/first Farm and optional first Field. Manage Data supports add/rename, a full icon-labelled hierarchy, Whole Field/Seasons grouping, season/crop records and selected-field native layer filtering.
+- One-click New Project generates Organisation 1 → Client 1 → Farm 1 → Field 1 → Seasons → Season 1 in a Documents workspace, with editable starter labels. Native Layers shows the full hierarchy as separate short levels, including all clients/farms/fields/seasons. The menu-only options form retains explicit setup. Manage Data supports add/rename, a full icon-labelled hierarchy, Whole Field/Seasons grouping, season/crop records and selected-field native layer filtering.
 - Schema 1 upgrade-copy support uses a SQLite storage snapshot, native QGIS schema creation/writes and validation. The original is retained unchanged; reserved table conflicts are refused. The original farm UUID becomes the first farm ID, and remains the workspace identity for compatibility.
 - Unrelated map layers are retained; three shared reference layers are reused across fields and after moving/reopening the project. Map context is saved through QGIS Save Map. Hierarchy changes save immediately to GeoPackage.
 
@@ -33,7 +33,7 @@ One organisation can contain several clients; one client can contain several far
 
 ## What the reference platforms show
 
-| Platform | Verified pattern | Lesson for Ag Tech Tooling |
+| Platform | Verified pattern | Lesson for Ag-GIS |
 | --- | --- | --- |
 | John Deere Operations Center | The field API operates within an organisation and relates fields to clients and farms. Deere's display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
 | Ag Leader SMS | Management items include Grower, Farm, Field and Year; SMS Advanced analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
@@ -112,7 +112,7 @@ Keep map and Layers as the primary workspace. Proposed controls belong in the ex
 
 All clients/farms/fields are viewing/filtering options, not database records. Require an explicit target for writes/imports rather than assigning new data to an aggregate selection. Changing a parent selection must reset incompatible child selections and make the active context visible.
 
-Selection should make the active context clear and filter or zoom without changing source data. Use native QGIS controls where practical. Avoid creating a separate permanent management panel in Simple view or one QGIS layer per individual field. Version 0.5.0 implements the focused management dialog, with readable labels/icons and native field filtering; dropdown selectors remain a future interface refinement.
+Selection should make the active context clear and filter or zoom without changing source data. Use native QGIS controls where practical. Avoid creating a separate permanent management panel in Simple view or one QGIS layer per individual field. Version 0.6.0 implements the focused management dialog, with readable labels/icons and native field filtering; dropdown selectors remain a future interface refinement.
 
 ## Next increment and checks
 
@@ -129,3 +129,14 @@ Verified automated foundation checks cover same-named farms/fields under differe
 - [Ag Leader: SMS Software Layout and Management Tree](https://portal.agleader.com/community/articles/en_US/Knowledge/6865).
 - [PTx: FarmENGAGE APIs](https://www.ptxag.com/us/en/partners/developers/api/).
 - [PTx: Initial Organization Creation and Management](https://www.ptxag.com/us/en/resources/product-resources/farmengage-initial-organization-creation-management.html).
+
+The 0.6.0 native Layers tree mirrors the complete management hierarchy using stable group properties. Selecting any field branch switches the shared reference views to that field; no table per field/season is created. Use Manage Data for persistent record renames. Default labels are placeholders, not inferred ownership or a real crop season.
+
+## Managed dataset extension — 0.9.0
+
+`agtech_datasets` now indexes managed vector tables and relative raster files with
+field/type/provenance metadata (catalogue version 1, core farm schema remains 2).
+Imports preserve heterogeneous source attributes in individual dataset tables;
+these are not per-field/year schemas. See MANAGED_DATA.md for copying, recovery,
+filtering, typed reference roles and storage limits. Dataset-season relationships,
+shared multi-field scope and history lineage remain future schema work.

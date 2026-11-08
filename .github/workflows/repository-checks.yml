@@ -1,0 +1,35 @@
+name: Repository checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: repository-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  basic:
+    name: Repository and syntax (not QGIS integration)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check repository and Python syntax
+        run: python tools/check_repository.py
+      - name: Check plugin metadata
+        run: python tools/check_plugin.py
+      - name: Check local agent decision workflow
+        run: python tools/agent_ops_test.py
+      - name: Construct development ZIP (not a release)
+        run: python tools/build_plugin.py
+      - name: Exercise issue triage without network
+        run: node tools/feedback_workflow_test.cjs
+      - name: State check limits
+        run: echo 'Basic checks passed. Real QGIS/Qt, extracted-package integration and user acceptance remain separate.'

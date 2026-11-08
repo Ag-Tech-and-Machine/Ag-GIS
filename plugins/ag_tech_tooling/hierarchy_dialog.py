@@ -1,12 +1,13 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
+from .branding import brand_dialog
 from pathlib import Path
 import sqlite3
-from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtCore import Qt, QDate
 from qgis.PyQt.QtWidgets import (
-    QDialog, QDialogButtonBox, QFormLayout, QHBoxLayout, QLabel, QLineEdit,
-    QMessageBox, QPushButton, QTreeWidget, QTreeWidgetItem, QVBoxLayout,
+    QDialog, QDialogButtonBox, QFormLayout, QHBoxLayout, QLabel, QLineEdit, QCheckBox,
+    QMessageBox, QPushButton, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDateEdit,
 )
-from qgis.core import QgsDefaultValue, QgsProject, QgsVectorLayer
+from qgis.core import QgsDefaultValue, QgsLayerTreeGroup, QgsProject, QgsVectorLayer
 from . import hierarchy as store
 from .ui_icons import icon, decorate_input, decorate_buttons
 
@@ -16,7 +17,7 @@ class NameDialog(QDialog):
         super().__init__(parent)
         self.kind, self.renaming = kind, bool(value)
         self.setWindowTitle(("Rename " if value else "Add ") + kind.title())
-        self.setWindowIcon(icon(kind))
+        brand_dialog(self)
         layout = QVBoxLayout(self)
         form = QFormLayout()
         self.name = QLineEdit(value)
@@ -46,12 +47,128 @@ class NameDialog(QDialog):
         super().accept()
 
 
+class SeasonBoundaryPreview(QDialog):
+    """Preview first; explicit confirmed paired date edit keeps recorded history."""
+    def __init__(self, root, season_id, parent=None):
+        super().__init__(parent)
+        self.root, self.season_id = Path(root), season_id
+        self.expected_timeline = store.records(root)['season']
+        selected = next((row for row in self.expected_timeline if row['id'] == season_id), None)
+        self.setWindowTitle('Preview Season Boundary')
+        brand_dialog(self)
+        self.resize(960, 650)
+        layout = QVBoxLayout(self)
+        self.decision = None
+        self.notice = QLabel('Preview only until you explicitly apply both dates. Jobs stay in their recorded seasons, '
+                             'even when the new dates would match another season. Reassignment is not available. '
+                             'Apply saves the two dates and an audit decision immediately; Close changes nothing.')
+        self.notice.setWordWrap(True)
+        layout.addWidget(self.notice)
+        form = QFormLayout()
+        form.addRow('Season ending at this boundary', QLabel(selected['name'] if selected else 'Missing season'))
+        self.end = QDateEdit()
+        self.end.setCalendarPopup(True)
+        self.end.setDisplayFormat('yyyy-MM-dd')
+        self.end.setDateRange(QDate(1, 1, 1), QDate(9999, 12, 31))
+        self.end.setDate(QDate.fromString(selected['end_date'], 'yyyy-MM-dd') if selected and selected['end_date'] else QDate.currentDate())
+        form.addRow('Proposed last day', self.end)
+        layout.addLayout(form)
+        self.result = QLabel()
+        self.result.setWordWrap(True)
+        layout.addWidget(self.result)
+        self.timeline = QTreeWidget()
+        self.timeline.setHeaderLabels(['Season (date order)', 'Saved first day', 'Saved last day', 'Proposed first day', 'Proposed last day'])
+        layout.addWidget(self.timeline)
+        self.history = QTreeWidget()
+        self.history.setHeaderLabels(['Saved job', 'Job date', 'Job type', 'Recorded season (kept)', 'Would match by date', 'Review'])
+        layout.addWidget(self.history)
+        self.keep_jobs = QCheckBox('I reviewed the job impacts: keep all jobs in their recorded seasons')
+        layout.addWidget(self.keep_jobs)
+        self.apply_button = QPushButton('Apply Both Dates…')
+        self.apply_button.setEnabled(False)
+        self.apply_button.clicked.connect(self.apply_dates)
+        self.keep_jobs.toggled.connect(self.update_apply)
+        row = QHBoxLayout()
+        refresh = QPushButton('Refresh Preview')
+        refresh.clicked.connect(self.refresh_preview)
+        close = QPushButton(icon('cancel'), 'Close')
+        close.clicked.connect(self.reject)
+        row.addWidget(refresh)
+        row.addWidget(self.apply_button)
+        row.addStretch()
+        row.addWidget(close)
+        layout.addLayout(row)
+        self.end.dateChanged.connect(self.refresh_preview)
+        self.refresh_preview()
+
+    def refresh_preview(self, *args):
+        from .season_boundary import preview_boundary
+        self.preview = None
+        self.keep_jobs.setChecked(False)
+        self.apply_button.setEnabled(False)
+        self.timeline.clear()
+        self.history.clear()
+        try:
+            result = preview_boundary(self.root, self.season_id, self.end.date().toString('yyyy-MM-dd'),
+                                      expected_timeline=self.expected_timeline)
+        except (ValueError, OSError, sqlite3.Error) as error:
+            self.result.setText(str(error))
+            return
+        self.preview = result
+        for saved, proposed in zip(result['timeline'], result['proposed_timeline']):
+            QTreeWidgetItem(self.timeline, [saved['name'], saved['start_date'], saved['end_date'], proposed['start_date'], proposed['end_date']])
+        for job in result['history']:
+            state = ('Date match changes; recorded season kept' if job['date_match_changed'] else
+                     'Existing date/context mismatch; kept' if job['affected'] else 'Unchanged')
+            QTreeWidgetItem(self.history, [job['dataset_name'], job['job_date'], job['operation_subtype'],
+                                          job['recorded_season_name'], job['proposed_season_name'], state])
+        for tree in (self.timeline, self.history):
+            for column in range(tree.columnCount()):
+                tree.resizeColumnToContents(column)
+        self.result.setText(f"{result['date_match_changed_count']} saved job date matches would change; "
+                            f"{result['affected_count']} would differ from their recorded season. "
+                            f"{result['unreviewed_count']} Whole Field / unreviewed datasets are excluded, not guessed. "
+                            'The following season starts the next day. No history is reassigned.')
+        self.update_apply()
+
+    def update_apply(self, *args):
+        self.apply_button.setEnabled(bool(self.preview and self.keep_jobs.isChecked()
+                                          and self.preview['timeline'] != self.preview['proposed_timeline']))
+
+    def apply_dates(self):
+        if not self.apply_button.isEnabled():
+            return
+        reviewed = self.preview
+        changed = [(old, new) for old, new in zip(reviewed['timeline'], reviewed['proposed_timeline']) if old != new]
+        details = '\n'.join(f"{new['name']}: {new['start_date']} to {new['end_date']}" for old, new in changed)
+        answer = QMessageBox.question(self, 'Apply both season dates?',
+            details + f"\n\n{reviewed['date_match_changed_count']} job date matches change. Keep ALL jobs in their recorded seasons. "
+            'Save these two dates and this keep-history decision now? No jobs, source data or styles will be rewritten.',
+            QMessageBox.Yes | QMessageBox.Cancel, QMessageBox.Cancel)
+        if answer != QMessageBox.Yes:
+            return
+        try:
+            if any(getattr(layer, 'isEditable', lambda: False)() for layer in QgsProject.instance().mapLayers().values()):
+                raise ValueError('Finish layer edits before applying season dates.')
+            from .season_boundary import apply_boundary
+            self.decision = apply_boundary(self.root, reviewed, history_decision='retain-recorded')
+        except (ValueError, OSError, sqlite3.Error) as error:
+            self.preview = None
+            self.keep_jobs.setChecked(False)
+            self.apply_button.setEnabled(False)
+            self.history.clear()
+            self.timeline.clear()
+            self.result.setText('Not applied. ' + str(error))
+            return
+        self.accept()
+
+
 class HierarchyDialog(QDialog):
     def __init__(self, root, iface):
         super().__init__(iface.mainWindow())
         self.root, self.iface = Path(root), iface
         self.setWindowTitle("Manage Farm Data")
-        self.setWindowIcon(icon("organisation"))
+        brand_dialog(self)
         self.resize(820, 650)
         layout = QVBoxLayout(self)
         hint = QLabel("Select a parent, then add a client, farm, field, season or crop. Select a field or its data to show it on the map.")
@@ -66,7 +183,7 @@ class HierarchyDialog(QDialog):
             self.add_buttons[kind] = button
         layout.addLayout(row)
         self.tree = QTreeWidget()
-        self.tree.setHeaderLabels(["Organisation / Client / Farm / Field", "Data scope"])
+        self.tree.setHeaderLabels(["Farm Data", "Type"])
         self.tree.headerItem().setIcon(0, icon("organisation"))
         self.tree.headerItem().setIcon(1, icon("whole"))
         self.tree.setColumnWidth(0, 480)
@@ -83,6 +200,9 @@ class HierarchyDialog(QDialog):
         close = QPushButton(icon("cancel"), "Close")
         close.clicked.connect(self.reject)
         footer.addWidget(self.rename_button)
+        self.boundary_button = QPushButton(icon('season'), 'Preview Season Boundary…')
+        self.boundary_button.clicked.connect(self.preview_boundary)
+        footer.addWidget(self.boundary_button)
         footer.addStretch()
         footer.addWidget(self.show_button)
         footer.addWidget(close)
@@ -146,6 +266,24 @@ class HierarchyDialog(QDialog):
             button.setEnabled(parent_kind is None or self.ancestor(parent_kind) is not None)
         self.rename_button.setEnabled(current is not None and bool(current.data(0, Qt.UserRole)))
         self.show_button.setEnabled(self.ancestor("field") is not None)
+        data = current.data(0, Qt.UserRole) if current else None
+        self.boundary_button.setEnabled(bool(data and data[0] == 'season'))
+
+    def preview_boundary(self):
+        item = self.tree.currentItem()
+        data = item.data(0, Qt.UserRole) if item else None
+        if not data or data[0] != 'season':
+            return
+        try:
+            dialog = SeasonBoundaryPreview(self.root, data[1], self)
+            dialog.exec()
+            if dialog.decision:
+                self.reload(data[1])
+                self.status.setText('Both season dates saved to GeoPackage with a keep-history audit decision. '
+                                    'All jobs remain in their recorded seasons. Original data, styles and Whole Field are unchanged.')
+            dialog.deleteLater()
+        except (ValueError, OSError, sqlite3.Error) as error:
+            QMessageBox.warning(self, 'Could not preview season boundary', str(error))
 
     def add(self, kind):
         parent_kind = store.ENTITIES[kind][1]
@@ -157,6 +295,7 @@ class HierarchyDialog(QDialog):
             record_id = store.add_record(self.root, kind, dialog.name.text(), parent_id,
                                          start=dialog.start.text().strip(), end=dialog.end.text().strip())
             self.reload(record_id)
+            refresh_tree(self.root)
         except (ValueError, RuntimeError, OSError, sqlite3.Error) as error:
             QMessageBox.warning(self, "Could not add " + kind, str(error))
 
@@ -171,6 +310,7 @@ class HierarchyDialog(QDialog):
         try:
             store.rename_record(self.root, kind, record_id, dialog.name.text())
             self.reload(record_id)
+            refresh_tree(self.root)
         except (ValueError, RuntimeError, OSError, sqlite3.Error) as error:
             QMessageBox.warning(self, "Could not rename", str(error))
 
@@ -184,39 +324,83 @@ class HierarchyDialog(QDialog):
                 QMessageBox.warning(self, "Could not show field", str(error))
 
 
-def show_field(root, field_id):
-    """Display shared native layers for one field; retain unrelated project data."""
+def sync_tree(root, project=None):
+    """Mirror every stored hierarchy row with short, stable native QGIS groups."""
+    project = project or QgsProject.instance()
+    rows, key = store.records(root), store.workspace_id(root)
+    tree = project.layerTreeRoot()
+    group = next((node for node in tree.children() if isinstance(node, QgsLayerTreeGroup)
+                  and node.customProperty("AgTechTooling/workspace") == key), None)
+    if group is None:
+        group = tree.insertGroup(0, "Farm Data")
+        group.setCustomProperty("AgTechTooling/workspace", key)
+    group.setName("Farm Data")
+    groups = {}
+
+    def child(parent, name, kind, identifier, field_id=""):
+        node_key = kind + ":" + identifier
+        node = next((node for node in parent.children() if isinstance(node, QgsLayerTreeGroup)
+                     and node.customProperty("AgTechTooling/node") == node_key), None)
+        if node is None:
+            node = parent.addGroup(name)
+        node.setName(name)
+        node.setCustomProperty("AgTechTooling/node", node_key)
+        node.setCustomProperty("AgTechTooling/kind", kind)
+        node.setCustomProperty("AgTechTooling/field", field_id)
+        return node
+
+    for kind, (_, parent_kind, parent_key) in store.ENTITIES.items():
+        for row in rows[kind]:
+            parent = groups.get(row.get(parent_key)) if parent_kind else group
+            if parent is None:
+                continue
+            if kind == "season":
+                parent = groups["seasons:" + row[parent_key]]
+            field_id = row["id"] if kind == "field" else parent.customProperty("AgTechTooling/field", "")
+            node = child(parent, row["name"], kind, row["id"], field_id)
+            groups[row["id"]] = node
+            if kind == "field":
+                groups["whole:" + row["id"]] = child(node, "Whole Field", "whole", row["id"], row["id"])
+                groups["seasons:" + row["id"]] = child(node, "Seasons", "seasons", row["id"], row["id"])
+            elif kind in {"season", "crop"}:
+                for title in ("Plans", "Operations", "Results"):
+                    child(node, title, title.lower(), row["id"], field_id)
+    return group, groups
+
+
+def refresh_tree(root):
     project = QgsProject.instance()
+    if project.readEntry("AgTechTooling", "farm_id")[0] == store.workspace_id(root):
+        sync_tree(root, project)
+        project.setDirty(True)
+
+
+def show_field(root, field_id, project=None):
+    """Display shared native layers for one field; retain unrelated project data."""
+    project = project or QgsProject.instance()
     if any(getattr(layer, "isEditable", lambda: False)() for layer in project.mapLayers().values()):
         raise ValueError("Finish layer edits before changing field context.")
     rows = store.validate(root)
     field = next((row for row in rows["field"] if row["id"] == field_id), None)
     if not field:
         raise ValueError("Select a valid field.")
-    farm = next(row for row in rows["farm"] if row["id"] == field["farm_id"])
-    client = next(row for row in rows["client"] if row["id"] == farm["client_id"])
-    organisation = next(row for row in rows["organisation"] if row["id"] == client["organisation_id"])
     key = store.workspace_id(root)
-    tree = project.layerTreeRoot()
-    group = next((group for group in tree.children() if group.customProperty("AgTechTooling/workspace") == key), None)
-    if group is None:
-        group = tree.addGroup("Farm Data")
-        group.setCustomProperty("AgTechTooling/workspace", key)
-    group.setName(" / ".join(row["name"] for row in (organisation, client, farm, field)))
-    whole = group.findGroup("Whole Field") or group.addGroup("Whole Field")
-    group.findGroup("Seasons") or group.addGroup("Seasons")
+    group, groups = sync_tree(root, project)
+    whole = groups["whole:" + field_id]
     prepared = []
     for title, (table, geometry) in store.SPATIAL.items():
         existing = next((layer for layer in project.mapLayers().values()
                          if layer.customProperty("AgTechTooling/workspace") == key
                          and layer.customProperty("AgTechTooling/table") == table), None)
-        layer = existing or QgsVectorLayer(f"{store.database(root)}|layername={table}", title, "ogr")
+        layer = existing or QgsVectorLayer(
+            store.layer_uri(root, table, f'"field_id" = \'{field_id}\''), title, "ogr")
         if not layer.isValid():
             raise ValueError("Could not read " + title)
         prepared.append((layer, existing, table))
     for layer, existing, table in prepared:
-        if not layer.setSubsetString(f'"field_id" = \'{field_id}\''):
-            raise ValueError("QGIS could not filter the selected field.")
+        expression = f'"field_id" = \'{field_id}\''
+        if not layer.setSubsetString(expression):
+            raise ValueError("Ag-GIS could not filter the selected field.")
         for name, expression in (("id", "uuid()"), ("field_id", f"'{field_id}'"), ("revision", "'1'")):
             layer.setDefaultValueDefinition(layer.fields().indexFromName(name), QgsDefaultValue(expression))
         layer.setCustomProperty("AgTechTooling/workspace", key)
@@ -224,5 +408,17 @@ def show_field(root, field_id):
         if not existing:
             project.addMapLayer(layer, False)
             whole.addLayer(layer)
+        else:
+            node = project.layerTreeRoot().findLayer(layer.id())
+            if node is not None and node.parent() is not whole:
+                whole.addChildNode(node.clone())
+                node.parent().removeChildNode(node)
+    # Retire empty legacy flat groups from 0.5; preserve any unrelated user content.
+    for node in list(group.children()):
+        if isinstance(node, QgsLayerTreeGroup) and not node.customProperty("AgTechTooling/node"):
+            if node.name() in {"Whole Field", "Seasons"} and not node.children():
+                group.removeChildNode(node)
     project.writeEntry("AgTechTooling", "selected_field", field_id)
+    from .managed_data import apply_filters
+    apply_filters(root, field_id, project.readEntry("AgTechTooling", "data_filter_role", "*")[0], project)
     project.setDirty(True)

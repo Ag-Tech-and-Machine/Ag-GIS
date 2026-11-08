@@ -1,59 +1,55 @@
-# Ag Tech Tooling
+![Ag-GIS — Farming in view. Your farm maps. Your data. Your control. Built on open source tools.](assets/brand/ag-gis-banner.png)
 
-Ag Tech Tooling builds farmer-friendly, open-source tools that simplify agricultural workflows and automate GIS work. We aim to turn repetitive mapping and data preparation into understandable, dependable steps that farmers can use without needing to become GIS specialists.
+<p align="center">
+  <a href="https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases"><strong>Experimental downloads</strong></a>
+  &nbsp; · &nbsp;
+  <a href="docs/INSTALL.md">Getting started</a>
+  &nbsp; · &nbsp;
+  <a href="docs/USER_GUIDE.md">User guide</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/JamRov/Ag-GIS-Feedback/issues">Feedback &amp; ideas</a>
+  &nbsp; · &nbsp;
+  <a href="docs/DEVELOPMENT_PLAN.md">Development plan &amp; pipeline</a>
+</p>
 
-The project uses QGIS 3.x LTR. Version 0.5.0 provides a dedicated **Ag Tech Tooling** toolbar with New Project, Open Project and Manage Data. Manage Organisation → Client → Farm → Field and Season/Crop records in GeoPackage, with icon-labelled rows/controls and field-filtered native reference layers. Save/navigation reuse native QGIS actions. The bottom-right **Simple view** switch keeps our toolbar plus map and Layers. Schema 1 upgrades create a separate validated copy. Seasonal datasets, imports/exports, full settings editing, history and conversions remain under development. Source code is GPL-2.0-or-later. A public Git repository has not yet been created.
+## Farm maps, without the runaround.
 
-See [project purpose and design principles](docs/PURPOSE.md).
+Ag-GIS brings farm maps and data into practical desktop workflows: organise farm information, see it on a map and spend less time on repetitive GIS work.
 
-## Maintained instructions
+**Farming in view. Built on open source tools.**
 
-- [Installation and setup](docs/INSTALL.md)
-- [Bundled user guide](docs/USER_GUIDE.md)
-- [Development and tooling](docs/TOOLING.md)
-- [Farm data foundation and structure proposal](docs/FARM_PROJECTS.md) (minimal New/Open implemented)
-- [Organisation, Client, Farm and Field model](docs/FARM_DATA_MODEL.md) (implemented foundation and remaining design)
-- [Work log and verification status](docs/WORK_LOG.md)
+> **In development — not release-ready.** Downloads are experimental snapshots. Read the release notes before installing; the current development interface may be ahead of a published installer.
 
-These instructions are updated alongside the tooling, rather than only at release time.
+![Ag-GIS development desktop showing four synthetic paddocks and the Farm Data browser.](assets/brand/ag-gis-desktop.png)
 
-## Install locally
+*A real development desktop with generated demonstration boundaries. No customer data or online imagery. This shows local development, not a promise that an older download has the same interface.*
 
-Close QGIS and run `scripts/install-plugin.ps1`. It checks and builds the plugin, installs it into the existing `default` QGIS profile, backs up the profile settings, and enables Ag Tech Tooling. Restart QGIS normally to use the installed copy. Use `-Profile` to choose another existing user profile.
+## A clearer place for farm information
 
-## Develop
+**Keep the farm structure clear.** Organisation → Client → Farm → Field, with reusable Whole Field references separate from seasonal work. See the [farm data model](docs/FARM_DATA_MODEL.md) for what is implemented and what remains planned.
 
-Run `scripts/launch-qgis.ps1` in PowerShell. It finds an installed QGIS launcher, sets `QGIS_PLUGINPATH` to this repository's `plugins` directory, and opens the isolated `ag-tech-tooling-dev` profile.
+**Work from the map.** A simplified workspace brings farm tasks together while keeping the underlying mapping tools accessible. The [user guide](docs/USER_GUIDE.md) describes the workflows in each source snapshot.
 
-In QGIS, open **Plugins → Manage and Install Plugins → Installed**, then enable **Ag Tech Tooling**. Use its toolbar or Plugins menu action. Restart QGIS after changing Python code, or use the optional Plugin Reloader plugin.
+**Keep control of your data.** Preserving originals, useful local operation and deliberate sharing guide the project. Optional online services are future candidates, not a requirement or a launched product.
 
-Edit `plugins/ag_tech_tooling/plugin.py` for functionality and `metadata.txt` for plugin details. Keep GIS datasets outside Git; this repository ignores common dataset formats.
+## Try it, or help shape it
 
-## Check and package
+**Connect your own agent:** [Start Here](START_HERE.md). Describe the farming problem in ordinary words; copy instructions for Codex, Claude Code, Hermes or another agent. Local drafting needs no sign-in; nothing is submitted without review and explicit consent.
 
-Use the installed QGIS Python runtime to run all checks and build the ZIP:
+**Trying Ag-GIS?** Start with the [installation guide](docs/INSTALL.md), choose an [experimental download](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) and use a copy of your data for evaluation. Extract the complete Windows bundle before running Setup.exe. Each release has its own source and verification limits.
 
-```powershell
-.\scripts\check.ps1
-```
+**Have a farming task we should simplify?** Share the task and a safe example in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Reports and attachments are public: never include private farm/customer data or credentials.
 
-For syntax checks and packaging only, an ordinary Python 3 runtime also works:
+**Want to contribute?** Fork this repository and propose a focused pull request. Start with [AGENTS.md](AGENTS.md) and the [tooling notes](docs/TOOLING.md). Maintainers review changes; ideas and votes inform priorities without guaranteeing a feature or delivery date.
 
-```powershell
-python tools/check_plugin.py
-python tools/build_plugin.py
-```
+---
 
-If the `python` command is a Windows Store alias, use the full path to an installed Python executable. PyQGIS is bundled with QGIS; do not install a package called `qgis` from pip.
+### Development, foundations and credits
 
-The build produces `dist/ag_tech_tooling-0.5.0.zip`, suitable for **Plugins → Manage and Install Plugins → Install from ZIP**. Generated archives stay out of Git.
+The current desktop implementation uses QGIS/PyQGIS and its bundled tools. Ag-GIS is a separate project, built on open source tools, with upstream credits and licences retained and no implied endorsement. A broader toolkit is the direction, not a claim of other implemented integrations.
 
-`tools/smoke_test.py` checks the actual Qt/PyQGIS plugin lifecycle. Run it with QGIS's Python interpreter after setting up the QGIS environment; ordinary system Python cannot import PyQGIS.
+Read the [installation](docs/INSTALL.md), [tooling](docs/TOOLING.md) and [work log](docs/WORK_LOG.md) for prerequisites and verification. Ordinary Python can run `tools/check_plugin.py` and `tools/build_plugin.py`; real PyQGIS checks use QGIS's bundled runtime through `scripts/check.ps1`.
 
-## Git
+Cloud backup, mobile access, team synchronisation and hosted workspaces are future candidates. No paid cloud service has launched. Public source, local development and installed packages can differ.
 
-The repository starts on `main`. Commit identity is Michael `<admin@agtechandmachine.com>`. It is local: no GitHub repository or remote is created automatically.
-
-## Publishing
-
-The starter metadata marks this plugin experimental. The source uses GPL-2.0-or-later, with the license included in plugin ZIPs. Confirm the final plugin name, public project/support URLs and compatibility checks before publishing. It is not yet a public release.
+[GPL-2.0-or-later](LICENSE) · [Repository artwork and provenance](docs/REPOSITORY_PRESENTATION.md)
