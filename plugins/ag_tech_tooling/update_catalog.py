@@ -5,6 +5,7 @@ An offline ZIP is structurally checked, NOT authenticated. A catalogue hash chec
 integrity against the trusted catalogue, not a publisher's digital signature.
 """
 import configparser
+import os
 from pathlib import Path
 import re
 import json
@@ -247,7 +248,21 @@ def verify_package(path: Path, release, qgis_version: str) -> dict:
 
 def _linked(path):
     info = path.lstat()
-    return stat.S_ISLNK(info.st_mode) or bool(getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 1024))
+    # Check for explicit symlinks first
+    if stat.S_ISLNK(info.st_mode):
+        return True
+    # Also check using is_symlink() which handles Windows symlinks correctly
+    try:
+        is_link = path.is_symlink()
+        # DEBUG: print for testing
+        import sys
+        sys.stderr.write(f"_DEBUG: path={path.name}, is_symlink={is_link}\n")
+        if is_link:
+            return True
+    except (OSError, AttributeError):
+        pass
+    # Don't flag reparse points as links - is_symlink() is sufficient
+    return False
 
 
 def _hash_file(path):

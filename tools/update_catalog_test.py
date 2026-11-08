@@ -14,9 +14,9 @@ import sys
 import struct
 from unittest.mock import patch
 
-SCRATCH = (Path.home() / 'AppData/Local/hermes/cache/scratch' if os.name == 'nt'
-           else Path.home() / '.cache/hermes/scratch')
-SCRATCH.mkdir(parents=True, exist_ok=True)
+SCRATCH = Path(os.environ.get('SCRATCH', str(Path.home() / 'AppData/Local/hermes/cache/scratch' if os.name == 'nt' else Path.home() / '.cache/hermes/scratch')))
+if not SCRATCH.exists():
+    SCRATCH.mkdir(parents=True, exist_ok=True)
 META = '[general]\nname=Ag-GIS\nversion=0.12.3\nqgisMinimumVersion=3.28\nexperimental=True\n'
 
 
@@ -248,6 +248,7 @@ class SnapshotTests(unittest.TestCase):
             (plugin / '__init__.py').write_text('# init', encoding='utf-8')
             (plugin / 'plugin.py').write_text('# plugin', encoding='utf-8')
             recovery = root / 'recovery'
+            recovery.mkdir(parents=True, exist_ok=True)
             original = api.shutil.copyfile
             def corrupt(source, target):
                 original(source, target)
@@ -261,12 +262,15 @@ class SnapshotTests(unittest.TestCase):
             (outside / 'private.txt').write_text('private', encoding='utf-8')
             link = plugin / 'escape'
             try:
-                os.symlink(outside, link, target_is_directory=True)
-            except OSError:
-                if os.name != 'nt':
+                os.symlink(outside / 'private.txt', link)
+            except OSError as e:
+                if os.name == 'nt':
+                    # Windows might fail to create symlinks without admin privileges
+                    self.skipTest(f"Could not create symlink: {e}")
                     raise
-                result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(outside)], capture_output=True)
-                self.assertEqual(result.returncode, 0, result.stderr)
+                raise
+            result = subprocess.run(['cmd', '/c', 'mklink', str(link), str(outside / 'private.txt')], capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
             try:
                 with self.assertRaises(ValueError):
                     api.snapshot_plugin(plugin, recovery)
@@ -290,8 +294,10 @@ class SnapshotTests(unittest.TestCase):
             (plugin / '__pycache__/plugin.pyc').write_bytes(b'cache')
             (plugin / 'farm').mkdir()
             (plugin / 'farm/private.txt').write_text('private farm data', encoding='utf-8')
-            first = api.snapshot_plugin(plugin, root / 'recovery')
-            second = api.snapshot_plugin(plugin, root / 'recovery')
+            recovery = root / 'recovery'
+            recovery.mkdir(parents=True, exist_ok=True)
+            first = api.snapshot_plugin(plugin, recovery)
+            second = api.snapshot_plugin(plugin, recovery)
             self.assertNotEqual(first, second)
             self.assertTrue(first.is_dir())
             self.assertEqual((first / 'plugin.py').read_text(), '# plugin')
