@@ -425,6 +425,14 @@ class FarmBrowser(QObject):
         generation = self.selection_generation
         QTimer.singleShot(0, lambda: self.end_restore()
                           if generation == self.selection_generation else None)
+        # Rebuild the layer tree hierarchy after project load (Issue #3 fix)
+        try:
+            from . import hierarchy_dialog
+            root = workspace_root()
+            hierarchy_dialog.refresh_tree(root)
+        except Exception:
+            # If workspace is not ready, ignore - will be called on next interaction
+            pass
 
     def end_restore(self):
         if not self.closed:
