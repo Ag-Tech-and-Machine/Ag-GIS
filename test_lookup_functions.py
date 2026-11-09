@@ -132,6 +132,29 @@ def test_lookup_unit():
                 print(f"  ✗ {unit_token} -> expected {expected_fields}, got {result}")
                 all_passed = False
     
+    # Test bug fix: lookup should work when unit_token != standard_name
+    # This is a regression test for a bug where lookup_unit incorrectly required
+    # unit_token == standard_name in the SQL query
+    print("\n=== Regression test: unit_token != standard_name ===")
+    # Register a unit with different token and standard_name
+    register_unit(conn, "deere-gs3", "lph_internal", "litres_per_ha", "rate", "Internal token for litres per hectare")
+    register_unit(conn, "deere-gs3", "gpa_internal", "gallons_per_acre", "rate", "Internal token for gallons per acre")
+    
+    # These should now work (before the fix, they would return None)
+    result1 = lookup_unit("lph_internal", "deere-gs3", conn=conn)
+    if result1 and result1["standard"] == "litres_per_ha":
+        print(f"  ✓ lph_internal (token) != litres_per_ha (standard) -> {result1['standard']}")
+    else:
+        print(f"  ✗ lph_internal lookup failed: {result1}")
+        all_passed = False
+    
+    result2 = lookup_unit("gpa_internal", "deere-gs3", conn=conn)
+    if result2 and result2["standard"] == "gallons_per_acre":
+        print(f"  ✓ gpa_internal (token) != gallons_per_acre (standard) -> {result2['standard']}")
+    else:
+        print(f"  ✗ gpa_internal lookup failed: {result2}")
+        all_passed = False
+    
     conn.close()
     return all_passed
 

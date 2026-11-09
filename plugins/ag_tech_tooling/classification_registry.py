@@ -292,8 +292,9 @@ def lookup_unit(unit_token, source_type, *, conn=None, name="default", version=N
         return None
     if not conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='agtech_unit_registry'").fetchone():
         return None
-    query = "SELECT id,version,standard_name,category,description FROM agtech_unit_registry WHERE name=? AND vendor_source=? AND unit_token=? AND standard_name=?"
-    args = [name, source_type, unit_token, unit_token]
+    # Query by unit_token only - unit_token and standard_name are independent fields
+    query = "SELECT id,version,standard_name,category,description FROM agtech_unit_registry WHERE name=? AND vendor_source=? AND unit_token=?"
+    args = [name, source_type, unit_token]
     if version is not None:
         query += " AND version=?"
         args.append(version)
