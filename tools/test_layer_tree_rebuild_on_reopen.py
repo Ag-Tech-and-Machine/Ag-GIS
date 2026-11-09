@@ -139,6 +139,16 @@ with tempfile.TemporaryDirectory(prefix="agtech-layer-tree-rebuild-test-") as te
     # Verify the layer tree hierarchy is still there after reopen
     assert len(found_kinds_after) > 0, "Layer tree hierarchy should be rebuilt on reopen"
     
+    # Verify the delegate is not double-wrapped (restore must not nest wrappers)
+    # After the restore cycle, the delegate should be the original native delegate,
+    # not a wrapped FarmTreeDelegate. A FarmTreeDelegate has a .native attribute,
+    # so we check that the current delegate does NOT have this attribute.
+    current_delegate = view.itemDelegate()
+    if current_delegate is not None:
+        # FarmTreeDelegate has a .native attribute; the original delegate doesn't
+        # If current_delegate doesn't have .native, it's the original delegate (good)
+        assert not hasattr(current_delegate, 'native'), "Delegate should be the original native delegate, not a wrapped FarmTreeDelegate"
+    
     # Clean up
     browser2.close()
     iface.window.close()
