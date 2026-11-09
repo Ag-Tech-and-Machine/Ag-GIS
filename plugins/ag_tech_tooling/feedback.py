@@ -15,7 +15,7 @@ from qgis.PyQt.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
     QPlainTextEdit, QPushButton, QTabWidget, QVBoxLayout, QWidget)
 
 ISSUES_URL = "https://github.com/JamRov/Ag-GIS-Feedback/issues"
-SUPPORT_EMAIL = "[user identity]"
+SUPPORT_EMAIL = "admin@agtechandmachine.com"
 KINDS = {"Something went wrong": "bug_report.yml",
          "An idea or improvement": "suggestion.yml",
          "I need help": "help.yml"}

@@ -1,0 +1,45 @@
+{
+  "version": "0.12.2",
+  "qgisFile": "QGIS-OSGeo4W-3.44.14-1.msi",
+  "pluginFile": "ag_tech_tooling-0.12.2.zip",
+  "qgisUrl": "https://download.qgis.org/downloads/QGIS-OSGeo4W-3.44.14-1.msi",
+  "qgisHashSource": "https://github.com/microsoft/winget-pkgs/blob/master/manifests/o/OSGeo/QGIS_LTR/3.44.14/OSGeo.QGIS_LTR.installer.yaml",
+  "files": [
+    {
+      "path": "Ag-GIS-source.zip",
+      "sha256": "48008c135e454fbc0a7c9d779a31c92fb03d8569faa55796db38ae51ba3ab9fa"
+    },
+    {
+      "path": "Ag-GIS.exe",
+      "sha256": "e97957cc51f86c7806a1f7cb7a799a3adde797275dd9afd7b6ff0fbaa9b63844"
+    },
+    {
+      "path": "Ag-GIS.ico",
+      "sha256": "09ff8303c32f32f7dbf533a54e87bfb852dd1ed2c5a9c8c372360e944e4f5e9e"
+    },
+    {
+      "path": "ag_tech_tooling-0.12.2.zip",
+      "sha256": "f27229c862beec1df2927d97a6f8ee1ee451982665617d911611d5177800870e"
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "QGIS-OSGeo4W-3.44.14-1.msi",
+      "sha256": "0a579f980dcec85be2ecb47c5f08234ca6ce7b625c3cb9543eded1f43d445b46"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "edef6bf23d4a1eeb4bcd8bd5aabcf37c58718d9c39739a3c8f49c4c2a4b73553"
+    },
+    {
+      "path": "Setup.exe",
+      "sha256": "4ce8344d92da97ce2ef7db5cfacf315674981598d02c06d556942d6e3919d5af"
+    },
+    {
+      "path": "SOURCE-SNAPSHOT.json",
+      "sha256": "207b20c4ecec49171d3d816bad7c4df3df67f312145139616640b77a1c1ab792"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.12.2",
+  "qgisFile": "QGIS-OSGeo4W-3.44.14-1.msi",
+  "pluginFile": "ag_tech_tooling-0.12.2.zip",
+  "qgisUrl": "https://download.qgis.org/downloads/QGIS-OSGeo4W-3.44.14-1.msi",
+  "qgisHashSource": "https://github.com/microsoft/winget-pkgs/blob/master/manifests/o/OSGeo/QGIS_LTR/3.44.14/OSGeo.QGIS_LTR.installer.yaml",
+  "files": [
+    {
+      "path": "Ag-GIS-source.zip",
+      "sha256": "a931dbecdfb4e28de152d486621929da15e07a138afef5b0644cd8ade77fc719"
+    },
+    {
+      "path": "Ag-GIS.exe",
+      "sha256": "594b867a48d4c77052c96b9db56ffc589b4d0fad3d1f9e2044770870465af6c4"
+    },
+    {
+      "path": "Ag-GIS.ico",
+      "sha256": "09ff8303c32f32f7dbf533a54e87bfb852dd1ed2c5a9c8c372360e944e4f5e9e"
+    },
+    {
+      "path": "ag_tech_tooling-0.12.2.zip",
+      "sha256": "f27229c862beec1df2927d97a6f8ee1ee451982665617d911611d5177800870e"
+    },
+    {
+      "path": "Install.ps1",
+      "sha256": "cfbdfbf6f16259f6c04d6cc7c695643eccb06858973afda777ff0281ad886fc8"
+    },
+    {
+      "path": "install_profile.py",
+      "sha256": "3cdea73621dcf830674277c7337ca3ca9fc1102dc5f7cf7425a5aab47d4bd524"
+    },
+    {
+      "path": "Launch.cs",
+      "sha256": "0f2727841988194ac6c94a10ffbf73bae758b3c3391c9b6b7474e0a5bb859133"
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "QGIS-OSGeo4W-3.44.14-1.msi",
+      "sha256": "0a579f980dcec85be2ecb47c5f08234ca6ce7b625c3cb9543eded1f43d445b46"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "edef6bf23d4a1eeb4bcd8bd5aabcf37c58718d9c39739a3c8f49c4c2a4b73553"
+    },
+    {
+      "path": "Setup.cs",
+      "sha256": "9038428dc711541b581be833c80eb751c84a6cd283239975c885efd0df7d5add"
+    },
+    {
+      "path": "Setup.exe",
+      "sha256": "1f8860448f98938b92affa6e780a54e7ceda666a8f6cae6300d75f46f3b3895c"
+    },
+    {
+      "path": "SOURCE-SNAPSHOT.json",
+      "sha256": "7c5d9ad75327cff8b735f1199770ad4c595ab718b45e351896713e672bbfdcaa"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "default_gate_no_send": true,
+  "dialog_reopen_and_close": true,
+  "provider_contacted": false,
+  "module_origin": "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-juaycjvv\\ag_tech_tooling\\github_connection.py",
+  "ui_producer_native_server_consumer": true,
+  "timer_expiry_drops_access": true,
+  "ui_cancel_aborts_late_native_reply": true,
+  "dialog_close_drops_session_and_reopens_fresh": true,
+  "parent_destruction_clears_session": true,
+  "actual_quit_clears_controller_session": true,
+  "native_loopback_posts": 7
+}

@@ -1,0 +1,31 @@
+{
+  "created": "2026-11-07T06:49:29.523336+11:00",
+  "exit_code": 0,
+  "command": [
+    "C:/Program Files/QGIS 3.44.14/bin/python-qgis-ltr.bat",
+    "C:\\Users\\Michael\\AppData\\Local\\hermes\\cache\\scratch\\aggis-connection-pa9zo4mr\\run.py",
+    "C:\\Users\\Michael\\AppData\\Local\\hermes\\ag-gis-team\\worktrees\\wip-2026-11-06-recovery\\dist\\windows\\20261106T194342Z\\source\\tools\\github_connection_test.py"
+  ],
+  "plugin": "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-hfrmrh0k\\ag_tech_tooling",
+  "scratch": "C:\\Users\\Michael\\AppData\\Local\\hermes\\cache\\scratch\\aggis-connection-pa9zo4mr",
+  "assertions": {
+    "default_gate_no_send": true,
+    "dialog_reopen_and_close": true,
+    "provider_contacted": false,
+    "module_origin": "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-hfrmrh0k\\ag_tech_tooling\\github_connection.py",
+    "ui_producer_native_server_consumer": true,
+    "timer_expiry_drops_access": true,
+    "ui_cancel_aborts_late_native_reply": true,
+    "dialog_close_drops_session_and_reopens_fresh": true,
+    "parent_destruction_clears_session": true,
+    "actual_quit_clears_controller_session": true,
+    "native_loopback_posts": 7
+  },
+  "inputs": {
+    "C:\\Users\\Michael\\AppData\\Local\\hermes\\ag-gis-team\\worktrees\\wip-2026-11-06-recovery\\dist\\windows\\20261106T194342Z\\source\\tools\\run_github_connection_test.py": "8d7e49765c7586c4c07c101a72a58ebc6a82ab60378472ececd820315279e017",
+    "C:\\Users\\Michael\\AppData\\Local\\hermes\\ag-gis-team\\worktrees\\wip-2026-11-06-recovery\\dist\\windows\\20261106T194342Z\\source\\tools\\github_connection_test.py": "2e08c85b5dc126ad530b285eb0a06cd19f717574c011d92e52596f48485ff6b7",
+    "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-hfrmrh0k\\ag_tech_tooling\\github_connection.py": "b2baa83912c6beac137b133ffea6428793d9980e4c13037d61ca4f17f8d0388d",
+    "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-hfrmrh0k\\ag_tech_tooling\\github_session.py": "d5c7b9958f3a3280e75668f35fc872134573137f5f6addc5c8474d99a6b5385a",
+    "C:\\Users\\Michael\\AppData\\Local\\Temp\\agtech-package-test-hfrmrh0k\\ag_tech_tooling\\github_transport.py": "e20edc4571909318caa1d761c3e60b08217f7cdb5973aa9c27de6b6e3d098009"
+  }
+}

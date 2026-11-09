@@ -1,0 +1,243 @@
+Plugin syntax and metadata OK
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T201129Z\source\.aggis-agent\evidence\connection-33d50ddefd6e46b995e8738716e3b144\process.json
+exit 0
+Brand assets, About reuse/cleanup, title updates/restoration, dialog identity and later-owner preservation passed
+Windows taskbar ID/icon/command, rollback, later-owner preservation and shortcut persistence passed
+Feedback report, URL/email encoding, versions opt-out, lossless long reports, save/cancel/failure and lifecycle checks passed
+Feedback intake preview, explicit submission, exact body, duplicate and missing-CLI checks passed
+Native update isolated evidence: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-7gobzaw5
+UPDATE: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+EXPLICIT RECOVERY: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+PASS: actual native installer update and explicit snapshot recovery; isolated settings/profile; no network; separate data unchanged
+Evidence JSON: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-7gobzaw5\result.json
+QGIS plugin action, simple-view restoration and reload checks passed
+PASS: test_ensure_classification_tables
+PASS: test_register_vendor_mapping
+PASS: test_register_unit
+PASS: test_classify_with_storage
+PASS: test_get_latest_classification
+PASS: test_catalogue_migration
+PASS: test_unknown_value_preservation
+
+All tests passed!
+Operation style: point/line/polygon defaults, native edits, save/reopen, reset, source preservation and legacy refusal passed
+Message: ('Saved styling', 'Recovery styling was not synchronized: Final map archive did not match its save receipt; previous recovery styling retained.')
+Message: ('Saved styling', 'Recovery styling was not prepared: unable to open database file')
+Message: ('Saved styling', 'Recovery styling was not synchronized: database is locked')
+Message: ('Saved styling', 'Recovery styling was not prepared: Multiple map copies of one dataset need review; catalogue styling was retained.')
+Message: ('Saved styling', 'Recovery styling was not synchronized: Newer or unrecognized recovery styling exists. Keep this saved map and review before replacing recovery styling.')
+Durable dataset styles: native project save/reopen and catalogue-only recovery passed
+Actual synthetic GeoPackage: all core/catalogue column sets, TEXT declarations, versions and managed vector table inspected
+Farm creation, duplicate protection, schema rejection, map/database open, move/reopen and cancel checks passed
+Hierarchy, duplicate/orphan protection, season/crop records, icons, native map filtering and copy upgrade checks passed
+Default Documents setup, collision protection, no-form New and complete multi-client native tree checks passed
+Farm browser icons, native visibility/editing, unrelated layers and presentation restoration passed
+Single-point native rendered diameter: 8 pixels; marker size: 2.0 unit: 0
+Farmer defaults, overrides, names/styles, coordinate zoom, hierarchy add/rename, background attribution and unload passed
+Background native checkboxes, exclusive selection, attribution, save/reopen, migration and removal passed
+Esri native catalogue, attribution, settings, v1 upgrades, visibility, deletions, source overrides and save/reopen passed
+Background checkbox paint after name and indicator clicks passed
+Native canvas pixels, close-scale zoom limits, rapid switching, cancelled slow tiles and no-background rendering passed (localhost only)
+PCTGDP direct/folder recognition and source integrity passed
+PCTGDP inline layer preview passed
+PCTGDP malformed XML, DTD, root, signature, path safety, bounded streaming, limit and cancellation passed
+Scanner archive refusal/no-partial-rows/source-unchanged: encrypted, nul-name, byte-limit, entry-limit, real-nested-only
+Mixed Deere ZIP: live Stop Scan/no-write, retry/import, preview-only hierarchy and duplicate rejection passed
+Data In native discovery, ZIP, source safety, async UI, map add and lifecycle checks passed
+Asserted read-only cross-year Data In season review passed
+Asserted linked boundary preview/apply, keep-history, stale/source refusals and transactional rollback passed
+Asserted reviewed Data In import, classification pointer and seasonal catalogue recovery passed
+Field matching, complete coverage, ambiguity, CRS transforms, atomic setup and saved placement checks passed
+Managed copies, original removal, workspace move/recovery, numeric rasters, filters and failed-copy cleanup passed
+Plugin syntax and metadata OK
+Plugin ZIP ready: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T201129Z\source\dist\ag_tech_tooling-0.12.2.zip
+Plugin syntax and metadata OK
+Installed Ag-GIS 0.12.2: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-6c2he9gr\new-profile\python\plugins\ag_tech_tooling
+Recovery backup: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-6c2he9gr\new-profile\ag-tech-install-backups\20261107-071427-913952
+Installed Ag-GIS 0.12.2: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-6c2he9gr\new-profile\python\plugins\ag_tech_tooling
+Recovery backup: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-6c2he9gr\new-profile\ag-tech-install-backups\20261107-071428-304178
+Installer fresh profile, exact bytes, upgrade, recovery, unsafe ZIP and unrelated-plugin checks passed
+Windows splash rendering, icon compilation and native bootstrap/profile/nologo launch passed
+Brand assets, About reuse/cleanup, title updates/restoration, dialog identity and later-owner preservation passed
+Windows taskbar ID/icon/command, rollback, later-owner preservation and shortcut persistence passed
+Feedback report, URL/email encoding, versions opt-out, lossless long reports, save/cancel/failure and lifecycle checks passed
+Native update isolated evidence: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-cw1592v3
+UPDATE: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+EXPLICIT RECOVERY: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+PASS: actual native installer update and explicit snapshot recovery; isolated settings/profile; no network; separate data unchanged
+Evidence JSON: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-cw1592v3\result.json
+QGIS plugin action, simple-view restoration and reload checks passed
+PASS: test_ensure_classification_tables
+PASS: test_register_vendor_mapping
+PASS: test_register_unit
+PASS: test_classify_with_storage
+PASS: test_get_latest_classification
+PASS: test_catalogue_migration
+PASS: test_unknown_value_preservation
+
+All tests passed!
+Operation style: point/line/polygon defaults, native edits, save/reopen, reset, source preservation and legacy refusal passed
+Message: ('Saved styling', 'Recovery styling was not synchronized: Final map archive did not match its save receipt; previous recovery styling retained.')
+Message: ('Saved styling', 'Recovery styling was not prepared: unable to open database file')
+Message: ('Saved styling', 'Recovery styling was not synchronized: database is locked')
+Message: ('Saved styling', 'Recovery styling was not prepared: Multiple map copies of one dataset need review; catalogue styling was retained.')
+Message: ('Saved styling', 'Recovery styling was not synchronized: Newer or unrecognized recovery styling exists. Keep this saved map and review before replacing recovery styling.')
+Durable dataset styles: native project save/reopen and catalogue-only recovery passed
+Actual synthetic GeoPackage: all core/catalogue column sets, TEXT declarations, versions and managed vector table inspected
+Farm creation, duplicate protection, schema rejection, map/database open, move/reopen and cancel checks passed
+Hierarchy, duplicate/orphan protection, season/crop records, icons, native map filtering and copy upgrade checks passed
+Default Documents setup, collision protection, no-form New and complete multi-client native tree checks passed
+Farm browser icons, native visibility/editing, unrelated layers and presentation restoration passed
+Single-point native rendered diameter: 8 pixels; marker size: 2.0 unit: 0
+Farmer defaults, overrides, names/styles, coordinate zoom, hierarchy add/rename, background attribution and unload passed
+Background native checkboxes, exclusive selection, attribution, save/reopen, migration and removal passed
+Esri native catalogue, attribution, settings, v1 upgrades, visibility, deletions, source overrides and save/reopen passed
+Background checkbox paint after name and indicator clicks passed
+Native canvas pixels, close-scale zoom limits, rapid switching, cancelled slow tiles and no-background rendering passed (localhost only)
+PCTGDP direct/folder recognition and source integrity passed
+PCTGDP inline layer preview passed
+PCTGDP malformed XML, DTD, root, signature, path safety, bounded streaming, limit and cancellation passed
+Scanner archive refusal/no-partial-rows/source-unchanged: encrypted, nul-name, byte-limit, entry-limit, real-nested-only
+Mixed Deere ZIP: live Stop Scan/no-write, retry/import, preview-only hierarchy and duplicate rejection passed
+Data In native discovery, ZIP, source safety, async UI, map add and lifecycle checks passed
+Asserted read-only cross-year Data In season review passed
+Asserted linked boundary preview/apply, keep-history, stale/source refusals and transactional rollback passed
+Asserted reviewed Data In import, classification pointer and seasonal catalogue recovery passed
+Field matching, complete coverage, ambiguity, CRS transforms, atomic setup and saved placement checks passed
+Managed copies, original removal, workspace move/recovery, numeric rasters, filters and failed-copy cleanup passed
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T201129Z\source\.aggis-agent\evidence\connection-c655152645ab4bffadcf047a27c792ca\process.json
+exit 0
+Plugin syntax and metadata OK
+Extracted plugin ZIP passed lifecycle and farm workflow checks
+test_access_only_does_not_require_refresh_credentials (__main__.PackagedSessionTest.test_access_only_does_not_require_refresh_credentials) ... ok
+test_access_only_never_releases_or_retains_refresh_pair (__main__.PackagedSessionTest.test_access_only_never_releases_or_retains_refresh_pair) ... ok
+test_cancelled_old_generation_cannot_reauthorize_new_session (__main__.PackagedSessionTest.test_cancelled_old_generation_cannot_reauthorize_new_session) ... ok
+test_expiry_and_cancel_drop_access_and_require_fresh_sign_in (__main__.PackagedSessionTest.test_expiry_and_cancel_drop_access_and_require_fresh_sign_in) ... ok
+test_invalid_access_and_error_success_mixtures_fail_closed (__main__.PackagedSessionTest.test_invalid_access_and_error_success_mixtures_fail_closed) ... ok
+test_lifetime_starts_at_poll_send_not_response_or_first_use (__main__.PackagedSessionTest.test_lifetime_starts_at_poll_send_not_response_or_first_use) ... ok
+test_review_code_retained_only_while_waiting (__main__.PackagedSessionTest.test_review_code_retained_only_while_waiting) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 1.702s
+
+OK
+test_background_result_opens_with_notes_later_and_disabled_selection (__main__.UpdateTests.test_background_result_opens_with_notes_later_and_disabled_selection) ... ok
+test_channel_release_notes_and_opt_in_daily_notification (__main__.UpdateTests.test_channel_release_notes_and_opt_in_daily_notification) ... ok
+test_confirmed_native_handoff_snapshot_and_next_start_acknowledgement (__main__.UpdateTests.test_confirmed_native_handoff_snapshot_and_next_start_acknowledgement) ... ok
+test_current_incompatible_bad_catalogue_and_offline_cancel (__main__.UpdateTests.test_current_incompatible_bad_catalogue_and_offline_cancel) ... ok
+test_default_offline_reuses_nonmodal_dialog (__main__.UpdateTests.test_default_offline_reuses_nonmodal_dialog) ... ok
+test_download_headers_and_disk_close_failure_are_safe (__main__.UpdateTests.test_download_headers_and_disk_close_failure_are_safe) ... ok
+test_install_rejects_unsafe_source_preview_dirty_and_editable (__main__.UpdateTests.test_install_rejects_unsafe_source_preview_dirty_and_editable) ... ok
+test_manual_check_empty_error_retry_cancel_and_unload (__main__.UpdateTests.test_manual_check_empty_error_retry_cancel_and_unload) ... ok
+test_native_target_junction_is_refused_before_confirmation (__main__.UpdateTests.test_native_target_junction_is_refused_before_confirmation) ... ok
+test_network_bounds_tls_redirect_timeout (__main__.UpdateTests.test_network_bounds_tls_redirect_timeout) ... ok
+test_open_mid_request_exposes_cancel_and_dismiss_cancels (__main__.UpdateTests.test_open_mid_request_exposes_cancel_and_dismiss_cancels) ... ok
+test_package_download_trusted_redirect_stream_bounds_and_cancel (__main__.UpdateTests.test_package_download_trusted_redirect_stream_bounds_and_cancel) ... ok
+test_recheck_clears_stale_release_notes (__main__.UpdateTests.test_recheck_clears_stale_release_notes) ... ok
+test_staging_is_cleaned_on_close_unless_native_handoff (__main__.UpdateTests.test_staging_is_cleaned_on_close_unless_native_handoff) ... ok
+test_staging_precedes_confirmation_and_failed_backup_blocks_install (__main__.UpdateTests.test_staging_precedes_confirmation_and_failed_backup_blocks_install) ... ok
+test_unload_after_native_message_bar_dismissal (__main__.UpdateTests.test_unload_after_native_message_bar_dismissal) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.677s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK
+C:\PROGRA~1\QGIS34~1.14\apps\Python312\Lib\site-packages\osgeo\ogr.py:621: FutureWarning: Neither ogr.UseExceptions() nor ogr.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+ERROR 1: failed to execute insert : Invalid hierarchy identity, name or parent
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.027s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.333s
+
+OK
+C:\PROGRA~1\QGIS34~1.14\apps\Python312\Lib\site-packages\osgeo\gdal.py:606: FutureWarning: Neither gdal.UseExceptions() nor gdal.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T201129Z\source\tools\managed_data_test.py:57: DeprecationWarning: QgsField constructor is deprecated
+  vector.dataProvider().addAttributes([QgsField("fid", QVariant.Int), QgsField("field_id", QVariant.String), QgsField("pH", QVariant.Double)])
+Warning 1: Field field_id of width 255 truncated to 254.
+test_access_only_does_not_require_refresh_credentials (__main__.PackagedSessionTest.test_access_only_does_not_require_refresh_credentials) ... ok
+test_access_only_never_releases_or_retains_refresh_pair (__main__.PackagedSessionTest.test_access_only_never_releases_or_retains_refresh_pair) ... ok
+test_cancelled_old_generation_cannot_reauthorize_new_session (__main__.PackagedSessionTest.test_cancelled_old_generation_cannot_reauthorize_new_session) ... ok
+test_expiry_and_cancel_drop_access_and_require_fresh_sign_in (__main__.PackagedSessionTest.test_expiry_and_cancel_drop_access_and_require_fresh_sign_in) ... ok
+test_invalid_access_and_error_success_mixtures_fail_closed (__main__.PackagedSessionTest.test_invalid_access_and_error_success_mixtures_fail_closed) ... ok
+test_lifetime_starts_at_poll_send_not_response_or_first_use (__main__.PackagedSessionTest.test_lifetime_starts_at_poll_send_not_response_or_first_use) ... ok
+test_review_code_retained_only_while_waiting (__main__.PackagedSessionTest.test_review_code_retained_only_while_waiting) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+OK
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 1.947s
+
+OK
+test_background_result_opens_with_notes_later_and_disabled_selection (__main__.UpdateTests.test_background_result_opens_with_notes_later_and_disabled_selection) ... ok
+test_channel_release_notes_and_opt_in_daily_notification (__main__.UpdateTests.test_channel_release_notes_and_opt_in_daily_notification) ... ok
+test_confirmed_native_handoff_snapshot_and_next_start_acknowledgement (__main__.UpdateTests.test_confirmed_native_handoff_snapshot_and_next_start_acknowledgement) ... ok
+test_current_incompatible_bad_catalogue_and_offline_cancel (__main__.UpdateTests.test_current_incompatible_bad_catalogue_and_offline_cancel) ... ok
+test_default_offline_reuses_nonmodal_dialog (__main__.UpdateTests.test_default_offline_reuses_nonmodal_dialog) ... ok
+test_download_headers_and_disk_close_failure_are_safe (__main__.UpdateTests.test_download_headers_and_disk_close_failure_are_safe) ... ok
+test_install_rejects_unsafe_source_preview_dirty_and_editable (__main__.UpdateTests.test_install_rejects_unsafe_source_preview_dirty_and_editable) ... ok
+test_manual_check_empty_error_retry_cancel_and_unload (__main__.UpdateTests.test_manual_check_empty_error_retry_cancel_and_unload) ... ok
+test_native_target_junction_is_refused_before_confirmation (__main__.UpdateTests.test_native_target_junction_is_refused_before_confirmation) ... ok
+test_network_bounds_tls_redirect_timeout (__main__.UpdateTests.test_network_bounds_tls_redirect_timeout) ... ok
+test_open_mid_request_exposes_cancel_and_dismiss_cancels (__main__.UpdateTests.test_open_mid_request_exposes_cancel_and_dismiss_cancels) ... ok
+test_package_download_trusted_redirect_stream_bounds_and_cancel (__main__.UpdateTests.test_package_download_trusted_redirect_stream_bounds_and_cancel) ... ok
+test_recheck_clears_stale_release_notes (__main__.UpdateTests.test_recheck_clears_stale_release_notes) ... ok
+test_staging_is_cleaned_on_close_unless_native_handoff (__main__.UpdateTests.test_staging_is_cleaned_on_close_unless_native_handoff) ... ok
+test_staging_precedes_confirmation_and_failed_backup_blocks_install (__main__.UpdateTests.test_staging_precedes_confirmation_and_failed_backup_blocks_install) ... ok
+test_unload_after_native_message_bar_dismissal (__main__.UpdateTests.test_unload_after_native_message_bar_dismissal) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.429s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK
+C:\PROGRA~1\QGIS34~1.14\apps\Python312\Lib\site-packages\osgeo\ogr.py:621: FutureWarning: Neither ogr.UseExceptions() nor ogr.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+ERROR 1: failed to execute insert : Invalid hierarchy identity, name or parent
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.021s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.295s
+
+OK
+C:\PROGRA~1\QGIS34~1.14\apps\Python312\Lib\site-packages\osgeo\gdal.py:606: FutureWarning: Neither gdal.UseExceptions() nor gdal.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T201129Z\source\tools\managed_data_test.py:57: DeprecationWarning: QgsField constructor is deprecated
+  vector.dataProvider().addAttributes([QgsField("fid", QVariant.Int), QgsField("field_id", QVariant.String), QgsField("pH", QVariant.Double)])
+Warning 1: Field field_id of width 255 truncated to 254.
