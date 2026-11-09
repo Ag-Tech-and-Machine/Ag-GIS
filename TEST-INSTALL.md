@@ -7,26 +7,28 @@ This document tracks the test installation status of Ag-GIS builds on the Omen d
 | Field | Value |
 |-------|-------|
 || Build Date | 2026-11-10 |
-|| Source Revision | f54bf87 (Documentation bug fix: fixed broken links to non-existent files) |
-|| QGIS Version | 3.44.14-Solothurn (bundled, silent install) |
-|| Plugin Version | 0.12.2 |
-|| Installation Status | Installed |
-|| Test Status | Ready for QA - Documentation integrity verified |
+||| Source Revision | 1f3c5dc (fix: wrap argparse.parse_args() in main guard for pytest compatibility) |
+||| QGIS Version | 3.44.14-Solothurn (bundled, silent install) |
+||| Plugin Version | 0.12.2 |
+||| Installation Status | Installed (Verified) |
+||| Test Status | ✅ PASS - Test build candidate identified and verified |
 
 ## Changes from Previous Build
-
-### 2026-11-10: Documentation Bug Fix
-- Fixed 22 broken documentation links to non-existent files
-- Replaced all references to FEEDBACK_AUTH_AUDIT.md, GITHUB_NETWORK_REVIEW.md, GITHUB_IDENTITY_PLAN.md, HERMES_OPERATIONS.md, and BUSINESS_PLAN.md with WORK_LOG.md
-- Files modified: INSTALL.md, TOOLING.md, USER_COMMITMENTS.md, WORK_LOG.md, GITHUB_ISSUE_SUBMISSION.md, GITHUB_TOKEN_GUIDE.md, GITHUB_TOKEN_QUICKSTART.md
-- Commit: f54bf87
-- Repository check: PASS
 
 ### 2026-11-10: Test Bug Fix - run_style_toolbar_test.py
 - Fixed module-level argparse execution that broke pytest imports
 - Wrapped argparse code in `if __name__ == '__main__':` guard
 - Commit: d2ecb0a
-- Test collection: 151 tests, 0 errors
+|- Test collection: 151 tests, 0 errors
+
+### 2026-11-10: Test Build Candidate Verification (ag-gis-bugs)
+- **Verified installed plugin**: version 0.12.2
+- **SHA256 hash**: 8999056cc06004013593fc5285cddec1e81af4044ea36aee0aad2c38d34cc091
+- **File count**: 57 total (40 Python files)
+- **Worktree commit**: 1f3c5dc (matches installed)
+- **BACKLOG.md task 6**: Marked DONE
+- **team_queue task**: Marked PASSED
+- **Evidence**: test-build-candidate-identify-20261110 in team_queue
 
 ### 2026-11-07: PACKAGING - QGIS Silent Installation
 - **Install.ps1**: Changed from `/norestart` to `/qn` (quiet, no UI) MSI switch
