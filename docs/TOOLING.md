@@ -413,7 +413,7 @@ request-local fixture trust permits exact HTTPS delivery without forwarding the
 proxy authorization header to the origin. This does NOT test QGIS custom CA/host
 policy, native credential prompts/storage, system/PAC policy, production lifecycle
 or real sign-in. The routing wrapper alone does not install QGIS auth handlers.
-See [proxy experiment](GITHUB_NETWORK_REVIEW.md#authenticated-proxy-experiment--21-october-2026)
+See the proxy experiment in WORK_LOG.md
 for reproduction and remaining gates. Earlier experiments retain their historical
 limits; the new result covers only these named synthetic proxy/TLS boundaries.
 
@@ -425,13 +425,13 @@ Three synthetic Qt POSTs are absent; the two native control body/header fixtures
 are retained and exported. Recording is never disabled or cleared by this test.
 This is generic QGIS desktop evidence, NOT product/branded acceptance or real
 credential clearance. No runtime or installation change; sign-in stays disabled.
-See [recorder isolation](GITHUB_NETWORK_REVIEW.md#actual-app-recorder-isolation--21-october-2026)
+See the recorder isolation in WORK_LOG.md
 for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
 
 ## Bundled Qt contract experiment — 21 October 2026
 
 No installation or production-transport change. A disposable synthetic-only
-[bundled Qt spike](GITHUB_NETWORK_REVIEW.md#bundled-qt-integration-spike--21-october-2026)
+[bundled Qt spike](WORK_LOG.md)
 now exercises real loopback requests: Qgs signal isolation with unrelated controls,
 QGIS fallback/no-proxy routing through a test-local delegating factory, untrusted
 TLS refusal and late reply after abort. Base Qt does not automatically inherit
@@ -449,7 +449,7 @@ external registration remain separate gates.
 
 ## Sign-in transport options review — 21 October 2026
 
-Read the [per-request options matrix](GITHUB_NETWORK_REVIEW.md#per-request-options-review--21-october-2026)
+Read the per-request options review in WORK_LOG.md
 before selecting a diagnostic-safe transport. Reproduce with
 `py -B .aggis-agent/evidence/20261021-per-request-review/verify.py`; prerequisites,
 expected results and failure recovery are in that canonical review. The verifier
@@ -522,7 +522,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
 
 ## Native sign-in logging review — 21 October 2026
 
-1. Read [the pinned network trust review](GITHUB_NETWORK_REVIEW.md) before any
+1. Read the pinned network trust review in WORK_LOG.md
    sign-in integration. Native QGIS recording has a source-traced POST/header
    retention, Copy As cURL and explicit JSON export path; earlier empty message
    logs do not establish credential secrecy. This is source review, not observed
@@ -675,7 +675,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
    receipt and no retry/write callback. All eleven synthetic configs are removed.
    Real locked native update diagnostics are expected. Detailed evidence/limits:
    `.aggis-agent/evidence/20261020-interrupted-binding/verify.py` and
-   [identity design](GITHUB_IDENTITY_PLAN.md). Never expand/send APIHeader fixtures.
+   [identity design](WORK_LOG.md). Never expand/send APIHeader fixtures.
 4. LIMIT: the ledger lock cannot lock native storage. A change after the last read,
    arbitrary callback behavior and caller clocks remain unresolved; this is NOT
    power-loss durability, atomic protected admission, safe production refresh/recovery/rearm or working
@@ -1113,8 +1113,7 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 
 ## Optional identity: synthetic protected-storage feasibility — 20 October 2026
 
-1. Read [the implementation plan and primary references](GITHUB_IDENTITY_PLAN.md)
-   and [the authentication audit](FEEDBACK_AUTH_AUDIT.md). Identity, report-writing
+1. Read the identity plan in WORK_LOG.md. Identity, report-writing
    consent and repository permissions are separate. GitHub's documented device
    flow (including its refresh-secret exception) permits a public-client design;
    no registered Ag-GIS client or working login is supplied by these tests.
@@ -1722,7 +1721,7 @@ Last updated: 15 October 2026.
 
 ### Project identity and Hermes
 
-The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+The saved Codex project is **Ag-GIS**, with `[USER_PATH]\Documents\Projects\repos\Ag-GIS` as primary source and `[USER_PATH]\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
 ## What exists now
 
@@ -2036,10 +2035,10 @@ Matching still runs on the UI thread with its existing geometry limit. Imports
 currently target Whole Field; seasonal dataset assignment remains a later feature.
 
 
-Business direction and staged delivery gates are maintained in [BUSINESS_PLAN.md](BUSINESS_PLAN.md). Self-service onboarding is required; paid hosting is a proposal, not an implemented feature. No pricing or support commitments have been published.
+Business direction and staged delivery gates are maintained in WORK_LOG.md. Self-service onboarding is required; paid hosting is a proposal, not an implemented feature. No pricing or support commitments have been published.
 
 
-Business direction follows the Home Assistant/Nabu Casa model: useful local software plus optional managed services funding development. See BUSINESS_PLAN.md for revised research pricing and staged backup, mobile, team sync and premium hosted-workspace proposals. Evaluate existing QGIS-compatible clients/sync tooling; distinguish VPS infrastructure, QGIS Server map publication, remote desktop sessions and offline synchronisation. No cloud deployment or billing is implemented.
+Business direction follows the Home Assistant/Nabu Casa model: useful local software plus optional managed services funding development. See WORK_LOG.md for revised research pricing and staged backup, mobile, team sync and premium hosted-workspace proposals. Evaluate existing QGIS-compatible clients/sync tooling; distinguish VPS infrastructure, QGIS Server map publication, remote desktop sessions and offline synchronisation. No cloud deployment or billing is implemented.
 
 ## Native checkbox background catalogue — 0.12.0
 
@@ -2164,13 +2163,13 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+[USER_PATH]nts/Codex/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 # Hermes operations tooling
 
-`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native Hermes work/research jobs. The owner interacts through Hermes Bot Chat. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See [Hermes operations](HERMES_OPERATIONS.md) for scope, recovery, limits and approval handling.
+`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native Hermes work/research jobs. The owner interacts through Hermes Bot Chat. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See the Hermes operations in WORK_LOG.md for scope, recovery, limits and approval handling.
 
 The journal now retains progress/recovery events. Use `finish continue` with
 remaining work between increments; full completion requires explicit

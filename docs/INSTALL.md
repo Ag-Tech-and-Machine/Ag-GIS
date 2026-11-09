@@ -344,7 +344,7 @@ request-local fixture trust permits exact HTTPS delivery without forwarding the
 proxy authorization header to the origin. This does NOT test QGIS custom CA/host
 policy, native credential prompts/storage, system/PAC policy, production lifecycle
 or real sign-in. The routing wrapper alone does not install QGIS auth handlers.
-See [proxy experiment](GITHUB_NETWORK_REVIEW.md#authenticated-proxy-experiment--21-october-2026)
+See the proxy experiment in WORK_LOG.md (search for "proxy experiment")
 for reproduction and remaining gates. Earlier experiments retain their historical
 limits; the new result covers only these named synthetic proxy/TLS boundaries.
 
@@ -356,13 +356,13 @@ Three synthetic Qt POSTs are absent; the two native control body/header fixtures
 are retained and exported. Recording is never disabled or cleared by this test.
 This is generic QGIS desktop evidence, NOT product/branded acceptance or real
 credential clearance. No runtime or installation change; sign-in stays disabled.
-See [recorder isolation](GITHUB_NETWORK_REVIEW.md#actual-app-recorder-isolation--21-october-2026)
+See the recorder isolation in WORK_LOG.md (search for "recorder isolation")
 for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
 
 ## Bundled Qt contract experiment — 21 October 2026
 
 No installation or production-transport change. A disposable synthetic-only
-[bundled Qt spike](GITHUB_NETWORK_REVIEW.md#bundled-qt-integration-spike--21-october-2026)
+[bundled Qt spike](WORK_LOG.md)
 now exercises real loopback requests: Qgs signal isolation with unrelated controls,
 QGIS fallback/no-proxy routing through a test-local delegating factory, untrusted
 TLS refusal and late reply after abort. Base Qt does not automatically inherit
@@ -381,7 +381,7 @@ external registration remain separate gates.
 ## Sign-in transport options review — 21 October 2026
 
 No installation change: real in-app sign-in remains disabled. The new
-[per-request options review](GITHUB_NETWORK_REVIEW.md#per-request-options-review--21-october-2026)
+Read the per-request options review in WORK_LOG.md
 checks pinned source and compiled bindings, not a working login or desktop fix.
 It found no diagnostic opt-out in the reviewed request path; moving requests to a
 worker or merely selecting native OAuth2 does not establish recorder isolation.
@@ -453,7 +453,7 @@ based on this review. Native/branded acceptance and external registration remain
 
 ## Native sign-in logging review — 21 October 2026
 
-1. Read [the pinned network trust review](GITHUB_NETWORK_REVIEW.md) before any
+1. Read the pinned network trust review in WORK_LOG.md
    sign-in integration. Native QGIS recording has a source-traced POST/header
    retention, Copy As cURL and explicit JSON export path; earlier empty message
    logs do not establish credential secrecy. This is source review, not observed
@@ -606,7 +606,7 @@ based on this review. Native/branded acceptance and external registration remain
    receipt and no retry/write callback. All eleven synthetic configs are removed.
    Real locked native update diagnostics are expected. Detailed evidence/limits:
    `.aggis-agent/evidence/20261020-interrupted-binding/verify.py` and
-   [identity design](GITHUB_IDENTITY_PLAN.md). Never expand/send APIHeader fixtures.
+   [identity design](WORK_LOG.md). Never expand/send APIHeader fixtures.
 4. LIMIT: the ledger lock cannot lock native storage. A change after the last read,
    arbitrary callback behavior and caller clocks remain unresolved; this is NOT
    power-loss durability, atomic protected admission, safe production refresh/recovery/rearm or working
@@ -987,13 +987,13 @@ No runtime, dependency or installation changes in this bounded follow-up.
 4. For failures retain the unittest output; do not enter a real token, change a
    normal profile, disable global logging or fall back to the unsupported PAT UI.
    Evidence/readback: `.aggis-agent/evidence/20261020-auth-flow/verify.py`.
-   See [the identity plan](GITHUB_IDENTITY_PLAN.md) for remaining native-network,
+   See the identity plan in WORK_LOG.md for remaining native-network
    storage-integration and owner-controlled registration gates.
 
 ## Protected identity design, not a login installation — 20 October 2026
 
 No new runtime dependency, sign-in requirement or installed application change.
-[The identity plan](GITHUB_IDENTITY_PLAN.md) separates optional identity, protected
+[The identity plan](WORK_LOG.md) separates optional identity, protected
 storage and deliberately reviewed public feedback. It records current official
 GitHub device-flow/permission/refresh contracts and owner-controlled registration
 gates; it does not authorize or register an external app.
@@ -1448,7 +1448,7 @@ Last updated: 15 October 2026.
 - Windows workstation, local account Michael.
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
-- Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.
+- Repository: `[USER_PATH]\Documents\Projects\repos\ag-tech-tooling`.
 - Git author: Michael `<admin@agtechandmachine.com>`.
 
 QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate system Python is optional for syntax checks and packaging; it does not replace the QGIS runtime.
@@ -1512,7 +1512,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 1. For this machine, open the existing repository; do not initialise it again:
 
    ```powershell
-   Set-Location 'C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling'
+   Set-Location '[USER_PATH]\Documents\Projects\repos\ag-tech-tooling'
    git status
    ```
 
@@ -1587,7 +1587,7 @@ Version 0.6.0 adds hierarchy management and schema 2 projects to the existing Si
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Click **New Project** on the toolbar (also **Plugins → Ag-GIS → New Project…**).
-3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `C:\Users\Michael\Documents\Ag Tech Tooling\Projects`.
+3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `[USER_PATH]\Documents\Ag Tech Tooling\Projects`.
 4. Expected result: `Farm.qgz` and `Data/farm.gpkg`, with **Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1** in Layers. Each field has **Whole Field** and **Seasons**; the starter season is **Season 1**, with **Plans / Operations / Results**. There is no invented crop, year or geometry. Select fields in Layers to reuse the three native reference views.
 5. Finish layer edits before switching. Save/discard/cancel any unsaved current map when prompted; cancelling quick creation makes no new workspace. Use **Manage Data** to rename placeholders or add more clients, farms, fields and seasons within the same GeoPackage. For explicit location/names/CRS before creation, use **Plugins → Ag-GIS → New Project with Options…**. Quick creation inherits the map CRS or falls back to EPSG:4326; it does not determine a local survey projection or vertical datum.
 6. Later click **Open Project** and select `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
@@ -1624,11 +1624,11 @@ Switching off restores the previous central view only if the project has not cha
 Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
 
 1. Use the app's **Add new project** control and create a local project named **Ag-GIS**.
-2. Attach `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
+2. Attach `[USER_PATH]\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
 3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
 4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
 
-The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+The saved Codex project is **Ag-GIS**, with `[USER_PATH]\Documents\Projects\repos\Ag-GIS` as primary source and `[USER_PATH]\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
 Official guidance: https://learn.chatgpt.com/docs/projects
 
@@ -1680,7 +1680,7 @@ at this stage; current installed Data In behaviour remains as described above.
 
 ## Ag-GIS offline Windows installer and updates — 0.8.1
 
-The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved Codex project name is managed in the app; repository work does not rename that registration.
+The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `[USER_PATH]\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved Codex project name is managed in the app; repository work does not rename that registration.
 
 1. Prerequisite: Windows 64-bit. Obtain the complete `Ag-GIS-0.8.1-Windows-<timestamp>.zip` from the private `JamRov/Ag-GIS` GitHub release or your administrator. Repository access and GitHub sign-in are required for private downloads.
 2. Extract **all** files to a local folder. Save your work and close QGIS. Run `Setup.exe` as your normal Windows user. Keep every payload beside it. This launcher is unsigned.
@@ -1753,10 +1753,10 @@ Public feedback tracker: https://github.com/JamRov/Ag-GIS-Feedback/issues . Prod
    GIS dependency or data migration is needed.
 
 
-Ag-GIS remains a local desktop installation. The proposed paid backup/team services in BUSINESS_PLAN.md are not available or required for installation. Current private release downloads remain separate from the public feedback tracker.
+Ag-GIS remains a local desktop installation. The proposed paid backup/team services in WORK_LOG.md are not available or required for installation. Current private release downloads remain separate from the public feedback tracker.
 
 
-Future deployment choices are described in BUSINESS_PLAN.md. Only the local desktop installer exists today. Mobile access, managed backup, self-hosted services, VPS sessions and desktop/cloud synchronisation are proposed separate capabilities; none is required or included in the current installer.
+Future deployment choices are described in WORK_LOG.md. Only the local desktop installer exists today. Mobile access, managed backup, self-hosted services, VPS sessions and desktop/cloud synchronisation are proposed separate capabilities; none is required or included in the current installer.
 
 ## Background catalogue setup — 0.12.0
 
@@ -1766,7 +1766,7 @@ Future deployment choices are described in BUSINESS_PLAN.md. Only the local desk
 4. For a blank satellite layer check its checkbox, internet/service availability and coverage; the Australian layer covers Australia only. Use Roads or World as an alternative. The imagery dates and resolutions are explicitly labelled. Re-selecting a manually removed background in View Settings restores that choice.
 
 
-Branding direction: Ag-GIS will use its own product logo and frontend while retaining QGIS attribution. The current installer supplies QGIS plus the Ag-GIS plugin; it is not a fully rebranded standalone QGIS build. See BUSINESS_PLAN.md for the planned profile/launcher approach.
+Branding direction: Ag-GIS will use its own product logo and frontend while retaining QGIS attribution. The current installer supplies QGIS plus the Ag-GIS plugin; it is not a fully rebranded standalone QGIS build. See WORK_LOG.md for the planned profile/launcher approach.
 
 ## Ag-GIS product branding and launcher (15 October 2026)
 
@@ -1868,13 +1868,13 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+[USER_PATH]nts/Codex/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 # Hermes-managed development setup
 
-For the agent-managed development and business workflow, use [Hermes operations](HERMES_OPERATIONS.md). Run `py tools/setup_hermes.py --schedule` from the source root after configuring Hermes. This installs its management skill and two native schedules with Bot Chat delivery; it does not install or release the farmer-facing application.
+For the agent-managed development and business workflow, see the Hermes operations in WORK_LOG.md. Run `py tools/setup_hermes.py --schedule` from the source root after configuring Hermes. This installs its management skill and two native schedules with Bot Chat delivery; it does not install or release the farmer-facing application.
 
 For a provider interruption, restore and verify inference before resuming source
 work. The 19 October recovery adds a Windows fallback supervisor task and preserves

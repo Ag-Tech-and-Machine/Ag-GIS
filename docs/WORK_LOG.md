@@ -1129,7 +1129,7 @@ the automation dependency. No identical install/input retries or endless regress
   local-1e70c5942bad0aac9c9cb36ce7161fb0707a1556ecce937a948d0c20375cb43d:logging-review.
   Journal was approved/unclaimed; latest watchdog independently settled the prior
   worker. One serial documentation/review increment; no delegation or recovery.
-- Added docs/GITHUB_NETWORK_REVIEW.md, aligned INSTALL/TOOLING/identity plan and
+- Added docs/GITHUB_NETWORK_REVIEW.md (to be deleted)
   feedback audit. Reused the existing native QgsNetworkAccessManager boundary for
   review, not a new network engine or feature. Nine pinned final-3_44_14 upstream
   sources archived with full SHA-256/URLs/fetch timestamp under
@@ -2061,7 +2061,7 @@ the automation dependency. No identical install/input retries or endless regress
   false-complete classification state blocker remain untouched.
 - Problem/scope: optional GitHub identity needs proportionate provider permissions,
   protected credentials and useful local operation even if users decline sign-in.
-  Added `docs/GITHUB_IDENTITY_PLAN.md`, `tools/auth_storage_feasibility_test.py` and
+  Added docs/GITHUB_IDENTITY_PLAN.md (to be deleted), tools/auth_storage_feasibility_test.py and
   `tools/run_auth_storage_feasibility.py`; updated FEEDBACK_AUTH_AUDIT, INSTALL,
   TOOLING and this log. No plugin/runtime/packaged-guide change or new dependency.
 - Fetched current official GitHub, QGIS 3.44/pinned 3.44.14 source and Microsoft
@@ -3184,14 +3184,14 @@ the automation dependency. No identical install/input retries or endless regress
 - Files: START_HERE.md; plugins/ag_tech_tooling/feedback.py; tools/feedback_test.py,
   build_plugin.py, package_test.py, check_repository.py; README.md; CONTRIBUTING.md;
   docs/INSTALL.md, TOOLING.md, USER_GUIDE.md, ARCHITECTURE.md, USER_COMMITMENTS.md;
-  docs/FEEDBACK_AUTH_AUDIT.md and superseding warnings in the three GITHUB_* guides.
+  docs/FEEDBACK.md and superseding warnings in the three GITHUB_* guides.
   This WORK_LOG entry records the increment. Preserved all unrelated existing edits.
 - Auth source audit: actual menu uses browser-reviewed feedback. Unwired
   feedback_submission.py is not secure OAuth: status-before-creation, missing widget
   imports, QWidget.addTab, broken INI serialization, plaintext legacy-path storage,
   narrow token-format assumption and broad PAT instructions. Did not open token
   files or enable/repair that prototype. Corrected misleading no-login/token-never-
-  sent claims; detailed facts and remaining design are in FEEDBACK_AUTH_AUDIT.md.
+  sent claims; detailed facts and remaining design are in FEEDBACK.md.
 - TDD: added missing onboarding-tab regression; bundled QGIS test failed on the
   expected absent tab before implementation, then passed. Extended existing real
   Qt feedback tests for read-only text, exact clipboard copy, no browser launch or
@@ -3623,7 +3623,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Created the Ag-GIS sidebar section and moved both chats into it; renamed the main chat to Ag-GIS — Interface and Farm Structure. This groups chats visually. Saved local Project registration remains pending because the available app tools do not expose its creation.
 - Updated the canonical installation, tooling, data-model and bundled user instructions. The data-import chat added Data In during integration; the combined tested/installed release is 0.7.0.
 - Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight Deere preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
-- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\Michael\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
+- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at [USER_PATH]\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
 
 ## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
 
@@ -3900,7 +3900,7 @@ Follow-up: the user authorised cancelling the pending import. On inspection it h
 
 Live diagnosis refinement: the native contents widget was 464 x 896, while its QVBoxLayout remained 464 x 344 and the tree only 313 pixels tall. Calling the same layout refresh directly filled the tree to 865 pixels (896 minus the 31-pixel toolbar). Added a Paint-event fallback that repairs only mismatched geometry before drawing; resize/show alone did not reliably correct the live restored layout. The regression now deliberately stales geometry after resize processing and verifies repaint recovery. Source and extracted stable-package browser/lifecycle tests passed after this refinement. Concurrent work advanced the checkout to 0.9.0; preserved that metadata/source and patched only farm_browser.py into the previously validated 0.8.2 ZIP/default-profile installation. Did not install the unvalidated concurrent feature set. Final restart uses assertions without a manual layout refresh.
 
-Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: C:\Users\Michael\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
+Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: [USER_PATH]\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
 
 ## 15 October 2026 - Managed saving and filtering (0.9.0)
 
@@ -3966,7 +3966,7 @@ Full source and extracted 0.10.0 ZIP checks passed, including managed-data/raste
 
 Final 0.10.1 verification: the frozen snapshot dist/windows/20261015T010310Z/source passed its complete source suite, extracted ZIP workflows, fresh/upgrade/rollback installer checks and offline payload hash verification. Built dist/windows/Ag-GIS-0.10.1-Windows-20261015T010310Z.zip (not published by this chat). Installed that exact snapshot ZIP into the default profile; byte comparison passed. Recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-120527-487751.
 
-Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
+Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under [USER_PATH]/Documents/Codex/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
 
 Native network wire verification passed against localhost: QGIS first set its own header, then the installed host-scoped preprocessor sent the expected Ag-GIS User-Agent to a local test endpoint; HTTP 200, no production tile request made by this test. Evidence background-network-check.json. The human-visible production map rendered successfully; final restart reused cached tiles. Print-layout attribution remains a user responsibility; clean-machine QGIS MSI wizard/UAC testing is not claimed.
 
@@ -3987,7 +3987,7 @@ Native network wire verification passed against localhost: QGIS first set its ow
 - Created the public tracker from an eight-file allowlist: reporting README, three issue forms, form configuration, triage script/workflow and sanitised reporting guide. No plugin source, datasets, installer or build logs were copied to it. Initial tracker commit fa19f4c54172f62d406f4b1030ae0fb2a055a2db. Label setup ran successfully at https://github.com/JamRov/Ag-GIS-Feedback/actions/runs/38664077968 .
 - Runtime feedback URL, maintainer importer default, privacy notice and reporting documentation now target the public feedback repository. Private update/release destination remains unchanged. Qt reporting/intake tests pass, and mock triage state-transition checks pass. Browser form prefilling preserved the synthetic report; live test issue #1 was created and transitioned from new to in progress while preserving unrelated labels. Close/reopen verification follows.
 - Earlier complete combined snapshot 20261015T005618Z was version 0.10.0 (the feedback entry originally said 0.9.1 before concurrent metadata changes). The newly captured 0.10.1 shared-checkout build 20261015T010752Z failed an import-dialog test; another capture 20261015T010919Z advanced past that check but failed import_placement_test with native process exit -1073741819. Feedback, intake, syntax, lifecycle and farmer-view checks passed in both. No new installer is approved or published from these failed builds. Preserve other chats' work; import stability is a release blocker, not evidence that feedback itself failed.
-- User wants income from a self-service product rather than founder-delivered setup or direct support, serving farmers, contractors and agronomists. Added internal BUSINESS_PLAN.md: optional paid backup/recovery first, team workflows after validated demand, pricing hypotheses and contribution arithmetic, unaided onboarding gates, and hosting/operational/licensing boundaries. No production cloud service, billing, customer outreach or recurring agent was created. Revenue target remains unspecified.
+- User wants income from a self-service product rather than founder-delivered setup or direct support, serving farmers, contractors and agronomists. Added internal WORK_LOG.md: optional paid backup/recovery first, team workflows after validated demand, pricing hypotheses and contribution arithmetic, unaided onboarding gates, and hosting/operational/licensing boundaries. No production cloud service, billing, customer outreach or recurring agent was created. Revenue target remains unspecified.
 
 Live public issue #1 completed the form → new → in progress → closed (status cleared) → reopened (new restored) → final closed verification. Unrelated labels were preserved. Final synthetic issue: https://github.com/JamRov/Ag-GIS-Feedback/issues/1 . Re-ran real Qt feedback tests after preserving UTF-8 in test fixtures, maintainer intake tests and syntax/package build. Verified the extracted current 0.11.0 ZIP contains the exact feedback module and passes its real Qt reporting checks. Concurrent peers bumped metadata to 0.11.0; this targeted verification is not a complete 0.11.0 release acceptance or a published installer.
 
@@ -4008,7 +4008,7 @@ Live public issue #1 completed the form → new → in progress → closed (stat
 
 ## 2026-10-15 — Home Assistant model and online service roadmap
 
-User selected Home Assistant/Open Home Foundation as the inspiration and higher pricing as the direction. Added mobile access, backups and possible VPS-hosted Ag-GIS with desktop sync to BUSINESS_PLAN.md. Proposed A$49/A$129/A$299+ monthly research anchors supersede the earlier draft; no published prices or billing approval. Documented local/community principles, commercial funding, separate backup/remote access/hosted session/sync capabilities, controlled edit ownership and existing QField/Mergin evaluation. Main source stays private. No legal foundation, cloud service, payment or mobile/sync feature was created. Verified official Home Assistant/Foundation, QField, Mergin and QGIS documentation. Documentation-only update; no runtime tests required.
+User selected Home Assistant/Open Home Foundation as the inspiration and higher pricing as the direction. Added mobile access, backups and possible VPS-hosted Ag-GIS with desktop sync to WORK_LOG.md. Proposed A$49/A$129/A$299+ monthly research anchors supersede the earlier draft; no published prices or billing approval. Documented local/community principles, commercial funding, separate backup/remote access/hosted session/sync capabilities, controlled edit ownership and existing QField/Mergin evaluation. Main source stays private. No legal foundation, cloud service, payment or mobile/sync feature was created. Verified official Home Assistant/Foundation, QField, Mergin and QGIS documentation. Documentation-only update; no runtime tests required.
 
 ## 2026-10-15 — Selectable roads and satellite backgrounds (0.12.0)
 
@@ -4019,7 +4019,7 @@ Native checkbox/migration/attribution tests and farmer-view regression passed. S
 
 ## 2026-10-15 — Ag-GIS identity over QGIS
 
-User wants a custom logo and Ag-GIS frontend for QGIS. Confirmed the plugin already has an original map-symbol SVG and its own toolbar branding. Recorded a phased original-logo/profile/launcher approach in BUSINESS_PLAN.md; full application identity may require a dedicated custom distribution. Checked official QGIS trademark guidelines and configuration documentation. No final logo selected, upstream assets replaced or runtime behaviour changed. Documentation-only change.
+User wants a custom logo and Ag-GIS frontend for QGIS. Confirmed the plugin already has an original map-symbol SVG and its own toolbar branding. Recorded a phased original-logo/profile/launcher approach in WORK_LOG.md; full application identity may require a dedicated custom distribution. Checked official QGIS trademark guidelines and configuration documentation. No final logo selected, upstream assets replaced or runtime behaviour changed. Documentation-only change.
 
 Frozen 0.12.0 source/extracted ZIP, installer and payload checks passed. Live migration produced three native checkbox options, seven valid layers and HTTP 200 satellite imagery with no network error. Visual review caught the long credit wrapping into a narrow column; adjusted its width using QFontMetrics in 0.12.1 and added a regression assertion. Final build/live check follows.
 
@@ -4071,7 +4071,7 @@ other tooling work and was left untouched.
 
 Final 0.12.1: the first frozen run hit a temporary project.write failure in the background test fixture; the unchanged test and then the entire frozen source/extracted-ZIP suite passed on retry. Preserved first-attempt and retry logs under dist/windows/20261015T012543Z. Offline rebuild reused validation only after checking all plugin/test inputs were byte-identical. Final installer: dist/windows/Ag-GIS-0.12.1-Windows-20261015T013035Z.zip; payload hashes and ZIP CRC passed. Installed runtime exactly matches the validated package; new bundle plugin contents match the installed older-snapshot ZIP entry-for-entry.
 
-Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
+Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under [USER_PATH]/Documents/Codex/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
 
 2026-10-15 wording approval: the user selected the exact supporting line “Built on open source tools”. Applied to About, toolbar tooltip, shortcut description, preview generator and canonical branding/setup/tooling instructions. Regenerated previews and plugin ZIP; focused source lifecycle and extracted branding checks passed. No release deployment performed.
 
@@ -4142,7 +4142,7 @@ IDs/selection and custom URLs. World imagery also caps requests at matrix 14 to 
 oversampling its historical 10 m content. At the same viewport after correction, all
 12 DEA and 12 EOX requested tiles returned 200 with no native render errors; inspected
 both map images. OSM displayed from the normal cache. Detailed local evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-render-diagnosis.json.
+[USER_PATH]/Documents/Codex/2026-10-14/un/outputs/background-render-diagnosis.json.
 
 Checkbox switching already passed repeated native interaction checks. Improved the
 name-click interaction so highlighting another background also selects it; checkbox
@@ -4170,7 +4170,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+[USER_PATH]/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
