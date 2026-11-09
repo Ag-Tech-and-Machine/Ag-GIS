@@ -1129,7 +1129,7 @@ the automation dependency. No identical install/input retries or endless regress
   local-1e70c5942bad0aac9c9cb36ce7161fb0707a1556ecce937a948d0c20375cb43d:logging-review.
   Journal was approved/unclaimed; latest watchdog independently settled the prior
   worker. One serial documentation/review increment; no delegation or recovery.
-- Added docs/GITHUB_NETWORK_REVIEW.md, aligned INSTALL/TOOLING/identity plan and
+- Added docs/GITHUB_NETWORK_REVIEW.md (to be deleted)
   feedback audit. Reused the existing native QgsNetworkAccessManager boundary for
   review, not a new network engine or feature. Nine pinned final-3_44_14 upstream
   sources archived with full SHA-256/URLs/fetch timestamp under
@@ -2061,7 +2061,7 @@ the automation dependency. No identical install/input retries or endless regress
   false-complete classification state blocker remain untouched.
 - Problem/scope: optional GitHub identity needs proportionate provider permissions,
   protected credentials and useful local operation even if users decline sign-in.
-  Added `docs/GITHUB_IDENTITY_PLAN.md`, `tools/auth_storage_feasibility_test.py` and
+  Added docs/GITHUB_IDENTITY_PLAN.md (to be deleted), tools/auth_storage_feasibility_test.py and
   `tools/run_auth_storage_feasibility.py`; updated FEEDBACK_AUTH_AUDIT, INSTALL,
   TOOLING and this log. No plugin/runtime/packaged-guide change or new dependency.
 - Fetched current official GitHub, QGIS 3.44/pinned 3.44.14 source and Microsoft
@@ -3184,14 +3184,14 @@ the automation dependency. No identical install/input retries or endless regress
 - Files: START_HERE.md; plugins/ag_tech_tooling/feedback.py; tools/feedback_test.py,
   build_plugin.py, package_test.py, check_repository.py; README.md; CONTRIBUTING.md;
   docs/INSTALL.md, TOOLING.md, USER_GUIDE.md, ARCHITECTURE.md, USER_COMMITMENTS.md;
-  docs/FEEDBACK_AUTH_AUDIT.md and superseding warnings in the three GITHUB_* guides.
+  docs/FEEDBACK.md and superseding warnings in the three GITHUB_* guides.
   This WORK_LOG entry records the increment. Preserved all unrelated existing edits.
 - Auth source audit: actual menu uses browser-reviewed feedback. Unwired
   feedback_submission.py is not secure OAuth: status-before-creation, missing widget
   imports, QWidget.addTab, broken INI serialization, plaintext legacy-path storage,
   narrow token-format assumption and broad PAT instructions. Did not open token
   files or enable/repair that prototype. Corrected misleading no-login/token-never-
-  sent claims; detailed facts and remaining design are in FEEDBACK_AUTH_AUDIT.md.
+  sent claims; detailed facts and remaining design are in FEEDBACK.md.
 - TDD: added missing onboarding-tab regression; bundled QGIS test failed on the
   expected absent tab before implementation, then passed. Extended existing real
   Qt feedback tests for read-only text, exact clipboard copy, no browser launch or
@@ -3987,7 +3987,7 @@ Native network wire verification passed against localhost: QGIS first set its ow
 - Created the public tracker from an eight-file allowlist: reporting README, three issue forms, form configuration, triage script/workflow and sanitised reporting guide. No plugin source, datasets, installer or build logs were copied to it. Initial tracker commit fa19f4c54172f62d406f4b1030ae0fb2a055a2db. Label setup ran successfully at https://github.com/JamRov/Ag-GIS-Feedback/actions/runs/38664077968 .
 - Runtime feedback URL, maintainer importer default, privacy notice and reporting documentation now target the public feedback repository. Private update/release destination remains unchanged. Qt reporting/intake tests pass, and mock triage state-transition checks pass. Browser form prefilling preserved the synthetic report; live test issue #1 was created and transitioned from new to in progress while preserving unrelated labels. Close/reopen verification follows.
 - Earlier complete combined snapshot 20261015T005618Z was version 0.10.0 (the feedback entry originally said 0.9.1 before concurrent metadata changes). The newly captured 0.10.1 shared-checkout build 20261015T010752Z failed an import-dialog test; another capture 20261015T010919Z advanced past that check but failed import_placement_test with native process exit -1073741819. Feedback, intake, syntax, lifecycle and farmer-view checks passed in both. No new installer is approved or published from these failed builds. Preserve other chats' work; import stability is a release blocker, not evidence that feedback itself failed.
-- User wants income from a self-service product rather than founder-delivered setup or direct support, serving farmers, contractors and agronomists. Added internal BUSINESS_PLAN.md: optional paid backup/recovery first, team workflows after validated demand, pricing hypotheses and contribution arithmetic, unaided onboarding gates, and hosting/operational/licensing boundaries. No production cloud service, billing, customer outreach or recurring agent was created. Revenue target remains unspecified.
+- User wants income from a self-service product rather than founder-delivered setup or direct support, serving farmers, contractors and agronomists. Added internal WORK_LOG.md: optional paid backup/recovery first, team workflows after validated demand, pricing hypotheses and contribution arithmetic, unaided onboarding gates, and hosting/operational/licensing boundaries. No production cloud service, billing, customer outreach or recurring agent was created. Revenue target remains unspecified.
 
 Live public issue #1 completed the form → new → in progress → closed (status cleared) → reopened (new restored) → final closed verification. Unrelated labels were preserved. Final synthetic issue: https://github.com/JamRov/Ag-GIS-Feedback/issues/1 . Re-ran real Qt feedback tests after preserving UTF-8 in test fixtures, maintainer intake tests and syntax/package build. Verified the extracted current 0.11.0 ZIP contains the exact feedback module and passes its real Qt reporting checks. Concurrent peers bumped metadata to 0.11.0; this targeted verification is not a complete 0.11.0 release acceptance or a published installer.
 
@@ -4008,7 +4008,7 @@ Live public issue #1 completed the form → new → in progress → closed (stat
 
 ## 2026-10-15 — Home Assistant model and online service roadmap
 
-User selected Home Assistant/Open Home Foundation as the inspiration and higher pricing as the direction. Added mobile access, backups and possible VPS-hosted Ag-GIS with desktop sync to BUSINESS_PLAN.md. Proposed A$49/A$129/A$299+ monthly research anchors supersede the earlier draft; no published prices or billing approval. Documented local/community principles, commercial funding, separate backup/remote access/hosted session/sync capabilities, controlled edit ownership and existing QField/Mergin evaluation. Main source stays private. No legal foundation, cloud service, payment or mobile/sync feature was created. Verified official Home Assistant/Foundation, QField, Mergin and QGIS documentation. Documentation-only update; no runtime tests required.
+User selected Home Assistant/Open Home Foundation as the inspiration and higher pricing as the direction. Added mobile access, backups and possible VPS-hosted Ag-GIS with desktop sync to WORK_LOG.md. Proposed A$49/A$129/A$299+ monthly research anchors supersede the earlier draft; no published prices or billing approval. Documented local/community principles, commercial funding, separate backup/remote access/hosted session/sync capabilities, controlled edit ownership and existing QField/Mergin evaluation. Main source stays private. No legal foundation, cloud service, payment or mobile/sync feature was created. Verified official Home Assistant/Foundation, QField, Mergin and QGIS documentation. Documentation-only update; no runtime tests required.
 
 ## 2026-10-15 — Selectable roads and satellite backgrounds (0.12.0)
 
@@ -4019,7 +4019,7 @@ Native checkbox/migration/attribution tests and farmer-view regression passed. S
 
 ## 2026-10-15 — Ag-GIS identity over QGIS
 
-User wants a custom logo and Ag-GIS frontend for QGIS. Confirmed the plugin already has an original map-symbol SVG and its own toolbar branding. Recorded a phased original-logo/profile/launcher approach in BUSINESS_PLAN.md; full application identity may require a dedicated custom distribution. Checked official QGIS trademark guidelines and configuration documentation. No final logo selected, upstream assets replaced or runtime behaviour changed. Documentation-only change.
+User wants a custom logo and Ag-GIS frontend for QGIS. Confirmed the plugin already has an original map-symbol SVG and its own toolbar branding. Recorded a phased original-logo/profile/launcher approach in WORK_LOG.md; full application identity may require a dedicated custom distribution. Checked official QGIS trademark guidelines and configuration documentation. No final logo selected, upstream assets replaced or runtime behaviour changed. Documentation-only change.
 
 Frozen 0.12.0 source/extracted ZIP, installer and payload checks passed. Live migration produced three native checkbox options, seven valid layers and HTTP 200 satellite imagery with no network error. Visual review caught the long credit wrapping into a narrow column; adjusted its width using QFontMetrics in 0.12.1 and added a regression assertion. Final build/live check follows.
 
