@@ -121,7 +121,7 @@ def register_vendor_mapping(conn: sqlite3.Connection, name: str, source_type: st
 def register_unit(conn: sqlite3.Connection, vendor_source: str, unit_token: str, standard_name: str, 
                   category: str = None, description: str = None) -> str:
     """Register a unit interpretation.
-
+    
     Append a new version within (default, vendor_source, unit_token).
     Returns the unit registry name, not a numeric conversion.
     """
@@ -130,11 +130,19 @@ def register_unit(conn: sqlite3.Connection, vendor_source: str, unit_token: str,
     cursor = conn.cursor()
     created_utc = datetime.now(timezone.utc).isoformat()
     
+    # Find the next version number
     cursor.execute("""
-    INSERT INTO agtech_unit_registry (name, version, vendor_source, unit_token, standard_name, category, description, created_utc)
-    SELECT 'default', COALESCE(MAX(version), 0) + 1, ?, ?, ?, ?, ?, ?
-    FROM agtech_unit_registry WHERE name='default' AND vendor_source=? AND unit_token=?
-    """, (vendor_source, unit_token, standard_name, category, description, created_utc, vendor_source, unit_token))
+    SELECT COALESCE(MAX(version), 0) + 1
+    FROM agtech_unit_registry
+    WHERE name=? AND vendor_source=? AND unit_token=?
+    """, ("default", vendor_source, unit_token))
+    new_version = cursor.fetchone()[0]
+    
+    # Insert or replace
+    cursor.execute("""
+    INSERT OR REPLACE INTO agtech_unit_registry (name, version, vendor_source, unit_token, standard_name, category, description, created_utc)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, ("default", new_version, vendor_source, unit_token, standard_name, category, description, created_utc))
     
     conn.commit()
     return "default"
@@ -284,6 +292,7 @@ def lookup_unit(unit_token, source_type, *, conn=None, name="default", version=N
         return None
     if not conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='agtech_unit_registry'").fetchone():
         return None
+    # Query by unit_token only - unit_token and standard_name are independent fields
     query = "SELECT id,version,standard_name,category,description FROM agtech_unit_registry WHERE name=? AND vendor_source=? AND unit_token=?"
     args = [name, source_type, unit_token]
     if version is not None:
