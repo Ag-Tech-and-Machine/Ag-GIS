@@ -93,11 +93,9 @@ Wait for my review and explicit approval before any public action.
 - Exact prerequisites and commands: docs/DEVELOPMENT.md, docs/INSTALL.md and
   docs/TOOLING.md. Ordinary Python checks are not native QGIS acceptance.
 - PR/privacy/licensing rules: CONTRIBUTING.md, SECURITY.md and
-  docs/USER_COMMITMENTS.md. Read docs/HERMES_OPERATIONS.md if managing the owner's
-  existing task journal; this page does not grant new execution authority.
-- Handoff: problem/scope, files changed, native capability reused, synthetic
-  reproduction, exact checks/results, artifact identity where relevant, and
-  remaining work. Mark implemented/tested/installed/planned separately.
+  - Handoff: problem/scope, files changed, native capability reused, synthetic
+    reproduction, exact checks/results, artifact identity where relevant, and
+    remaining work. Mark implemented/tested/installed/planned separately.
 
 This is the canonical page. The plugin bundles an identical START_HERE.txt for
 local discovery; do not edit a generated package copy. An installed older build

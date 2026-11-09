@@ -344,7 +344,7 @@ request-local fixture trust permits exact HTTPS delivery without forwarding the
 proxy authorization header to the origin. This does NOT test QGIS custom CA/host
 policy, native credential prompts/storage, system/PAC policy, production lifecycle
 or real sign-in. The routing wrapper alone does not install QGIS auth handlers.
-See [proxy experiment](GITHUB_NETWORK_REVIEW.md#authenticated-proxy-experiment--21-october-2026)
+See [proxy experiment](TOOLING.md#proxy-experiment)
 for reproduction and remaining gates. Earlier experiments retain their historical
 limits; the new result covers only these named synthetic proxy/TLS boundaries.
 
@@ -356,13 +356,13 @@ Three synthetic Qt POSTs are absent; the two native control body/header fixtures
 are retained and exported. Recording is never disabled or cleared by this test.
 This is generic QGIS desktop evidence, NOT product/branded acceptance or real
 credential clearance. No runtime or installation change; sign-in stays disabled.
-See [recorder isolation](GITHUB_NETWORK_REVIEW.md#actual-app-recorder-isolation--21-october-2026)
+See [recorder isolation](TOOLING.md#recorder-isolation)
 for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
 
 ## Bundled Qt contract experiment — 21 October 2026
 
 No installation or production-transport change. A disposable synthetic-only
-[bundled Qt spike](GITHUB_NETWORK_REVIEW.md#bundled-qt-integration-spike--21-october-2026)
+[bundled Qt spike](TOOLING.md#bundled-qt-integration-spike--21-october-2026)
 now exercises real loopback requests: Qgs signal isolation with unrelated controls,
 QGIS fallback/no-proxy routing through a test-local delegating factory, untrusted
 TLS refusal and late reply after abort. Base Qt does not automatically inherit
@@ -381,7 +381,7 @@ external registration remain separate gates.
 ## Sign-in transport options review — 21 October 2026
 
 No installation change: real in-app sign-in remains disabled. The new
-[per-request options review](GITHUB_NETWORK_REVIEW.md#per-request-options-review--21-october-2026)
+[per-request options review](TOOLING.md#per-request-options-review--21-october-2026)
 checks pinned source and compiled bindings, not a working login or desktop fix.
 It found no diagnostic opt-out in the reviewed request path; moving requests to a
 worker or merely selecting native OAuth2 does not establish recorder isolation.
@@ -453,7 +453,7 @@ based on this review. Native/branded acceptance and external registration remain
 
 ## Native sign-in logging review — 21 October 2026
 
-1. Read [the pinned network trust review](GITHUB_NETWORK_REVIEW.md) before any
+1. Read [TOOLING.md](TOOLING.md) before any
    sign-in integration. Native QGIS recording has a source-traced POST/header
    retention, Copy As cURL and explicit JSON export path; earlier empty message
    logs do not establish credential secrecy. This is source review, not observed
@@ -606,7 +606,7 @@ based on this review. Native/branded acceptance and external registration remain
    receipt and no retry/write callback. All eleven synthetic configs are removed.
    Real locked native update diagnostics are expected. Detailed evidence/limits:
    `.aggis-agent/evidence/20261020-interrupted-binding/verify.py` and
-   [identity design](GITHUB_IDENTITY_PLAN.md). Never expand/send APIHeader fixtures.
+   [identity design](TOOLING.md#github-identity-plan). Never expand/send APIHeader fixtures.
 4. LIMIT: the ledger lock cannot lock native storage. A change after the last read,
    arbitrary callback behavior and caller clocks remain unresolved; this is NOT
    power-loss durability, atomic protected admission, safe production refresh/recovery/rearm or working
@@ -987,13 +987,13 @@ No runtime, dependency or installation changes in this bounded follow-up.
 4. For failures retain the unittest output; do not enter a real token, change a
    normal profile, disable global logging or fall back to the unsupported PAT UI.
    Evidence/readback: `.aggis-agent/evidence/20261020-auth-flow/verify.py`.
-   See [the identity plan](GITHUB_IDENTITY_PLAN.md) for remaining native-network,
+   See [the identity plan](TOOLING.md#github-identity-plan) for remaining native-network,
    storage-integration and owner-controlled registration gates.
 
 ## Protected identity design, not a login installation — 20 October 2026
 
 No new runtime dependency, sign-in requirement or installed application change.
-[The identity plan](GITHUB_IDENTITY_PLAN.md) separates optional identity, protected
+[The identity plan](TOOLING.md#github-identity-plan) separates optional identity, protected
 storage and deliberately reviewed public feedback. It records current official
 GitHub device-flow/permission/refresh contracts and owner-controlled registration
 gates; it does not authorize or register an external app.
@@ -1874,7 +1874,7 @@ background-fixed-satellite_world.png. No installer release/publication was perfo
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 # Hermes-managed development setup
 
-For the agent-managed development and business workflow, use [Hermes operations](HERMES_OPERATIONS.md). Run `py tools/setup_hermes.py --schedule` from the source root after configuring Hermes. This installs its management skill and two native schedules with Bot Chat delivery; it does not install or release the farmer-facing application.
+For the agent-managed development and business workflow, run `py tools/setup_hermes.py --schedule` from the source root after configuring Hermes. This installs its management skill and two native schedules with Bot Chat delivery; it does not install or release the farmer-facing application.
 
 For a provider interruption, restore and verify inference before resuming source
 work. The 19 October recovery adds a Windows fallback supervisor task and preserves
