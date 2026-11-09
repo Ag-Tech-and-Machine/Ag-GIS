@@ -998,7 +998,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Approved identity task ff2bbac607 claimed by current cron/session before edits;
   canonical journal approvals and no running claim checked. No recovery, delegation,
   new approval or scheduling. Dirty shared source and normal Ag-GIS PID4624 preserved.
-- Documentation/evidence only: GITHUB_NETWORK_REVIEW gains an options matrix;
+- Documentation/evidence only: network trust review gains an options matrix;
   INSTALL/TOOLING/identity instructions point to its canonical reproduction/recovery.
   Native capabilities reviewed: QgsNetworkAccessManager public request attributes,
   preprocessors, per-thread forwarding and native OAuth2 factory; none replaced.
@@ -1129,7 +1129,7 @@ the automation dependency. No identical install/input retries or endless regress
   local-1e70c5942bad0aac9c9cb36ce7161fb0707a1556ecce937a948d0c20375cb43d:logging-review.
   Journal was approved/unclaimed; latest watchdog independently settled the prior
   worker. One serial documentation/review increment; no delegation or recovery.
-- Added docs/GITHUB_NETWORK_REVIEW.md, aligned INSTALL/TOOLING/identity plan and
+- Added docs/network trust review, aligned INSTALL/TOOLING/identity plan and
   feedback audit. Reused the existing native QgsNetworkAccessManager boundary for
   review, not a new network engine or feature. Nine pinned final-3_44_14 upstream
   sources archived with full SHA-256/URLs/fetch timestamp under
@@ -2062,8 +2062,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Problem/scope: optional GitHub identity needs proportionate provider permissions,
   protected credentials and useful local operation even if users decline sign-in.
   Added `docs/GITHUB_IDENTITY_PLAN.md`, `tools/auth_storage_feasibility_test.py` and
-  `tools/run_auth_storage_feasibility.py`; updated FEEDBACK_AUTH_AUDIT, INSTALL,
-  TOOLING and this log. No plugin/runtime/packaged-guide change or new dependency.
+  `tools/run_auth_storage_feasibility.py`; updated INSTALL and this log. No plugin/runtime/packaged-guide change or new dependency.
 - Fetched current official GitHub, QGIS 3.44/pinned 3.44.14 source and Microsoft
   documentation. Fourteen archived responses have exact URLs/bytes/hashes in
   `.aggis-agent/evidence/20261020-auth-feasibility/sources/manifest.json`.
@@ -3191,7 +3190,7 @@ the automation dependency. No identical install/input retries or endless regress
   imports, QWidget.addTab, broken INI serialization, plaintext legacy-path storage,
   narrow token-format assumption and broad PAT instructions. Did not open token
   files or enable/repair that prototype. Corrected misleading no-login/token-never-
-  sent claims; detailed facts and remaining design are in FEEDBACK_AUTH_AUDIT.md.
+  sent claims; detailed facts and remaining design are in the relevant documentation.
 - TDD: added missing onboarding-tab regression; bundled QGIS test failed on the
   expected absent tab before implementation, then passed. Extended existing real
   Qt feedback tests for read-only text, exact clipboard copy, no browser launch or

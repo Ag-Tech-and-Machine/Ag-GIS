@@ -3,7 +3,7 @@
 > **Superseded prototype instructions — 19 October 2026. Do not follow the PAT setup below.**
 > The discoverable feedback route uses browser review; embedded GitHub login is
 > unfinished. The unwired prototype has runtime and token-storage defects.
-> Do not generate a broad `repo` token. See [the source audit](FEEDBACK_AUTH_AUDIT.md)
+> Do not generate a broad `repo` token. See [Start Here](../START_HERE.md) for current offline-first onboarding.
 > and [Start Here](../START_HERE.md) for current offline-first onboarding.
 
 ## Create Your Token (One-Time Setup)
