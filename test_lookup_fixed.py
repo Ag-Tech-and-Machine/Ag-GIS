@@ -191,7 +191,10 @@ def test_lookup_vendor_mapping():
         if expected is None:
             passed = result is None
             status = "✓" if passed else "✗"
-            print(f"  {status} {op_token} -> {'None' if result is None else f'{result[\"operation_family\"]}/{result[\"operation_subtype\"]}'}")
+            if result is None:
+                print(f"  {status} {op_token} -> None")
+            else:
+                print(f"  {status} {op_token} -> {result['operation_family']}/{result['operation_subtype']}")
         else:
             passed = (result is not None and 
                      result['operation_family'] == expected['operation_family'] and
@@ -232,7 +235,10 @@ def test_lookup_unit():
                      result['category'] == expected['category'])
         
         if passed:
-            print(f"  ✓ {unit_token} -> {result['standard']} ({result['category']})")
+            if result is None:
+                print(f"  ✓ {unit_token} -> None")
+            else:
+                print(f"  ✓ {unit_token} -> {result['standard']} ({result['category']})")
         else:
             print(f"  ✗ {unit_token} -> expected {expected}, got {result}")
             all_passed = False
