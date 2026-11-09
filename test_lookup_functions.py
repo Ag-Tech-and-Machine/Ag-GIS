@@ -82,14 +82,13 @@ def test_lookup_vendor_mapping():
         ("unknown_op", "deere-gs3", None),
     ]
     
-    all_passed = True
     for op_token, source_type, expected_fields in test_cases:
         result = lookup_vendor_mapping(op_token, source_type, conn=conn)
         if result is None and expected_fields is None:
             print(f"  ✓ {op_token} -> None (as expected)")
         elif result is None:
-            print(f"  ✗ {op_token} -> expected {expected_fields}, got None")
-            all_passed = False
+            print(f"  ✗ {op_token} -> expected data, got None")
+            assert False, f"Expected data for {op_token}, got None"
         else:
             # Check if expected fields are present in result
             match = all(result.get(key) == expected_fields.get(key) for key in expected_fields)
@@ -97,10 +96,9 @@ def test_lookup_vendor_mapping():
                 print(f"  ✓ {op_token} -> {result}")
             else:
                 print(f"  ✗ {op_token} -> expected {expected_fields}, got {result}")
-                all_passed = False
+                assert False, f"Expected {expected_fields}, got {result}"
     
     conn.close()
-    return all_passed
 
 
 def test_lookup_unit():
@@ -146,17 +144,16 @@ def test_lookup_unit():
         print(f"  ✓ lph_internal (token) != litres_per_ha (standard) -> {result1['standard']}")
     else:
         print(f"  ✗ lph_internal lookup failed: {result1}")
-        all_passed = False
+        assert False, f"lph_internal lookup failed: {result1}"
     
     result2 = lookup_unit("gpa_internal", "deere-gs3", conn=conn)
     if result2 and result2["standard"] == "gallons_per_acre":
         print(f"  ✓ gpa_internal (token) != gallons_per_acre (standard) -> {result2['standard']}")
     else:
         print(f"  ✗ gpa_internal lookup failed: {result2}")
-        all_passed = False
+        assert False, f"gpa_internal lookup failed: {result2}"
     
     conn.close()
-    return all_passed
 
 if __name__ == "__main__":
     print("Testing classification_registry lookup functions")

@@ -25,7 +25,7 @@ from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
 GITHUB_API_BASE = "https://api.github.com"
 AG_GIS_FEEDBACK_REPO = "JamRov/Ag-GIS-Feedback"
 ISSUES_URL = f"https://github.com/{AG_GIS_FEEDBACK_REPO}/issues"
-SUPPORT_EMAIL = "[user identity]"
+SUPPORT_EMAIL = "admin@agtechandmachine.com"
 
 # Template mappings
 KINDS = {

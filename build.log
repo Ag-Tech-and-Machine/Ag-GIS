@@ -1,0 +1,304 @@
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\.gitignore
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\AGENTS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\ARCHITECTURE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\BRAND_ASSETS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\BRANDING.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\DATA_DICTIONARY.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\DATA_TYPES.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\DEVELOPMENT.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\DEVELOPMENT_PLAN.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\FARM_DATA_MODEL.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\FARM_PROJECTS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\FEEDBACK.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\GITHUB_ISSUE_SUBMISSION.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\GITHUB_TOKEN_GUIDE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\GITHUB_TOKEN_QUICKSTART.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\IMPORTS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\INSTALL.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\MANAGED_DATA.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\PCTGDP.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\PILOT_CHECKLIST.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\PRIVACY_EXCLUSIONS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\PRIVACY_SANITIZATION.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\PURPOSE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\REPOSITORY_PRESENTATION.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\ROADMAP.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\TOOLING.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\UPDATES.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\USER_COMMITMENTS.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\USER_GUIDE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\docs\WORK_LOG.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\installer\Ag-GIS.ico
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\installer\Install.ps1
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\installer\install_profile.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\installer\Launch.cs
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\installer\Setup.cs
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\LICENSE
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\__init__.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_client.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_crop.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_farm.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_field.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_job.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_organisation.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_plan.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_result.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_season.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\agtech_whole.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\app_icon.ico
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\archive_sources.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\background_maps.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\brand_lockup.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\branding.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\classification.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\classification_registry.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\data_filter.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\data_types.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\dataset_styles.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\deere_preview.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\deere_zip.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\farm_browser.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\farm_dialog.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\farm_project.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\feedback.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\feedback_submission.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\github_connection.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\github_session.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\github_transport.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\hierarchy.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\hierarchy_dialog.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\icon.svg
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\import_destination.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\import_dialog.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\import_placement.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\import_sources.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\LICENSE
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\managed_data.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\map_presentation.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\metadata.txt
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\operation_style.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\pctgdp_preview.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\plugin.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\reviewed_import.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\season_boundary.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\simple_view.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\START_HERE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\test_feedback_submission.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\ui_icons.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\update_catalog.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\updates.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\view_settings.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\windows_taskbar.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\plugins\ag_tech_tooling\workspace_defaults.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\README.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\scripts\check.ps1
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\scripts\install-plugin.ps1
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\scripts\launch-qgis.ps1
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\START_HERE.md
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\archive_sources_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_flow_model.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_flow_model_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_network_feasibility_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_admission_native_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_admission_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_attempt_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_fence.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_fence_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_handoff_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_model_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_native_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_readback.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_readback_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_receipt_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_rollback_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_refresh_success_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_session_model_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_session_native_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_storage_failure_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\auth_storage_feasibility_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\background_checkbox_paint_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\background_maps_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\background_render_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\branding_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\build_brand_assets.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\build_plugin.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\build_repository_artwork.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\build_update_catalog.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\build_windows_installer.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\check_plugin.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\check_repository.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\classification_registry_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\classification_resolution_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\classification_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\data_dictionary_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\data_in_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\dataset_style_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\deere_preview.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\deere_preview_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\default_workspace_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\esri_background_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\farm_browser_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\farm_project_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\farmer_view_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\feedback_intake_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\feedback_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\feedback_workflow_test.cjs
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\github_connection_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\github_recorder_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\github_session_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\github_transport_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\hierarchy_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\import_feedback.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\import_placement_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\install_plugin.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\installer_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\launcher_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\managed_data_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\operation_style_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\package_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\pctgdp_preview.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\pctgdp_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\reviewed_import_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_auth_network_feasibility.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_auth_refresh_admission_native.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_auth_refresh_native.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_auth_storage_failure.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_auth_storage_feasibility.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_github_connection_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_github_recorder_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_github_transport_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_pctgdp_inspect.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_style_tests.bat
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_style_tests.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_style_toolbar_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_tree_navigation_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\run_tree_reopen_desktop_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\season_boundary_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\season_review_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\smoke_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\style_toolbar_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\test_operation_style.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\test_pyqt5.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\tree_navigation_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\tree_reopen_desktop_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\update_catalog_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\update_native_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\updates_test.py
+Copied: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\tools\windows_taskbar_test.py
+Plugin syntax and metadata OK
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\source\.aggis-agent\evidence\connection-420c0fb907944423a16e733027b286a8\process.json
+exit 0
+Brand assets, About reuse/cleanup, title updates/restoration, dialog identity and later-owner preservation passed
+Windows taskbar ID/icon/command, rollback, later-owner preservation and shortcut persistence passed
+Feedback report, URL/email encoding, versions opt-out, lossless long reports, save/cancel/failure and lifecycle checks passed
+Feedback intake preview, explicit submission, exact body, duplicate and missing-CLI checks passed
+Native update isolated evidence: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-03jy05cw
+UPDATE: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+EXPLICIT RECOVERY: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+PASS: actual native installer update and explicit snapshot recovery; isolated settings/profile; no network; separate data unchanged
+Evidence JSON: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-03jy05cw\result.json
+QGIS plugin action, simple-view restoration and reload checks passed
+PASS: test_ensure_classification_tables
+PASS: test_register_vendor_mapping
+PASS: test_register_unit
+PASS: test_classify_with_storage
+PASS: test_get_latest_classification
+PASS: test_catalogue_migration
+PASS: test_unknown_value_preservation
+
+All tests passed!
+Operation style: point/line/polygon defaults, native edits, save/reopen, reset, source preservation and legacy refusal passed
+Message: ('Saved styling', 'Recovery styling was not synchronized: Final map archive did not match its save receipt; previous recovery styling retained.')
+Message: ('Saved styling', 'Recovery styling was not prepared: unable to open database file')
+Message: ('Saved styling', 'Recovery styling was not synchronized: database is locked')
+Message: ('Saved styling', 'Recovery styling was not prepared: Multiple map copies of one dataset need review; catalogue styling was retained.')
+Message: ('Saved styling', 'Recovery styling was not synchronized: Newer or unrecognized recovery styling exists. Keep this saved map and review before replacing recovery styling.')
+Durable dataset styles: native project save/reopen and catalogue-only recovery passed
+Actual synthetic GeoPackage: all core/catalogue column sets, TEXT declarations, versions and managed vector table inspected
+Farm creation, duplicate protection, schema rejection, map/database open, move/reopen and cancel checks passed
+Hierarchy, duplicate/orphan protection, season/crop records, icons, native map filtering and copy upgrade checks passed
+Default Documents setup, collision protection, no-form New and complete multi-client native tree checks passed
+Farm browser icons, native visibility/editing, unrelated layers and presentation restoration passed
+Single-point native rendered diameter: 8 pixels; marker size: 2.0 unit: 0
+Farmer defaults, overrides, names/styles, coordinate zoom, hierarchy add/rename, background attribution and unload passed
+Background native checkboxes, exclusive selection, attribution, save/reopen, migration and removal passed
+Esri native catalogue, attribution, settings, v1 upgrades, visibility, deletions, source overrides and save/reopen passed
+Background checkbox paint after name and indicator clicks passed
+Native canvas pixels, close-scale zoom limits, rapid switching, cancelled slow tiles and no-background rendering passed (localhost only)
+PCTGDP direct/folder recognition and source integrity passed
+PCTGDP inline layer preview passed
+PCTGDP malformed XML, DTD, root, signature, path safety, bounded streaming, limit and cancellation passed
+Scanner archive refusal/no-partial-rows/source-unchanged: encrypted, nul-name, byte-limit, entry-limit, real-nested-only
+Mixed Deere ZIP: live Stop Scan/no-write, retry/import, preview-only hierarchy and duplicate rejection passed
+Data In native discovery, ZIP, source safety, async UI, map add and lifecycle checks passed
+Asserted read-only cross-year Data In season review passed
+Asserted linked boundary preview/apply, keep-history, stale/source refusals and transactional rollback passed
+Asserted reviewed Data In import, classification pointer and seasonal catalogue recovery passed
+Field matching, complete coverage, ambiguity, CRS transforms, atomic setup and saved placement checks passed
+Managed copies, original removal, workspace move/recovery, numeric rasters, filters and failed-copy cleanup passed
+Plugin syntax and metadata OK
+Plugin ZIP ready: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\source\dist\ag_tech_tooling-0.12.2.zip
+Plugin syntax and metadata OK
+Installed Ag-GIS 0.12.2: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-u5u06huo\new-profile\python\plugins\ag_tech_tooling
+Recovery backup: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-u5u06huo\new-profile\ag-tech-install-backups\20261107-101426-507620
+Installed Ag-GIS 0.12.2: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-u5u06huo\new-profile\python\plugins\ag_tech_tooling
+Recovery backup: C:\Users\Michael\AppData\Local\Temp\agtech-installer-test-u5u06huo\new-profile\ag-tech-install-backups\20261107-101426-847709
+Installer fresh profile, exact bytes, upgrade, recovery, unsafe ZIP and unrelated-plugin checks passed
+Windows splash rendering, icon compilation and native bootstrap/profile/nologo launch passed
+Plugin syntax and metadata OK
+Brand assets, About reuse/cleanup, title updates/restoration, dialog identity and later-owner preservation passed
+Windows taskbar ID/icon/command, rollback, later-owner preservation and shortcut persistence passed
+Feedback report, URL/email encoding, versions opt-out, lossless long reports, save/cancel/failure and lifecycle checks passed
+Native update isolated evidence: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-2d9juqam
+UPDATE: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+EXPLICIT RECOVERY: native replacement/load/start, retained ZIP, confirmed pending and restart instruction passed
+PASS: actual native installer update and explicit snapshot recovery; isolated settings/profile; no network; separate data unchanged
+Evidence JSON: C:\Users\Michael\AppData\Local\hermes\cache\scratch\aggis-native-update-2d9juqam\result.json
+QGIS plugin action, simple-view restoration and reload checks passed
+PASS: test_ensure_classification_tables
+PASS: test_register_vendor_mapping
+PASS: test_register_unit
+PASS: test_classify_with_storage
+PASS: test_get_latest_classification
+PASS: test_catalogue_migration
+PASS: test_unknown_value_preservation
+
+All tests passed!
+Operation style: point/line/polygon defaults, native edits, save/reopen, reset, source preservation and legacy refusal passed
+Message: ('Saved styling', 'Recovery styling was not synchronized: Final map archive did not match its save receipt; previous recovery styling retained.')
+Message: ('Saved styling', 'Recovery styling was not prepared: unable to open database file')
+Message: ('Saved styling', 'Recovery styling was not synchronized: database is locked')
+Message: ('Saved styling', 'Recovery styling was not prepared: Multiple map copies of one dataset need review; catalogue styling was retained.')
+Message: ('Saved styling', 'Recovery styling was not synchronized: Newer or unrecognized recovery styling exists. Keep this saved map and review before replacing recovery styling.')
+Durable dataset styles: native project save/reopen and catalogue-only recovery passed
+Actual synthetic GeoPackage: all core/catalogue column sets, TEXT declarations, versions and managed vector table inspected
+Farm creation, duplicate protection, schema rejection, map/database open, move/reopen and cancel checks passed
+Hierarchy, duplicate/orphan protection, season/crop records, icons, native map filtering and copy upgrade checks passed
+Default Documents setup, collision protection, no-form New and complete multi-client native tree checks passed
+Farm browser icons, native visibility/editing, unrelated layers and presentation restoration passed
+Single-point native rendered diameter: 8 pixels; marker size: 2.0 unit: 0
+Farmer defaults, overrides, names/styles, coordinate zoom, hierarchy add/rename, background attribution and unload passed
+Background native checkboxes, exclusive selection, attribution, save/reopen, migration and removal passed
+Esri native catalogue, attribution, settings, v1 upgrades, visibility, deletions, source overrides and save/reopen passed
+Background checkbox paint after name and indicator clicks passed
+Native canvas pixels, close-scale zoom limits, rapid switching, cancelled slow tiles and no-background rendering passed (localhost only)
+PCTGDP direct/folder recognition and source integrity passed
+PCTGDP inline layer preview passed
+PCTGDP malformed XML, DTD, root, signature, path safety, bounded streaming, limit and cancellation passed
+Scanner archive refusal/no-partial-rows/source-unchanged: encrypted, nul-name, byte-limit, entry-limit, real-nested-only
+Mixed Deere ZIP: live Stop Scan/no-write, retry/import, preview-only hierarchy and duplicate rejection passed
+Data In native discovery, ZIP, source safety, async UI, map add and lifecycle checks passed
+Asserted read-only cross-year Data In season review passed
+Asserted linked boundary preview/apply, keep-history, stale/source refusals and transactional rollback passed
+Asserted reviewed Data In import, classification pointer and seasonal catalogue recovery passed
+Field matching, complete coverage, ambiguity, CRS transforms, atomic setup and saved placement checks passed
+Managed copies, original removal, workspace move/recovery, numeric rasters, filters and failed-copy cleanup passed
+C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\source\.aggis-agent\evidence\connection-cdee90dc9e004a77a41ba8a81f300374\process.json
+exit 0
+Extracted plugin ZIP passed lifecycle and farm workflow checks
+
+DEBUG: Copying QGIS MSI from C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\Ag-GIS-0.12.2-Windows\QGIS-OSGeo4W-3.44.14-1.msi to C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\Ag-GIS-0.12.2-Windows\installer\QGIS-OSGeo4W-3.44.14-1.msi
+DEBUG: Copied QGIS MSI successfully
+DEBUG: Destination exists: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\20261106T231117Z\Ag-GIS-0.12.2-Windows\installer\QGIS-OSGeo4W-3.44.14-1.msi
+All installer payload hashes verified.
+Offline installer: C:\Users\Michael\AppData\Local\hermes\ag-gis-team\worktrees\wip-2026-11-06-recovery\dist\windows\Ag-GIS-0.12.2-Windows-20261106T231117Z.zip
