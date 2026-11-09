@@ -22,6 +22,12 @@ This document tracks the test installation status of Ag-GIS builds on the Omen d
 - Commit: f54bf87
 - Repository check: PASS
 
+### 2026-11-10: Test Bug Fix - run_style_toolbar_test.py
+- Fixed module-level argparse execution that broke pytest imports
+- Wrapped argparse code in `if __name__ == '__main__':` guard
+- Commit: d2ecb0a
+- Test collection: 151 tests, 0 errors
+
 ### 2026-11-07: PACKAGING - QGIS Silent Installation
 - **Install.ps1**: Changed from `/norestart` to `/qn` (quiet, no UI) MSI switch
 - **Version checking**: Now validates QGIS is exactly 3.44.14-Solothurn
