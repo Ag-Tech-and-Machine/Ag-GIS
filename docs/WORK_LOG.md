@@ -998,7 +998,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Approved identity task ff2bbac607 claimed by current cron/session before edits;
   canonical journal approvals and no running claim checked. No recovery, delegation,
   new approval or scheduling. Dirty shared source and normal Ag-GIS PID4624 preserved.
-- Documentation/evidence only: GITHUB_NETWORK_REVIEW gains an options matrix;
+- Documentation/evidence only: WORK_LOG gains an options matrix;
   INSTALL/TOOLING/identity instructions point to its canonical reproduction/recovery.
   Native capabilities reviewed: QgsNetworkAccessManager public request attributes,
   preprocessors, per-thread forwarding and native OAuth2 factory; none replaced.
@@ -1129,7 +1129,7 @@ the automation dependency. No identical install/input retries or endless regress
   local-1e70c5942bad0aac9c9cb36ce7161fb0707a1556ecce937a948d0c20375cb43d:logging-review.
   Journal was approved/unclaimed; latest watchdog independently settled the prior
   worker. One serial documentation/review increment; no delegation or recovery.
-- Added docs/GITHUB_NETWORK_REVIEW.md (to be deleted)
+- Added docs/GITHUB_IDENTITY_PLAN.md (to be deleted)
   feedback audit. Reused the existing native QgsNetworkAccessManager boundary for
   review, not a new network engine or feature. Nine pinned final-3_44_14 upstream
   sources archived with full SHA-256/URLs/fetch timestamp under
@@ -1333,7 +1333,7 @@ the automation dependency. No identical install/input retries or endless regress
   competing worker/delegation. No new concrete owner-visible Deere defect recorded.
 - Test-only increment, no product/helper behavior change. Changed
   tools/auth_refresh_admission_native_test.py and run_auth_refresh_admission_native.py;
-  INSTALL/TOOLING/GITHUB_IDENTITY_PLAN/WORK_LOG and relevant skill recipes aligned.
+  INSTALL/TOOLING/WORK_LOG and relevant skill recipes aligned.
   Native reuse: isolated QgsAuthManager encrypted fixtures, cache-cleared reads,
   native store/remove, post-init exact settings/auth-path assertions. Never expand
   APIHeader or send a network request; no real credentials used.
@@ -1375,7 +1375,7 @@ the automation dependency. No identical install/input retries or endless regress
   are not overwritten; post-admission failures remain uncertain/no retry or rearm.
 - Files: that helper; new tools/auth_refresh_admission_test.py,
   auth_refresh_admission_native_test.py, run_auth_refresh_admission_native.py;
-  INSTALL/TOOLING/GITHUB_IDENTITY_PLAN/WORK_LOG. Native reuse: QgsAuthManager encrypted
+  INSTALL/TOOLING/WORK_LOG. Native reuse: QgsAuthManager encrypted
   fixtures, full cache-cleared load/store/removal in scratch profiles with post-init
   settings/auth path assertions. APIHeader is NEVER expanded/sent. No plugin change.
 - Two real RED/GREEN slices: missing helper, then detected original was overwritten
@@ -1426,7 +1426,7 @@ the automation dependency. No identical install/input retries or endless regress
   commit refuses handoff without undoing the receipt or allowing replay/rearm.
 - Files: tools/auth_refresh_readback.py, new auth_refresh_handoff_test.py,
   auth_refresh_native_test.py, run_auth_refresh_native.py; INSTALL/TOOLING/
-  GITHUB_IDENTITY_PLAN/WORK_LOG. Native reuse: QgsAuthManager encrypted synthetic
+  WORK_LOG. Native reuse: QgsAuthManager encrypted synthetic
   configs/cache-cleared readback in isolated profiles; never APIHeader expansion.
   No plugin, runtime or farm-schema changes.
 - Two retained RED/GREEN slices: missing gate and invalid old-expiry preflight.
@@ -1478,7 +1478,7 @@ the automation dependency. No identical install/input retries or endless regress
   No farm schema, plugin module, settings or production credential changes.
 - Files: tools/auth_refresh_fence.py, auth_refresh_fence_test.py, new
   auth_refresh_success_test.py, auth_refresh_native_test.py,
-  run_auth_refresh_native.py; docs INSTALL/TOOLING/GITHUB_IDENTITY_PLAN/WORK_LOG.
+  run_auth_refresh_native.py; docs INSTALL/TOOLING/WORK_LOG.
   Native QGIS reuse: isolated QgsAuthManager encrypted fixture/cache-cleared full
   config snapshot. APIHeader never expanded/sent. Earlier independent model ack
   is not evidence of commit-before-handoff; new terminal phases never ack a model.
@@ -1532,7 +1532,7 @@ the automation dependency. No identical install/input retries or endless regress
 - User problem: exact token/revision/expiry readback previously did not establish
   which attempt/slot produced that protected replacement. Added UNWIRED
   acknowledge_attempt_fixture_readback, six receipt tests; extended native harness
-  and runner. INSTALL/TOOLING/GITHUB_IDENTITY_PLAN updated alongside tests.
+  and runner. INSTALL/TOOLING/WORK_LOG updated alongside tests.
 - Native QGIS reuse: QgsAuthManager encrypted synthetic config update, cache clear,
   full readback and fresh-process persistence; APIHeader NEVER expanded/sent.
   Protected replacement now contains exact slot, attempt and old revision in the
@@ -1572,7 +1572,7 @@ the automation dependency. No identical install/input retries or endless regress
   watchdog recorded prior session terminal/no editor; journal approved. No newer
   concrete visible defect identified; existing Setup/classification gates retained.
 - Added developer-only RefreshFence.read_attempt and auth_refresh_attempt_test.py;
-  extended native harness/runner plus INSTALL/TOOLING/GITHUB_IDENTITY_PLAN.
+  extended native harness/runner plus INSTALL/TOOLING/WORK_LOG.
   No packaged plugin behavior changed. Native reuse: QgsAuthManager encrypted
   fixture update, cache clear and exact full readback; NEVER header expansion.
 - Two real RED/GREEN slices: missing attempt guard, then strict metadata/time types
@@ -1612,7 +1612,7 @@ the automation dependency. No identical install/input retries or endless regress
   fixture path. No schema migration, reset, success or rearm added.
 - Files: tools/auth_refresh_fence.py, auth_refresh_fence_test.py,
   auth_refresh_native_test.py, run_auth_refresh_native.py and canonical
-  INSTALL/TOOLING/GITHUB_IDENTITY_PLAN/WORK_LOG. No plugin behavior change.
+  INSTALL/TOOLING/WORK_LOG. No plugin behavior change.
 - Two sequential RED/GREEN slices cover missing guard and invalid-None fallback;
   four new test methods include mismatched-expiry no-write, exact cold expiry
   latch, wrong slots/schema and real writer-lock refusal. Fifteen fence tests pass.
@@ -1640,7 +1640,7 @@ the automation dependency. No identical install/input retries or endless regress
   no worker/children in latest authoritative watchdog; journal approved. No fresh
   concrete Deere/visible defect identified, no identical-package reinstall.
 - Added developer-only tools/auth_refresh_readback.py and its test; extended native
-  harness/runner and aligned INSTALL/TOOLING/GITHUB_IDENTITY_PLAN. Reuses native
+  harness/runner and aligned INSTALL/TOOLING/WORK_LOG. Reuses native
   QgsAuthManager encrypted update, cache clear and full readback. APIHeader fixture
   storage is NEVER expanded/sent. No plugin/model/fence behavior changed.
 - Three sequential RED/GREEN slices cover read-before-ack ordering, exact pair/
@@ -1678,7 +1678,7 @@ the automation dependency. No identical install/input retries or endless regress
   Latest watchdog owner-state identifies this admission/session, no child editors;
   previous worker settled. No new concrete Deere/UI defect identified.
 - Changed only developer tools/auth_refresh_fence.py and its test plus canonical
-  INSTALL/TOOLING/GITHUB_IDENTITY_PLAN/WORK_LOG. No packaged runtime change.
+  INSTALL/TOOLING/WORK_LOG. No packaged runtime change.
   SQLite transaction groundwork remains intended for native QgsAuthManager;
   this does not add an alternative GIS engine or product authentication UI.
 - New regression actually failed: observe expiry at 200, abrupt process exit,
@@ -1717,7 +1717,7 @@ the automation dependency. No identical install/input retries or endless regress
   no editing children in authoritative 13:25 watchdog checkpoint; journal approved.
   No fresh Deere scanner defect identified and no identical-package reinstall.
 - Added developer-only tools/auth_refresh_native_test.py and
-  tools/run_auth_refresh_native.py; updated INSTALL/TOOLING/GITHUB_IDENTITY_PLAN.
+  tools/run_auth_refresh_native.py; updated INSTALL/TOOLING/WORK_LOG.
   No production/model/fence change. Reuses QgsAuthManager protected store/update,
   explicit cache-clear/full readback, native Qt timers and existing model/fence.
 - Six fresh native QGIS3.44.14 processes pass: seed target/expiry/sentinel; model
@@ -1758,7 +1758,7 @@ the automation dependency. No identical install/input retries or endless regress
   journal approved with no running claim. Claimed before edits; no recovery needed.
   No fresh Deere scanner defect or owner feedback identified; no invented decoder gap.
 - Changed tools/auth_refresh_fence.py, auth_refresh_fence_test.py, INSTALL/TOOLING/
-  GITHUB_IDENTITY_PLAN and this log. Existing SQLite transaction/fail-closed guard
+  WORK_LOG and this log. Existing SQLite transaction/fail-closed guard
   remains developer-only coordination groundwork for native QgsAuthManager; no GIS
   engine, runtime module/dependency or visible product action added.
 - Three sequential RED/GREEN slices: exact case-sensitive fixture revision refusal;
