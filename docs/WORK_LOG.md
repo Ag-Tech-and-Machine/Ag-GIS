@@ -4294,3 +4294,18 @@ verified Deere operation mapping, database-backed resolution and no regressions
 were not established by that evidence. The subsequent bounded repair and its
 source/package results are recorded at the top of this log; full import/season/
 styling acceptance remains open.
+
+## 9 November 2026 — Issue #3: Layer tree hierarchy rebuild on project reopen
+
+Fix committed 4ccd6aa0339cbbfe0856517f585f9dcf94398aa5.
+Added `hierarchy_dialog.refresh_tree(workspace_root())` call in FarmBrowser
+`_on_project_loaded()` to rebuild the layer tree hierarchy after project load.
+Previously the tree was not refreshed when a Farm.qgz project was reopened,
+causing the hierarchy (organisations, clients, farms, fields) to not display
+properly. The fix wraps the call in a try-except to handle cases where the
+workspace is not yet ready; it will be called on next user interaction.
+Test file `tools/test_layer_tree_rebuild_on_reopen.py` created to verify the
+fix end-to-end with QGIS integration (requires GUI testing).
+
+Evidence: `plugins/ag_tech_tooling/farm_browser.py` (commit 4ccd6aa0)
+Test: `tools/test_layer_tree_rebuild_on_reopen.py` (requires QGIS GUI)
