@@ -3062,7 +3062,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 - Claimed approved desktop task `fd20d387f2`, unchanged digest
   `326c0ca1cc992e2571d70c8e37ef0c920d47c1a8d89d477e823568f7d41a3065`,
-  worker `hermes-cron-aggis-work-20261019T1049-AEDT`; journal had no running task.
+  worker `scheduled-worker-20261019T1049-AEDT`; journal had no running task.
   One bounded investigation/acceptance increment, no product source fixes.
 - Farmer problem: dependable import/save/reopen without loss or confusing warnings.
   Reused native QGIS 3.44.14 installer, real desktop/Qt controls, QgsTask/provider
@@ -3120,7 +3120,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Farmer problem/scope: inspect nested machine exports without manual unpacking.
   Claimed approved task `4738b911d6`, unchanged digest
   `b0ff7c41e4ab87ab3a05ebb12b86a5d5b3f23204dff5e0ccfdea0aea23e227ca`, worker
-  `hermes-cron-aggis-work-20261019T1038-AEDT`. Status already recorded prior recovery
+  `scheduled-worker-20261019T1038-AEDT`. Status already recorded prior recovery
   and no running task; no duplicate worker or new approval/recovery was created.
 - Reconciled interrupted `deere_zip.py` with source/package/build inventories and
   existing folder/XML inspectors. Its existing ZIP preview already had partial
@@ -3168,7 +3168,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 - Claimed approved task `ff2bbac607` (unchanged digest
   `5105b3abe5e8894f5e06321056f8bdf330c7dd73dd59394fe84b2b4a60d38d8c`), worker
-  `hermes-cron-aggis-work-20261019T1030-AEDT`; journal had no running claim.
+  `scheduled-worker-20261019T1030-AEDT`; journal had no running claim.
   One bounded onboarding increment; desktop/Deere/classification scopes preserved.
 - Farmer problem: describe a problem/idea without learning repository mechanics.
   Added canonical root START_HERE.md with a review-first ordinary-language prompt
@@ -3224,7 +3224,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 - Approved task `45e60520ff`, unchanged digest
   `b5a151d5ead10fb6141d1ab508cc669033f535ad02e896318611d5b089b08555`;
-  claimed worker `hermes-cron-aggis-work-20261019T1019-AEDT` before edits.
+  claimed worker `scheduled-worker-20261019T1019-AEDT` before edits.
   Existing desktop/Deere tasks and unrelated dirty-tree changes preserved.
 - Added `docs/DATA_DICTIONARY.md` revision 1 with actual core/catalogue columns,
   storage paths, logical keys/triggers, missing catalogue UPDATE constraints,
@@ -3280,7 +3280,7 @@ the automation dependency. No identical install/input retries or endless regress
 ## 19 October 2026 — Isolated visible desktop acceptance checkpoint
 
 - Approved task `fd20d387f2`; worker
-  `hermes-cron-aggis-work-20261019T0952-AEDT`. No product code changed.
+  `scheduled-worker-20261019T0952-AEDT`. No product code changed.
   Rebuilt the development plugin (`py tools/check_plugin.py` and
   `py tools/build_plugin.py`, both exit 0). Copied artifact SHA-256:
   `5b3d474f4334b4eefe509449d90a70bd426ea74d246add4fb43d3d800216e1d8`.
@@ -3943,7 +3943,7 @@ Source browser/lifecycle and dedicated farmer-view integration tests passed duri
 - Added the Feedback toolbar/menu action with a modeless problem/idea/help report, review tab, optional minimal versions, native browser issue-form launch, atomic saved Markdown, copy and email-draft fallbacks. No automatic farm/log/account/path collection or direct submission. Long URLs preserve the full report through clipboard fallback; cancel/errors keep the draft. Unload/reload owns the dialog lifecycle.
 - Added GitHub issue forms, PR acceptance template, native status/priority labels and a least-permission triage workflow. Saved-report maintainer intake previews by default, requires --submit to post and checks indexed Report IDs for best-effort duplicates. FEEDBACK.md documents the work queue, sender permission, recovery and closure/acceptance.
 - Real Qt feedback tests, plugin lifecycle smoke check, maintainer intake boundary tests and Node workflow state-transition tests passed locally. Source/extracted-package build and live label/form/issue lifecycle verification follow below. Version 0.9.1 identifies the feedback integration on the current shared 0.9.x worktree.
-- The user asked about making the repository public and whether the approach is appropriate. Visibility has not been changed. Public source/release/issue exposure is a separate pending decision; the same report URLs work with current private access or future public visibility.
+- The team asked about making the repository public and whether the approach is appropriate. Visibility has not been changed. Public source/release/issue exposure is a separate pending decision; the same report URLs work with current private access or future public visibility.
 - Verification includes a fresh-process reopen after originals are removed and the
   entire workspace is moved; duplicate source IDs, source attributes, Z/M geometry,
   NoData/scale/offset, numeric ASCII conversion, palette colours/class labels,

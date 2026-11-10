@@ -46,7 +46,7 @@ Full versioned rollback includes after-close settings. Evidence and executed scr
 
 Current final acceptance dependency is NOT the old preservation/installation gate:
 normal extension UIA Invoke timed out with unknown outcome, then supported transport
-readback failed. Fresh `hermes computer-use doctor --json` exits1: UIA enumeration
+readback failed. Fresh `your agent doctor --json` exits1: UIA enumeration
 exceeded2000ms/provider may be hung, while D3D11/session checks pass. Current official
 your Computer Use docs were fetched; no rawdriver/config/permission bypass attempted.
 Retain the actual last Simple View screenshot and installed origins; never equate
@@ -2164,7 +2164,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
+C:/Users/Public/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
