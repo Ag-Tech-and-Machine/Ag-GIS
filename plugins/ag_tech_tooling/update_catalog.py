@@ -246,7 +246,11 @@ def verify_package(path: Path, release, qgis_version: str) -> dict:
 
 
 def _linked(path):
+    """Check if path is a symlink or junction (not a directory)"""
     info = path.lstat()
+    # Skip directories - they can have reparse point attributes but aren't links
+    if stat.S_ISDIR(info.st_mode):
+        return False
     return stat.S_ISLNK(info.st_mode) or bool(getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 1024))
 
 
