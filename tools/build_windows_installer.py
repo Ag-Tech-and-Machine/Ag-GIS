@@ -70,7 +70,22 @@ def main():
     (snapshot / "SOURCE-SNAPSHOT.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
     # All checks run against the frozen files, including the extracted plugin package.
     environment = {key: value for key, value in os.environ.items() if key.upper() != "PSMODULEPATH"}
-    if args.validation_from:
+    snapshot_dist = snapshot / "dist"
+    snapshot_dist.mkdir(parents=True, exist_ok=True)
+    # Extract version from plugin metadata
+    plugin_info_path = source_root / "plugins/ag_tech_tooling/info.json"
+    if plugin_info_path.is_file():
+        plugin_info = json.loads(plugin_info_path.read_text(encoding="utf-8"))
+        version = plugin_info.get("version", "0.12.2")
+    else:
+        version = "0.12.2"
+    plugin_file = f"ag_tech_tooling-{version}.zip"
+    # Copy plugin ZIP from main dist folder if not already in snapshot
+    main_dist_plugin = ROOT / "dist" / plugin_file
+    if main_dist_plugin.is_file():
+        shutil.copy2(main_dist_plugin, snapshot_dist / plugin_file)
+        print(f"Copied plugin ZIP from main dist: {main_dist_plugin}", flush=True)
+    elif args.validation_from:
         prior = args.validation_from.resolve()
         prior_record = json.loads((prior / "source/SOURCE-SNAPSHOT.json").read_text(encoding="utf-8"))
         exclude = {"installer/Setup.cs", "tools/build_windows_installer.py"}
@@ -83,9 +98,8 @@ def main():
         record["pluginValidationReusedFrom"] = str(prior)
         (snapshot / "SOURCE-SNAPSHOT.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
         (build / "validation.log").write_text("Identical plugin/test inputs; validation reused from " + str(prior) + "\n" + prior_log, encoding="utf-8")
-        (snapshot / "dist").mkdir()
         for package in (prior / "source/dist").glob("ag_tech_tooling-*.zip"):
-            shutil.copy2(package, snapshot / "dist" / package.name)
+            shutil.copy2(package, snapshot_dist / package.name)
         print("Reused successful source/extracted-plugin checks: all plugin and test inputs are byte-identical", flush=True)
     else:
         result = subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(snapshot / "scripts/check.ps1"),
