@@ -128,7 +128,7 @@ Verified automated foundation checks cover same-named farms/fields under differe
 - [farm equipment SMS service: Agronomic Analysis](https://portal.agleader.com/community/s/article/6388?language=en_US).
 - [farm equipment: SMS Software Layout and Management Tree](https://portal.agleader.com/community/articles/en_US/Knowledge/6865).
 - [agriculture platform: farm equipment APIs](https://www.farmsoft.net/us/en/partners/developers/api/).
-- [agriculture platform: Initial Organization Creation and Management](https://www.farmsoft.net/us/en/resources/product-resources/farmengage-local-initial-organization-creation-management.html).
+- [agriculture platform: Initial Organization Creation and Management](https://www.farmsoft.net/us/en/resources/product-resources/farmengage-private-local-initial-organization-creation-management.html).
 
 The 0.6.0 native Layers tree mirrors the complete management hierarchy using stable group properties. Selecting any field branch switches the shared reference views to that field; no table per field/season is created. Use Manage Data for persistent record renames. Default labels are placeholders, not inferred ownership or a real crop season.
 
