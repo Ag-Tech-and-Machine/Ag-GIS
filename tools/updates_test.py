@@ -57,7 +57,7 @@ def spin(milliseconds=5):
 from qgis.PyQt.QtWidgets import QMainWindow
 from ag_tech_tooling import updates
 
-scratch = Path(os.environ.get("TMPDIR") or Path.home() / "AppData/Local/hermes/cache/scratch")
+scratch = Path(os.environ.get("TMPDIR") or Path.home() / "AppData/Local/tool/cache/scratch")
 scratch.mkdir(parents=True, exist_ok=True)
 suite_home = tempfile.TemporaryDirectory(prefix="aggis-updates-suite-", dir=scratch, ignore_cleanup_errors=True)
 QSettings.setDefaultFormat(QSettings.IniFormat)

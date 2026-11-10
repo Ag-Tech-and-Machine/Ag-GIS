@@ -16,7 +16,7 @@ import time
 
 def main():
     root = Path(os.environ['AGGIS_SYNTHETIC_NETWORK_ROOT']).resolve()
-    base = Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve()
+    base = Path('C:/temp/AppData/Local/tool/cache/scratch').resolve()
     assert root.is_relative_to(base) and root.name.startswith('aggis-auth-network-')
     assert (root / 'SYNTHETIC-ONLY').read_text() == 'native-loopback-v1'
     marker = os.environ['AGGIS_SYNTHETIC_NETWORK_MARKER'].encode('ascii')

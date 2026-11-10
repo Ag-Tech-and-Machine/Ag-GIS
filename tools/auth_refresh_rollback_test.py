@@ -18,7 +18,7 @@ import unittest
 
 from auth_refresh_fence import RefreshFence
 
-BASE = Path.home() / 'AppData/Local/hermes/cache/scratch'
+BASE = Path.home() / 'AppData/Local/tool/cache/scratch'
 TOOLS = Path(__file__).resolve().parent
 
 # Each call starts a fresh interpreter and independently opens the fixture on disk.

@@ -11,7 +11,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/temp/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/temp/AppData/Local/tool/cache/scratch')
 PHASES = ('seed', 'cancel-write', 'cold-cancel', 'expire-write', 'cold-expire',
           'bound-admission', 'readback-ack', 'cold-ack', 'record-replacement', 'cold-replacement', 'committed-handoff', 'cleanup')
 

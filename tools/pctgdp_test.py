@@ -15,7 +15,7 @@ from ag_tech_tooling.import_sources import scan_local
 from ag_tech_tooling.import_dialog import ImportDialog
 from ag_tech_tooling.pctgdp_preview import inspect_project, PreviewCancelled
 
-tempfile.tempdir = os.environ.get("TMPDIR", str(Path.home() / "AppData/Local/hermes/cache/scratch"))
+tempfile.tempdir = os.environ.get("TMPDIR", str(Path.home() / "AppData/Local/tool/cache/scratch"))
 
 
 def container(path, xml):

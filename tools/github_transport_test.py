@@ -17,7 +17,7 @@ from urllib.parse import parse_qs
 
 def main():
     root = Path(os.environ['AGGIS_TRANSPORT_SCRATCH']).resolve()
-    base = Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve()
+    base = Path('C:/temp/AppData/Local/tool/cache/scratch').resolve()
     assert root.is_relative_to(base) and root.name.startswith('aggis-transport-')
     assert (root / 'SYNTHETIC-ONLY').read_text() == 'transport-v1'
     plugin = Path(os.environ['AGGIS_TRANSPORT_PLUGIN']).resolve()

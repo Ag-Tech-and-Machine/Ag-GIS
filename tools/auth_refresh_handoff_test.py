@@ -12,7 +12,7 @@ from auth_refresh_fence import RefreshFence
 from auth_refresh_readback_test import pair
 import auth_refresh_readback as gate
 
-BASE = Path.home() / 'AppData/Local/hermes/cache/scratch'
+BASE = Path.home() / 'AppData/Local/tool/cache/scratch'
 
 
 class HandoffTests(unittest.TestCase):

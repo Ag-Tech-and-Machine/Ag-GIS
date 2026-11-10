@@ -52,7 +52,7 @@ def run():
     server = None
     transport = None
     try:
-        assert ROOT.is_relative_to(Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve())
+        assert ROOT.is_relative_to(Path('C:/temp/AppData/Local/tool/cache/scratch').resolve())
         assert ROOT.name.startswith('aggis-recorder-')
         assert (ROOT / 'SYNTHETIC-ONLY').read_text() == 'recorder-v1'
         profile = Path(QgsApplication.qgisSettingsDirPath()).resolve()

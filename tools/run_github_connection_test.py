@@ -10,7 +10,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/temp/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/temp/AppData/Local/tool/cache/scratch')
 
 
 def main():

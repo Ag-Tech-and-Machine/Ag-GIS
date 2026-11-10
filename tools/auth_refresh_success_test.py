@@ -11,7 +11,7 @@ import unittest
 
 from auth_refresh_fence import RefreshFence
 
-BASE = Path.home() / 'AppData/Local/hermes/cache/scratch'
+BASE = Path.home() / 'AppData/Local/tool/cache/scratch'
 
 
 class SuccessTests(unittest.TestCase):

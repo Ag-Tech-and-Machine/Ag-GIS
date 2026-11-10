@@ -62,7 +62,7 @@ def interface_class():
 def main():
     # QGIS's Windows bootstrap can reset TMPDIR to the system Temp directory.
     # Always choose your agent scratch explicitly, then redirect all three variables.
-    scratch = Path.home() / "AppData/Local/hermes/cache/scratch"
+    scratch = Path.home() / "AppData/Local/tool/cache/scratch"
     scratch.mkdir(parents=True, exist_ok=True)
     home = Path(tempfile.mkdtemp(prefix="aggis-native-update-", dir=scratch)).resolve()
     print("Native update isolated evidence: " + str(home), flush=True)

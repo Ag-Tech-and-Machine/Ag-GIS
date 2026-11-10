@@ -17,7 +17,7 @@ class FenceTest(unittest.TestCase):
                              'Durable pre-request fence is not implemented')
         self.Fence = importlib.import_module('auth_refresh_fence').RefreshFence
         # The scheduler can supply system TEMP despite the advertised scratch root.
-        scratch = Path.home() / 'AppData/Local/hermes/cache/scratch'
+        scratch = Path.home() / 'AppData/Local/tool/cache/scratch'
         self.assertTrue(scratch.is_dir())
         self.temp = tempfile.TemporaryDirectory(prefix='synthetic-refresh-fence-', dir=scratch)
         self.addCleanup(self.temp.cleanup)

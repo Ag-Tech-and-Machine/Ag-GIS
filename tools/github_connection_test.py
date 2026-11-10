@@ -7,7 +7,7 @@ import sys
 
 def main():
     root = Path(os.environ['AGGIS_CONNECTION_SCRATCH']).resolve()
-    assert root.is_relative_to(Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve())
+    assert root.is_relative_to(Path('C:/temp/AppData/Local/tool/cache/scratch').resolve())
     assert (root / 'SYNTHETIC-ONLY').read_text() == 'connection-v1'
     plugin = Path(os.environ['AGGIS_CONNECTION_PLUGIN']).resolve()
     os.environ['QT_QPA_PLATFORM'] = 'offscreen'

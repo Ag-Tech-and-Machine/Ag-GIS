@@ -20,7 +20,7 @@ parser.add_argument('--scenario', choices=('all-fields', 'single-field-reload', 
 args = parser.parse_args()
 out = args.evidence.resolve()
 out.mkdir(parents=True, exist_ok=False)
-home = Path(os.environ['LOCALAPPDATA']) / 'hermes/cache/scratch'
+home = Path(os.environ['LOCALAPPDATA']) / 'tool/cache/scratch'
 scratch = Path(tempfile.mkdtemp(prefix='aggis-tree-reopen-', dir=home))
 profile = scratch / 'config/profiles/reopen'
 destination = profile / 'python/plugins/ag_tech_tooling'

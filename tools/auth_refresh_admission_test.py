@@ -10,7 +10,7 @@ import auth_refresh_readback as gate
 from auth_refresh_fence import RefreshFence
 from auth_refresh_readback_test import pair
 
-BASE = Path.home() / 'AppData/Local/hermes/cache/scratch'
+BASE = Path.home() / 'AppData/Local/tool/cache/scratch'
 
 
 class AdmissionTests(unittest.TestCase):

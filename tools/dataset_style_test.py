@@ -3,7 +3,7 @@ import os
 os.environ.setdefault('QT_QPA_PLATFORM', 'offscreen')
 import sys, tempfile, gc
 from pathlib import Path
-scratch = Path(os.environ.get('AGTECH_TEST_SCRATCH', str(Path.home() / 'AppData/Local/hermes/cache/scratch')))
+scratch = Path(os.environ.get('AGTECH_TEST_SCRATCH', str(Path.home() / 'AppData/Local/tool/cache/scratch')))
 if scratch.is_dir():
     tempfile.tempdir = str(scratch)
     for key in ('TEMP', 'TMP', 'TMPDIR'): os.environ[key] = tempfile.tempdir
