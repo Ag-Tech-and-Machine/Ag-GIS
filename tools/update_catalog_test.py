@@ -14,7 +14,7 @@ import sys
 import struct
 from unittest.mock import patch
 
-SCRATCH = Path(os.environ.get('SCRATCH', str(Path.home() / 'AppData/Local/tmp/cache/scratch' if os.name == 'nt' else Path.home() / '.cache/hermes/scratch')))
+SCRATCH = Path(os.environ.get('SCRATCH', str(Path.home() / 'AppData/Local/scratch/cache/scratch' if os.name == 'nt' else Path.home() / '.cache/hermes/scratch')))
 if not SCRATCH.exists():
     SCRATCH.mkdir(parents=True, exist_ok=True)
 META = '[general]\nname=Ag-GIS\nversion=0.12.3\nqgisMinimumVersion=3.28\nexperimental=True\n'
