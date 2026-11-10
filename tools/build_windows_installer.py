@@ -114,7 +114,7 @@ def main():
         f"Ag-GIS {version} offline Windows installer\n\n"
         "1. Extract ALL files to a local folder. Keep Setup.exe beside the other files.\n"
         "2. Save your map and close QGIS. Double-click Setup.exe as your normal user.\n"
-        "3. If QGIS 3.44.14 is missing, complete its official wizard and administrator prompt.\n"
+        "3. If QGIS 3.44.14 is missing, approve the Windows administrator prompt; setup installs it silently.\n"
         "4. Open Ag-GIS from the Start menu, or open QGIS normally.\n\n"
         "Other profile: powershell -NoProfile -File .\\Install.ps1 -Profile profile_name\n"
         "Verify without installing: powershell -NoProfile -File .\\Install.ps1 -VerifyOnly\n"
