@@ -20,8 +20,8 @@ $python=Join-Path $qgisRoot 'bin\python-qgis-ltr.bat'
 if(-not(Test-Path -LiteralPath $python)){
     $msi=Join-Path $PSScriptRoot $manifest.qgisFile
     $log=Join-Path $env:TEMP ('AgTech-QGIS-'+[guid]::NewGuid().ToString()+'.log')
-    Write-Output 'Installing QGIS. Follow its setup wizard; Windows may request administrator approval.'
-    $process=Start-Process msiexec.exe -ArgumentList @('/i',('"'+$msi+'"'),'/norestart','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
+    Write-Output 'Installing QGIS silently. Windows may request administrator approval.'
+    $process=Start-Process msiexec.exe -Verb RunAs -ArgumentList @('/i',('"'+$msi+'"'),'/quiet','/norestart','/L*v',('"'+$log+'"'),('INSTALLDIR="'+$qgisRoot+'"')) -Wait -PassThru
     if($process.ExitCode -eq 3010){throw "QGIS requires a restart. Restart Windows and run Setup.exe again. Log: $log"}
     if($process.ExitCode -ne 0){throw "QGIS installation cancelled or failed ($($process.ExitCode)). Log: $log"}
 }
