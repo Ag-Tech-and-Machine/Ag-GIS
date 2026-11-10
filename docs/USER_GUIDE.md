@@ -55,7 +55,7 @@ This development dialog has not been delivered to the normal installed build.
 ## Connect your agent: describe a problem or idea
 
 1. Click **Feedback → Connect your agent → Copy agent instructions**.
-2. Paste into your own agent (Codex, Claude Code, Hermes or another file-reading
+2. Paste into your agent (your tool, your tool Code, your tool or another file-reading
    agent), then describe the farming job in ordinary words. The instructions are
    bundled locally as START_HERE.txt; reading/copying requires no login or internet.
 3. Give access to source and synthetic examples only, not your farm-data folder.
@@ -181,7 +181,7 @@ saving retains earlier completed imports; closing before import adds none.
 ## Create a project
 
 1. Click New Project. No setup form is required. Finish layer edits first and respond to any native Save/Discard/Cancel prompt for the current map. Cancel creates no new workspace.
-2. The plugin creates My Farm Data under your system Documents → Ag Tech Tooling → Projects and opens its map. On this machine the parent is C:\Users\Michael\Documents\Ag Tech Tooling\Projects. Existing folders are preserved: subsequent projects use My Farm Data 2, My Farm Data 3 and so on.
+2. The plugin creates My Farm Data under your Documents → Ag Tech Tooling → Projects and opens its map. On this machine the parent is {USER_HOME} Tech Tooling\Projects. Existing folders are preserved: subsequent projects use My Farm Data 2, My Farm Data 3 and so on.
 3. In Layers, expand Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1. Whole Field contains native Boundaries, Guidance Lines and Infrastructure views. Seasons contains Season 1 with Plans, Operations and Results branches. These are starter names; no year, crop or geometry is invented.
 4. Click Manage Data to rename the starter records and add further organisations, clients, farms, fields, seasons and crops as needed. All clients/farms/fields live within this workspace's GeoPackage; creating another workspace is optional.
 5. Select a field or one of its branches in Layers to browse without changing other visibility checks. For the shared native reference editing view use Manage Data → Show Field on Map explicitly. Short labels stay at each separate hierarchy level.
@@ -274,6 +274,6 @@ This replaces the earlier single-background setup. New and existing farm maps no
 5. Esri World Imagery supplies worldwide aerial/satellite imagery with location-dependent detail and capture dates; it is not live or survey-grade. Existing maps receive this new choice unchecked without changing the saved selection, hidden groups or removed old options. Its credit links to Esri's official item and terms; no claim of an open-data licence or universal reuse permission is made.
 6. All require internet access; visible tile requests reveal the requested map area to the selected provider. Credits switch with the selected background and appear in native canvas image exports; add required credit in print layouts and check permitted use before distributing imagery. No bulk/offline imagery download is provided. Outside Australia, choose Esri, World or Roads.
 
-These providers require no API key for the supplied services. Google was deferred at the user's request because no Maps Platform account is available; no unofficial Google tile endpoint or placeholder Google checkbox is shipped.
+These providers require no API key for the supplied services. Google was deferred at team request because no Maps Platform account is available; no unofficial Google tile endpoint or placeholder Google checkbox is shipped.
 
 Background loading correction (15 October 2026): saved built-in satellite layers are repaired automatically on open. Closer views enlarge supported tiles, avoiding blank Australia imagery from unsupported zoom requests. Fine detail is limited by the stated 30 m / 10 m source resolution. Switching backgrounds cancels the previous render; unticking the active checkbox still gives a plain map.

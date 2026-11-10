@@ -10,7 +10,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
 CRASH_PHASES = ('crash-before-write', 'crash-after-write', 'crash-after-readback', 'crash-after-request')
 PHASES = ('seed', 'bind') + CRASH_PHASES + ('cold', 'cleanup')
 

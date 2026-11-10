@@ -93,7 +93,7 @@ a changing source is rejected. Hash checks are not a backup.
    Expect direct/folder recognition, inline preview and safety/cancellation pass
    messages. `AGTECH_TEST_PLUGIN_ROOT` selects an extracted package for the same test.
 3. Run `scripts/check.ps1` for the source and extracted-package regression suites.
-   Keep test scratch under Hermes's configured scratch directory.
+   Keep test scratch under your tool's configured scratch directory.
 
 ## Independent elevation-grid validation — 16 October 2026
 

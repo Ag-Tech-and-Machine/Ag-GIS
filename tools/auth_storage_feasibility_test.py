@@ -1,7 +1,7 @@
 """Developer-only native storage experiment; no login or existing credential access.
 
 Run through QGIS Python via the isolated runner documented in TOOLING.md.
-Only a newly created, explicitly marked Hermes scratch directory is accepted.
+Only a newly created, explicitly marked your agent scratch directory is accepted.
 No product imports, network requests, credential enumeration or OS vault entries.
 """
 from pathlib import Path
@@ -58,7 +58,7 @@ def dpapi_roundtrip(secret):
 
 def main():
     scratch = Path(os.environ['AGGIS_SYNTHETIC_AUTH_ROOT']).resolve()
-    allowed = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch').resolve()
+    allowed = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch').resolve()
     assert scratch.is_relative_to(allowed) and scratch.name.startswith('aggis-auth-feasibility-')
     assert (scratch / 'SYNTHETIC-ONLY').read_text() == 'fresh-synthetic-auth-feasibility-v1'
     phase = os.environ['AGGIS_SYNTHETIC_AUTH_PHASE']

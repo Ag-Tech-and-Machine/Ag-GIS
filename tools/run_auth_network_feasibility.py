@@ -17,7 +17,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
 
 
 def sha(data):
@@ -31,7 +31,7 @@ def main():
     bootstrap = args.qgis_root / 'bin/python-qgis-ltr.bat'
     openssl = shutil.which('openssl')
     if os.name != 'nt' or not bootstrap.is_file() or not BASE.is_dir() or not openssl:
-        raise SystemExit('Requires existing Windows QGIS, OpenSSL and Hermes scratch; nothing installed.')
+        raise SystemExit('Requires existing Windows QGIS, OpenSSL and your agent scratch; nothing installed.')
     out = ROOT / '.aggis-agent/evidence' / ('auth-network-' + uuid.uuid4().hex)
     out.mkdir(parents=True, exist_ok=False)
     script = ROOT / 'tools/auth_network_feasibility_test.py'

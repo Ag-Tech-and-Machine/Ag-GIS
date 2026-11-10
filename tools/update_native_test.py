@@ -1,6 +1,6 @@
 """Offline integration: real QGIS ZIP replacement, plugin lifecycle and recovery.
 
-Run with QGIS's python-qgis-ltr.bat. Only a unique Hermes scratch directory is
+Run with QGIS's python-qgis-ltr.bat. Only a unique your agent scratch directory is
 written. AGTECH_TEST_PLUGIN_ROOT selects the packaged/extracted plugins parent.
 The next-version ZIP is an explicit test fixture, never a release: metadata alone
 changes; all shipped Python/runtime bytes remain the selected package's bytes.
@@ -61,7 +61,7 @@ def interface_class():
 
 def main():
     # QGIS's Windows bootstrap can reset TMPDIR to the system Temp directory.
-    # Always choose Hermes scratch explicitly, then redirect all three variables.
+    # Always choose your agent scratch explicitly, then redirect all three variables.
     scratch = Path.home() / "AppData/Local/hermes/cache/scratch"
     scratch.mkdir(parents=True, exist_ok=True)
     home = Path(tempfile.mkdtemp(prefix="aggis-native-update-", dir=scratch)).resolve()

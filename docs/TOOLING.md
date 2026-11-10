@@ -48,7 +48,7 @@ Current final acceptance dependency is NOT the old preservation/installation gat
 normal extension UIA Invoke timed out with unknown outcome, then supported transport
 readback failed. Fresh `hermes computer-use doctor --json` exits1: UIA enumeration
 exceeded2000ms/provider may be hung, while D3D11/session checks pass. Current official
-Hermes Computer Use docs were fetched; no rawdriver/config/permission bypass attempted.
+your Computer Use docs were fetched; no rawdriver/config/permission bypass attempted.
 Retain the actual last Simple View screenshot and installed origins; never equate
 those with an unobserved native popup/Cancel result or reinstall identical57 bytes.
 
@@ -155,7 +155,7 @@ hash-only/print-only acceptance claim are withdrawn, not rehabilitated by a buil
 
 1. Run `python tools/run_style_toolbar_test.py --evidence <new-private-directory> --name source`.
    Prerequisite: pinned Windows QGIS 3.44.14 and developer Python with existing
-   psutil. The runner snapshots the executed test and payload, uses Hermes scratch
+   psutil. The runner snapshots the executed test and payload, uses your tool cache
    settings/auth/temp paths and refuses an existing case directory.
 2. Build a **new** package with `py tools/build_plugin.py --output <new-candidate.zip>`;
    never overwrite a frozen candidate. Extract it and repeat with
@@ -231,7 +231,7 @@ the failed receipt is retained and only that AST distinction was corrected.
 
 Rediscover process command line AND relevant QGIS environment: the old Untitled
 PID30928 is scratch `reopen`, not the normal profile. Do not close it or assert
-that it preserves the owner's farm. Normal launched PID8968/HWND12191670 is a
+that it preserves team's farm. Normal launched PID8968/HWND12191670 is a
 freshly verified default-profile process, not a reusable future target.
 
 The read-only startup observer connects native projectSaved and QAction Save
@@ -254,7 +254,7 @@ is pending; launcher exit0 does not substitute for it.
 
 ## Independent field navigation regression
 
-1. Use existing Hermes/developer Python and pinned QGIS. Run
+1. Use your developer Python and pinned QGIS. Run
    `python tools/run_tree_reopen_desktop_test.py --scenario independent-fields --evidence <new-directory>`.
    Repeat with `--plugin-root <immutable-extraction>/ag_tech_tooling`.
 2. The real branded full-controller fixture uses two disk-backed imports in separate
@@ -290,7 +290,7 @@ real managed synthetic disk data, filters and shared-reference placement. The
 existing browser-only tests are still useful but cannot replace this test.
 
 1. Prerequisites: pinned QGIS 3.44.14, the existing local Ag-GIS launcher/icon,
-   interactive Windows desktop and a developer Python with the existing Hermes
+   interactive Windows desktop and a developer Python with the existing your tool
    `psutil` package. No new plugin/runtime dependency is introduced. Keep real
    farm data outside the checkout; this runner creates a separate scratch profile
    and synthetic workspace and verifies post-init settings/auth/module origins.
@@ -298,7 +298,7 @@ existing browser-only tests are still useful but cannot replace this test.
    Add `--scenario single-field-reload` for the combined field-specific boundary
    filter, mixed manual collapse, queued refresh and actual plugin unload/initGui
    reload before warm/cold reopen. `--scenario combined` is not a supported value.
-   Use the existing developer/Hermes Python containing `psutil`; plain `py` may
+   Use the existing developer/your Python containing `psutil`; plain `py` may
    select an interpreter without it. Do not install dependencies to fix that mismatch.
    Repeat with `--plugin-root <immutable-extraction>/ag_tech_tooling`.
    The runner rejects an existing output directory, retains failed receipts, requires native
@@ -376,7 +376,7 @@ The 57-entry candidate differs from normal installation in two runtime files;
 normal installed/branded visible acceptance remains the next delivery gate.
 No custom authentication/transport/certificate investigation was resumed.
 
-## Latest owner direction and installed development build — 21 October 2026
+## Latest team direction and installed development build — 21 October 2026
 
 The owner confirmed standard QGIS tooling plus reviewable feedback in their normal
 already-authenticated GitHub browser/profile. Stop custom embedded sign-in,
@@ -388,7 +388,7 @@ The existing Feedback toolbar opens Describe / Review report / Connect your agen
 It prepares summary, area, impact, details, steps, expected result and optional
 Ag-GIS/QGIS/Python/system versions. Errors must be deliberately supplied in Details;
 it does not automatically collect logs, paths, account details or farm records.
-Open GitHub form uses QDesktopServices to open the OS default browser, not a Hermes
+Open GitHub form uses QDesktopServices to open the OS default browser, not a your tool
 automation profile. User reviews and submits on GitHub; browser/profile cookie
 reuse is delegated to the user's OS/browser configuration, not verified here.
 Long reports use an explicitly warned copy/paste fallback. Save/Copy/Email remain
@@ -462,7 +462,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
 ## Native recorder/export reproduction — 21 October 2026
 
 1. Developer prerequisites: Python and the existing Windows QGIS 3.44.14 desktop
-   binary. Close only earlier test-owned scratch runs, never the owner's farm.
+   binary. Close only earlier test-owned scratch runs, never team's farm.
    Run `py -B tools/run_github_recorder_test.py`; use `--plugin-root` to audit an
    exact extracted candidate. Each run creates a new scratch profile/auth/settings
    root and launches generic QGIS with plugins disabled, not branded Ag-GIS.
@@ -609,7 +609,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
    `py -B tools/auth_flow_model_test.py` for six session and eleven device-model
    tests. Existing Windows QGIS 3.44.14 supplies Qt for
    `tools/auth_session_native_test.py`; its output argument must be inside an
-   `aggis-session-*` directory under Hermes scratch. No account/install is required.
+   `aggis-session-*` directory under your tool cache. No account/install is required.
    Reproducible execution and exact receipts:
    `.aggis-agent/evidence/20261020-session-only-reconciliation/verify.py`.
 3. The Qt check uses real timers/monotonic time and asserts access-only retention,
@@ -631,11 +631,11 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
 
 ## Clock and snapshot boundary characterization — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on the existing Windows Hermes host.
+1. Developer prerequisite: Python 3.12+ on the existing Windows your development host.
    Run `py -B tools/auth_refresh_rollback_test.py`. No QGIS, installation, account,
    real credentials, network or OS clock change is needed for these six tests.
 2. These are **known-gap characterization tests**, not a rollback fix. Fresh
-   processes reopen nonsecret schema-3 SQLite fixtures in Hermes scratch. Stale
+   processes reopen nonsecret schema-3 SQLite fixtures in your tool cache. Stale
    injected time before any expiry observation still admits. A forward clock
    observation permanently latches expiry even after the fixture time is corrected.
 3. With the unchanged ledger, cold retry/terminal readback remain refused. Deliberate
@@ -925,9 +925,9 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 
 ## Synthetic revision/expiry refresh fence — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on this Windows Hermes development host.
+1. Developer prerequisite: Python 3.12+ on this Windows your tool development host.
    Run `py -B tools/auth_refresh_fence_test.py` from the checkout. Eleven methods test
-   fresh synthetic SQLite files under explicit Hermes scratch; no sign-in, native
+   fresh synthetic SQLite files under explicit your tool cache; no sign-in, native
    credential access, installation update or network connection is used.
 2. Developer-only `tools/auth_refresh_fence.py` remains unpackaged and unwired.
    Explicit `RefreshFence.create(path, slot, revision=..., expires_at=...)` enrolls
@@ -1005,7 +1005,7 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 4. Initial constructor-only isolation did not change the external Python profile
    root (`Roaming/python/profiles/default`); explicit path assertions caught that
    harness assumption. Failed logs are preserved. Final native config and Qt Ini
-   settings are scratch-isolated; the owner's default Ag-GIS profile is not used
+   settings are scratch-isolated; team's default Ag-GIS profile is not used
    as test settings or farm storage. Installed plugin code is read-only.
 5. No runtime behavior, package content, installation or normal desktop session
    changed. Existing branded journey evidence is historical, not rerun here.
@@ -1049,7 +1049,7 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 ## Native synthetic loopback boundary audit — 20 October 2026
 
 1. Prerequisites: existing Windows QGIS 3.44.14 bundled Python/Qt, OpenSSL on PATH
-   and writable Hermes scratch. Nothing is installed. Run
+   and writable your tool cache. Nothing is installed. Run
    `py tools/run_auth_network_feasibility.py`. The runner invokes bundled Python
    twice with fresh scratch settings/profile/auth paths, resetting tempfile after
    vendor bootstrap. No normal credential database, OS vault or farm data is read.
@@ -1119,7 +1119,7 @@ verifiers remain historical and hash-bound to their original frozen inputs.
    flow (including its refresh-secret exception) permits a public-client design;
    no registered Ag-GIS client or working login is supplied by these tests.
 2. Prerequisites: Windows, existing QGIS 3.44.14 bundled Python/Qt/auth providers,
-   writable Hermes scratch. Run from source root:
+   writable your tool cache. Run from source root:
    `py tools/run_auth_storage_feasibility.py --qgis-root "C:/Program Files/QGIS 3.44.14"`.
    The runner creates fresh marked scratch auth/settings/profile paths and ignored
    `.aggis-agent/evidence/auth-storage-<unique-id>/results.json`. It generates only
@@ -1224,7 +1224,7 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 ## Single-location marker reliability — 20 October 2026
 
 1. Reproduce with bundled QGIS Python and `tools/farmer_view_test.py` (using a
-   Hermes scratch TEMP/TMP/TMPDIR shim after the QGIS batch bootstrap). The new
+   your tool cache TEMP/TMP/TMPDIR shim after the QGIS batch bootstrap). The new
    native renderer assertion was RED: **3 px**, size **0.65 mm**, exit1. A lone
    location was correctly placed; `prepare_layer` had shrunk the native 2 mm
    default. Millimetre symbol size does not grow with coordinate zoom.
@@ -1472,7 +1472,7 @@ GIS engine, vendor decoder, numeric conversion or automatic renderer change.
    It asserts actual scanner → row → button → modal wiring, exact original bytes,
    field isolation, cross-year boundaries, invalid dates/types and no writes.
 4. Keep `AGTECH_TEST_PLUGIN_ROOT` at the package parent and TEMP/TMP/TMPDIR in
-   Hermes scratch. Flush test-owned deferred Qt objects before deleting synthetic
+   your tool cache. Flush test-owned deferred Qt objects before deleting synthetic
    GeoPackages on Windows. A locked-fixture cleanup failure is not a product fix.
 5. Reviewed writes use a locked SQLite metadata transaction after the native copy:
    revalidate full timeline and source hash, insert catalogue row, append immutable
@@ -1578,7 +1578,7 @@ These bounds are safeguards, not a general-purpose hostile-archive sandbox.
 4. `scripts/check.ps1` remains the full inventory, not evidence it ran this cycle.
    Its previously recorded execution-policy restriction was not bypassed. The
    supported QGIS batch bootstrap ran the targeted tests directly. For isolated
-   tests, reset `TEMP`/`TMP`/`TMPDIR` and Python `tempfile.tempdir` to Hermes scratch
+   tests, reset `TEMP`/`TMP`/`TMPDIR` and Python `tempfile.tempdir` to your tool cache
    after bootstrap (the QGIS batch can override incoming TEMP).
 
 Evidence: `.aggis-agent/evidence/20261019-deere-zip/` (local, ignored): command
@@ -1720,9 +1720,9 @@ Last updated: 15 October 2026.
 3. `tools/farm_project_test.py` covers opening both supported paths, refusing unrelated files, missing-workspace recovery instructions and cancellation that preserves unsaved work. `scripts/check.ps1` runs it against source and the extracted plugin package.
 4. Record immutable snapshot/package identity separately from automated source checks, installed-build checks and farmer acceptance. Do not commit/publish the shared dirty tree or replace the normal profile as a testing shortcut. See WORK_LOG.md for the actual evidence and outstanding gates.
 
-### Project identity and Hermes
+### Project identity and your tool
 
-The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+The saved your tool project is **Ag-GIS**, with `{USER_HOME} as primary source and `{USER_HOME} as farm workspace. Both paths are compatibility junctions to the original directories. your tool has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. your tool may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
 ## What exists now
 
@@ -2164,13 +2164,13 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
-# Hermes operations tooling
+# your tool operations tooling
 
-`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native Hermes work/research jobs. The owner interacts through Hermes Bot Chat. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See [Hermes operations](HERMES_OPERATIONS.md) for scope, recovery, limits and approval handling.
+`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native your tool work/research jobs. The owner interacts through your tool team channel. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See [your tool operations](HERMES_OPERATIONS.md) for scope, recovery, limits and approval handling.
 
 The journal now retains progress/recovery events. Use `finish continue` with
 remaining work between increments; full completion requires explicit

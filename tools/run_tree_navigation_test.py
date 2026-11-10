@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--plugin-root', type=Path, default=ROOT / 'plugins/ag_tech_tooling')
 p.add_argument('--evidence', type=Path, required=True)

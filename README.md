@@ -34,7 +34,7 @@ Ag-GIS brings farm maps and data into practical desktop workflows: organise farm
 
 ## Try it, or help shape it
 
-**Connect your own agent:** [Start Here](START_HERE.md). Describe the farming problem in ordinary words; copy instructions for Codex, Claude Code, Hermes or another agent. Local drafting needs no sign-in; nothing is submitted without review and explicit consent.
+**Connect your agent:** [Start Here](START_HERE.md). Describe the farming problem in ordinary words; copy instructions for your agent or another tool. Local drafting needs no sign-in; nothing is submitted without review and explicit consent.
 
 **Trying Ag-GIS?** Start with the [installation guide](docs/INSTALL.md), choose an [experimental download](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) and use a copy of your data for evaluation. Extract the complete Windows bundle before running Setup.exe. Each release has its own source and verification limits.
 

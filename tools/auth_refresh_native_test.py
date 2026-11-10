@@ -19,7 +19,7 @@ from auth_refresh_readback import (acknowledge_attempt_fixture_readback,
 
 def main():
     scratch = Path(os.environ['AGGIS_SYNTHETIC_AUTH_ROOT']).resolve()
-    allowed = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch').resolve()
+    allowed = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch').resolve()
     assert scratch.is_relative_to(allowed) and scratch.name.startswith('aggis-auth-late-')
     assert (scratch / 'SYNTHETIC-ONLY').read_text() == 'fresh-synthetic-auth-late-v1'
     phase = os.environ['AGGIS_SYNTHETIC_AUTH_PHASE']

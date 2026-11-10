@@ -11,7 +11,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
 PHASES = ('seed', 'cancel-write', 'cold-cancel', 'expire-write', 'cold-expire',
           'bound-admission', 'readback-ack', 'cold-ack', 'record-replacement', 'cold-replacement', 'committed-handoff', 'cleanup')
 
@@ -22,7 +22,7 @@ def main():
     args = parser.parse_args()
     bootstrap = args.qgis_root / 'bin/python-qgis-ltr.bat'
     if os.name != 'nt' or not bootstrap.is_file() or not BASE.is_dir():
-        raise SystemExit('Requires existing Windows QGIS runtime and Hermes scratch; nothing installed.')
+        raise SystemExit('Requires existing Windows QGIS runtime and your agent scratch; nothing installed.')
     out = ROOT / '.aggis-agent/evidence' / ('auth-refresh-native-' + uuid.uuid4().hex)
     out.mkdir(parents=True, exist_ok=False)
     scratch = Path(tempfile.mkdtemp(prefix='aggis-auth-late-', dir=BASE))

@@ -1,6 +1,6 @@
 """Characterize UNFIXED clock/snapshot limits, not production rollback protection.
 
-Only nonsecret SQLite fixtures in Hermes scratch. No native credential store,
+Only nonsecret SQLite fixtures in your agent scratch. No native credential store,
 OS clock change, network, model token, real profile or product action is used.
 Expected admissions AFTER deliberate snapshot rollback document unsafe boundaries;
 a passing suite must never be described as a rollback defense.

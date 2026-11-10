@@ -233,7 +233,7 @@ placement match the saved snapshot. Desktop captures show the populated native
 tree; no runtime edit or identical-file reinstall was needed.
 
 This is **isolated installed-code acceptance**, not a fresh test of that combined
-sequence inside the owner's open farm session. That session was preserved. Earlier
+sequence inside team's open farm session. That session was preserved. Earlier
 normal-install All Fields warm/cold delivery evidence remains separate. Wider normal
 combined click-through, unassisted use and full Windows Setup/MSI/UAC remain outside
 this increment. Evidence: `.aggis-agent/evidence/20261021-tree-combined-settlement/`.
@@ -249,7 +249,7 @@ application is left running in Simple View (PID 29356 at verification).
    All Fields/data-type filters, checkboxes, layer IDs and shared-reference tree
    placement. Source and extracted candidate pass isolated branded same-session
    and automatic cold-start regression checks; the normal installation passes
-   those same preservation checks with the owner's existing ten layers.
+   those same preservation checks with team's existing ten layers.
 2. Native Save was confirmed clean before graceful closure and replacement.
    Complete plugin rollback, settings and saved-map snapshots were independently
    checked, including the settings flushed on exit. Rollback:
@@ -309,7 +309,7 @@ Source and extracted native offscreen tests pass, including separate-process
 project reopening. These are not branded desktop acceptance or local delivery.
 Next: run relevant lifecycle regressions, use the standing controlled local-update
 procedure with verified rollback/native Save/clean close, then inspect the normal
-shortcut in Simple View. Stop on a save conflict; never discard the owner's work.
+shortcut in Simple View. Stop on a save conflict; never discard team's work.
 
 ## Normal local development delivery — 21 October 2026
 
@@ -393,7 +393,7 @@ based on this review. Native/branded acceptance and external registration remain
 ## Native recorder/export reproduction — 21 October 2026
 
 1. Developer prerequisites: Python and the existing Windows QGIS 3.44.14 desktop
-   binary. Close only earlier test-owned scratch runs, never the owner's farm.
+   binary. Close only earlier test-owned scratch runs, never team's farm.
    Run `py -B tools/run_github_recorder_test.py`; use `--plugin-root` to audit an
    exact extracted candidate. Each run creates a new scratch profile/auth/settings
    root and launches generic QGIS with plugins disabled, not branded Ag-GIS.
@@ -540,7 +540,7 @@ based on this review. Native/branded acceptance and external registration remain
    `py -B tools/auth_flow_model_test.py` for six session and eleven device-model
    tests. Existing Windows QGIS 3.44.14 supplies Qt for
    `tools/auth_session_native_test.py`; its output argument must be inside an
-   `aggis-session-*` directory under Hermes scratch. No account/install is required.
+   `aggis-session-*` directory under your tool cache. No account/install is required.
    Reproducible execution and exact receipts:
    `.aggis-agent/evidence/20261020-session-only-reconciliation/verify.py`.
 3. The Qt check uses real timers/monotonic time and asserts access-only retention,
@@ -562,11 +562,11 @@ based on this review. Native/branded acceptance and external registration remain
 
 ## Clock and snapshot boundary characterization — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on the existing Windows Hermes host.
+1. Developer prerequisite: Python 3.12+ on your Windows development host.
    Run `py -B tools/auth_refresh_rollback_test.py`. No QGIS, installation, account,
    real credentials, network or OS clock change is needed for these six tests.
 2. These are **known-gap characterization tests**, not a rollback fix. Fresh
-   processes reopen nonsecret schema-3 SQLite fixtures in Hermes scratch. Stale
+   processes reopen nonsecret schema-3 SQLite fixtures in your tool cache. Stale
    injected time before any expiry observation still admits. A forward clock
    observation permanently latches expiry even after the fixture time is corrected.
 3. With the unchanged ledger, cold retry/terminal readback remain refused. Deliberate
@@ -856,9 +856,9 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 
 ## Synthetic revision/expiry refresh fence — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on this Windows Hermes development host.
+1. Developer prerequisite: Python 3.12+ on your Windows development host.
    Run `py -B tools/auth_refresh_fence_test.py` from the checkout. Eleven methods test
-   fresh synthetic SQLite files under explicit Hermes scratch; no sign-in, native
+   fresh synthetic SQLite files under explicit your tool cache; no sign-in, native
    credential access, installation update or network connection is used.
 2. Developer-only `tools/auth_refresh_fence.py` remains unpackaged and unwired.
    Explicit `RefreshFence.create(path, slot, revision=..., expires_at=...)` enrolls
@@ -959,7 +959,7 @@ No plugin/runtime, account requirement or normal installation changes.
    or remembered-login adapter has been enabled by these developer experiments.
 2. On the existing Windows development machine with QGIS 3.44.14 and OpenSSL,
    run `py tools/run_auth_network_feasibility.py` from the checkout. It creates two
-   fresh marked Hermes scratch profiles and ephemeral localhost servers. OpenSSL
+   fresh marked your tool cache profiles and ephemeral localhost servers. OpenSSL
    creates only an untrusted one-day test certificate; no trust store is changed.
 3. Expected: two native processes exit0, each asserting HTTP success, Cancel/abort,
    local timeout/abort, manual off-host redirect refusal and self-signed TLS failure.
@@ -1004,7 +1004,7 @@ gates; it does not authorize or register an external app.
    `py tools/run_auth_storage_feasibility.py` for synthetic storage-only checks.
    Expected: four native processes exit0; exact synthetic read/cold-read, wrong
    password refusal, per-record deletion and unrelated sentinel preservation.
-   A new ignored evidence folder and marked Hermes scratch profile are created.
+   A new ignored evidence folder and marked your tool cache profile are created.
 3. No real GitHub login, OS-vault entry, provider request or normal profile is used.
    The DPAPI check is in-memory only, not a Credential Manager integration. Native
    APIHeader expansion has a debug-logging hazard and was deliberately not used.
@@ -1262,7 +1262,7 @@ GS3 setup/catalogue exports as read-only metadata, not decoded operation imports
    the original token and review the vendor/rule/version rather than guess a unit.
 3. For native checks use QGIS's bundled Python on `tools/data_dictionary_test.py`,
    `tools/data_in_test.py`, `tools/operation_style_test.py` and `tools/smoke_test.py`.
-   Use synthetic workspaces and TEMP/TMP/TMPDIR beneath Hermes scratch, not farm data.
+   Use synthetic workspaces and TEMP/TMP/TMPDIR beneath your tool cache, not farm data.
    Set `AGTECH_TEST_PLUGIN_ROOT` to the directory **containing** `ag_tech_tooling`.
 4. Build to a new ZIP with `py tools/build_plugin.py --output <new-local-zip>`;
    validate/extract it to scratch and repeat checks against that extracted parent.
@@ -1445,11 +1445,11 @@ Last updated: 15 October 2026.
 
 ## Tested workstation
 
-- Windows workstation, local account Michael.
+- Windows workstation, local account [Name].
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
-- Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.
-- Git author: Michael `<admin@agtechandmachine.com>`.
+- Repository: `{USER_HOME}
+- Git author: [Name] `<admin@agtechandmachine.com>`.
 
 QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate system Python is optional for syntax checks and packaging; it does not replace the QGIS runtime.
 
@@ -1472,7 +1472,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 3. Configure the author for this workstation:
 
    ```powershell
-   git config --global user.name "Michael"
+   git config --global user.name "[Name]"
    git config --global user.email "admin@agtechandmachine.com"
    git config --global init.defaultBranch main
    ```
@@ -1512,7 +1512,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 1. For this machine, open the existing repository; do not initialise it again:
 
    ```powershell
-   Set-Location 'C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling'
+   Set-Location '{USER_HOME}
    git status
    ```
 
@@ -1587,7 +1587,7 @@ Version 0.6.0 adds hierarchy management and schema 2 projects to the existing Si
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Click **New Project** on the toolbar (also **Plugins → Ag-GIS → New Project…**).
-3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `C:\Users\Michael\Documents\Ag Tech Tooling\Projects`.
+3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `{USER_HOME} Tech Tooling\Projects`.
 4. Expected result: `Farm.qgz` and `Data/farm.gpkg`, with **Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1** in Layers. Each field has **Whole Field** and **Seasons**; the starter season is **Season 1**, with **Plans / Operations / Results**. There is no invented crop, year or geometry. Select fields in Layers to reuse the three native reference views.
 5. Finish layer edits before switching. Save/discard/cancel any unsaved current map when prompted; cancelling quick creation makes no new workspace. Use **Manage Data** to rename placeholders or add more clients, farms, fields and seasons within the same GeoPackage. For explicit location/names/CRS before creation, use **Plugins → Ag-GIS → New Project with Options…**. Quick creation inherits the map CRS or falls back to EPSG:4326; it does not determine a local survey projection or vertical datum.
 6. Later click **Open Project** and select `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
@@ -1624,11 +1624,11 @@ Switching off restores the previous central view only if the project has not cha
 Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
 
 1. Use the app's **Add new project** control and create a local project named **Ag-GIS**.
-2. Attach `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
+2. Attach `{USER_HOME} as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
 3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
 4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
 
-The saved Codex project is **Ag-GIS**, with `C:\Users\Michael\Documents\Projects\repos\Ag-GIS` as primary source and `C:\Users\Michael\Documents\Ag-GIS` as farm workspace. Both paths are compatibility junctions to the original directories. Hermes has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. Codex may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
+The saved your tool project is **Ag-GIS**, with `{USER_HOME} as primary source and `{USER_HOME} as farm workspace. Both paths are compatibility junctions to the original directories. your tool has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. your tool may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
 Official guidance: https://learn.chatgpt.com/docs/projects
 
@@ -1680,7 +1680,7 @@ at this stage; current installed Data In behaviour remains as described above.
 
 ## Ag-GIS offline Windows installer and updates — 0.8.1
 
-The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved Codex project name is managed in the app; repository work does not rename that registration.
+The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `{USER_HOME} and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved your tool project name is managed in the app; repository work does not rename that registration.
 
 1. Prerequisite: Windows 64-bit. Obtain the complete `Ag-GIS-0.8.1-Windows-<timestamp>.zip` from the private `JamRov/Ag-GIS` GitHub release or your administrator. Repository access and GitHub sign-in are required for private downloads.
 2. Extract **all** files to a local folder. Save your work and close QGIS. Run `Setup.exe` as your normal Windows user. Keep every payload beside it. This launcher is unsigned.
@@ -1868,13 +1868,13 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
-# Hermes-managed development setup
+# your tool-managed development setup
 
-For the agent-managed development and business workflow, use [Hermes operations](HERMES_OPERATIONS.md). Run `py tools/setup_hermes.py --schedule` from the source root after configuring Hermes. This installs its management skill and two native schedules with Bot Chat delivery; it does not install or release the farmer-facing application.
+For the agent-managed development and business workflow, use [your tool operations](HERMES_OPERATIONS.md). Run `py tools/setup_hermes.py --schedule` from the source root after configuring your tool. This installs its management skill and two native schedules with team channel delivery; it does not install or release the farmer-facing application.
 
 For a provider interruption, restore and verify inference before resuming source
 work. The 19 October recovery adds a Windows fallback supervisor task and preserves

@@ -11,7 +11,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 QGIS = Path('C:/Program Files/QGIS 3.44.14')
-BASE = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
         try:
             exit_code = process.wait(timeout=55)
         except subprocess.TimeoutExpired:
-            # Never kill the owner's QGIS. Leave a handle and report the exact test PID.
+            # Never kill team's QGIS. Leave a handle and report the exact test PID.
             (out / 'timeout.json').write_text(json.dumps(dict(pid=process.pid, scratch=str(scratch))))
             raise RuntimeError('Synthetic recorder application did not close; inspect test PID ' + str(process.pid))
     receipt = dict(created=datetime.now().astimezone().isoformat(), exit_code=exit_code,

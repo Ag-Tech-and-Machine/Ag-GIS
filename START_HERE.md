@@ -2,7 +2,7 @@
 
 Ag-GIS is in development, not release-ready. You can use local Ag-GIS without
 signing in. Connecting your own agent is optional, not an Ag-GIS cloud service.
-This page works with Codex, Claude Code, Hermes and other agents that can read
+This page works with your agent or other tools that can read
 local files. No special agent extension or account linking is required.
 
 ## For farmers: start with ordinary words
@@ -93,7 +93,7 @@ Wait for my review and explicit approval before any public action.
 - Exact prerequisites and commands: docs/DEVELOPMENT.md, docs/INSTALL.md and
   docs/TOOLING.md. Ordinary Python checks are not native QGIS acceptance.
 - PR/privacy/licensing rules: CONTRIBUTING.md, SECURITY.md and
-  docs/USER_COMMITMENTS.md. Read docs/HERMES_OPERATIONS.md if managing the owner's
+  docs/USER_COMMITMENTS.md. Read docs/HERMES_OPERATIONS.md if managing team's
   existing task journal; this page does not grant new execution authority.
 - Handoff: problem/scope, files changed, native capability reused, synthetic
   reproduction, exact checks/results, artifact identity where relevant, and

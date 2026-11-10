@@ -185,7 +185,7 @@ QGZ XML readback matches all21 named-group expansion values. Actual local Qwen3.
 review125 prompt/82 completion tokens is retained; its broad data-integrity wording
 is not an additional proven assertion. Two pre-native launch failures are retained
 (rendered interpreter path; bare interpreter lacked psutil). Existing initialized
-Hermes kernel executed the runner; no dependency installation or policy change.
+your tool kernel executed the runner; no dependency installation or policy change.
 
 Evidence: `.aggis-agent/evidence/20261023-standalone-contracts/RESULT.md`, prelaunch
 hashes, exact harness/payload/source snapshots, native logs, retained QGZ/sidecar and
@@ -229,7 +229,7 @@ the automation dependency. No identical install/input retries or endless regress
 ## 23 October 2026 — Owner-directed normal installation actually executed
 
 - Reconciled canonical idle workers/admissions; sole deleg76c095af owns direct installation.
-  Supported7253 recover/claim after owner direction durably learned; fd20 idle, no regressions.
+  Supported7253 recover/claim after team direction durably learned; fd20 idle, no regressions.
 - Fresh paired exact-window controls/native read-only console snapshots: both17900/26804
   exact Farm.qgz, same10 layerIDs, no vector editable/modified/editbuffer state. Distinct
   map/tree state preserved, never a winner/discard. Independent full workspace/NAS backups.
@@ -362,7 +362,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Closed one previously unrun successor regression gap: snapshotted
   tools/farm_browser_test.py ran through pinned QGIS3.44.14 against source and exact
   e6f2059a extraction. Both processes exited0 with empty stderr and asserted
-  post-init settings/auth/Qt settings inside separate Hermes scratch directories.
+  post-init settings/auth/Qt settings inside separate your tool scratch directories.
 - Assertions exercise actual native checkbox off/on, rename editor commit,
   model/selection identity, dock resize/layout recovery, semantic icons, unrelated
   layers and original-delegate restoration/non-nested recreation. No product repair
@@ -440,7 +440,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Immutable successor `0994fe2df9a267cff42e78e2961d79b8a3a54a5c2ea166b9769300740b20e608`,57entries, differs from frozen2ef only in simple_view.py; all ZIP/extracted/source bytes independently matched. Six fresh source/extracted native suites (smoke, operation style, durable dataset style) exit0 with post-init settings/auth isolation. Native RED/frozen wide-window RED retain exact Save-child assertion. Small-window overflow and late-registration timing failures remain harness receipts, not product fixes. Repository/plugin/build/feedback/diff checks pass.
 - Exact successor branded automatic-cold fixture run:34assertions, three real outer Cancel cycles including two after full reload, actual split-menu Reset, preserved source/raw values/geometry/import provenance and one visible Save Map button/action/projectSaved event. Cold and recovered Save child stays visible; native34100/launcher32308 exit0. Final QGZ reset size2 and fourth append-only style revision/final-QGZ binding independently read back. Actual desktop pixels inspected, no QWidget.grab visibility inference. Baseline4 and test-only queued derivative each have distinct34assertion/exit0 receipts, not extra source acceptance counts.
 - **Separate confirmed blocker:** at294px Layers width, Edit Style is explicitly overflow-hidden; native extension visible but disabled, no popup. At700px child is visible. No default-width fix claimed. No normal installation until relevant discoverability and fresh supported-control/conflict-free Save/complete rollback/full installed-byte/running-origin/visible acceptance prerequisites pass. QTest inside owned process is not external reliability or normal-installed proof.
-- Evidence `.aggis-agent/evidence/20261022-toolbar-lifecycle/verify.py --require-toolbar` exits0 for exact successor; baseline strict contract1; --require-full1 intentionally. Local Qwen3.5-9B actual156completion review retained; speculative dock-causation advice not adopted. Initial QEvent.Destroy/hidden-original-native-toolbar selection and QWidgetAction/defaultAction assumption failures retained; observed native Save/clean-close cleanup only. First runner inherited system TEMP; accepted subsequent fixtures explicitly use Hermes scratch. No failure silently replaced.
+- Evidence `.aggis-agent/evidence/20261022-toolbar-lifecycle/verify.py --require-toolbar` exits0 for exact successor; baseline strict contract1; --require-full1 intentionally. Local Qwen3.5-9B actual156completion review retained; speculative dock-causation advice not adopted. Initial QEvent.Destroy/hidden-original-native-toolbar selection and QWidgetAction/defaultAction assumption failures retained; observed native Save/clean-close cleanup only. First runner inherited system TEMP; accepted subsequent fixtures explicitly use your tool scratch. No failure silently replaced.
 - Normal17900/26804 and historical idle synthetic23516/HWND3804126 remain present and untouched; last-known dirty synthetic lacks a supported command channel, no forcekill/discard. All newly created native apps exited0. Finishcontinue, not complete. Remaining default-width discoverability repair and controlled normal delivery/acceptance; no broadening to auth, providers, release or policy changes.
 
 
@@ -684,7 +684,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Native Ctrl+S delivery returned **unverifiable**; do not claim a new successful
   save. Subsequent read-only Win32 title remained clean, but the desktop capture
   tool failed twice because its machine-wide daemon was unavailable. Existing
-  Hermes Python lacks pywinauto; no package was installed. The attempted read-only
+  your tool Python lacks pywinauto; no package was installed. The attempted read-only
   UIA inspection command `powershell.exe -NoProfile -File
   .aggis-agent/evidence/20261021-tree-normal-combined/uia.ps1` was explicitly denied
   by Windows script policy (UnauthorizedAccess). Its body did not execute. No
@@ -729,7 +729,7 @@ the automation dependency. No identical install/input retries or endless regress
   Rejected its assertion that isolated branded acceptance equals owner-session
   acceptance. These are distinct evidence levels. No runtime change inferred.
 - Plain `py` initially lacked psutil; retained this harness failure and reran with
-  the existing Hermes interpreter. No installation/configuration change was made.
+  the existing your tool interpreter. No installation/configuration change was made.
   INSTALL/TOOLING now identify exact scenario and interpreter prerequisites.
 - Evidence: `.aggis-agent/evidence/20261021-tree-combined-settlement/`, including
   executable verifier, process receipts, screenshots and critical review. Approval
@@ -1051,7 +1051,7 @@ the automation dependency. No identical install/input retries or endless regress
   both synthetic values in the two rows. Export is deleted after assertions; only
   this test's recorder is explicitly cleared. Copy As cURL/Copy as JSON actions
   are discovered in the native context menu but NOT invoked, avoiding any read or
-  overwrite of the owner's clipboard. cURL bytes remain source-only evidence.
+  overwrite of team's clipboard. cURL bytes remain source-only evidence.
 - Initial platform discovery is retained. Forcing -platform offscreen crashed the
   generic QGIS app at startup before the probe; crash-handler receipt archived,
   exact test handler closed gracefully. This does not diagnose an upstream/product
@@ -1138,7 +1138,7 @@ the automation dependency. No identical install/input retries or endless regress
   and headers into request nodes; Copy As cURL includes both and explicit JSON
   export serializes content after a warning. Disabling recording does not clear
   retained rows. This is SOURCE EVIDENCE, not fresh desktop/logger export execution,
-  automatic disk logging, a claim about the owner's setting or a security fix.
+  automatic disk logging, a claim about team's setting or a security fix.
 - Debug-file routing is separate from QgsMessageLog/release stdout/stderr. Existing
   TLS refusal cannot retract earlier copied request bodies. Review disposition is
   NOT CLEARED for real credentials. No silent global log suppression/clearing.
@@ -1724,7 +1724,7 @@ the automation dependency. No identical install/input retries or endless regress
   Cancel then handed-off real native update/readback; cold exact replacement and
   retry refusal; expiry then real update/readback; cold refusal; explicit cleanup.
   Each process asserts post-init native/Qt settings and auth DB inside marked
-  Hermes scratch. All three synthetic configurations removed at final cleanup.
+  your tool scratch. All three synthetic configurations removed at final cleanup.
 - Cancellation/expiry do not undo an already handed-off future write: native
   replacement succeeds, while model refuses late acknowledgement/releases no pair.
   Fence stays uncertain, unchanged after the write; old/new retries refuse in same
@@ -1805,7 +1805,7 @@ the automation dependency. No identical install/input retries or endless regress
   credential quarantine or safe product refresh. No reset/success path is exposed.
 - First GREEN attempt passed behavior but failed test cleanup: SQLite context did
   not close connection; inherited TMPDIR pointed at system Temp. Retained failure,
-  switched to explicit Hermes scratch and contextlib.closing, independently checked
+  switched to explicit your tool scratch and contextlib.closing, independently checked
   and removed only the exact earlier synthetic fixture. Corrected runs pass.
 - Evidence .aggis-agent/evidence/20261020-refresh-fence/: frozen inputs, RED/GREEN,
   mutation logs, checks and verify.py. Final model/portable/runtime identity results
@@ -1878,7 +1878,7 @@ the automation dependency. No identical install/input retries or endless regress
   provider-lock fixture cleanup failure; retained, not a product defect/fix claim.
 - Failed harness isolation experiments preserved: constructor-only custom config
   did not isolate external Python's QGIS settings root; exact/ancestor assertions
-  caught `Roaming/python/profiles/default`, not the owner's Ag-GIS default profile.
+  caught `Roaming/python/profiles/default`, not team's Ag-GIS default profile.
   Set explicit QGIS_CUSTOM_CONFIG_PATH plus Qt Ini paths and assert actual native
   settings under scratch. Final three Data In runs prove that isolation. Earlier
   passing assertions are not counted as fully isolated acceptance.
@@ -2190,7 +2190,7 @@ the automation dependency. No identical install/input retries or endless regress
   Actual portable-check synthetic missing-source/missing-package/empty refusals pass.
   No plugin/runtime behaviour, style controls, dependency or decoder added.
 - Evidence: `.aggis-agent/evidence/20261020-regression-inventory/`. Recorded **177**
-  immutable source/test inputs under Hermes scratch, checked capture/source/copy
+  immutable source/test inputs under your tool scratch, checked capture/source/copy
   hash equality, and independently verified existing QGIS 3.44.14 vendor MSI against
   pinned SHA-256 `0a579f980dcec85be2ecb47c5f08234ca6ce7b625c3cb9543eded1f43d445b46`.
   Current candidate ZIP unchanged:
@@ -2323,7 +2323,7 @@ the automation dependency. No identical install/input retries or endless regress
   OGR virtual ZIP provider, managed GeoPackage writer, Save Map and addProject.
 - Final actual branded launcher journey PID24640 and cold restart PID24976 both
   exited **0**, launcher exits0, no unexpected modals/style warnings. Isolated
-  profile/fixtures under Hermes scratch `aggis-deere-branded-20261020/acceptance-03`.
+  profile/fixtures under your tool scratch `aggis-deere-branded-20261020/acceptance-03`.
   Exact module path verified inside that profile. All **54 source/ZIP/extracted/
   installed entries** match unchanged artifact SHA-256
   `fc43863541dc32f6bc8ba97c9e6d86b9d0a9ac447bd540d0d2b3ba51f8f04235`.
@@ -2548,7 +2548,7 @@ the automation dependency. No identical install/input retries or endless regress
   Data before selection. That failed receipt contained error/unexpected modal despite
   a later passed flag/exit0; it was rejected, not counted. Final mode stops that timer;
   verification requires no error/modals plus exact boundary results. `py` lacked
-  psutil for the launcher controller; used the existing Hermes interpreter, no install.
+  psutil for the launcher controller; used the existing your tool interpreter, no install.
 - Independent `py .aggis-agent/evidence/20261019-season-boundary/verify.py` exit0
   rechecks exact suite inventory/exit codes, package bytes/hash, desktop receipts,
   no-write preview hashes, actual SQLite seasons/classification/provenance/raw values,
@@ -2626,7 +2626,7 @@ the automation dependency. No identical install/input retries or endless regress
   matching final project hash, retained raw `gal?` units and original source bytes.
   23 screenshots hashed and retained locally; results.json/storage-audit.json/manifest,
   source/extracted logs, desktop receipts and reproducible harness stored beside it.
-  All GIS fixtures/profiles stay outside the source tree in Hermes scratch.
+  All GIS fixtures/profiles stay outside the source tree in your tool scratch.
 - DATA_DICTIONARY revision4 records actual table/columns/FK/contract/save receipt,
   provenance/unknown units and export/dependency limits. INSTALL/TOOLING and bundled
   USER_GUIDE aligned. No normal installation/profile/farm edits, EXE update, release,
@@ -2708,7 +2708,7 @@ the automation dependency. No identical install/input retries or endless regress
   saved. 0 already saved. 0 could not import. Map saved.`. Initial failing harness
   also hit locked fixture/native teardown failure (exit139); not a healthy exit.
   Its runtime bootstrap reset TEMP to system Temp; all subsequent probes/tests set
-  TEMP/TMP/TMPDIR and Python tempfile.tempdir after the QGIS bootstrap to Hermes
+  TEMP/TMP/TMPDIR and Python tempfile.tempdir after the QGIS bootstrap to your tool
   scratch. Failed evidence retained, no invented clean-red exit.
 - Root cause proven with an isolated real Qt probe: `QProgressDialog.close()` emits
   `canceled`, flipping QgsRasterBlockFeedback from false to true during cleanup.
@@ -3014,7 +3014,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Exact local artifact: `.aggis-agent/evidence/20261019-classification-resolution/ag_tech_tooling-0.12.2-resolution.zip`;
   SHA-256 `f3420eb81a856033559ce9eb57eeaf40fda749abc6909c3fe2107a92217bdd14`.
   All **51 entries** matched live runtime/guide bytes and extracted bytes; final
-  recheck passed. Final extraction/fixtures are in explicit Hermes scratch. Initial
+  recheck passed. Final extraction/fixtures are in explicit your tool scratch. Initial
   cycle inherited Windows system TMPDIR for its extracted copy; recorded in the
   original artifact manifest, not hidden. Final harness uses explicit scratch and
   preserves the same ZIP. No private farm data was read or modified.
@@ -3102,7 +3102,7 @@ the automation dependency. No identical install/input retries or endless regress
   crash dialogs from this run were stopped after retaining evidence.
 - Evidence: `.aggis-agent/evidence/20261019-desktop-shutdown-import/REVIEW.md`,
   manifest, commands, exact artifact, per-process JSON/logs, stacks and screenshots.
-  Real GIS fixtures remain outside the repository under Hermes scratch.
+  Real GIS fixtures remain outside the repository under your tool scratch.
 - Checks this increment: `py tools/build_plugin.py`, `py tools/check_repository.py`,
   `py tools/check_plugin.py`, `node tools/feedback_workflow_test.cjs` and targeted
   `git diff --check` all exit 0 (Git noted existing CRLF normalization warnings).
@@ -3197,7 +3197,7 @@ the automation dependency. No identical install/input retries or endless regress
   Qt feedback tests for read-only text, exact clipboard copy, no browser launch or
   account-home inspection during opening, missing-guide recovery and lifecycle.
 - PASS: `py .aggis-agent/evidence/20261019-onboarding/check-harness.py`. Created a
-  clean allowlisted source snapshot in Hermes scratch, checked all 15 referenced
+  clean allowlisted source snapshot in your tool scratch, checked all 15 referenced
   instruction files and both prompts, ran check_plugin/build_plugin, validated all
   49 archive entries byte-for-byte (including canonical START_HERE.txt/USER_GUIDE.txt).
   QGIS 3.44.14 feedback_test.py and smoke_test.py each passed against clean source
@@ -3284,7 +3284,7 @@ the automation dependency. No identical install/input retries or endless regress
   Rebuilt the development plugin (`py tools/check_plugin.py` and
   `py tools/build_plugin.py`, both exit 0). Copied artifact SHA-256:
   `5b3d474f4334b4eefe509449d90a70bd426ea74d246add4fb43d3d800216e1d8`.
-- Launched real QGIS 3.44.14 in Hermes scratch, profile parent
+- Launched real QGIS 3.44.14 in your tool scratch, profile parent
   `aggis-visible-20261019-0958/config`, profile `acceptance`.
   Actual native `installFromZipFile` installed and started the plugin;
   its module path and all 46 installed shipping files matched the ZIP.
@@ -3404,7 +3404,7 @@ the automation dependency. No identical install/input retries or endless regress
   it; no geographic CRS was assigned. No production patch was made for this probe.
 - Retained private GeoTIFF, JSON evidence, reference export and reproduction scripts
   under Documents/Ag-GIS Validation, outside Git. Used bundled QGIS Python with
-  TEMP/TMP/TMPDIR redirected to Hermes scratch. Updated PCTGDP.md, INSTALL.md and
+  TEMP/TMP/TMPDIR redirected to your tool scratch. Updated PCTGDP.md, INSTALL.md and
   TOOLING.md while preserving other chats' concurrent edits.
 - Checks passed: private full-grid comparison; private native scanner/dialog/copy/
   reopen harness; `tools/pctgdp_test.py`; `tools/managed_data_test.py` (including
@@ -3571,7 +3571,7 @@ the automation dependency. No identical install/input retries or endless regress
   Bypass -File scripts/check.ps1 -QgisRoot 'C:/Program Files/QGIS 3.44.14'` (all exit 0).
   The full script built the development ZIP and passed source/extracted-package
   PCT GDP, Data In, placement, managed-data, lifecycle and other regression checks.
-  Scratch paths were redirected to Hermes cache. Real NAS scans through both
+  Scratch paths were redirected to your tool cache. Real NAS scans through both
   Data In's service and the portable CLI verified ten layer records and unchanged
   source SHA-256. The JSON inventory is private scratch evidence, not a Git fixture.
   Existing expected invalid-parent rejection and GDAL/QgsField/Shapefile warnings
@@ -3623,7 +3623,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Created the Ag-GIS sidebar section and moved both chats into it; renamed the main chat to Ag-GIS — Interface and Farm Structure. This groups chats visually. Saved local Project registration remains pending because the available app tools do not expose its creation.
 - Updated the canonical installation, tooling, data-model and bundled user instructions. The data-import chat added Data In during integration; the combined tested/installed release is 0.7.0.
 - Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight Deere preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
-- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\Michael\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
+- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at {USER_HOME} Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
 
 ## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
 
@@ -3652,7 +3652,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 ## 15 October 2026 — Organisation/Farm/Field research
 
-- Reviewed primary Deere, Ag Leader SMS and PTx FarmENGAGE documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
+- Reviewed primary Deere, farm equipment SMS and agriculture platform farm equipment documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
 - Documented a proposed Organisation → Farm → Field interface, optional Client/Grower handling, stable identities, boundary revisions and separate season/job relationships. Proposed multi-farm organisation workspaces revise the earlier one-farm packaging illustration.
 - Kept the installed 0.4.0 plugin and schema version 1 unchanged. No migrations, imports, production datasets or new hierarchy controls were created.
 - Confirmed the live QGIS accessibility tree contains the dedicated toolbar and seven controls. The 0.4.0 installed-build capture shows native icons above their labels; fresh Windows screenshot capture timed out, so the capture is prior verification evidence, not a fresh screenshot.
@@ -3751,7 +3751,7 @@ the automation dependency. No identical install/input retries or endless regress
 
 ### Completed
 
-- Configured Git author Michael `<admin@agtechandmachine.com>` and default branch `main`.
+- Configured Git author [Name] `<admin@agtechandmachine.com>` and default branch `main`.
 - Created the local `ag-tech-tooling` repository and committed the starter.
 - Installed QGIS 3.44.14 LTR using WinGet; installer hash verification and installation succeeded.
 - Added source discovery through `QGIS_PLUGINPATH` and an isolated development profile launcher.
@@ -3900,7 +3900,7 @@ Follow-up: the user authorised cancelling the pending import. On inspection it h
 
 Live diagnosis refinement: the native contents widget was 464 x 896, while its QVBoxLayout remained 464 x 344 and the tree only 313 pixels tall. Calling the same layout refresh directly filled the tree to 865 pixels (896 minus the 31-pixel toolbar). Added a Paint-event fallback that repairs only mismatched geometry before drawing; resize/show alone did not reliably correct the live restored layout. The regression now deliberately stales geometry after resize processing and verifies repaint recovery. Source and extracted stable-package browser/lifecycle tests passed after this refinement. Concurrent work advanced the checkout to 0.9.0; preserved that metadata/source and patched only farm_browser.py into the previously validated 0.8.2 ZIP/default-profile installation. Did not install the unvalidated concurrent feature set. Final restart uses assertions without a manual layout refresh.
 
-Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: C:\Users\Michael\Documents\Codex\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
+Final live verification passed (11:38:59): normal default profile, maximised 1920-pixel QGIS window; tree rectangle (0,31,464,865) fills contents (0,0,464,896) below its native 31-pixel toolbar. Four layers are valid, including the completed import; no Data In dialog is open and saved Farm.qgz SHA-256 is unchanged by reopen/verification. Screenshot: {USER_HOME} tool\2026-10-14\un\outputs\farm-browser-current-workspace.png. JSON evidence: farm-browser-restart-verification.json in the same outputs folder.
 
 ## 15 October 2026 - Managed saving and filtering (0.9.0)
 
@@ -3966,7 +3966,7 @@ Full source and extracted 0.10.0 ZIP checks passed, including managed-data/raste
 
 Final 0.10.1 verification: the frozen snapshot dist/windows/20261015T010310Z/source passed its complete source suite, extracted ZIP workflows, fresh/upgrade/rollback installer checks and offline payload hash verification. Built dist/windows/Ag-GIS-0.10.1-Windows-20261015T010310Z.zip (not published by this chat). Installed that exact snapshot ZIP into the default profile; byte comparison passed. Recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-120527-487751.
 
-Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
+Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
 
 Native network wire verification passed against localhost: QGIS first set its own header, then the installed host-scoped preprocessor sent the expected Ag-GIS User-Agent to a local test endpoint; HTTP 200, no production tile request made by this test. Evidence background-network-check.json. The human-visible production map rendered successfully; final restart reused cached tiles. Print-layout attribution remains a user responsibility; clean-machine QGIS MSI wizard/UAC testing is not claimed.
 
@@ -4071,7 +4071,7 @@ other tooling work and was left untouched.
 
 Final 0.12.1: the first frozen run hit a temporary project.write failure in the background test fixture; the unchanged test and then the entire frozen source/extracted-ZIP suite passed on retry. Preserved first-attempt and retry logs under dist/windows/20261015T012543Z. Offline rebuild reused validation only after checking all plugin/test inputs were byte-identical. Final installer: dist/windows/Ag-GIS-0.12.1-Windows-20261015T013035Z.zip; payload hashes and ZIP CRC passed. Installed runtime exactly matches the validated package; new bundle plugin contents match the installed older-snapshot ZIP entry-for-entry.
 
-Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
+Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
 
 2026-10-15 wording approval: the user selected the exact supporting line “Built on open source tools”. Applied to About, toolbar tooltip, shortcut description, preview generator and canonical branding/setup/tooling instructions. Regenerated previews and plugin ZIP; focused source lifecycle and extracted branding checks passed. No release deployment performed.
 
@@ -4142,7 +4142,7 @@ IDs/selection and custom URLs. World imagery also caps requests at matrix 14 to 
 oversampling its historical 10 m content. At the same viewport after correction, all
 12 DEA and 12 EOX requested tiles returned 200 with no native render errors; inspected
 both map images. OSM displayed from the normal cache. Detailed local evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-render-diagnosis.json.
+C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-render-diagnosis.json.
 
 Checkbox switching already passed repeated native interaction checks. Improved the
 name-click interaction so highlighting another background also selects it; checkbox
@@ -4170,52 +4170,52 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Michael/Documents/Codex/2026-10-14/un/outputs/background-fix-installed.json,
+C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 
 
-## 15 October 2026 — Ag-GIS project registration and Hermes connection
+## 15 October 2026 — Ag-GIS project registration and your tool connection
 
-Renamed the Codex authoritative project and saved registry to Ag-GIS; attached source and farm workspace through Ag-GIS junctions. Renamed the Hermes slug to ag-gis while preserving its immutable project ID. Verified five migrated development chats through the live projects.project_sessions API and moved their frozen workspace policies to the Ag-GIS source path. Updated the Hermes handoff skill. Existing source/data folders and plugin compatibility IDs remain intact. A physical checkout move was blocked by automatic approval review. Desktop project-view activation could not be verified because Windows input geometry was unavailable; Ctrl+K → Ag-GIS is the available navigation route. Codex’s live connector retained the old cached label despite the authoritative project/registry update, requiring desktop refresh. This is configuration/docs work; no plugin runtime change or QGIS test is claimed.
-# 18 October 2026 — Hermes management and Bot Chat interface
+Renamed the your tool authoritative project and saved registry to Ag-GIS; attached source and farm workspace through Ag-GIS junctions. Renamed the your tool slug to ag-gis while preserving its immutable project ID. Verified five migrated development chats through the live projects.project_sessions API and moved their frozen workspace policies to the Ag-GIS source path. Updated the your tool handoff skill. Existing source/data folders and plugin compatibility IDs remain intact. A physical checkout move was blocked by automatic approval review. Desktop project-view activation could not be verified because Windows input geometry was unavailable; Ctrl+K → Ag-GIS is the available navigation route. your tool’s live connector retained the old cached label despite the authoritative project/registry update, requiring desktop refresh. This is configuration/docs work; no plugin runtime change or QGIS test is claimed.
+# 18 October 2026 — your tool management and team channel interface
 
-Implemented the owner's Hermes-managed build/setup/business workflow. The owner
+Implemented team's your tool-managed build/setup/business workflow. The owner
 confirmed desktop reliability (install → create farm → import → save/reopen), then
-clarified that Hermes must ask direction questions and Bot Chat is the primary
+clarified that your tool must ask direction questions and team channel is the primary
 interface. The local journal records that approval; no new product features or
 external publication/spending were approved.
 
 Added the versioned aggis-manager skill, native work/research prompts, a local
-SQLite proposal/decision/learning journal and idempotent Hermes setup. The journal
+SQLite proposal/decision/learning journal and idempotent your tool setup. The journal
 requires current scoped approval to claim work and serialises cooperating workers;
 it is not an OS security boundary. Added canonical operating/setup instructions
 and a dated primary-source competitor baseline. Private operating state, marketing
 drafts and research remain under ignored .aggis-agent. Existing dirty source,
-farm data, credentials, global Hermes settings and QGIS profiles were preserved.
+farm data, credentials, global your tool settings and QGIS profiles were preserved.
 
 Verified `py tools/agent_ops_test.py` (5 tests), `py tools/check_repository.py`,
 `py tools/check_plugin.py`, `py tools/build_plugin.py` and
 `node tools/feedback_workflow_test.cjs`. Development plugin ZIP 0.12.2 SHA-256:
 E7F57C749D86FAFF180651F2EC7C2BD37ECFBE572277C818679670687C564D97.
-Setup rerun refreshed the same two Hermes jobs without duplicates. Native cron
+Setup rerun refreshed the same two your tool jobs without duplicates. Native cron
 doctor reported no issues and the existing gateway ticker was running. Work is
 every four hours; competitor/business research every seven days, both delivering
-to Hermes Bot Chat. A separate one-run startup check tests Bot Chat delivery.
+to your tool team channel. A separate one-run startup check tests team channel delivery.
 
 Full `scripts/check.ps1 -QgisRoot 'C:\Program Files\QGIS 3.44.14'` FAILED at
 update_native_test.py: plugin initGui calls `self.submission.attach()` but the
 current SubmissionActions has no attach method. Earlier metadata, branding,
 Windows taskbar, feedback/intake, 13 catalogue and 16 update tests passed. Later
-checks were not reached. This existing plugin blocker is recorded for Hermes's
+checks were not reached. This existing plugin blocker is recorded for your tool's
 approved reliability task. No successful full integration, farmer acceptance,
 installer validation or release readiness is claimed. No release/push occurred.
 
-Bot Chat delivery was verified end-to-end: one-run startup job 3afaa491a1fd,
+team channel delivery was verified end-to-end: one-run startup job 3afaa491a1fd,
 execution 236f74a2ce23421cbe6b08b0cebd9319, durable delivery receipt
 2edcc3af59321805841452539d5d9397ae34ab20c0f43c3cbfa70ae3bd50e093
-settled successfully. The live Bot Chat reply acknowledged management, the
+settled successfully. The live team channel reply acknowledged management, the
 approved reliability scope, the missing attach blocker and owner decision gates.
 It reported requesting a stop to an earlier separate importer worker to avoid
 conflicting source edits. This is the bot's reported coordination action, not
@@ -4231,25 +4231,25 @@ Remaining: isolated visible installed create/import/save/reopen journey, cancell
 
 ## 19 October 2026 — provider and interrupted-work recovery
 
-Repaired the failed Hermes Bot Chat route after its custom OpenAI API primary
+Repaired the failed your tool team channel route after its custom your tool API primary
 returned credit_balance_exhausted and its local Qwen fallback refused connections.
 Used native revision-fenced session mutation to select the already authenticated
 openai-codex/gpt-6.1-sol route; aligned profile defaults and cleared the old custom
-endpoint/mode through Hermes config commands. Credentials were preserved, with
+endpoint/mode through your tool config commands. Credentials were preserved, with
 dated local configuration and consistent SQLite backups before repair. No gateway
 restart or account purchase was needed.
 
 Restored the existing loopback-only Qwen server and installed the limited-user
-Windows task Hermes Local Fallback Supervisor: logon and five-minute recovery
+Windows task your tool Local Fallback Supervisor: logon and five-minute recovery
 triggers, IgnoreNew instances, process mutex and restart-on-failure settings.
 Verified health and inference, then deliberately stopped only the verified local
 model-server PID 29112. Its supervisor automatically restored healthy PID 29016,
-which answered FALLBACK_OK. An isolated Hermes-native turn against a synthetic
+which answered FALLBACK_OK. An isolated your tool-native turn against a synthetic
 local 429/credit-exhaustion primary switched to the real Qwen fallback and completed
 with FALLBACK_RECOVERED; actual-model evidence came from the settled turn receipt,
 not the session's selected-primary label. No real paid API was used by that test.
 
-Bot Chat completed a real tool call and returned a settled acknowledgement of the
+team channel completed a real tool call and returned a settled acknowledgement of the
 repaired provider, retained approvals and saved field-comparison/season-placement
 requests. Canonical snapshot showed the old bot turn idle, no queued admissions,
 and no child/delegated workers. Recovered the two interrupted owner-approved tasks
@@ -4272,7 +4272,7 @@ Verification: regression cases failed before their respective fixes; all ten
 agent_ops tests then passed. Repository structure/link/syntax/assets check and
 PowerShell parsing checks passed. Native cron doctor found no issues. Repair
 scripts, backups, native delivery/turn receipts and recovery-test evidence remain
-private under the local Hermes repairs/20261019-aggis-recovery and local-fallback
+private under the local your tool repairs/20261019-aggis-recovery and local-fallback
 folders. No product GIS behaviour was changed by this repair, so the full QGIS
 suite was not rerun. Visible product acceptance and release readiness remain
 separate from verified provider/management recovery. Future account limits and
