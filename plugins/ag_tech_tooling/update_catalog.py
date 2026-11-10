@@ -6,6 +6,7 @@ integrity against the trusted catalogue, not a publisher's digital signature.
 """
 import configparser
 from pathlib import Path
+import os
 import re
 import json
 import hashlib
@@ -246,12 +247,20 @@ def verify_package(path: Path, release, qgis_version: str) -> dict:
 
 
 def _linked(path):
-    """Check if path is a symlink or junction (not a directory)"""
+    """Check if path is a symlink or junction (not a regular directory)"""
     info = path.lstat()
-    # Skip directories - they can have reparse point attributes but aren't links
+    # Check for reparse points first (symlinks and junctions)
+    reparse_point = bool(getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 1024))
+    if reparse_point:
+        # On Windows, symlinks and junctions have FILE_ATTRIBUTE_REPARSE_POINT,
+        # but regular directories can also have it (e.g., the hermes directory).
+        # Check if it's actually a symlink or junction (not a regular directory).
+        if os.path.islink(path) or (os.name == 'nt' and path.is_junction()):
+            return True
+    # Skip regular directories
     if stat.S_ISDIR(info.st_mode):
         return False
-    return stat.S_ISLNK(info.st_mode) or bool(getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 1024))
+    return stat.S_ISLNK(info.st_mode)
 
 
 def _hash_file(path):
