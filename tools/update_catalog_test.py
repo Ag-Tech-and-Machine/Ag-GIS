@@ -248,6 +248,7 @@ class SnapshotTests(unittest.TestCase):
             (plugin / '__init__.py').write_text('# init', encoding='utf-8')
             (plugin / 'plugin.py').write_text('# plugin', encoding='utf-8')
             recovery = root / 'recovery'
+            recovery.mkdir()  # Create recovery directory
             original = api.shutil.copyfile
             def corrupt(source, target):
                 original(source, target)
@@ -284,6 +285,8 @@ class SnapshotTests(unittest.TestCase):
             root = Path(temporary)
             plugin = root / 'ag_tech_tooling'
             plugin.mkdir()
+            recovery = root / 'recovery'
+            recovery.mkdir()  # Create recovery directory
             for name, data in [('metadata.txt', META), ('__init__.py', '# init'), ('plugin.py', '# plugin'), ('farm.gpkg', 'private')]:
                 (plugin / name).write_text(data, encoding='utf-8')
             (plugin / '__pycache__').mkdir()
