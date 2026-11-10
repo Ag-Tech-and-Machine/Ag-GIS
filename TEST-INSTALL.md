@@ -7,7 +7,7 @@ This document tracks the test installation status of Ag-GIS builds on the Omen d
 | Field | Value |
 |-------|-------|
 || Build Date | 2026-11-10 |
-||| Source Revision | 1f3c5dc (fix: wrap argparse.parse_args() in main guard for pytest compatibility) |
+||| Source Revision | 149c572 (docs: verify test build candidate 0.12.2, update TEST-INSTALL.md) |
 ||| QGIS Version | 3.44.14-Solothurn (bundled, silent install) |
 ||| Plugin Version | 0.12.2 |
 ||| Installation Status | Installed (Verified) |
