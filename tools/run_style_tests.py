@@ -10,7 +10,7 @@ sys.path.insert(0, r'C:\Program Files\QGIS 3.44.14\apps\qgis-ltr\python')
 # Set environment
 os.environ.setdefault('QT_QPA_PLATFORM', 'offscreen')
 os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'C:\temp\Documents\Projects\repos\ag-tech-tooling\plugins'
-os.environ['AGTECH_TEST_SCRATCH'] = r'C:\temp\AppData\Local\hermes\cache\scratch'
+os.environ['AGTECH_TEST_SCRATCH'] = r'C:\temp\cache\scratch'
 os.environ['OSGEO4W_ROOT'] = r'C:\Program Files\QGIS 3.44.14'
 os.environ['QGIS_PREFIX_PATH'] = r'C:\Program Files\QGIS 3.44.14\apps\qgis-ltr'
 os.environ['GDAL_FILENAME_IS_UTF8'] = 'YES'
@@ -30,7 +30,7 @@ app = QgsApplication([], False)
 app.initQgis()
 
 # Set up test directories
-test_dir = r'C:\temp\AppData\Local\hermes\cache\scratch'
+test_dir = r'C:\temp\cache\scratch'
 os.environ['AGTECH_TEST_SCRATCH'] = test_dir
 import tempfile
 tempfile.tempdir = test_dir

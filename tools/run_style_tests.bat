@@ -4,7 +4,7 @@ REM Run operation_style_test.py and dataset_style_test.py using QGIS Python runt
 set "OSGEO4W_ROOT=C:\Program Files\QGIS 3.44.14"
 set "PATH=%OSGEO4W_ROOT%\apps\Qt5\bin;%OSGEO4W_ROOT%\apps\qgis-ltr\bin;%OSGEO4W_ROOT%\apps\Python312;%PATH%"
 set "AGTECH_TEST_PLUGIN_ROOT=C:\temp\Documents\Projects\repos\ag-tech-tooling\plugins"
-set "AGTECH_TEST_SCRATCH=C:\temp\AppData\Local\hermes\cache\scratch"
+set "AGTECH_TEST_SCRATCH=C:\temp\cache\scratch"
 set "QGIS_PREFIX_PATH=C:\Program Files\QGIS 3.44.14\apps\qgis-ltr"
 set "PYTHONPATH=%OSGEO4W_ROOT%\apps\qgis-ltr\python"
 set "QT_PLUGIN_PATH=%OSGEO4W_ROOT%\apps\qgis-ltr\qtplugins;%OSGEO4W_ROOT%\apps\qt5\plugins"
