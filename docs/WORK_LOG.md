@@ -2288,7 +2288,7 @@ the automation dependency. No identical install/input retries or endless regress
   desktop image: green marker visible near canvas centre, native hierarchy visible,
   Simple View checked. This is automated visual evidence, not unassisted acceptance.
 - Real Stop Scan still cancels actual native task at archive validator with no
-  source/map/GeoPackage/layer-ID writes. Retry previews Grower/Home/Region, keeps
+  source/map/GeoPackage/layer-ID writes. Retry previews Grower/Region/Area, keeps
   proprietary metadata unselectable, imports only native GIS. Duplicate remains
   exact no-write. Native Save Map/same-process/cold reopen retain exact raw tokens,
   unknown `gal?` units/value/WKB/CRS/field and Whole Field → Imported Data placement.
@@ -2330,7 +2330,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Real Stop Scan reaches native cancellation in actual shared ZIP validation;
   exact stopped status, cleared rows/restored controls, original ZIP/map/complete
   GeoPackage bytes, catalogue records and layer IDs unchanged. Only task scheduling
-  is gated; no synthetic scanner response. Retry shows Grower/Home/Region with
+  is gated; no synthetic scanner response. Retry shows Grower/Region/Area with
   metadata-only guidance and an explicit opaque nested-archive warning. Proprietary
   rows have neither checkboxes nor import payloads; only one native GeoJSON imports.
 - Actual Import to Field reports one saved/zero failed/Map saved. Rescan/duplicate
