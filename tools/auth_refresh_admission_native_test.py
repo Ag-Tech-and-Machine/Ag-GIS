@@ -17,7 +17,7 @@ CRASH_EXITS = {case: 41 + index for index, case in enumerate(CRASH_CASES)}
 
 def main():
     scratch = Path(os.environ['AGGIS_SYNTHETIC_AUTH_ROOT']).resolve()
-    allowed = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch').resolve()
+    allowed = Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve()
     assert scratch.is_relative_to(allowed) and scratch.name.startswith('aggis-pre-bind-')
     assert (scratch / 'SYNTHETIC-ONLY').read_text() == 'fresh-synthetic-pre-bind-v1'
     phase = os.environ['AGGIS_SYNTHETIC_AUTH_PHASE']

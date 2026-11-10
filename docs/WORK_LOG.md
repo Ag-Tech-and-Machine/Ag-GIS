@@ -4234,7 +4234,7 @@ Remaining: isolated visible installed create/import/save/reopen journey, cancell
 Repaired the failed your tool team channel route after its custom your tool API primary
 returned credit_balance_exhausted and its local Qwen fallback refused connections.
 Used native revision-fenced session mutation to select the already authenticated
-openai-codex/gpt-6.1-sol route; aligned profile defaults and cleared the old custom
+development-route/gpt-6.1-sol route; aligned profile defaults and cleared the old custom
 endpoint/mode through your tool config commands. Credentials were preserved, with
 dated local configuration and consistent SQLite backups before repair. No gateway
 restart or account purchase was needed.

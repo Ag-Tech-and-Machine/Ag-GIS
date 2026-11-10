@@ -1630,7 +1630,7 @@ Creating a Git repository on disk does not register it in the desktop app's Proj
 
 The saved your tool project is **Ag-GIS**, with `{USER_HOME} as primary source and `{USER_HOME} as farm workspace. Both paths are compatibility junctions to the original directories. your tool has the matching first-class **Ag-GIS** project, slug `ag-gis`, with the live source, farm workspace, knowledge and five migrated workstreams attached. Use **Ctrl+K → Ag-GIS** to enter its grouped project view. your tool may require a restart to refresh its cached label. Internal `ag_tech_tooling` identifiers remain stable for upgrades.
 
-Official guidance: https://learn.chatgpt.com/docs/projects
+Official guidance: https://learn.example.com/docs/projects
 
 ### What the plugin package includes
 
@@ -1868,7 +1868,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/Public/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
+C:/temp/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.

@@ -11,7 +11,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 QGIS = Path('C:/Program Files/QGIS 3.44.14')
-BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/temp/AppData/Local/hermes/cache/scratch')
 
 
 def main():

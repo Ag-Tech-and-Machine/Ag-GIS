@@ -17,7 +17,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch')
+BASE = Path('C:/temp/AppData/Local/hermes/cache/scratch')
 
 
 def sha(data):

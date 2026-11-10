@@ -16,7 +16,7 @@ from auth_flow_model_test import grant, token
 
 def main():
     output = Path(sys.argv[1]).resolve()
-    base = Path('C:/Users/[Maintainer]/AppData/Local/hermes/cache/scratch').resolve()
+    base = Path('C:/temp/AppData/Local/hermes/cache/scratch').resolve()
     assert output.is_relative_to(base) and output.parent.name.startswith('aggis-session-')
     app = QCoreApplication([])
     result = {'synthetic_only': True, 'network': False, 'product_wired': False}
