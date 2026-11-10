@@ -28,4 +28,17 @@ if(-not(Test-Path -LiteralPath $python)){
 if(-not(Test-Path -LiteralPath $python)){throw 'QGIS Python was not found after setup. Repair QGIS and retry.'}
 & $python (Join-Path $PSScriptRoot 'install_profile.py') --package (Join-Path $PSScriptRoot $manifest.pluginFile) --profile $Profile
 if($LASTEXITCODE -ne 0){throw 'Plugin installation failed. See the error above; previous files are recovered automatically.'}
-Write-Output 'Installation complete. Open QGIS normally and find the Ag-GIS toolbar.'
+$launcherDir=Join-Path $env:LOCALAPPDATA ('Ag-GIS\'+$Profile)
+New-Item -ItemType Directory -Path $launcherDir -Force | Out-Null
+foreach($asset in @('Ag-GIS.exe','Ag-GIS.ico')){
+    Copy-Item -LiteralPath (Join-Path $PSScriptRoot $asset) -Destination (Join-Path $launcherDir $asset) -Force
+}
+[IO.File]::WriteAllLines((Join-Path $launcherDir 'launch.txt'), @($qgisRoot,$Profile))
+$programs=[Environment]::GetFolderPath('Programs')
+$shortcutName=if($Profile -eq 'default'){'Ag-GIS.lnk'}else{'Ag-GIS ('+$Profile+').lnk'}
+$shortcut=(New-Object -ComObject WScript.Shell).CreateShortcut((Join-Path $programs $shortcutName))
+$shortcut.TargetPath=Join-Path $launcherDir 'Ag-GIS.exe'
+$shortcut.WorkingDirectory=$launcherDir
+$shortcut.IconLocation=(Join-Path $launcherDir 'Ag-GIS.ico')+',0'
+$shortcut.Save()
+Write-Output 'Installation complete. Open Ag-GIS from the Start menu.'
