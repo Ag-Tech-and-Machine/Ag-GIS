@@ -27,7 +27,7 @@ PROVIDERS = {
                 url="https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 zmax=23,
                 credit="Powered by Esri · Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community",
-                link="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+                link="https://www.arcgis.com/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
                 description="Worldwide aerial and satellite imagery. Detail and capture date vary by location; not live or survey-grade. Esri service terms apply; not an open-data licence. Visible tiles are requested from Esri; no bulk/offline imagery download."),
     "satellite_au": dict(name="Satellite — Australia 2025 (30 m)",
                 url="https://ows.dea.ga.gov.au/?service=WMTS&request=GetTile&version=1.0.0&layer=ga_ls8cls9c_gm_cyear_3&style=simple_rgb&format=image/png&tilematrixset=WholeWorld_WebMercator&tilematrix={z}&tilerow={y}&tilecol={x}&time=2025-01-01",
