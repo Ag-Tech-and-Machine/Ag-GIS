@@ -85,6 +85,12 @@ def main():
     if main_dist_plugin.is_file():
         shutil.copy2(main_dist_plugin, snapshot_dist / plugin_file)
         print(f"Copied plugin ZIP from main dist: {main_dist_plugin}", flush=True)
+        # Extract plugin ZIP to plugin directory (handle nested path correctly)
+        plugin_extract_dir = snapshot / "plugins"
+        plugin_extract_dir.mkdir(parents=True, exist_ok=True)
+        with ZipFile(snapshot_dist / plugin_file, 'r') as zf:
+            zf.extractall(plugin_extract_dir)
+        print(f"Extracted plugin ZIP to {plugin_extract_dir}", flush=True)
     elif args.validation_from:
         prior = args.validation_from.resolve()
         prior_record = json.loads((prior / "source/SOURCE-SNAPSHOT.json").read_text(encoding="utf-8"))
