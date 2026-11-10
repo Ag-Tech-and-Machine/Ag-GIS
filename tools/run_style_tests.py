@@ -9,8 +9,8 @@ sys.path.insert(0, r'C:\Program Files\QGIS 3.44.14\apps\qgis-ltr\python')
 
 # Set environment
 os.environ.setdefault('QT_QPA_PLATFORM', 'offscreen')
-os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'C:\Users\[Maintainer]\Documents\Projects\repos\ag-tech-tooling\plugins'
-os.environ['AGTECH_TEST_SCRATCH'] = r'C:\Users\[Maintainer]\AppData\Local\hermes\cache\scratch'
+os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'C:\temp\Documents\Projects\repos\ag-tech-tooling\plugins'
+os.environ['AGTECH_TEST_SCRATCH'] = r'C:\temp\AppData\Local\hermes\cache\scratch'
 os.environ['OSGEO4W_ROOT'] = r'C:\Program Files\QGIS 3.44.14'
 os.environ['QGIS_PREFIX_PATH'] = r'C:\Program Files\QGIS 3.44.14\apps\qgis-ltr'
 os.environ['GDAL_FILENAME_IS_UTF8'] = 'YES'
@@ -30,7 +30,7 @@ app = QgsApplication([], False)
 app.initQgis()
 
 # Set up test directories
-test_dir = r'C:\Users\[Maintainer]\AppData\Local\hermes\cache\scratch'
+test_dir = r'C:\temp\AppData\Local\hermes\cache\scratch'
 os.environ['AGTECH_TEST_SCRATCH'] = test_dir
 import tempfile
 tempfile.tempdir = test_dir
@@ -44,7 +44,7 @@ print()
 
 # Run operation_style_test.py
 import importlib.util
-spec = importlib.util.spec_from_file_location("operation_style_test", r'C:\Users\[Maintainer]\Documents\Projects\repos\ag-tech-tooling\tools\operation_style_test.py')
+spec = importlib.util.spec_from_file_location("operation_style_test", r'C:\temp\Documents\Projects\repos\ag-tech-tooling\tools\operation_style_test.py')
 op_style_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(op_style_module)
 
@@ -64,7 +64,7 @@ print("=" * 60)
 print()
 
 # Run dataset_style_test.py
-spec2 = importlib.util.spec_from_file_location("dataset_style_test", r'C:\Users\[Maintainer]\Documents\Projects\repos\ag-tech-tooling\tools\dataset_style_test.py')
+spec2 = importlib.util.spec_from_file_location("dataset_style_test", r'C:\temp\Documents\Projects\repos\ag-tech-tooling\tools\dataset_style_test.py')
 dataset_style_module = importlib.util.module_from_spec(spec2)
 spec2.loader.exec_module(dataset_style_module)
 

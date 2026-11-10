@@ -3966,7 +3966,7 @@ Full source and extracted 0.10.0 ZIP checks passed, including managed-data/raste
 
 Final 0.10.1 verification: the frozen snapshot dist/windows/20261015T010310Z/source passed its complete source suite, extracted ZIP workflows, fresh/upgrade/rollback installer checks and offline payload hash verification. Built dist/windows/Ag-GIS-0.10.1-Windows-20261015T010310Z.zip (not published by this chat). Installed that exact snapshot ZIP into the default profile; byte comparison passed. Recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-120527-487751.
 
-Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
+Live default-profile QGIS verification passed: five valid layers, default OpenStreetMap beneath farm data, visible single attribution, selected field focused, unused field branches collapsed, complete left-panel fill, short imported name and 0.65 mm points. View Settings was visually reviewed and cancelled without changing preferences; native Save Map saved the resulting map. Evidence: farmer-view-live.json, farmer-view-live.png and farmer-view-settings.png under C:/temp/Documents/your tool/2026-10-14/un/outputs. Original pre-update map plus a consistent SQLite snapshot are in outputs/farmer-view-before-update.
 
 Native network wire verification passed against localhost: QGIS first set its own header, then the installed host-scoped preprocessor sent the expected Ag-GIS User-Agent to a local test endpoint; HTTP 200, no production tile request made by this test. Evidence background-network-check.json. The human-visible production map rendered successfully; final restart reused cached tiles. Print-layout attribution remains a user responsibility; clean-machine QGIS MSI wizard/UAC testing is not claimed.
 
@@ -4071,7 +4071,7 @@ other tooling work and was left untouched.
 
 Final 0.12.1: the first frozen run hit a temporary project.write failure in the background test fixture; the unchanged test and then the entire frozen source/extracted-ZIP suite passed on retry. Preserved first-attempt and retry logs under dist/windows/20261015T012543Z. Offline rebuild reused validation only after checking all plugin/test inputs were byte-identical. Final installer: dist/windows/Ag-GIS-0.12.1-Windows-20261015T013035Z.zip; payload hashes and ZIP CRC passed. Installed runtime exactly matches the validated package; new bundle plugin contents match the installed older-snapshot ZIP entry-for-entry.
 
-Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
+Live QGIS verification passed with all three named backgrounds as native checkboxes, only World checked, seven valid layers, correct saved preference, one clean linked attribution footer and complete left-panel fill. Original live 0.12.0 satellite requests returned HTTP 200 without errors; final restart reused tiles and preserved the selection. Current map saved using native Save Map. Evidence: outputs/background-options-live.json and background-options-live.png; archived first-render evidence uses the -0.12.0 suffix. All output evidence is under C:/temp/Documents/your tool/2026-10-14/un/outputs. Default-profile recovery backup: %APPDATA%/QGIS/QGIS3/profiles/default/ag-tech-install-backups/20261015-123025-787295. The user deferred Google configuration. No release publication or clean-machine MSI wizard test is claimed.
 
 2026-10-15 wording approval: the user selected the exact supporting line “Built on open source tools”. Applied to About, toolbar tooltip, shortcut description, preview generator and canonical branding/setup/tooling instructions. Regenerated previews and plugin ZIP; focused source lifecycle and extracted branding checks passed. No release deployment performed.
 
@@ -4142,7 +4142,7 @@ IDs/selection and custom URLs. World imagery also caps requests at matrix 14 to 
 oversampling its historical 10 m content. At the same viewport after correction, all
 12 DEA and 12 EOX requested tiles returned 200 with no native render errors; inspected
 both map images. OSM displayed from the normal cache. Detailed local evidence:
-C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-render-diagnosis.json.
+C:/temp/Documents/your tool/2026-10-14/un/outputs/background-render-diagnosis.json.
 
 Checkbox switching already passed repeated native interaction checks. Improved the
 name-click interaction so highlighting another background also selects it; checkbox
@@ -4170,7 +4170,7 @@ checkbox-off worked, and Save Map succeeded. Eight uncached tile responses were
 successful, with no native render errors; other tiles used the native cache. Inspected
 all three full-window screenshots. The original World background and map extent were
 restored and the map left open. Original Farm.qgz was backed up separately. Evidence:
-C:/Users/[Name]/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
+C:/temp/Documents/your tool/2026-10-14/un/outputs/background-fix-installed.json,
 background-fixed-osm.png, background-fixed-satellite_au.png and
 background-fixed-satellite_world.png. No installer release/publication was performed
 by this background-fix task. Close-scale softness is inherent to the source imagery.
