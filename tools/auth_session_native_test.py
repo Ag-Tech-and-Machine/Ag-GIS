@@ -8,12 +8,6 @@ from pathlib import Path
 import sys
 import time
 
-from qgis.PyQt.QtCore import QCoreApplication, QTimer
-
-from auth_flow_model import SessionDeviceFlow
-from auth_flow_model_test import grant, token
-
-
 def main():
     output = Path(sys.argv[1]).resolve()
     base = Path('C:/Users/Michael/AppData/Local/hermes/cache/scratch').resolve()
@@ -21,6 +15,9 @@ def main():
     app = QCoreApplication([])
     result = {'synthetic_only': True, 'network': False, 'product_wired': False}
     errors = []
+
+    from qgis.PyQt.QtCore import QCoreApplication, QTimer
+
     flow = SessionDeviceFlow(time.monotonic)
     cancelled = SessionDeviceFlow(time.monotonic)
     at_quit = SessionDeviceFlow(time.monotonic)
