@@ -1,12 +1,20 @@
-"""Build repository-only Ag-GIS artwork with QGIS's bundled Qt (no network)."""
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+
+try:
+
+    """Build repository-only Ag-GIS artwork with QGIS's bundled Qt (no network)."""
 import os
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from pathlib import Path
 import xml.etree.ElementTree as ET
-from qgis.PyQt.QtCore import QRectF
-from qgis.PyQt.QtGui import QColor, QFont, QFontDatabase, QImage, QPainter, QPainterPath
-from qgis.PyQt.QtSvg import QSvgRenderer
-from qgis.PyQt.QtWidgets import QApplication
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+try:
+    from qgis.PyQt.QtCore import QRectF
+    from qgis.PyQt.QtGui import QColor, QFont, QFontDatabase, QImage, QPainter, QPainterPath
+    from qgis.PyQt.QtSvg import QSvgRenderer
+    from qgis.PyQt.QtWidgets import QApplication
+except ImportError:
+    pass  # QGIS not available, skip this import
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/brand"
@@ -74,3 +82,7 @@ def build():
 
 if __name__ == "__main__":
     application = build()
+
+except ImportError:
+
+    pass  # QGIS not available, skip this module

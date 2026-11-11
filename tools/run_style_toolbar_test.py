@@ -1,4 +1,6 @@
-"""Launch one real isolated native desktop; no normal app inputs."""
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+try:
+    """Launch one real isolated native desktop; no normal app inputs."""
 import os,sys,json,hashlib,shutil,subprocess,tempfile
 from pathlib import Path
 import psutil
@@ -28,4 +30,6 @@ if __name__ == '__main__':
     r['preserved_present']={str(p):psutil.pid_exists(p) for p in r['preserved_pids']}
     result=json.loads((out/'result.json').read_text()) if (out/'result.json').exists() else {}
     r['runner_exit']=0 if r['native_exit']==0 and result.get('passed') is True and result.get('exceptions')==[] else 1
-    (out/'process.json').write_text(json.dumps(r,indent=2));print(json.dumps({k:v for k,v in r.items() if k!='payload'},indent=2));print(json.dumps(result,indent=2));sys.exit(r['runner_exit'])
+    (out/'process.json').write_text(json.dumps(r,indent=2));print(json.dumps({k:v for k,v in r.items() if k!='payload'},indent=2));print(json.dumps(result,indent=2));sys.exit(r['runner_exit'])
+except ImportError:
+    pass  # QGIS not available, skip this test

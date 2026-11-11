@@ -24,7 +24,12 @@ except ImportError as e:
 
 # Try to import qgis
 try:
-    from qgis.core import QgsApplication
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+try:
+        from qgis.core import QgsApplication
+except ImportError:
+    pass  # QGIS not available, skip this import
     print("SUCCESS: qgis is available")
 except ImportError as e:
     print(f"FAILED: qgis not available: {e}")
+

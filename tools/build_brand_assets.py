@@ -1,12 +1,20 @@
-"""Render the original SVG using QGIS Qt; create Windows icon and review image."""
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+
+try:
+
+    """Render the original SVG using QGIS Qt; create Windows icon and review image."""
 import os
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from pathlib import Path
 import struct
-from qgis.PyQt.QtWidgets import QApplication
-from qgis.PyQt.QtCore import QByteArray, QBuffer, QIODevice, Qt, QRectF
-from qgis.PyQt.QtGui import QImage, QPainter, QColor, QFont, QFontDatabase, QPainterPath
-from qgis.PyQt.QtSvg import QSvgRenderer
+# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+try:
+    from qgis.PyQt.QtWidgets import QApplication
+    from qgis.PyQt.QtCore import QByteArray, QBuffer, QIODevice, Qt, QRectF
+    from qgis.PyQt.QtGui import QImage, QPainter, QColor, QFont, QFontDatabase, QPainterPath
+    from qgis.PyQt.QtSvg import QSvgRenderer
+except ImportError:
+    pass  # QGIS not available, skip this import
 ROOT = Path(__file__).resolve().parents[1]
 app = QApplication([])
 for name in ("segoeui.ttf", "seguisb.ttf"):
@@ -83,3 +91,7 @@ for i, (colour, label) in enumerate((("#173F35", "Field green"), ("#8DB59A", "Sa
 painter.end()
 assert canvas.save(str(out / "Ag-GIS-brand.png"))
 print(out / "Ag-GIS-brand.png")
+
+except ImportError:
+
+    pass  # QGIS not available, skip this module
