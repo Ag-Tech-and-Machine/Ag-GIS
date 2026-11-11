@@ -344,9 +344,7 @@ request-local fixture trust permits exact HTTPS delivery without forwarding the
 proxy authorization header to the origin. This does NOT test QGIS custom CA/host
 policy, native credential prompts/storage, system/PAC policy, production lifecycle
 or real sign-in. The routing wrapper alone does not install QGIS auth handlers.
-See [proxy experiment](GITHUB_NETWORK_REVIEW.md#authenticated-proxy-experiment--21-october-2026)
-for reproduction and remaining gates. Earlier experiments retain their historical
-limits; the new result covers only these named synthetic proxy/TLS boundaries.
+See [INSTALL.md authentication notes](INSTALL.md#authentication) for reproduction and remaining gates. Earlier experiments retain their historical limits; the new result covers only these named synthetic proxy/TLS boundaries.
 
 ## Actual app recorder experiment — 21 October 2026
 
@@ -356,14 +354,12 @@ Three synthetic Qt POSTs are absent; the two native control body/header fixtures
 are retained and exported. Recording is never disabled or cleared by this test.
 This is generic QGIS desktop evidence, NOT product/branded acceptance or real
 credential clearance. No runtime or installation change; sign-in stays disabled.
-See [recorder isolation](GITHUB_NETWORK_REVIEW.md#actual-app-recorder-isolation--21-october-2026)
-for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
+See [INSTALL.md authentication notes](INSTALL.md#authentication) for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
 
 ## Bundled Qt contract experiment — 21 October 2026
 
 No installation or production-transport change. A disposable synthetic-only
-[bundled Qt spike](GITHUB_NETWORK_REVIEW.md#bundled-qt-integration-spike--21-october-2026)
-now exercises real loopback requests: Qgs signal isolation with unrelated controls,
+Now exercises real loopback requests: Qgs signal isolation with unrelated controls,
 QGIS fallback/no-proxy routing through a test-local delegating factory, untrusted
 TLS refusal and late reply after abort. Base Qt does not automatically inherit
 QGIS proxy routing; the wrapper is not full native authentication/trust integration.
@@ -380,9 +376,7 @@ external registration remain separate gates.
 
 ## Sign-in transport options review — 21 October 2026
 
-No installation change: real in-app sign-in remains disabled. The new
-[per-request options review](GITHUB_NETWORK_REVIEW.md#per-request-options-review--21-october-2026)
-checks pinned source and compiled bindings, not a working login or desktop fix.
+No installation change: real in-app sign-in remains disabled. The new [per-request options review](INSTALL.md#sign-in-transport-options) checks pinned source and compiled bindings, not a working login or desktop fix.
 It found no diagnostic opt-out in the reviewed request path; moving requests to a
 worker or merely selecting native OAuth2 does not establish recorder isolation.
 Run `py -B .aggis-agent/evidence/20261021-per-request-review/verify.py` with the
@@ -453,7 +447,7 @@ based on this review. Native/branded acceptance and external registration remain
 
 ## Native sign-in logging review — 21 October 2026
 
-1. Read [the pinned network trust review](GITHUB_NETWORK_REVIEW.md) before any
+1. Read [INSTALL.md authentication notes](INSTALL.md#authentication) before any
    sign-in integration. Native QGIS recording has a source-traced POST/header
    retention, Copy As cURL and explicit JSON export path; earlier empty message
    logs do not establish credential secrecy. This is source review, not observed
@@ -606,7 +600,7 @@ based on this review. Native/branded acceptance and external registration remain
    receipt and no retry/write callback. All eleven synthetic configs are removed.
    Real locked native update diagnostics are expected. Detailed evidence/limits:
    `.aggis-agent/evidence/20261020-interrupted-binding/verify.py` and
-   [identity design](GITHUB_IDENTITY_PLAN.md). Never expand/send APIHeader fixtures.
+   [identity design](ARCHITECTURE.md#authentication). Never expand/send APIHeader fixtures.
 4. LIMIT: the ledger lock cannot lock native storage. A change after the last read,
    arbitrary callback behavior and caller clocks remain unresolved; this is NOT
    power-loss durability, atomic protected admission, safe production refresh/recovery/rearm or working
@@ -987,13 +981,13 @@ No runtime, dependency or installation changes in this bounded follow-up.
 4. For failures retain the unittest output; do not enter a real token, change a
    normal profile, disable global logging or fall back to the unsupported PAT UI.
    Evidence/readback: `.aggis-agent/evidence/20261020-auth-flow/verify.py`.
-   See [the identity plan](GITHUB_IDENTITY_PLAN.md) for remaining native-network,
+   See [ARCHITECTURE.md authentication](ARCHITECTURE.md#authentication) for remaining native-network,
    storage-integration and owner-controlled registration gates.
 
 ## Protected identity design, not a login installation — 20 October 2026
 
 No new runtime dependency, sign-in requirement or installed application change.
-[The identity plan](GITHUB_IDENTITY_PLAN.md) separates optional identity, protected
+[The identity plan](ARCHITECTURE.md#authentication) separates optional identity, protected
 storage and deliberately reviewed public feedback. It records current official
 GitHub device-flow/permission/refresh contracts and owner-controlled registration
 gates; it does not authorize or register an external app.
@@ -1753,10 +1747,10 @@ Public feedback tracker: https://github.com/JamRov/Ag-GIS-Feedback/issues . Prod
    GIS dependency or data migration is needed.
 
 
-Ag-GIS remains a local desktop installation. The proposed paid backup/team services in BUSINESS_PLAN.md are not available or required for installation. Current private release downloads remain separate from the public feedback tracker.
+Ag-GIS remains a local desktop installation. Future deployment choices are described in a separate document.
 
 
-Future deployment choices are described in BUSINESS_PLAN.md. Only the local desktop installer exists today. Mobile access, managed backup, self-hosted services, VPS sessions and desktop/cloud synchronisation are proposed separate capabilities; none is required or included in the current installer.
+Future deployment choices are described in a separate document.
 
 ## Background catalogue setup — 0.12.0
 
@@ -1766,7 +1760,7 @@ Future deployment choices are described in BUSINESS_PLAN.md. Only the local desk
 4. For a blank satellite layer check its checkbox, internet/service availability and coverage; the Australian layer covers Australia only. Use Roads or World as an alternative. The imagery dates and resolutions are explicitly labelled. Re-selecting a manually removed background in View Settings restores that choice.
 
 
-Branding direction: Ag-GIS will use its own product logo and frontend while retaining QGIS attribution. The current installer supplies QGIS plus the Ag-GIS plugin; it is not a fully rebranded standalone QGIS build. See BUSINESS_PLAN.md for the planned profile/launcher approach.
+Branding direction: Ag-GIS will use its own product logo and frontend while retaining QGIS attribution. The current installer supplies QGIS plus the Ag-GIS plugin; it is not a fully rebranded standalone QGIS build.
 
 ## Ag-GIS product branding and launcher (15 October 2026)
 
@@ -1874,7 +1868,7 @@ background-fixed-satellite_world.png. No installer release/publication was perfo
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 # your tool-managed development setup
 
-For the agent-managed development and business workflow, use [your tool operations](HERMES_OPERATIONS.md). Run `py tools/setup_hermes.py --schedule` from the source root after configuring your tool. This installs its management skill and two native schedules with team channel delivery; it does not install or release the farmer-facing application.
+For the agent-managed development and business workflow, use [your tool operations](../AGENTS.md#management-and-documentation). Run `py tools/setup_hermes.py --schedule` from the source root after configuring your tool. This installs its management skill and two native schedules with team channel delivery; it does not install or release the farmer-facing application.
 
 For a provider interruption, restore and verify inference before resuming source
 work. The 19 October recovery adds a Windows fallback supervisor task and preserves

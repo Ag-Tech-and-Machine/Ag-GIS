@@ -34,7 +34,7 @@ Keep commercial service commitments distinct from community participation. Avoid
 
 Local Ag-GIS use and agent-instruction copying require no sign-in. The discoverable feedback dialog prepares local drafts and opens a browser form; GitHub sign-in and deliberate submission happen there. Secure in-app GitHub sign-in is unfinished. An unwired direct-token prototype is not a supported authentication route; do not create a broad PAT for onboarding. Any API token used for authentication would be sent to GitHub, not kept exclusively on-device. See [the implementation audit](GITHUB_ISSUE_SUBMISSION.md).
 - Public source contributions are available through forks and pull requests. A self-hosted cloud package is not available yet; do not advertise that deployment route as implemented.
-- Cloud backup, mobile access, team synchronisation and hosted desktops are proposals. No paid online service, subscription or uptime promise has launched. Current prices in BUSINESS_PLAN.md are internal research hypotheses.
+- Cloud backup, mobile access, team synchronisation and hosted desktops are proposals. No paid online service, subscription or uptime promise has launched.
 - No foundation, community board, public voting mechanism or community control of company assets has been established.
 
 ## Release and business decision checks

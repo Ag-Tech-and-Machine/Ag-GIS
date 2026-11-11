@@ -93,7 +93,7 @@ Wait for my review and explicit approval before any public action.
 - Exact prerequisites and commands: docs/DEVELOPMENT.md, docs/INSTALL.md and
   docs/TOOLING.md. Ordinary Python checks are not native QGIS acceptance.
 - PR/privacy/licensing rules: CONTRIBUTING.md, SECURITY.md and
-  docs/USER_COMMITMENTS.md. Read docs/HERMES_OPERATIONS.md if managing team's
+  docs/USER_COMMITMENTS.md. Read [team scope and approval gates](AGENTS.md) if managing team's
   existing task journal; this page does not grant new execution authority.
 - Handoff: problem/scope, files changed, native capability reused, synthetic
   reproduction, exact checks/results, artifact identity where relevant, and

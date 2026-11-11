@@ -36,7 +36,7 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 ## Management and documentation
 
-- [maintainer] ongoing execution through the team channel. Read `docs/HERMES_OPERATIONS.md` for team's current scope, approval gates, local journal, native schedules and learning workflow. The team approved reliability work on install → create farm → import → save/reopen. Ask the team in your team channel before adding features or pursuing new functionality goals; roadmap/competitor entries do not grant approval. Prepare marketing drafts autonomously and obtain specific approval before publication, outreach, pricing, spending or release. Preserve these gates during self-improvement.
+- [maintainer] ongoing execution through the team channel. Read [team scope and approval gates](AGENTS.md) for team's current scope, approval gates, local journal, native schedules and learning workflow. The team approved reliability work on install → create farm → import → save/reopen. Ask the team in your team channel before adding features or pursuing new functionality goals; roadmap/competitor entries do not grant approval. Prepare marketing drafts autonomously and obtain specific approval before publication, outreach, pricing, spending or release. Preserve these gates during self-improvement.
 
 - Act as the tooling manager: keep implementation, installation steps, operating instructions and verification status aligned.
 - Update `docs/INSTALL.md` and `docs/TOOLING.md` in the same change as any feature, dependency, setup or workflow change. Do not defer documentation until release.

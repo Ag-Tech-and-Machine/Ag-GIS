@@ -413,9 +413,7 @@ request-local fixture trust permits exact HTTPS delivery without forwarding the
 proxy authorization header to the origin. This does NOT test QGIS custom CA/host
 policy, native credential prompts/storage, system/PAC policy, production lifecycle
 or real sign-in. The routing wrapper alone does not install QGIS auth handlers.
-See [proxy experiment](GITHUB_NETWORK_REVIEW.md#authenticated-proxy-experiment--21-october-2026)
-for reproduction and remaining gates. Earlier experiments retain their historical
-limits; the new result covers only these named synthetic proxy/TLS boundaries.
+See [INSTALL.md authentication notes](INSTALL.md#authentication) for reproduction and remaining gates. Earlier experiments retain their historical limits; the new result covers only these named synthetic proxy/TLS boundaries.
 
 ## Actual app recorder experiment — 21 October 2026
 
@@ -425,14 +423,12 @@ Three synthetic Qt POSTs are absent; the two native control body/header fixtures
 are retained and exported. Recording is never disabled or cleared by this test.
 This is generic QGIS desktop evidence, NOT product/branded acceptance or real
 credential clearance. No runtime or installation change; sign-in stays disabled.
-See [recorder isolation](GITHUB_NETWORK_REVIEW.md#actual-app-recorder-isolation--21-october-2026)
-for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
+See [INSTALL.md authentication notes](INSTALL.md#authentication) for commands, prerequisites, recovery and remaining proxy/trust/lifecycle gates.
 
 ## Bundled Qt contract experiment — 21 October 2026
 
 No installation or production-transport change. A disposable synthetic-only
-[bundled Qt spike](GITHUB_NETWORK_REVIEW.md#bundled-qt-integration-spike--21-october-2026)
-now exercises real loopback requests: Qgs signal isolation with unrelated controls,
+Now exercises real loopback requests: Qgs signal isolation with unrelated controls,
 QGIS fallback/no-proxy routing through a test-local delegating factory, untrusted
 TLS refusal and late reply after abort. Base Qt does not automatically inherit
 QGIS proxy routing; the wrapper is not full native authentication/trust integration.
@@ -449,7 +445,7 @@ external registration remain separate gates.
 
 ## Sign-in transport options review — 21 October 2026
 
-Read the [per-request options matrix](GITHUB_NETWORK_REVIEW.md#per-request-options-review--21-october-2026)
+The new [per-request options review](TOOLING.md#sign-in-transport-options) checks pinned source and compiled bindings, not a working login or desktop fix.
 before selecting a diagnostic-safe transport. Reproduce with
 `py -B .aggis-agent/evidence/20261021-per-request-review/verify.py`; prerequisites,
 expected results and failure recovery are in that canonical review. The verifier
@@ -522,7 +518,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
 
 ## Native sign-in logging review — 21 October 2026
 
-1. Read [the pinned network trust review](GITHUB_NETWORK_REVIEW.md) before any
+1. Read [INSTALL.md authentication notes](INSTALL.md#authentication) before any
    sign-in integration. Native QGIS recording has a source-traced POST/header
    retention, Copy As cURL and explicit JSON export path; earlier empty message
    logs do not establish credential secrecy. This is source review, not observed
@@ -675,7 +671,7 @@ rebuild, reinstall, fresh recorder/export test or security clearance is implied.
    receipt and no retry/write callback. All eleven synthetic configs are removed.
    Real locked native update diagnostics are expected. Detailed evidence/limits:
    `.aggis-agent/evidence/20261020-interrupted-binding/verify.py` and
-   [identity design](GITHUB_IDENTITY_PLAN.md). Never expand/send APIHeader fixtures.
+   [identity design](ARCHITECTURE.md#authentication). Never expand/send APIHeader fixtures.
 4. LIMIT: the ledger lock cannot lock native storage. A change after the last read,
    arbitrary callback behavior and caller clocks remain unresolved; this is NOT
    power-loss durability, atomic protected admission, safe production refresh/recovery/rearm or working
@@ -1113,8 +1109,8 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 
 ## Optional identity: synthetic protected-storage feasibility — 20 October 2026
 
-1. Read [the implementation plan and primary references](GITHUB_IDENTITY_PLAN.md)
-   and [the authentication audit](FEEDBACK_AUTH_AUDIT.md). Identity, report-writing
+1. Read [the implementation plan and primary references](ARCHITECTURE.md#authentication)
+   and [browser-reviewed feedback](../docs/FEEDBACK.md) for current submission.
    consent and repository permissions are separate. GitHub's documented device
    flow (including its refresh-secret exception) permits a public-client design;
    no registered Ag-GIS client or working login is supplied by these tests.
@@ -2036,10 +2032,10 @@ Matching still runs on the UI thread with its existing geometry limit. Imports
 currently target Whole Field; seasonal dataset assignment remains a later feature.
 
 
-Business direction and staged delivery gates are maintained in [BUSINESS_PLAN.md](BUSINESS_PLAN.md). Self-service onboarding is required; paid hosting is a proposal, not an implemented feature. No pricing or support commitments have been published.
+Business direction and staged delivery gates are maintained in a separate document.
 
 
-Business direction follows the Home Assistant/Nabu Casa model: useful local software plus optional managed services funding development. See BUSINESS_PLAN.md for revised research pricing and staged backup, mobile, team sync and premium hosted-workspace proposals. Evaluate existing QGIS-compatible clients/sync tooling; distinguish VPS infrastructure, QGIS Server map publication, remote desktop sessions and offline synchronisation. No cloud deployment or billing is implemented.
+Business direction follows the Home Assistant/Nabu Casa model: useful local software plus optional managed services funding development.
 
 ## Native checkbox background catalogue — 0.12.0
 
@@ -2170,7 +2166,7 @@ background-fixed-satellite_world.png. No installer release/publication was perfo
 by this background-fix task. Close-scale softness is inherent to the source imagery.
 # your tool operations tooling
 
-`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native your tool work/research jobs. The owner interacts through your tool team channel. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See [your tool operations](HERMES_OPERATIONS.md) for scope, recovery, limits and approval handling.
+`tools/agent_ops.py` maintains a local SQLite proposal, decision and learning journal under ignored `.aggis-agent/`. `tools/setup_hermes.py --schedule` installs the versioned `agent/skills/aggis-manager` skill and idempotently registers native your tool work/research jobs. The owner interacts through your tool team channel. Run `py tools/agent_ops_test.py` to check decision/revocation/concurrency behaviour. See [your tool operations](../AGENTS.md#management-and-documentation) for scope, recovery, limits and approval handling.
 
 The journal now retains progress/recovery events. Use `finish continue` with
 remaining work between increments; full completion requires explicit
