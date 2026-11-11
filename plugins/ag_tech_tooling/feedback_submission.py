@@ -14,12 +14,55 @@ from urllib.parse import quote
 import uuid
 from typing import Optional, Tuple
 
-from qgis.core import Qgis
-from qgis.PyQt.QtCore import QUrl, Qt, QIODevice
-from qgis.PyQt.QtGui import QDesktopServices
-from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPlainTextEdit,
-    QPushButton, QVBoxLayout, QWidget)
+# QGIS imports - wrapped to handle pytest environment where QGIS is unavailable
+try:
+    from qgis.core import Qgis
+    from qgis.PyQt.QtCore import QUrl, Qt, QIODevice
+    from qgis.PyQt.QtGui import QDesktopServices
+    from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
+        QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPlainTextEdit,
+        QPushButton, QVBoxLayout, QWidget)
+    QGIS_AVAILABLE = True
+except ImportError:
+    QGIS_AVAILABLE = False
+    # Minimal stubs for testing without QGIS
+    class Qgis:
+        VERSION = 0
+    class QUrl:
+        def __init__(self, url):
+            self.url = url
+    class Qt:
+        Auto = 0
+    class QIODevice:
+        Readable = 0
+    class QDesktopServices:
+        @staticmethod
+        def openUrl(url):
+            pass
+    class QApplication:
+        def __init__(self, *args):
+            pass
+    class QDialog:
+        def __init__(self, *args, **kwargs):
+            pass
+    class QFormLayout:
+        pass
+    class QHBoxLayout:
+        pass
+    class QLabel:
+        pass
+    class QLineEdit:
+        pass
+    class QMessageBox:
+        pass
+    class QPlainTextEdit:
+        pass
+    class QPushButton:
+        pass
+    class QVBoxLayout:
+        pass
+    class QWidget:
+        pass
 
 # GitHub API settings - these must match the GitHub App configuration
 GITHUB_API_BASE = "https://api.github.com"

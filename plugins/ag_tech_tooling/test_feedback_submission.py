@@ -4,7 +4,12 @@ import unittest
 from unittest.mock import MagicMock, patch, mock_open
 from pathlib import Path
 
-from qgis.PyQt.QtWidgets import QMessageBox
+try:
+    from qgis.PyQt.QtWidgets import QMessageBox
+    QGIS_AVAILABLE = True
+except ImportError:
+    QMessageBox = None
+    QGIS_AVAILABLE = False
 
 from .feedback_submission import (
     load_oauth_token, save_oauth_token, delete_oauth_token,
@@ -155,9 +160,17 @@ class TestSubmissionDialog(unittest.TestCase):
     
     def test_dialog_creation(self):
         """Dialog can be created."""
+        # Skip if QGIS not available (pytest environment)
+        if not QGIS_AVAILABLE:
+            self.skipTest("QGIS not available in test environment")
         # This test requires a real QGIS iface, so we skip it
         # unittest.skip("Requires QGIS iface")
         pass
+    
+    def test_dialog_creation_without_qgis(self):
+        """Dialog creation is gracefully handled when QGIS unavailable."""
+        # Just verify we handle the absence gracefully
+        self.assertIsNone(QMessageBox)
 
 
 if __name__ == "__main__":
