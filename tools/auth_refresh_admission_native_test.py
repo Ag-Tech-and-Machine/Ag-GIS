@@ -73,15 +73,14 @@ try:
         from qgis.PyQt.QtCore import QSettings
 
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+except Exception as exc:
+    print(f"Module-level error: {{exc}}")
+    sys.exit(1)
 try:
-            from qgis.core import QgsApplication, QgsAuthMethodConfig, Qgis
+    from qgis.core import (QgsApplication, QgsAuthMethodConfig,
+                       )
 except ImportError:
     pass  # QGIS not available, skip this import
-
-except ImportError:
-
-    pass  # QGIS not available, skip this test
-
     QSettings.setDefaultFormat(QSettings.IniFormat)
 
     for scope in (QSettings.UserScope, QSettings.SystemScope):
