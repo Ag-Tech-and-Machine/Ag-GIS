@@ -180,7 +180,7 @@
 
 ### Completed
 
-- Configured Git author Michael `<admin@agtechandmachine.com>` and default branch `main`.
+- Configured Git author Ag-GIS maintainers `<admin@agtechandmachine.com>` and default branch `main`.
 - Created the local `ag-tech-tooling` repository and committed the starter.
 - Installed QGIS 3.44.14 LTR using WinGet; installer hash verification and installation succeeded.
 - Added source discovery through `QGIS_PLUGINPATH` and an isolated development profile launcher.

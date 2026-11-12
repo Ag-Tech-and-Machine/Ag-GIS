@@ -47,7 +47,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 3. Configure the author for this workstation:
 
    ```powershell
-   git config --global user.name "Michael"
+   git config --global user.name "Ag-GIS maintainers"
    git config --global user.email "admin@agtechandmachine.com"
    git config --global init.defaultBranch main
    ```
@@ -255,7 +255,7 @@ at this stage; current installed Data In behaviour remains as described above.
 
 ## Ag-GIS offline Windows installer and updates — 0.8.1
 
-The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved Codex project name is managed in the app; repository work does not rename that registration.
+The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved project name is managed in the app; repository work does not rename that registration.
 
 1. Prerequisite: Windows 64-bit. Obtain the complete `Ag-GIS-0.8.1-Windows-<timestamp>.zip` from the private `JamRov/Ag-GIS` GitHub release or your administrator. Repository access and GitHub sign-in are required for private downloads.
 2. Extract **all** files to a local folder. Save your work and close QGIS. Run `Setup.exe` as your normal Windows user. Keep every payload beside it. This launcher is unsigned.

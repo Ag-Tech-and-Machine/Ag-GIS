@@ -122,8 +122,8 @@ Verified automated foundation checks cover same-named farms/fields under differe
 
 ## Primary sources reviewed
 
-- [Deere field API](https://developer.deere.com/dev-docs/fields) and [client API](https://developer.deere.com/dev-docs/clients).
-- [Deere: Manage Clients, Farms and Fields](https://displaysimulator.deere.com/onscreen_help/4640/current/en/fields/fields_manage.htm).
+- [agricultural machinery field API](https://developer.deere.com/dev-docs/fields) and [client API](https://developer.deere.com/dev-docs/clients).
+- [agricultural machinery: Manage Clients, Farms and Fields](https://displaysimulator.deere.com/onscreen_help/4640/current/en/fields/fields_manage.htm).
 - [Ag Leader: Creating Management Items](https://portal.agleader.com/community/s/article/1606?language=en_US).
 - [Ag Leader SMS Advanced: Agronomic Analysis](https://portal.agleader.com/community/s/article/6388?language=en_US).
 - [Ag Leader: SMS Software Layout and Management Tree](https://portal.agleader.com/community/articles/en_US/Knowledge/6865).
