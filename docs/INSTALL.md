@@ -87,7 +87,7 @@ QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate
 1. For this machine, open the existing repository; do not initialise it again:
 
    ```powershell
-   Set-Location 'C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling'
+   Set-Location 'C:\\Users\\<USER>\\Documents\\Projects\\repos\\ag-tech-tooling'
    git status
    ```
 
@@ -162,7 +162,7 @@ Version 0.6.0 adds hierarchy management and schema 2 projects to the existing Si
 
 1. Install the current build using the local installation steps above, then restart QGIS. Use a local writable destination outside the source repository. No additional Python packages are needed; GDAL and PyQGIS come with QGIS.
 2. Click **New Project** on the toolbar (also **Plugins → Ag-GIS → New Project…**).
-3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `C:\Users\Michael\Documents\Ag Tech Tooling\Projects`.
+3. No setup form appears. The plugin creates and opens **My Farm Data** under the operating system's **Documents → Ag Tech Tooling → Projects** folder. Subsequent projects use numbered names and preserve existing folders. On this workstation the parent is `C:\\Users\\<USER>\\Documents\\Ag Tech Tooling\\Projects`.
 4. Expected result: `Farm.qgz` and `Data/farm.gpkg`, with **Farm Data → Organisation 1 → Client 1 → Farm 1 → Field 1** in Layers. Each field has **Whole Field** and **Seasons**; the starter season is **Season 1**, with **Plans / Operations / Results**. There is no invented crop, year or geometry. Select fields in Layers to reuse the three native reference views.
 5. Finish layer edits before switching. Save/discard/cancel any unsaved current map when prompted; cancelling quick creation makes no new workspace. Use **Manage Data** to rename placeholders or add more clients, farms, fields and seasons within the same GeoPackage. For explicit location/names/CRS before creation, use **Plugins → Ag-GIS → New Project with Options…**. Quick creation inherits the map CRS or falls back to EPSG:4326; it does not determine a local survey projection or vertical datum.
 6. Later click **Open Project** and select `Data/farm.gpkg`. Expected result: the matching `Farm.qgz` opens after validation. Other GeoPackages cannot yet be imported using this control.
@@ -255,7 +255,7 @@ at this stage; current installed Data In behaviour remains as described above.
 
 ## Ag-GIS offline Windows installer and updates — 0.8.1
 
-The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved project name is managed in the app; repository work does not rename that registration.
+The product is now **Ag-GIS**. The internal plugin folder/ID `ag_tech_tooling`, source checkout `C:\\Users\\<USER>\\Documents\\Projects\\repos\\ag-tech-tooling`, and existing Documents/Ag Tech Tooling data location remain stable for upgrades and saved work. The saved project name is managed in the app; repository work does not rename that registration.
 
 1. Prerequisite: Windows 64-bit. Obtain the complete `Ag-GIS-0.8.1-Windows-<timestamp>.zip` from the private `JamRov/Ag-GIS` GitHub release or your administrator. Repository access and GitHub sign-in are required for private downloads.
 2. Extract **all** files to a local folder. Save your work and close QGIS. Run `Setup.exe` as your normal Windows user. Keep every payload beside it. This launcher is unsigned.
