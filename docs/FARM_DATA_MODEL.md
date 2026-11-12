@@ -36,7 +36,7 @@ One organisation can contain several clients; one client can contain several far
 | Platform | Verified pattern | Lesson for Ag-GIS |
 | --- | --- | --- |
 | agricultural machinery operations centre | The field API operates within an organisation and relates fields to clients and farms. the display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
-| Ag Leader SMS | Management items include Grower, Farm, Field and Year; SMS Advanced analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
+| agricultural machinery SMS | Management items include Grower, Farm, Field and Year; SMS Advanced analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
 | PTx FarmENGAGE | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
 
 This is a comparison of public documentation, not a reverse-engineered database schema or a claim that the three products have identical models.
@@ -122,12 +122,12 @@ Verified automated foundation checks cover same-named farms/fields under differe
 
 ## Primary sources reviewed
 
-- [agricultural machinery field API](https://developer.example.com/dev-docs/fields) and [client API](https://developer.deere.com/dev-docs/clients).
+- [agricultural machinery field API](https://developer.example.com/dev-docs/fields) and [client API](https://developer.example.com/dev-docs/clients).
 - [agricultural machinery: Manage Clients, Farms and Fields](https://displaysimulator.example.com/onscreen_help/current/en/fields/fields_manage.htm).
-- [Ag Leader: Creating Management Items](https://portal.agleader.com/community/s/article/1606?language=en_US).
-- [Ag Leader SMS Advanced: Agronomic Analysis](https://portal.agleader.com/community/s/article/6388?language=en_US).
-- [Ag Leader: SMS Software Layout and Management Tree](https://portal.agleader.com/community/articles/en_US/Knowledge/6865).
-- [PTx: FarmENGAGE APIs](https://www.ptxag.com/us/en/partners/developers/api/).
-- [PTx: Initial Organization Creation and Management](https://www.ptxag.com/us/en/resources/product-resources/farmengage-initial-organization-creation-management.html).
+- [agricultural machinery: Creating Management Items](https://portal.example.com/community/s/article/1606?language=en_US).
+- [agricultural machinery SMS Advanced: Agronomic Analysis](https://portal.example.com/community/s/article/6388?language=en_US).
+- [agricultural machinery: SMS Software Layout and Management Tree](https://portal.example.com/community/articles/en_US/Knowledge/6865).
+- [agricultural machinery: FarmENGAGE APIs](https://www.agricultural-machinery.com/us/en/partners/developers/api/).
+- [agricultural machinery: Initial Organization Creation and Management](https://www.agricultural-machinery.com/us/en/resources/product-resources/farmengage-initial-organization-creation-management.html).
 
 The 0.6.0 native Layers tree mirrors the complete management hierarchy using stable group properties. Selecting any field branch switches the shared reference views to that field; no table per field/season is created. Use Manage Data for persistent record renames. Default labels are placeholders, not inferred ownership or a real crop season.
