@@ -1,29 +1,8 @@
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
-
-try:
-
-    # SPDX-License-Identifier: GPL-2.0-or-later
-
-    """Tests for GitHub issue submission functionality."""
-
-    import unittest
-
-    from unittest.mock import MagicMock, patch, mock_open
-
-    from pathlib import Path
-
-    
-
-# QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
 try:
         from qgis.PyQt.QtWidgets import QMessageBox
 except ImportError:
     pass  # QGIS not available, skip this import
-
-except ImportError:
-
-    pass  # QGIS not available, skip this test
-
 
 
 from .feedback_submission import (
