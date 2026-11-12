@@ -23,15 +23,13 @@ try:
     
 
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
+except Exception as exc:
+    print(f"Module-level error: {{exc}}")
+    sys.exit(1)
 try:
-        from qgis.PyQt.QtCore import QCoreApplication, QTimer
+    from qgis.PyQt.QtCore import QCoreApplication, QTimer
 except ImportError:
     pass  # QGIS not available, skip this import
-
-except ImportError:
-
-    pass  # QGIS not available, skip this test
-
 
 
 from auth_flow_model import SessionDeviceFlow
