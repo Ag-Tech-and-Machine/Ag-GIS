@@ -23,8 +23,8 @@ Last updated: 15 October 2026.
 23:- Windows workstation, local account (any user).
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
-- Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.
-- Git author: Michael `<admin@agtechandmachine.com>`.
+- Repository: `C:\\Users\\<USER>\\Documents\\Projects\\repos\\ag-tech-tooling`.
+- Git author: Ag-GIS maintainers `<admin@agtechandmachine.com>`.
 
 QGIS includes the Python, Qt and PyQGIS runtime used by this project. A separate system Python is optional for syntax checks and packaging; it does not replace the QGIS runtime.
 
