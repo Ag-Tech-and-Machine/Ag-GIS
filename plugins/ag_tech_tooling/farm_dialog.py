@@ -37,6 +37,9 @@ class NewFarmDialog(QDialog):
         row.addWidget(self.location)
         browse = QPushButton("Browse…")
         browse.setIcon(icon("open"))
+        browse.setToolTip("Open a folder browser to choose where to save the project")
+        # Set accessible name for screen readers (QAbstractButton doesn't have setAccessibleName, use objectName)
+        browse.setObjectName("browse-location-button")
         browse.clicked.connect(self.browse)
         row.addWidget(browse)
         self.crs = QgsProjectionSelectionWidget()
@@ -45,15 +48,29 @@ class NewFarmDialog(QDialog):
                                      ("Organisation", self.organisation, "organisation"),
                                      ("Client / Grower", self.client, "client")):
             decorate_input(control, kind)
+            # Add tooltips and accessible names to inputs
+            control.setToolTip("Enter the name for this " + label.lower())
+            control.setObjectName("input-" + kind)
             form.addRow(label, control)
         if not upgrade:
             for label, control, kind in (("First farm", self.farm_name, "farm"),
                                          ("First field (optional)", self.field, "field")):
                 decorate_input(control, kind)
+                # Add tooltips and accessible names to inputs
+                control.setToolTip("Enter the name for this " + label.lower() + " (optional)")
+                control.setObjectName("input-" + kind)
                 form.addRow(label, control)
         decorate_input(self.location, "open")
+        # Add tooltip and accessible name to location input
+        self.location.setToolTip("Choose a local folder to save the project")
+        self.location.setObjectName("project-location-input")
         form.addRow("Save inside", row)
         form.addRow("Farm coordinate system", self.crs)
+        # Add tooltip to CRS widget
+        self.crs.setToolTip("Select the coordinate system for your farm data")
+        # In upgrade mode, CRS is disabled, so add a note about this
+        if upgrade:
+            self.crs.setToolTip(self.crs.toolTip() + " (fixed from existing project)")
         layout.addLayout(form)
         note = QLabel("Choose a local folder and confirm the coordinate system. "
                       "Manage Data adds more clients, farms, fields, seasons and crops. "
