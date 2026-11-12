@@ -20,7 +20,7 @@ Last updated: 15 October 2026.
 
 ## Tested workstation
 
-- Windows workstation, local account Michael.
+23:- Windows workstation, local account (any user).
 - Git 2.55.0.windows.3.
 - QGIS 3.44.14 LTR, installed in `C:\Program Files\QGIS 3.44.14`.
 - Repository: `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling`.

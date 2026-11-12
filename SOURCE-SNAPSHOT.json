@@ -68,6 +68,6 @@
     "tools/smoke_test.py": "95a95e4bf14d5f450d06d381c11ab42ee8493ca28c934f5d1c8757410cdbebf1",
     "tools/updates_test.py": "0c2efb045e6f4fe9a0a3b2116d16715e716914f8df6c3b2963e8bf4bb16a5220"
   },
-  "sourceSnapshotBase": "C:\\Users\\Michael\\Documents\\Projects\\repos\\ag-tech-tooling\\dist\\windows\\20261015T002236Z\\source",
-  "pluginValidationReusedFrom": "C:\\Users\\Michael\\Documents\\Projects\\repos\\ag-tech-tooling\\dist\\windows\\20261015T002236Z"
+  "sourceSnapshotBase": "C:\\\\Users\\\\<USER>\\\\Documents\\\\Projects\\\\repos\\\\ag-tech-tooling\\\\dist\\\\windows\\\\20261015T002236Z\\\\source",
+  "pluginValidationReusedFrom": "C:\\\\Users\\\\<USER>\\\\Documents\\\\Projects\\\\repos\\\\ag-tech-tooling\\\\dist\\\\windows\\\\20261015T002236Z"
 }

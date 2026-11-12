@@ -35,7 +35,7 @@ One organisation can contain several clients; one client can contain several far
 
 | Platform | Verified pattern | Lesson for Ag-GIS |
 | --- | --- | --- |
-| John Deere Operations Center | The field API operates within an organisation and relates fields to clients and farms. Deere's display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
+| agricultural machinery operations centre | The field API operates within an organisation and relates fields to clients and farms. the display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
 | Ag Leader SMS | Management items include Grower, Farm, Field and Year; SMS Advanced analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
 | PTx FarmENGAGE | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
 
@@ -43,7 +43,7 @@ This is a comparison of public documentation, not a reverse-engineered database 
 
 ## Client/Grower support
 
-Client is required in the planned core model from the outset, rather than deferred to a contractor add-on. Grower is an external-platform term to map to Client as appropriate. Do not silently equate a Deere organisation ID with its client ID, or collapse several external growers into one record because names match.
+Client is required in the planned core model from the outset, rather than deferred to a contractor add-on. Grower is an external-platform term to map to Client as appropriate. Do not silently equate the organisation ID with its client ID, or collapse several external growers into one record because names match.
 
 For an owner-operator, Organisation and Client may have the same display name but remain separate records with stable IDs. A simplified setup can prefill the client name for confirmation; it must not remove this level or silently assign ownership. A default selection can save repeated navigation for single-client users. An Ag Tech workspace is not itself an authentication or permission boundary, and this local hierarchy does not implement user access controls.
 

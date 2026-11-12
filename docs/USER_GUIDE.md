@@ -35,8 +35,8 @@ The ZIP contains all runtime modules, native/bundled icon support, licence and t
    linked rather than copied into the workspace GeoPackage. New hierarchy records
    save immediately after confirming the import. To organise a loose layer added
    by an older version, re-import its source and choose its field.
-5. Deere setup folders show their client/farm/field structure and guidance catalogue
-   for review. Guidance marked Decoder needed cannot be added yet. Deere ZIPs
+5. agricultural machinery setup folders show their client/farm/field structure and guidance catalogue
+   for review. Guidance marked Decoder needed cannot be added yet. machinery ZIPs
    must be unpacked to preview their farm structure.
 6. Stop Scan or Close cancels without adding data. If no data is found, choose the
    complete export folder. If access fails, reconnect the drive/NAS and retry.
