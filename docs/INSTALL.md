@@ -205,7 +205,7 @@ Creating a Git repository on disk does not register it in the desktop app's Proj
 
 The Ag-GIS sidebar section and related chat titles are renamed. The saved local project is currently labelled Ag Tech QGIS and its own rename/primary-folder selection require the app settings. Current assistant tools can create sidebar sections and move chats into existing Projects, but cannot create a saved local Project; attaching the repository requires the app control.
 
-Official guidance: https://chat.openai.com/guides
+Official guidance: https://help.openai.com
 
 ### What the plugin package includes
 

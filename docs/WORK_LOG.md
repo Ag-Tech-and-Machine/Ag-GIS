@@ -81,7 +81,7 @@
 
 ## 15 October 2026 — Organisation/Farm/Field research
 
-- Reviewed primary machinery vendor SMS and machinery vendor FarmENGAGE documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
+- Reviewed primary machinery vendor SMS documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
 - Documented a proposed Organisation → Farm → Field interface, optional Client/Grower handling, stable identities, boundary revisions and separate season/job relationships. Proposed multi-farm organisation workspaces revise the earlier one-farm packaging illustration.
 - Kept the installed 0.4.0 plugin and schema version 1 unchanged. No migrations, imports, production datasets or new hierarchy controls were created.
 - Confirmed the live QGIS accessibility tree contains the dedicated toolbar and seven controls. The 0.4.0 installed-build capture shows native icons above their labels; fresh Windows screenshot capture timed out, so the capture is prior verification evidence, not a fresh screenshot.
