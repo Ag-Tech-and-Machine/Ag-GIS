@@ -15,6 +15,9 @@ def main():
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:
         for source in sorted(PLUGIN.iterdir()):
             if source.is_file() and (source.suffix in {".py", ".txt", ".svg", ".ico"} or source.name == "LICENSE"):
+                # Exclude test files from the production package
+                if source.name.startswith("test_"):
+                    continue
                 archive.write(source, f"ag_tech_tooling/{source.name}")
         archive.write(ROOT / "docs" / "USER_GUIDE.md", "ag_tech_tooling/USER_GUIDE.txt")
         archive.write(ROOT / "START_HERE.md", "ag_tech_tooling/START_HERE.txt")

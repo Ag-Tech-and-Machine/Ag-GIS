@@ -450,7 +450,12 @@ class FeedbackSubmissionDialog(QDialog):
                         f"Report ID: {self.report_id}"
                     )
                 else:
-                    raise Exception("No issue number in response")
+                    # Handle malformed GitHub API response (201 without 'number' field)
+                    error_msg = "GitHub API returned success but no issue number. "
+                    error_msg += "This may be a temporary API issue. Please try again."
+                    QMessageBox.critical(self, "Submission issue", error_msg)
+                    self.status.setText("Submission failed: API returned malformed response.")
+                    self.status.setStyleSheet("color: orange;")
             
             elif response.status_code == 401:
                 QMessageBox.critical(self, "Authentication failed",

@@ -39,6 +39,7 @@ class NewFarmDialog(QDialog):
         browse = QPushButton("Browse folder")
         browse.setToolTip("Choose a local parent folder")
         browse.setProperty("aria-label", "Browse for save location")
+        browse = QPushButton("Browse…")
         browse.setIcon(icon("open"))
         browse.clicked.connect(self.browse)
         row.addWidget(browse)
