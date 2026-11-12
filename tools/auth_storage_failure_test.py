@@ -89,8 +89,7 @@ except ImportError:
 
     assert Path(QgsApplication.qgisSettingsDirPath()).resolve().is_relative_to(scratch), \
 
-        'Native QGIS settings must resolve inside the marked scratch root'
-
+'        'Native QGIS settings must resolve inside the marked scratch root'
     assert Path(QSettings().fileName()).resolve().is_relative_to(scratch), \
 
         'Qt settings must resolve inside the marked scratch root'
