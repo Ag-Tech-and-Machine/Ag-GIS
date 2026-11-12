@@ -25,7 +25,7 @@ from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
 GITHUB_API_BASE = "https://api.github.com"
 AG_GIS_FEEDBACK_REPO = "JamRov/Ag-GIS-Feedback"
 ISSUES_URL = f"https://github.com/{AG_GIS_FEEDBACK_REPO}/issues"
-SUPPORT_EMAIL = "[user identity]"
+SUPPORT_EMAIL = "admin@agtechandmachine.com"
 
 # Template mappings
 KINDS = {
@@ -450,7 +450,12 @@ class FeedbackSubmissionDialog(QDialog):
                         f"Report ID: {self.report_id}"
                     )
                 else:
-                    raise Exception("No issue number in response")
+                    # Handle malformed GitHub API response (201 without 'number' field)
+                    error_msg = "GitHub API returned success but no issue number. "
+                    error_msg += "This may be a temporary API issue. Please try again."
+                    QMessageBox.critical(self, "Submission issue", error_msg)
+                    self.status.setText("Submission failed: API returned malformed response.")
+                    self.status.setStyleSheet("color: orange;")
             
             elif response.status_code == 401:
                 QMessageBox.critical(self, "Authentication failed",
