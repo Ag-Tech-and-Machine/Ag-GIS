@@ -37,7 +37,7 @@ One organisation can contain several clients; one client can contain several far
 | --- | --- | --- |
 | agricultural machinery operations centre | The field API operates within an organisation and relates fields to clients and farms. the display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
 | agricultural machinery SMS | Management items include Grower, Farm, Field and Year; SMS Advanced analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
-| PTx FarmENGAGE | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
+| agricultural machinery FarmENGAGE | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
 
 This is a comparison of public documentation, not a reverse-engineered database schema or a claim that the three products have identical models.
 
