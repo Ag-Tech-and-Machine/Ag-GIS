@@ -1,41 +1,32 @@
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
 
-try:
+# Install the bundled plugin using QGIS Python; stage, verify and recover on failure.
 
-    """Install the bundled plugin using QGIS Python; stage, verify and recover on failure."""
+import argparse
 
-    import argparse
+import configparser
 
-    import configparser
+import hashlib
 
-    import hashlib
+import os
 
-    import os
+from pathlib import Path, PurePosixPath
 
-    from pathlib import Path, PurePosixPath
+import re
 
-    import re
+import shutil
 
-    import shutil
+import tempfile
 
-    import tempfile
+from datetime import datetime
 
-    from datetime import datetime
-
-    from zipfile import ZipFile
+from zipfile import ZipFile
 
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
 try:
-        from qgis.PyQt.QtCore import QSettings
+    from qgis.PyQt.QtCore import QSettings
 except ImportError:
     pass  # QGIS not available, skip this import
-
-except ImportError:
-
-    pass  # QGIS not available, skip this module
-
-
-
 
 
 def install(package, profile):
@@ -181,9 +172,6 @@ def install(package, profile):
     print(f"Recovery backup: {backup}")
 
 
-
-
-
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
@@ -199,5 +187,3 @@ if __name__ == "__main__":
         raise ValueError("Use a simple profile name")
 
     install(args.package, Path(os.environ["APPDATA"]) / "QGIS/QGIS3/profiles" / args.profile)
-
-
