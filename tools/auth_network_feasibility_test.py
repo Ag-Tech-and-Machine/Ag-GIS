@@ -59,17 +59,13 @@ try:
         from qgis.PyQt.QtNetwork import QNetworkRequest, QNetworkReply
 
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
-try:
+        try:
             from qgis.core import (QgsApplication, QgsNetworkAccessManager,
 except ImportError:
     pass  # QGIS not available, skip this import
 
-except ImportError:
-
-    pass  # QGIS not available, skip this test
-
                            QgsNetworkRequestParameters, Qgis)
-
+            QgsNetworkRequestParameters, Qgis)
     QSettings.setDefaultFormat(QSettings.IniFormat)
 
     for scope in (QSettings.UserScope, QSettings.SystemScope):
