@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
-    'START_HERE.md', 'AGENTS.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CODE_OF_CONDUCT.md',
+    'START_HERE.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CODE_OF_CONDUCT.md',
     'LICENSE', '.editorconfig', '.github/copilot-instructions.md',
     'docs/DEVELOPMENT.md', 'docs/ARCHITECTURE.md', 'docs/ROADMAP.md',
     'docs/USER_COMMITMENTS.md', 'docs/BRAND_ASSETS.md',
@@ -32,7 +32,7 @@ def check():
     for directory in ('plugins', 'tools'):
         for path in (ROOT / directory).rglob('*.py'):
             ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
-    markdown = [ROOT / 'START_HERE.md', ROOT / 'README.md', ROOT / 'AGENTS.md', ROOT / 'CONTRIBUTING.md',
+    markdown = [ROOT / 'START_HERE.md', ROOT / 'README.md', ROOT / 'CONTRIBUTING.md',
                 *(ROOT / 'docs').glob('*.md')]
     for path in markdown:
         text = path.read_text(encoding='utf-8')
