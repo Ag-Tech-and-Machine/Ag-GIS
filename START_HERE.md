@@ -2,8 +2,7 @@
 
 Ag-GIS is in development, not release-ready. You can use local Ag-GIS without
 signing in. Connecting your own agent is optional, not an Ag-GIS cloud service.
-This page works with Codex, Claude Code, Hermes and other agents that can read
-local files. No special agent extension or account linking is required.
+This page works with your agent. No special agent extension or account linking is required.
 
 ## For farmers: start with ordinary words
 

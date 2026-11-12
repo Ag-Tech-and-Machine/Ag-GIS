@@ -540,7 +540,7 @@ based on this review. Native/branded acceptance and external registration remain
    `py -B tools/auth_flow_model_test.py` for six session and eleven device-model
    tests. Existing Windows QGIS 3.44.14 supplies Qt for
    `tools/auth_session_native_test.py`; its output argument must be inside an
-   `aggis-session-*` directory under Hermes scratch. No account/install is required.
+   `aggis-session-*` directory under the system temporary directory. No account/install is required.
    Reproducible execution and exact receipts:
    `.aggis-agent/evidence/20261020-session-only-reconciliation/verify.py`.
 3. The Qt check uses real timers/monotonic time and asserts access-only retention,
@@ -562,11 +562,11 @@ based on this review. Native/branded acceptance and external registration remain
 
 ## Clock and snapshot boundary characterization — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on the existing Windows Hermes host.
+1. Developer prerequisite: Python 3.12+ on this Windows development host.
    Run `py -B tools/auth_refresh_rollback_test.py`. No QGIS, installation, account,
    real credentials, network or OS clock change is needed for these six tests.
 2. These are **known-gap characterization tests**, not a rollback fix. Fresh
-   processes reopen nonsecret schema-3 SQLite fixtures in Hermes scratch. Stale
+   processes reopen nonsecret schema-3 SQLite fixtures in the system temporary directory. Stale
    injected time before any expiry observation still admits. A forward clock
    observation permanently latches expiry even after the fixture time is corrected.
 3. With the unchanged ledger, cold retry/terminal readback remain refused. Deliberate
@@ -856,9 +856,9 @@ verifiers remain historical and hash-bound to their original frozen inputs.
 
 ## Synthetic revision/expiry refresh fence — 20 October 2026
 
-1. Developer prerequisite: Python 3.12+ on this Windows Hermes development host.
+1. Developer prerequisite: Python 3.12+ on this Windows development host.
    Run `py -B tools/auth_refresh_fence_test.py` from the checkout. Eleven methods test
-   fresh synthetic SQLite files under explicit Hermes scratch; no sign-in, native
+   fresh synthetic SQLite files under explicit system temporary directory; no sign-in, native
    credential access, installation update or network connection is used.
 2. Developer-only `tools/auth_refresh_fence.py` remains unpackaged and unwired.
    Explicit `RefreshFence.create(path, slot, revision=..., expires_at=...)` enrolls
@@ -959,7 +959,7 @@ No plugin/runtime, account requirement or normal installation changes.
    or remembered-login adapter has been enabled by these developer experiments.
 2. On the existing Windows development machine with QGIS 3.44.14 and OpenSSL,
    run `py tools/run_auth_network_feasibility.py` from the checkout. It creates two
-   fresh marked Hermes scratch profiles and ephemeral localhost servers. OpenSSL
+   fresh marked system temporary directory profiles and ephemeral localhost servers. OpenSSL
    creates only an untrusted one-day test certificate; no trust store is changed.
 3. Expected: two native processes exit0, each asserting HTTP success, Cancel/abort,
    local timeout/abort, manual off-host redirect refusal and self-signed TLS failure.
@@ -1004,7 +1004,7 @@ gates; it does not authorize or register an external app.
    `py tools/run_auth_storage_feasibility.py` for synthetic storage-only checks.
    Expected: four native processes exit0; exact synthetic read/cold-read, wrong
    password refusal, per-record deletion and unrelated sentinel preservation.
-   A new ignored evidence folder and marked Hermes scratch profile are created.
+   A new ignored evidence folder and marked system temporary directory profile are created.
 3. No real GitHub login, OS-vault entry, provider request or normal profile is used.
    The DPAPI check is in-memory only, not a Credential Manager integration. Native
    APIHeader expansion has a debug-logging hazard and was deliberately not used.
@@ -1262,7 +1262,7 @@ GS3 setup/catalogue exports as read-only metadata, not decoded operation imports
    the original token and review the vendor/rule/version rather than guess a unit.
 3. For native checks use QGIS's bundled Python on `tools/data_dictionary_test.py`,
    `tools/data_in_test.py`, `tools/operation_style_test.py` and `tools/smoke_test.py`.
-   Use synthetic workspaces and TEMP/TMP/TMPDIR beneath Hermes scratch, not farm data.
+   Use synthetic workspaces and TEMP/TMP/TMPDIR beneath the system temporary directory, not farm data.
    Set `AGTECH_TEST_PLUGIN_ROOT` to the directory **containing** `ag_tech_tooling`.
 4. Build to a new ZIP with `py tools/build_plugin.py --output <new-local-zip>`;
    validate/extract it to scratch and repeat checks against that extracted parent.

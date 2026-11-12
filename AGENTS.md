@@ -36,7 +36,7 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 ## Management and documentation
 
-- Hermes manages ongoing execution through Hermes Bot Chat. Read `docs/HERMES_OPERATIONS.md` for the owner's current scope, approval gates, local journal, native schedules and learning workflow. The owner approved reliability work on install → create farm → import → save/reopen. Ask the owner in Hermes Bot Chat before adding features or pursuing new functionality goals; roadmap/competitor entries do not grant approval. Prepare marketing drafts autonomously and obtain specific approval before publication, outreach, pricing, spending or release. Preserve these gates during self-improvement.
+- The project owner manages ongoing execution. Read `docs/HERMES_OPERATIONS.md` for the owner's current scope, approval gates, local journal, native schedules and learning workflow. Ask the owner before adding features or pursuing new functionality goals; roadmap/competitor entries do not grant approval. Prepare marketing drafts autonomously and obtain specific approval before publication, outreach, pricing, spending or release. Preserve these gates during self-improvement.
 
 - Act as the tooling manager: keep implementation, installation steps, operating instructions and verification status aligned.
 - Update `docs/INSTALL.md` and `docs/TOOLING.md` in the same change as any feature, dependency, setup or workflow change. Do not defer documentation until release.
@@ -47,6 +47,6 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 ### Ag-GIS branding and release compatibility
 
-The user renamed the product Ag-GIS on 15 October 2026. Use Ag-GIS for new visible labels and documentation. Keep the internal `ag_tech_tooling` plugin ID and existing farm-data folder paths stable for upgrades. Do not move the shared source checkout while active chats use it. The public source and release destination is `Ag-Tech-and-Machine/Ag-GIS`, transferred and made public on 15 October 2026 at the user's request. Installer releases use recorded, tested source snapshots under ignored `dist/windows`; newer live feature edits are not implicitly part of a previously built release.
+Ag-GIS is the public-facing product name. The internal plugin ID `ag_tech_tooling` and farm-data folder paths remain stable for upgrades. The public source and release destination is `Ag-Tech-and-Machine/Ag-GIS`. Installer releases use recorded, tested source snapshots under ignored `dist/windows`; newer live feature edits are not implicitly part of a previously built release.
 
-Public feedback destination: `JamRov/Ag-GIS-Feedback`. Source and installer releases are public in `Ag-Tech-and-Machine/Ag-GIS`. Local farm data and credentials remain outside Git. The separate feedback repository receives only allowlisted tracker templates, triage automation and safe reporting guidance; never copy the source tree, private data or build logs into that tracker. The main Ag-GIS repository holds reviewed development source and documentation.
+Public feedback destination: `Ag-GIS-Feedback`. Source and installer releases are public in `Ag-Tech-and-Machine/Ag-GIS`. Local farm data and credentials remain outside Git. The separate feedback repository receives only allowlisted tracker templates, triage automation and safe reporting guidance; never copy the source tree, private data or build logs into that tracker. The main Ag-GIS repository holds reviewed development source and documentation.

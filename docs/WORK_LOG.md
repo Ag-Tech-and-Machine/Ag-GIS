@@ -185,7 +185,7 @@ QGZ XML readback matches all21 named-group expansion values. Actual local Qwen3.
 review125 prompt/82 completion tokens is retained; its broad data-integrity wording
 is not an additional proven assertion. Two pre-native launch failures are retained
 (rendered interpreter path; bare interpreter lacked psutil). Existing initialized
-Hermes kernel executed the runner; no dependency installation or policy change.
+The Python kernel executed the runner; no dependency installation or policy change.
 
 Evidence: `.aggis-agent/evidence/20261023-standalone-contracts/RESULT.md`, prelaunch
 hashes, exact harness/payload/source snapshots, native logs, retained QGZ/sidecar and
@@ -362,7 +362,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Closed one previously unrun successor regression gap: snapshotted
   tools/farm_browser_test.py ran through pinned QGIS3.44.14 against source and exact
   e6f2059a extraction. Both processes exited0 with empty stderr and asserted
-  post-init settings/auth/Qt settings inside separate Hermes scratch directories.
+  post-init settings/auth/Qt settings inside separate system temporary directoryries.
 - Assertions exercise actual native checkbox off/on, rename editor commit,
   model/selection identity, dock resize/layout recovery, semantic icons, unrelated
   layers and original-delegate restoration/non-nested recreation. No product repair
@@ -684,7 +684,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Native Ctrl+S delivery returned **unverifiable**; do not claim a new successful
   save. Subsequent read-only Win32 title remained clean, but the desktop capture
   tool failed twice because its machine-wide daemon was unavailable. Existing
-  Hermes Python lacks pywinauto; no package was installed. The attempted read-only
+  Python lacks pywinauto; no package was installed. The attempted read-only
   UIA inspection command `powershell.exe -NoProfile -File
   .aggis-agent/evidence/20261021-tree-normal-combined/uia.ps1` was explicitly denied
   by Windows script policy (UnauthorizedAccess). Its body did not execute. No
@@ -729,7 +729,7 @@ the automation dependency. No identical install/input retries or endless regress
   Rejected its assertion that isolated branded acceptance equals owner-session
   acceptance. These are distinct evidence levels. No runtime change inferred.
 - Plain `py` initially lacked psutil; retained this harness failure and reran with
-  the existing Hermes interpreter. No installation/configuration change was made.
+  the existing Python interpreter. No installation/configuration change was made.
   INSTALL/TOOLING now identify exact scenario and interpreter prerequisites.
 - Evidence: `.aggis-agent/evidence/20261021-tree-combined-settlement/`, including
   executable verifier, process receipts, screenshots and critical review. Approval

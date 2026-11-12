@@ -7,7 +7,8 @@ import tempfile
 from pathlib import Path
 
 # Set the environment variable for the test plugin root
-os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'C:\Users\Michael\Documents\Projects\repos\Ag-GIS\plugins\ag_tech_tooling'
+# Use a generic path placeholder - replace with actual path before running tests
+os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'C:\path\to\ag_tech_tooling\plugins'
 
 # Add both the plugin directory and its parent to sys.path
 plugins_parent = os.path.dirname(os.environ.get('AGTECH_TEST_PLUGIN_ROOT'))
