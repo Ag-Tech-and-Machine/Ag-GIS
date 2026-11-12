@@ -59,13 +59,11 @@ try:
         from qgis.PyQt.QtNetwork import QNetworkRequest, QNetworkReply
 
 # QGIS imports wrapped to avoid import-time crashes when QGIS is unavailable
-        try:
-            from qgis.core import (QgsApplication, QgsNetworkAccessManager,
-except ImportError:
-    pass  # QGIS not available, skip this import
-
-                           QgsNetworkRequestParameters, Qgis)
-            QgsNetworkRequestParameters, Qgis)
+    try:
+        from qgis.core import (QgsApplication, QgsNetworkAccessManager,
+                       QgsNetworkRequestParameters, Qgis)
+    except ImportError:
+        pass  # QGIS not available, skip this import
     QSettings.setDefaultFormat(QSettings.IniFormat)
 
     for scope in (QSettings.UserScope, QSettings.SystemScope):
@@ -502,6 +500,9 @@ except ImportError:
 
 
 
+except Exception as exc:
+    print(f"Module-level error: {{exc}}")
+    sys.exit(1)
 if __name__ == '__main__':
 
     main()
