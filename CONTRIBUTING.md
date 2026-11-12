@@ -1,16 +1,41 @@
 # Contributing to Ag-GIS
 
-Ag-GIS welcomes farming workflow ideas, reproducible bug reports, documentation and code contributions. Public feedback is maintained in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Do not include original farm/customer datasets, credentials or private screenshots in reports or pull requests.
+Ag-GIS welcomes farming workflow ideas, reproducible bug reports, documentation and code contributions. Public feedback is maintained at https://github.com/JamRov/Ag-GIS-Feedback/issues. Do not include original farm/customer datasets, credentials or private screenshots in reports or pull requests.
+
+**Public repository: no login required for contribution.** Fork the repository, create a focused branch, and submit pull requests. Maintainer review is required for all code changes.
+
+## Agent contributor rules (strict)
+
+When using AI agents (Codex, Claude Code, Hermes, or other autonomous agents) for contributions:
+
+1. **Always describe the problem first** — explain the farming task, what happens today, and the outcome that would help. Use a synthetic example; never attach real farm data.
+
+2. **Review before any automated action** — let the agent prepare a draft, then explicitly review the destination, attachments, and code changes before choosing to share or submit. Nothing is sent by preview or draft generation.
+
+3. **Explicit user consent required for submissions** — agents cannot be forced to auto-submit private data or bypass the review step. User review and explicit consent is mandatory before any PR creation, file modification, or external submission.
+
+4. **Preserve privacy in all prompts** — give agents access to source code and synthetic examples only, not your farm-data folder. External AI providers may process what you paste; check their privacy controls.
+
+5. **Isolated work for agent tasks** — use a separate branch or worktree for agent-generated changes. Do not mix agent edits with manual work. Keep generated packages, user settings and GIS datasets outside commits.
+
+6. **Never bypass maintainer review** — a pull request does not grant direct repository write access. Code changes require maintainer review; avoid auto-closing feedback issues before acceptance is verified.
+
+7. **Data integrity and user control** — maintainers assess user control, usability, data integrity, compatibility, maintenance and service cost. Feedback and votes inform priorities but do not guarantee acceptance or delivery dates.
 
 Start with [Start Here](START_HERE.md) for farmer-first agent prompts: describe the problem, let your agent prepare a draft, then review before sharing. No mandatory login for local use.
 
 ## Propose a change
 
 1. Search the feedback tracker for an existing report. Explain the farming task, what happens today and the outcome that would help. Use a synthetic example and identify the affected version.
+
 2. Discuss substantial changes before investing in them. Maintainers assess user control, usability, data integrity, compatibility, maintenance and service cost. Feedback and votes inform priorities but do not guarantee acceptance or delivery dates.
+
 3. Fork the repository, create a focused branch and read AGENTS.md and the relevant docs before editing. Keep generated packages, user settings and GIS datasets outside commits. Never include credentials.
+
 4. Reuse native QGIS APIs and qgis.PyQt. Preserve original user data, useful local operation and portable export. Keep initGui/unload paired and preserve the internal ag_tech_tooling plugin ID for compatibility.
+
 5. Update canonical installation/tooling/user instructions for changed behaviour. Run scripts/check.ps1 with the installed QGIS Python environment for source and extracted-package verification; ordinary Python cannot validate PyQGIS workflows. Record exact checks and any limitations.
+
 6. Open a pull request describing the problem, result and evidence. Link the feedback issue with Related issue; avoid auto-closing a user problem before its acceptance is verified. Code changes require maintainer review; a pull request does not grant direct repository write access.
 
 ## Licensing and credit
