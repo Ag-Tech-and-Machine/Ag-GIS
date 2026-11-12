@@ -1,0 +1,103 @@
+name: Repository checks
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  repository-checks:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    
+    - name: Check plugin syntax and metadata
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/check_plugin.py
+        if ($LASTEXITCODE -ne 0) { throw "check_plugin.py failed" }
+    
+    - name: Run plugin tests
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/smoke_test.py
+        if ($LASTEXITCODE -ne 0) { throw "smoke_test.py failed" }
+    
+    - name: Run farm project test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/farm_project_test.py
+        if ($LASTEXITCODE -ne 0) { throw "farm_project_test.py failed" }
+    
+    - name: Run hierarchy test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/hierarchy_test.py
+        if ($LASTEXITCODE -ne 0) { throw "hierarchy_test.py failed" }
+    
+    - name: Run default workspace test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/default_workspace_test.py
+        if ($LASTEXITCODE -ne 0) { throw "default_workspace_test.py failed" }
+    
+    - name: Run farm browser test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/farm_browser_test.py
+        if ($LASTEXITCODE -ne 0) { throw "farm_browser_test.py failed" }
+    
+    - name: Run Deere preview test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/deere_preview_test.py
+        if ($LASTEXITCODE -ne 0) { throw "deere_preview_test.py failed" }
+    
+    - name: Run data in test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/data_in_test.py
+        if ($LASTEXITCODE -ne 0) { throw "data_in_test.py failed" }
+    
+    - name: Run import placement test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/import_placement_test.py
+        if ($LASTEXITCODE -ne 0) { throw "import_placement_test.py failed" }
+    
+    - name: Run build plugin test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/build_plugin.py
+        if ($LASTEXITCODE -ne 0) { throw "build_plugin.py failed" }
+    
+    - name: Run installer test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/installer_test.py
+        if ($LASTEXITCODE -ne 0) { throw "installer_test.py failed" }
+    
+    - name: Run package test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/package_test.py
+        if ($LASTEXITCODE -ne 0) { throw "package_test.py failed" }
+    
+    - name: Run updates test
+      shell: pwsh
+      run: |
+        & 'C:\Program Files\QGIS 3.44.14\bin\python-qgis-ltr.bat' tools/updates_test.py
+        if ($LASTEXITCODE -ne 0) { throw "updates_test.py failed" }
+    
+    - name: Run check.ps1 validation
+      shell: pwsh
+      run: |
+        .\scripts\check.ps1
+        if ($LASTEXITCODE -ne 0) { throw "check.ps1 failed" }
