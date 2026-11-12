@@ -199,13 +199,13 @@ Switching off restores the previous central view only if the project has not cha
 Creating a Git repository on disk does not register it in the desktop app's Projects sidebar.
 
 1. Use the app's **Add new project** control and create a local project named **Ag-GIS**.
-2. Attach `C:\Users\Michael\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
+2. Attach `C:\Users\<USER>\Documents\Projects\repos\ag-tech-tooling` as its primary folder. If needed, use the project's **Edit project → Add folder** controls and **Make primary** for this folder.
 3. Move the ongoing tooling chat into that project, or start future tooling chats from it. Keep the installation and tooling documentation in the repository so all project chats can read it.
 4. Confirm the project appears in the sidebar and that the attached primary folder is the repository above.
 
 The Ag-GIS sidebar section and related chat titles are renamed. The saved local project is currently labelled Ag Tech QGIS and its own rename/primary-folder selection require the app settings. Current assistant tools can create sidebar sections and move chats into existing Projects, but cannot create a saved local Project; attaching the repository requires the app control.
 
-Official guidance: https://learn.chatgpt.com/docs/projects
+Official guidance: https://chat.openai.com/guides
 
 ### What the plugin package includes
 
