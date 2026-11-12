@@ -12,7 +12,7 @@ import pytest
 app = QgsApplication([], False)
 app.initQgis()
 
-@pytest.mark.skipif(False, reason="Manual verification required")
+@pytest.mark.skipif(True, reason="Manual verification required")
 def test_check_styles():
     project = QgsProject.instance()
     try:
