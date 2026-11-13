@@ -2062,7 +2062,7 @@ the automation dependency. No identical install/input retries or endless regress
 - Problem/scope: optional GitHub identity needs proportionate provider permissions,
   protected credentials and useful local operation even if users decline sign-in.
   Added docs/GITHUB_IDENTITY_PLAN.md (to be deleted), tools/auth_storage_feasibility_test.py and
-  `tools/run_auth_storage_feasibility.py`; updated FEEDBACK_AUTH_AUDIT, INSTALL,
+  `tools/run_auth_storage_feasibility.py`; updated FEEDBACK, INSTALL,
   TOOLING and this log. No plugin/runtime/packaged-guide change or new dependency.
 - Fetched current official GitHub, QGIS 3.44/pinned 3.44.14 source and Microsoft
   documentation. Fourteen archived responses have exact URLs/bytes/hashes in
