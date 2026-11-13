@@ -162,11 +162,11 @@ class FeedbackSubmissionDialog(QDialog):
         if token_data:
             self.github_token = token_data["token"]
             self.status.setText("GitHub token found. Report can be submitted without login.")
-            self.status.setStyleSheet("color: green;")
+            self.status.setStyleSheet("color: Qt.darkGreen;")  # semantic green for success
         else:
             self.github_token = None
             self.status.setText("No GitHub token stored. Login to create a token or use Copy/Email.")
-            self.status.setStyleSheet("color: orange;")
+            self.status.setStyleSheet("color: Qt.darker(Qt.orange);")  # semantic orange for warning
         
         layout = QVBoxLayout(self)
         
@@ -430,7 +430,7 @@ class FeedbackSubmissionDialog(QDialog):
                         f"Hash: {report_hash}\n\n"
                         f"You can view, edit, or close this issue at the link above."
                     )
-                    self.status.setStyleSheet("color: green; font-weight: bold;")
+                    self.status.setStyleSheet("color: Qt.darkGreen; font-weight: bold;")  # semantic green for success
                     self.submit_btn.setEnabled(False)
                     self.submit_btn.setText("Submitted")
                     
@@ -455,7 +455,7 @@ class FeedbackSubmissionDialog(QDialog):
                     error_msg += "This may be a temporary API issue. Please try again."
                     QMessageBox.critical(self, "Submission issue", error_msg)
                     self.status.setText("Submission failed: API returned malformed response.")
-                    self.status.setStyleSheet("color: orange;")
+                    self.status.setStyleSheet("color: Qt.darker(Qt.orange);")  # semantic orange for warning
             
             elif response.status_code == 401:
                 QMessageBox.critical(self, "Authentication failed",
@@ -467,7 +467,7 @@ class FeedbackSubmissionDialog(QDialog):
                 self.github_token = None
                 self.submit_btn.setEnabled(False)
                 self.status.setText("GitHub token invalid. Login to create a new token.")
-                self.status.setStyleSheet("color: red;")
+                self.status.setStyleSheet("color: Qt.red;")  # semantic red for error
             
             elif response.status_code == 403:
                 QMessageBox.critical(self, "Access denied",
@@ -513,7 +513,7 @@ class FeedbackSubmissionDialog(QDialog):
                 if save_oauth_token(token):
                     self.github_token = token
                     self.status.setText("GitHub token saved. You can now submit reports.")
-                    self.status.setStyleSheet("color: green;")
+                    self.status.setStyleSheet("color: Qt.darkGreen;")  # semantic green for success
                     self.submit_btn.setEnabled(True)
                     QMessageBox.information(self, "Token saved",
                                            "Your GitHub token has been saved. "
