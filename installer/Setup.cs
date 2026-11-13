@@ -2,12 +2,21 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 class Setup {
-    static int Main() {
+    static int Main(string[] args) {
         try {
+            string profile = "default";
+            if (args.Length != 0) {
+                if (args.Length != 2 || args[0] != "--profile" || !Regex.IsMatch(args[1], @"\A[A-Za-z0-9_-]+\z")) {
+                    Console.Error.WriteLine("Use Setup.exe --profile followed by a simple profile name.");
+                    return 1;
+                }
+                profile = args[1];
+            }
             string root = AppDomain.CurrentDomain.BaseDirectory;
             string powershell = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"WindowsPowerShell\v1.0\powershell.exe");
-            var info = new ProcessStartInfo(powershell, "-NoProfile -File \"" + Path.Combine(root, "Install.ps1") + "\"");
+            var info = new ProcessStartInfo(powershell, "-NoProfile -File \"" + Path.Combine(root, "Install.ps1") + "\" -Profile " + profile);
             info.UseShellExecute = false;
             var process = Process.Start(info);
             process.WaitForExit();
