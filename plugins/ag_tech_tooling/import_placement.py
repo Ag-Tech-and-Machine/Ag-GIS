@@ -10,6 +10,7 @@ from qgis.core import (QgsCoordinateTransform, QgsGeometry, QgsProject,
 from . import hierarchy as store
 from .farm_project import validate_farm
 from .hierarchy_dialog import sync_tree
+from . import data_types
 
 KINDS = ("organisation", "client", "farm", "field")
 
@@ -142,22 +143,77 @@ def match_field(root, incoming, project=None):
         return {"field_id": None, "reason": "The boundary comparison could not be completed. Choose the field explicitly."}
 
 
+def review_job_season(root, field_id, job_date, operation, *, connection=None):
+    """Read-only explicit-selection preview, never a binding or vendor decoder.
+
+    Dates are calendar dates with inclusive endpoints. Adjacent intervals must
+    start the day after the preceding end; no import time or name inference.
+    Legacy undated/gapped timelines remain untouched and require review.
+    """
+    from datetime import date
+    from .classification import OPERATION_FAMILIES
+    if connection is None:
+        rows = store.records(root)
+    else:
+        rows = {}
+        for kind in ("field", "season"):
+            cursor = connection.execute(f'SELECT * FROM "{store.ENTITIES[kind][0]}" ORDER BY name COLLATE NOCASE')
+            columns = [column[0] for column in cursor.description]
+            rows[kind] = [dict(zip(columns, row)) for row in cursor]
+    if field_id not in {row["id"] for row in rows["field"]}:
+        raise ValueError("Choose an existing field before reviewing its seasons.")
+    if operation not in OPERATION_FAMILIES:
+        raise ValueError("Choose a known job type. Unknown source types need review, not a guessed season.")
+    try:
+        day = date.fromisoformat(job_date)
+        if day.isoformat() != job_date:
+            raise ValueError()
+    except (ValueError, TypeError):
+        raise ValueError("Enter the recorded job date as YYYY-MM-DD; do not use the import date.") from None
+    seasons = [row for row in rows["season"] if row["field_id"] == field_id]
+    for row in seasons:
+        try:
+            start, end = date.fromisoformat(row["start_date"]), date.fromisoformat(row["end_date"])
+            if start.isoformat() != row["start_date"] or end.isoformat() != row["end_date"] or start > end:
+                raise ValueError()
+        except (ValueError, TypeError):
+            raise ValueError("Every season in this field needs valid start and end dates before seasonal placement can be reviewed.") from None
+    seasons.sort(key=lambda row: (row["start_date"], row["end_date"], row["id"]))
+    for previous, current in zip(seasons, seasons[1:]):
+        if (date.fromisoformat(current["start_date"]) - date.fromisoformat(previous["end_date"])).days != 1:
+            raise ValueError("This field's seasons have a gap or overlap. Review their linked dates; no history has been reassigned.")
+    match = next((row for row in seasons if row["start_date"] <= job_date <= row["end_date"]), None)
+    if match is None:
+        raise ValueError("The recorded job date is outside this field's dated seasons. No season has been selected.")
+    return {"contract": "season-review-v1", "field_id": field_id, "job_date": job_date,
+            "operation_subtype": operation, "operation_family": OPERATION_FAMILIES[operation],
+            "season_id": match["id"], "season_name": match["name"], "timeline": seasons}
+
+
 def place_layer(root, layer, field_id, role="data", project=None):
     project = project or QgsProject.instance()
-    if role not in {"data", "boundary"} or (role == "boundary" and (
-            not isinstance(layer, QgsVectorLayer) or layer.geometryType() != QgsWkbTypes.PolygonGeometry)):
-        raise ValueError("Only polygon data can be used as a field boundary.")
+    data_types.validate(layer, role)
     if field_id not in {r["id"] for r in store.records(root)["field"]}:
         raise ValueError("Select a valid field before importing.")
     _, groups = sync_tree(root, project)
-    whole = groups["whole:" + field_id]
-    group = next((n for n in whole.children() if n.customProperty("AgTechTooling/import_group") == field_id), None)
-    if group is None:
-        group = whole.addGroup("Imported Data")
-        group.setCustomProperty("AgTechTooling/import_group", field_id)
+    season_id = layer.customProperty("AgTechTooling/import_season", "")
+    if season_id:
+        season = next((row for row in store.records(root)["season"] if row["id"] == season_id and row["field_id"] == field_id), None)
+        if season is None or role != "data":
+            raise ValueError("Saved job season is not in this field. No placement was guessed.")
+        group = next(node for node in groups[season_id].children()
+                     if node.customProperty("AgTechTooling/node") == "operations:" + season_id)
+    else:
+        whole = groups["whole:" + field_id]
+        group = next((n for n in whole.children() if n.customProperty("AgTechTooling/import_group") == field_id), None)
+        if group is None:
+            group = whole.addGroup("Imported Data")
+            group.setCustomProperty("AgTechTooling/import_group", field_id)
     layer.setCustomProperty("AgTechTooling/workspace", store.workspace_id(root))
     layer.setCustomProperty("AgTechTooling/import_field", field_id)
     layer.setCustomProperty("AgTechTooling/import_role", role)
+    from .map_presentation import prepare_layer
+    prepare_layer(layer, project)
     if isinstance(layer, QgsVectorLayer):
         layer.setReadOnly(True)
     if layer.id() not in project.mapLayers():

@@ -1,10 +1,10 @@
 [general]
 name=Ag-GIS
-description=Farmer-friendly tools to simplify workflows and automate GIS work.
-about=Farmer-friendly QGIS toolbar and Simple view, with Organisation/Client/Farm/Field and Season/Crop management in GeoPackage. Import/export and conversion workflows are under development.
-version=0.8.1
+description=Simple farming workflows. Built on open source tools.
+about=Ag-GIS — Farming in view. Built on open source tools. Manage farm workspaces, import local data, filter maps and choose backgrounds. Your maps and work stay local. Optional cloud services are not included.
+version=0.12.2
 qgisMinimumVersion=3.28
-author=Michael
+author=[Name]
 email=admin@agtechandmachine.com
 category=Vector
 icon=icon.svg

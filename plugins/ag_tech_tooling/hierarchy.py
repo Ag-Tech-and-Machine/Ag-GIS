@@ -44,7 +44,7 @@ def _write_table(path, table, fields, geometry="None", crs=None):
     uri = geometry if crs is None else f"{geometry}?crs={crs.authid()}"
     layer = QgsVectorLayer(uri, table, "memory")
     if not layer.isValid() or not layer.dataProvider().addAttributes([QgsField(name, QVariant.String) for name in fields]):
-        raise ValueError(f"QGIS could not prepare {table}.")
+        raise ValueError(f"Ag-GIS could not prepare {table}.")
     layer.updateFields()
     options = QgsVectorFileWriter.SaveVectorOptions()
     options.driverName, options.layerName = "GPKG", table
@@ -53,21 +53,21 @@ def _write_table(path, table, fields, geometry="None", crs=None):
         options.layerOptions = ["ASPATIAL_VARIANT=GPKG_ATTRIBUTES"]
     result = QgsVectorFileWriter.writeAsVectorFormatV3(layer, str(path), QgsProject.instance().transformContext(), options)
     if result[0] != QgsVectorFileWriter.NoError:
-        raise ValueError(f"QGIS could not create {table}: {result[1]}")
+        raise ValueError(f"Ag-GIS could not create {table}: {result[1]}")
 
 
 def _connection(path):
     try:
         return QgsProviderRegistry.instance().providerMetadata("ogr").createConnection(str(path), {})
     except QgsProviderConnectionException as error:
-        raise ValueError("QGIS could not open the workspace database: " + str(error)) from error
+        raise ValueError("Ag-GIS could not open the workspace database: " + str(error)) from error
 
 
 def _execute(connection, sql):
     try:
         return connection.executeSql(sql)
     except QgsProviderConnectionException as error:
-        raise ValueError("QGIS could not initialise the hierarchy: " + str(error)) from error
+        raise ValueError("Ag-GIS could not initialise the hierarchy: " + str(error)) from error
 
 
 def initialise(root, organisation, client, farm, farm_id, crs, field=None):
@@ -196,7 +196,7 @@ def add_record(root, kind, name, parent_id=None, record_id=None, start="", end="
     for key, value in values.items():
         feature[key] = value
     if not layer.dataProvider().addFeatures([feature])[0]:
-        raise ValueError(f"QGIS could not save the {kind}. No parent records were changed.")
+        raise ValueError(f"Ag-GIS could not save the {kind}. No parent records were changed.")
     return record_id
 
 
@@ -213,4 +213,4 @@ def rename_record(root, kind, record_id, name):
     layer = QgsVectorLayer(layer_uri(root, ENTITIES[kind][0]), kind, "ogr")
     feature = next((feature for feature in layer.getFeatures() if feature["id"] == record_id), None)
     if feature is None or not layer.dataProvider().changeAttributeValues({feature.id(): {layer.fields().indexFromName("name"): name}}):
-        raise ValueError("QGIS could not rename the selected record.")
+        raise ValueError("Ag-GIS could not rename the selected record.")

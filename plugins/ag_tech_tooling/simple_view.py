@@ -31,7 +31,7 @@ class SimpleView(QObject):
         self.switch.setObjectName("ag_tech_tooling_simple_view_switch")
         self.switch.setAccessibleName("Simple view")
         self.switch.setIcon(icon("whole"))
-        self.switch.setToolTip("Show only the map and Layers. Turn off to restore your previous QGIS layout.")
+        self.switch.setToolTip("Show only the map and Layers. Turn off to restore your full layout.")
         layout.addWidget(self.switch)
         self.window.statusBar().addPermanentWidget(self.container)
         self.switch.toggled.connect(self.set_enabled)
@@ -60,7 +60,9 @@ class SimpleView(QObject):
             return
         for toolbar in self.managed_toolbars():
             if toolbar not in self.tracked_toolbars:
-                callback = lambda visible, bar=toolbar: self._guard_toolbar(bar, visible)
+                # Queue policy until native toolbar child visibility has propagated.
+                callback = lambda visible, bar=toolbar: QTimer.singleShot(
+                    0, lambda: self._guard_toolbar(bar, visible))
                 toolbar.visibilityChanged.connect(callback)
                 self.tracked_toolbars[toolbar] = callback
             if self.switch.isChecked():
@@ -97,7 +99,12 @@ class SimpleView(QObject):
             return
         for dock in self.managed_docks():
             if dock not in self.tracked_docks:
-                callback = lambda visible, panel=dock: self._guard_dock(panel, visible)
+                # Qt emits visibilityChanged before propagating visibility to
+                # dock children. Reversing hide/show inside that signal leaves
+                # the dock visible but its native tree/toolbar invisible. Apply
+                # the policy after the native transition has finished instead.
+                callback = lambda visible, panel=dock: QTimer.singleShot(
+                    0, lambda: self._guard_dock(panel, visible))
                 dock.visibilityChanged.connect(callback)
                 self.tracked_docks[dock] = callback
             if self.switch.isChecked() and dock.objectName() != "Layers":
@@ -158,7 +165,7 @@ class SimpleView(QObject):
             self._register_toolbars()
         elif self.saved_state is not None:
             if not self.window.restoreState(self.saved_state):
-                raise RuntimeError("QGIS could not restore the saved full layout")
+                raise RuntimeError("Ag-GIS could not restore the saved full layout")
             self.saved_state = None
             self.settings.remove(self.STATE_KEY)
             self._restore_page()

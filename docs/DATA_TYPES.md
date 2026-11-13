@@ -1,10 +1,9 @@
 # Intelligent data handling proposal
 
-Status: proposed next increment, 15 October 2026. This document does not describe
-additional implemented import behaviour. Current Data In discovers vector/raster
-sources, places linked layers by field, and supports explicit polygon boundary
-designation. It does not yet classify agronomic datasets, copy data into managed
-storage, map measurement attributes or assign seasonal datasets.
+Status: broader design proposal, updated 15 October 2026. Version 0.9.0 implements
+compatible manual types, managed vector/raster saving, catalogue recovery and
+field/type filtering; see MANAGED_DATA.md. Automatic agronomic classification,
+measurement/unit mapping, semantic styling and seasonal datasets remain proposed.
 
 ## Farmer workflow
 
@@ -88,9 +87,8 @@ GeoPackage remains the core vector/relationship/catalogue store. Raster storage
 needs a tested policy for imagery versus numeric grids. Ordinary image tiles and
 gridded coverage extensions have different capabilities. Test precision, NoData,
 bands, units and interoperability before writing numeric elevation/rate rasters
-into GeoPackage. Managed lossless GeoTIFFs within the packaged workspace are a
-possible alternative for unsuitable/large raster types, not an adopted change to
-the current storage choice. A farmer should still open/share one managed project.
+into GeoPackage. Version 0.9.0 adopts managed lossless GeoTIFFs inside Data/Rasters,
+indexed by the core GeoPackage. A farmer opens/shares one managed workspace folder.
 
 ## Delivery order and acceptance
 
@@ -114,3 +112,11 @@ run for this design-only document and no runtime behaviour changed in this step.
 - [QGIS raster alignment and resampling](https://doc.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/rastertools.html)
 - [QGIS native vector geometry tools](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html)
 - [GDAL GeoPackage raster capabilities, including gridded coverage](https://gdal.org/en/stable/drivers/raster/gpkg.html)
+
+## Implemented subset in 0.9.0
+
+Compatible manual role selection, native managed vector/raster saving, dataset
+catalogue recovery and field/type visibility filters are now implemented. See
+MANAGED_DATA.md for actual storage and limits. The evidence-based automatic type
+suggestions, targeted unit/measurement/date prompts, season relationships and
+semantic styling above remain proposed; they are not implied by a manual label.

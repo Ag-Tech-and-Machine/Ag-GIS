@@ -96,5 +96,38 @@ class PreviewTest(unittest.TestCase):
             self.assertEqual(preview.inspect_export(self.root)["format"], "unrecognised")
 
 
+    def test_zip_preview_profiles_and_safety(self):
+        import zipfile
+        import shutil
+        shutil.copytree(self.root / 'default', self.root / 'second')
+        archive_path = Path(self.temp.name) / 'machine.zip'
+        with zipfile.ZipFile(archive_path, 'w') as archive:
+            for path in self.root.rglob('*'):
+                if path.is_file():
+                    archive.write(path, path.relative_to(self.root))
+        before = archive_path.read_bytes()
+        result = preview.inspect_export(archive_path)
+        self.assertEqual(len(result['entities']), 6)
+        self.assertEqual(len(result['spatial_items']), 2)
+        self.assertEqual(len(result['profiles']), 2)
+        self.assertFalse(result['geometry_import_supported'])
+        self.assertTrue(result['source_unchanged'])
+        self.assertEqual(archive_path.read_bytes(), before)
+        with zipfile.ZipFile(archive_path, 'a') as archive:
+            archive.writestr('../escape', 'bad')
+        with self.assertRaisesRegex(ValueError, 'Unsafe'):
+            preview.inspect_export(archive_path)
+
+    def test_zip_cancel_and_bomb(self):
+        import zipfile
+        archive_path = Path(self.temp.name) / 'bomb.zip'
+        with zipfile.ZipFile(archive_path, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr('GS3_2630/default/RCD/EIC/setup.fds', b'x' * 1024)
+        with patch('ag_tech_tooling.deere_zip.LIMIT_BYTES', 10):
+            with self.assertRaisesRegex(ValueError, 'limits'):
+                preview.inspect_export(archive_path)
+        with self.assertRaisesRegex(RuntimeError, 'cancelled'):
+            preview.inspect_export(archive_path, cancelled=lambda: True)
+
 if __name__ == "__main__":
     unittest.main()

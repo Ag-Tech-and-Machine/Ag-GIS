@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "version_key": "0.12.2",
+      "version_string": "0.12.2",
+      "channel": "stable",
+      "url": "https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases/download/v0.12.2/ag_tech_tooling-0.12.2.zip",
+      "notes": "dist\\ag_tech_tooling-0.12.2.notes",
+      "compatible_qgis": [
+        "3.40",
+        "3.41",
+        "3.42",
+        "3.43",
+        "3.44"
+      ],
+      "data_upgrades": false,
+      "experimental": false
+    }
+  ]
+}

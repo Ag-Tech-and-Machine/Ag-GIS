@@ -1,15 +1,18 @@
-## User problem and result
+## Problem and result
 
-Closes #<!-- issue number, or explain why no issue applies -->
+Related issue: <!-- link to safe report; no customer data -->
 
-Describe the farming task, the problem and what changes for the user.
+Describe the farming task, previous behaviour and resulting behaviour.
 
-## Verification
+## Evidence
 
-- [ ] Reproduced the problem, or documented the requested improvement
-- [ ] Checked the source and extracted plugin package with QGIS
-- [ ] Checked cancellation, saved work and unload/reload where applicable
-- [ ] Updated INSTALL.md, TOOLING.md, USER_GUIDE.md and WORK_LOG.md as needed
-- [ ] Recorded the verified plugin version and remaining limitations
+- [ ] Scope is focused; unrelated work and original user data are preserved.
+- [ ] Native QGIS capability reused, or exception explained.
+- [ ] Cancellation, recovery, save/reopen and unload/reload checked where relevant.
+- [ ] Exact commands/results recorded; unavailable checks and remaining limits stated.
+- [ ] Source and extracted-package integration checked for behaviour changes. Basic CI alone is insufficient.
+- [ ] Instructions, user-control/privacy implications and third-party licences reviewed.
 
-Before closing the issue, link a released build and record user/reviewer acceptance or the checks that substitute for it.
+## Limitations
+
+State what is still experimental or planned. This PR does not declare release readiness or authorise publishing a release.

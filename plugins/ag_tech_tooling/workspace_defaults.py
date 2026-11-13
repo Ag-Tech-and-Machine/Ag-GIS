@@ -31,10 +31,10 @@ def create_default(parent=None, crs=None):
     project = QgsProject()
     try:
         if not project.read(str(root / "Farm.qgz")):
-            raise ValueError(f"Created {root}, but QGIS could not prepare the initial map.")
+            raise ValueError(f"Created {root}, but Ag-GIS could not prepare the initial map.")
         show_field(root, store.records(root)["field"][0]["id"], project=project)
         if not project.write():
-            raise ValueError(f"Created {root}, but QGIS could not save the initial map.")
+            raise ValueError(f"Created {root}, but Ag-GIS could not save the initial map.")
     finally:
         project.clear()
     return root
