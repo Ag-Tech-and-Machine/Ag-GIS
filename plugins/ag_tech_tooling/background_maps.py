@@ -341,7 +341,7 @@ class BackgroundMaps(QObject):
         painter.save()
         painter.setFont(QFont("Sans Serif", 9))
         rect = painter.viewport().adjusted(6, 6, -6, -6)
-        painter.setPen(QColor("#222222"))
+        # Use painter's default pen (theme-aware), no hard-coded colours
         painter.setBackground(QColor("white"))
         painter.setBackgroundMode(Qt.OpaqueMode)
         painter.drawText(rect, Qt.AlignBottom | Qt.AlignRight | Qt.TextWordWrap,

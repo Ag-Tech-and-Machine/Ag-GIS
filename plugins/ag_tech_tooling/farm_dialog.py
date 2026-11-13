@@ -37,6 +37,8 @@ class NewFarmDialog(QDialog):
         row = QHBoxLayout()
         row.addWidget(self.location)
         browse = QPushButton("Browse…")
+        browse.setToolTip("Browse for a project location")
+        browse.setAccessibleName("Browse project location")
         browse.setIcon(icon("open"))
         browse.clicked.connect(self.browse)
         row.addWidget(browse)

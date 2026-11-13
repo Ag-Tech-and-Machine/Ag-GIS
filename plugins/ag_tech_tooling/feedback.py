@@ -121,6 +121,8 @@ class FeedbackDialog(QDialog):
         self.agent_guide.setPlainText(instructions)
         agent_layout.addWidget(self.agent_guide)
         copy_agent = QPushButton("Copy agent instructions")
+        copy_agent.setToolTip("Copy the agent instructions to your clipboard")
+        copy_agent.setAccessibleName("Copy agent instructions")
         copy_agent.clicked.connect(
             lambda: QApplication.clipboard().setText(self.agent_guide.toPlainText()))
         agent_layout.addWidget(copy_agent)
@@ -136,15 +138,23 @@ class FeedbackDialog(QDialog):
         for label, callback in (("Open GitHub form…", self.open_issue), ("Save report…", self.save_report),
                                 ("Copy report", self.copy_report), ("Email draft…", self.email_report)):
             button = QPushButton(label)
+            # Clean tooltip: remove trailing ellipsis from label for tooltip text (if present)
+            tooltip_text = label[:-2] if label.endswith('…') else label
+            button.setToolTip(tooltip_text)
+            button.setAccessibleName(label)
             button.clicked.connect(callback)
             actions.addWidget(button)
         layout.addLayout(actions)
         footer = QHBoxLayout()
         tracker = QPushButton("View reported issues")
+        tracker.setToolTip("Open the list of issues you have already reported on GitHub")
+        tracker.setAccessibleName("View reported issues")
         tracker.clicked.connect(lambda: self.open_url(ISSUES_URL))
         footer.addWidget(tracker)
         footer.addStretch()
         close = QPushButton("Close")
+        close.setToolTip("Close the feedback dialog without submitting")
+        close.setAccessibleName("Close dialog")
         close.clicked.connect(self.reject)
         footer.addWidget(close)
         layout.addLayout(footer)
