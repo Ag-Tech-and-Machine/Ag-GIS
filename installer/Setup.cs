@@ -6,6 +6,9 @@ using System.Text.RegularExpressions;
 class Setup {
     static int Main(string[] args) {
         try {
+            Console.Title = "Ag-GIS Setup";
+            Console.WriteLine("Ag-GIS - Farming in view");
+            Console.WriteLine("Built on open source tools");
             string profile = "default";
             if (args.Length != 0) {
                 if (args.Length != 2 || args[0] != "--profile" || !Regex.IsMatch(args[1], @"\A[A-Za-z0-9_-]+\z")) {

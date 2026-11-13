@@ -40,10 +40,13 @@ def main():
     source_root = args.source_from.resolve() if args.source_from else ROOT
     if args.source_from and not (source_root / "SOURCE-SNAPSHOT.json").is_file():
         raise ValueError("--source-from requires a recorded source snapshot")
+    for asset in ("installer/Launch.cs", "installer/Ag-GIS.ico", "plugins/ag_tech_tooling/branding.py"):
+        if not (source_root / asset).is_file():
+            raise ValueError("Snapshot predates branding assets; capture and validate a new source snapshot: " + asset)
     roots = [source_root / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
     sources = sorted([p for directory in roots for p in directory.rglob("*")
                       if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
-                     + [source_root / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore")])
+                     + [source_root / name for name in ("AGENTS.md", "README.md", "LICENSE", ".gitignore", "START_HERE.md")])
     before = {str(p.relative_to(source_root)).replace("\\", "/"): sha(p) for p in sources}
     for source in sources:
         if source.is_symlink():
@@ -102,8 +105,9 @@ def main():
     for name in ("Install.ps1", "install_profile.py", "Setup.cs", "Launch.cs", "Ag-GIS.ico"):
         shutil.copy2(snapshot / "installer" / name, bundle / name)
     compiler = Path(r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe")
-    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", str(bundle / "Setup.cs")], check=True)
-    subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll", f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", f"/win32icon:{bundle / 'Ag-GIS.ico'}", str(bundle / "Setup.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll",
+                    f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
     shutil.copy2(snapshot / "LICENSE", bundle / "LICENSE.txt")
     shutil.copy2(snapshot / "SOURCE-SNAPSHOT.json", bundle / "SOURCE-SNAPSHOT.json")
     with ZipFile(bundle / "Ag-GIS-source.zip", "w", ZIP_DEFLATED) as archive:

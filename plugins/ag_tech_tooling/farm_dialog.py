@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
+from .branding import brand_dialog
 from pathlib import Path
 import sqlite3
-from qgis.PyQt.QtCore import QItemSelectionModel, QTimer
+from qgis.PyQt.QtCore import QTimer, QModelIndex
 
 from qgis.PyQt.QtWidgets import (
     QDialog, QDialogButtonBox, QFileDialog, QFormLayout, QHBoxLayout,
@@ -19,7 +20,7 @@ class NewFarmDialog(QDialog):
         super().__init__(parent)
         self.upgrade = upgrade
         self.setWindowTitle("Upgrade Project Copy" if upgrade else "New Farm Project")
-        self.setWindowIcon(icon("organisation"))
+        brand_dialog(self)
         self.setMinimumWidth(520)
         layout = QVBoxLayout(self)
         layout.addWidget(QLabel("Create an upgraded copy; the original is retained." if upgrade
@@ -98,22 +99,43 @@ class FarmActions:
         self.attached = False
         self.busy = False
         self.view = None
+        self.styles = None
+        self.restoring = False
+
+    def attach_styles(self):
+        if self.styles is None:
+            from .dataset_styles import SavedStyles
+            self.styles = SavedStyles(lambda text: self.iface.messageBar().pushMessage('Saved styling', text, duration=15))
+
+    def detach_styles(self):
+        if self.styles is not None:
+            self.styles.close()
+            self.styles = None
 
     def attach(self):
+        self.attach_styles()
         if self.attached or not hasattr(self.iface, "layerTreeView"):
             return
         self.view = self.iface.layerTreeView()
         self.view.selectionModel().currentChanged.connect(self.field_selected)
         self.iface.projectRead.connect(self.project_read)
+        QgsProject.instance().aboutToBeCleared.connect(self.begin_restore)
         self.attached = True
         QTimer.singleShot(0, self.refresh_current)
 
     def detach(self):
+        self.detach_styles()
         if self.attached:
             self.view.selectionModel().currentChanged.disconnect(self.field_selected)
             self.iface.projectRead.disconnect(self.project_read)
+            QgsProject.instance().aboutToBeCleared.disconnect(self.begin_restore)
         self.attached = False
         self.view = None
+
+    def begin_restore(self):
+        # Native project loading selects layers before iface.projectRead. This
+        # selection restores presentation; it must not switch the field/filter.
+        self.restoring = True
 
     def project_read(self):
         QTimer.singleShot(0, self.refresh_current)
@@ -123,21 +145,30 @@ class FarmActions:
             return
         project = QgsProject.instance()
         if not project.fileName() or project.readNumEntry("AgTechTooling", "schema_version")[0] != 2:
+            self.restoring = False
             return
         self.busy = True
         try:
             from .hierarchy_dialog import sync_tree
-            _, nodes = sync_tree(Path(project.fileName()).resolve().parent)
+            from .managed_data import restore_datasets
+            root = Path(project.fileName()).resolve().parent
+            failures = restore_datasets(root, project)
+            if failures:
+                self.iface.messageBar().pushMessage("Saved data", "; ".join(failures), duration=10)
+            _, nodes = sync_tree(root)
             selected = project.readEntry("AgTechTooling", "selected_field")[0]
-            if selected in nodes:
+            if project.readEntry("AgTechTooling", "data_filter_field")[0] == "*":
+                self.view.setCurrentIndex(QModelIndex())
+            elif selected in nodes:
                 self.view.setCurrentNode(nodes[selected])
         except (ValueError, OSError, sqlite3.Error) as error:
             self.iface.messageBar().pushMessage("Farm Data", str(error), duration=8)
         finally:
             self.busy = False
+            self.restoring = False
 
     def field_selected(self, current, previous):
-        if not self.attached or self.busy:
+        if not self.attached or self.busy or self.restoring:
             return
         node = self.view.index2node(current)
         field_id = ""
@@ -149,18 +180,15 @@ class FarmActions:
         project = QgsProject.instance()
         if not field_id or project.readEntry("AgTechTooling", "selected_field")[0] == field_id:
             return
-        if not project.fileName():
+        if not project.fileName() or project.readNumEntry("AgTechTooling", "schema_version")[0] != 2:
             return
-        self.busy = True
-        try:
-            from .hierarchy_dialog import show_field
-            show_field(Path(project.fileName()).resolve().parent, field_id)
-        except (ValueError, OSError, RuntimeError, sqlite3.Error) as error:
-            if previous.isValid():
-                self.view.selectionModel().setCurrentIndex(previous, QItemSelectionModel.ClearAndSelect)
-            self.iface.messageBar().pushMessage("Farm Data", str(error), duration=8)
-        finally:
-            self.busy = False
+        if any(getattr(layer, "isEditable", lambda: False)() for layer in project.mapLayers().values()):
+            return  # Keep the editing destination stable until native edits finish.
+        # Current-row selection is browsing context, not an exclusive map filter.
+        # show_field changes shared reference subsets/placement and hides imports
+        # in other fields. Reserve it for the explicit Manage Data action; native
+        # checkboxes and Filter Data own visibility independently of navigation.
+        project.writeEntry("AgTechTooling", "selected_field", field_id)
 
     def can_replace_project(self):
         project = QgsProject.instance()
@@ -178,7 +206,7 @@ class FarmActions:
         if answer == QMessageBox.Discard:
             return True
         if not project.fileName():
-            path, _ = QFileDialog.getSaveFileName(self.iface.mainWindow(), "Save current map", "", "QGIS project (*.qgz)")
+            path, _ = QFileDialog.getSaveFileName(self.iface.mainWindow(), "Save current map", "", "Ag-GIS map (*.qgz)")
             if not path:
                 return False
             return project.write(path)
@@ -189,7 +217,7 @@ class FarmActions:
         if prompt and not self.can_replace_project():
             return False
         if not self.iface.addProject(info["project"]):
-            raise ValueError("QGIS could not open the farm map. The farm files have been retained.")
+            raise ValueError("Ag-GIS could not open the farm map. The farm files have been retained.")
         self.iface.messageBar().pushMessage("Farm Project", f"Opened {info['name']} — {info['crs']}", duration=6)
         return True
 
@@ -257,14 +285,19 @@ class FarmActions:
 
     def open(self):
         from .workspace_defaults import projects_directory
-        path, _ = QFileDialog.getOpenFileName(self.iface.mainWindow(), "Open farm GeoPackage", str(projects_directory()), "GeoPackage (*.gpkg)")
+        path, _ = QFileDialog.getOpenFileName(
+            self.iface.mainWindow(), "Open farm project", str(projects_directory()),
+            "Ag-GIS project (Farm.qgz farm.gpkg)")
         if not path:
             return
         try:
             selected = Path(path).resolve()
-            root = selected.parent.parent
-            if selected != root / "Data" / "farm.gpkg":
-                raise ValueError("Select Data/farm.gpkg inside an Ag Tech farm folder. General GeoPackage import is not available yet.")
+            if selected.name == "Farm.qgz":
+                root = selected.parent
+            elif selected.name == "farm.gpkg" and selected.parent.name == "Data":
+                root = selected.parent.parent
+            else:
+                raise ValueError("Select Farm.qgz in your Ag-GIS project folder, or Data/farm.gpkg inside it. Use Data In to import other datasets.")
             self.open_root(root)
         except (ValueError, OSError, RuntimeError, sqlite3.Error) as error:
             QMessageBox.warning(self.iface.mainWindow(), "Farm Project", str(error))

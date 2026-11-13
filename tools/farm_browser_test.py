@@ -7,13 +7,14 @@ from contextlib import ExitStack
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 sys.path.insert(0, os.environ.get("AGTECH_TEST_PLUGIN_ROOT", str(Path(__file__).resolve().parents[1] / "plugins")))
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt.QtWidgets import QDockWidget, QMainWindow, QStyle, QStyleOptionViewItem, QLineEdit
+from qgis.PyQt.QtWidgets import QDockWidget, QMainWindow, QStyle, QStyleOptionViewItem, QLineEdit, QWidget, QVBoxLayout, QToolBar
 from qgis.PyQt.QtTest import QTest
 from qgis.core import QgsApplication, QgsLayerTreeModel, QgsProject, QgsVectorLayer
 from qgis.gui import QgsLayerTreeView
 from ag_tech_tooling.workspace_defaults import create_default
 from ag_tech_tooling.hierarchy_dialog import sync_tree
 from ag_tech_tooling.farm_browser import FarmBrowser, KINDS
+from ag_tech_tooling.background_maps import PROVIDERS
 from ag_tech_tooling.ui_icons import icon
 from ag_tech_tooling import hierarchy as store
 
@@ -40,7 +41,15 @@ with tempfile.TemporaryDirectory(prefix="agtech-browser-test-") as temporary, Ex
             self.model.setFlag(QgsLayerTreeModel.AllowNodeChangeVisibility, True)
             self.model.setFlag(QgsLayerTreeModel.AllowNodeRename, True)
             self.view.setModel(self.model)
-            self.dock.setWidget(self.view)
+            self.contents = QWidget()
+            layout = QVBoxLayout(self.contents)
+            layout.setContentsMargins(0, 0, 0, 0)
+            layout.setSpacing(0)
+            self.toolbar = QToolBar()
+            self.toolbar.addAction("Add Group")
+            layout.addWidget(self.toolbar)
+            layout.addWidget(self.view)
+            self.dock.setWidget(self.contents)
             self.window.addDockWidget(Qt.LeftDockWidgetArea, self.dock)
             self.window.resize(440, 740)
         def layerTreeView(self):
@@ -56,6 +65,24 @@ with tempfile.TemporaryDirectory(prefix="agtech-browser-test-") as temporary, Ex
     assert view.model() is model and view.selectionModel() is selection
     assert view.indentation() == 14 and view.iconSize().width() == 20
     assert iface.dock.windowTitle() == "Farm Data"
+    # Match QGIS's actual toolbar + tree container, including recovery from a
+    # stale child rectangle when the restored dock is shown or maximised.
+    for width, height in ((585, 915), (320, 500), (640, 1000)):
+        iface.window.resize(width, height)
+        app.processEvents()
+        view.resize(200, 180)
+        iface.contents.layout().setGeometry(iface.contents.rect().adjusted(0, 0, -100, -100))
+        from qgis.PyQt.QtCore import QEvent
+        app.sendEvent(iface.contents, QEvent(QEvent.Show))
+        app.processEvents()
+        assert view.width() == iface.contents.width()
+        assert view.geometry().bottom() == iface.contents.rect().bottom()
+        assert view.geometry().top() == iface.toolbar.geometry().bottom() + 1
+        # Dock restoration may replace the rectangle after resize callbacks.
+        iface.contents.layout().setGeometry(iface.contents.rect().adjusted(0, 0, 0, -300))
+        iface.contents.repaint()
+        app.processEvents()
+        assert view.geometry().bottom() == iface.contents.rect().bottom()
     found = set()
     def verify(node):
         index = view.node2index(node)
@@ -99,7 +126,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-browser-test-") as temporary, Ex
     QTest.keyClick(editor, Qt.Key_Return)
     app.processEvents()
     assert unrelated.name() == "Other data renamed"
-    assert len(project.mapLayers()) == 4 and layer.isValid()
+    assert len(project.mapLayers()) == 4 + len(PROVIDERS) and layer.isValid()
     browser.close()
     browser.close()
     assert view.itemDelegate() is native
