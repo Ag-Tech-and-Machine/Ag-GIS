@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 # Set the environment variable for the test plugin root
-os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'{USER_HOME}
+os.environ['AGTECH_TEST_PLUGIN_ROOT'] = r'{USER_HOME}'
 
 sys.path.insert(0, os.environ.get('AGTECH_TEST_PLUGIN_ROOT'))
 
