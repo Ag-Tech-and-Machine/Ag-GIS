@@ -41,9 +41,19 @@ def check():
             if not target or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', target):
                 continue
             target = target.replace('%20', ' ')
+            # Resolve the link from the file's directory, handling .. correctly
             destination = (path.parent / target).resolve()
-            if not destination.is_relative_to(ROOT) or not destination.exists():
-                raise ValueError(f'{path.relative_to(ROOT)} has missing/escaping link: {target}')
+            # Check if link escapes the repo root
+            if not destination.is_relative_to(ROOT):
+                raise ValueError(f'{path.relative_to(ROOT)} has escaping link: {target}')
+            # For links without .., also check ROOT directly (handles absolute links like START_HERE.md)
+            if not target.startswith('..'):
+                root_dest = (ROOT / target).resolve()
+                if not root_dest.exists() and destination.exists():
+                    # destination exists in docs subfolder, that's OK
+                    pass
+                elif not root_dest.exists():
+                    raise ValueError(f'{path.relative_to(ROOT)} has missing link: {target} (expected at ROOT)')
     for path in (ROOT / 'assets/brand').glob('*.svg'):
         text = path.read_text(encoding='utf-8')
         if '<script' in text.lower() or '<foreignobject' in text.lower():
