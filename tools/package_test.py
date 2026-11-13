@@ -24,7 +24,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-package-test-") as temporary:
     environment = os.environ.copy()
     environment["AGTECH_TEST_PLUGIN_ROOT"] = temporary
     # Tests that don't require QGIS
-    # (update_catalog_test.py requires a missing build_update_catalog.py - TODO: implement)
+    # build_update_catalog.py now exists and is functional (implemented 2026-11-13)
     for script in (
         "github_session_test.py", "branding_test.py", "smoke_test.py", 
         "classification_test.py", "classification_registry_test.py", "classification_resolution_test.py",
