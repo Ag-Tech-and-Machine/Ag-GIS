@@ -51,8 +51,8 @@
 - Added default-workspace checks for known location, missing Documents recovery, no-form creation, numbered collisions, saved multi-client hierarchy, empty reference queries, field navigation, edit-session refusal, cancellation and signal lifecycle. Checks also run against the extracted package. The completed Deere preview component is included and its synthetic checks are now part of both suites.
 - Created the Ag-GIS sidebar section and moved both chats into it; renamed the main chat to Ag-GIS — Interface and Farm Structure. This groups chats visually. Saved local Project registration remains pending because the available app tools do not expose its creation.
 - Updated the canonical installation, tooling, data-model and bundled user instructions. The data-import chat added Data In during integration; the combined tested/installed release is 0.7.0.
-- Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight machinery preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
-- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\<USER>\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
+- Final source and extracted-ZIP checks passed on QGIS 3.44.14, including native-error-free default creation/navigation/save, lifecycle, legacy farm protection, schema 2 hierarchy, eight Deere preview cases and Data In discovery/cancellation/map linking. The invalid-parent hierarchy test deliberately emits a provider rejection.
+- Installed 0.7.0 in the default profile, preserving the previous plugin/settings. Live GUI verification passed: a two-client disposable workspace navigated correctly, all three empty reference layers queried, unload/reload retained one toolbar, and the actual New Project action created and saved the real starter at C:\Users\Michael\Documents\Ag Tech Tooling\Projects\My Farm Data. Only Layers was visible beside the map; all nine toolbar buttons had icons. QGIS remains open there in Simple view. Live report and screenshot are exported with the guide/package.
 
 ## 15 October 2026 — Hierarchy and icon-labelled management, version 0.5.0
 
@@ -81,7 +81,7 @@
 
 ## 15 October 2026 — Organisation/Farm/Field research
 
-- Reviewed primary machinery vendor SMS documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
+- Reviewed primary Deere, Ag Leader SMS and PTx FarmENGAGE documentation for organisation/client/grower/farm/field models, task/time views and unit preferences.
 - Documented a proposed Organisation → Farm → Field interface, optional Client/Grower handling, stable identities, boundary revisions and separate season/job relationships. Proposed multi-farm organisation workspaces revise the earlier one-farm packaging illustration.
 - Kept the installed 0.4.0 plugin and schema version 1 unchanged. No migrations, imports, production datasets or new hierarchy controls were created.
 - Confirmed the live QGIS accessibility tree contains the dedicated toolbar and seven controls. The 0.4.0 installed-build capture shows native icons above their labels; fresh Windows screenshot capture timed out, so the capture is prior verification evidence, not a fresh screenshot.
@@ -180,7 +180,7 @@
 
 ### Completed
 
-- Configured Git author Ag-GIS maintainers `<admin@agtechandmachine.com>` and default branch `main`.
+- Configured Git author Michael `<admin@agtechandmachine.com>` and default branch `main`.
 - Created the local `ag-tech-tooling` repository and committed the starter.
 - Installed QGIS 3.44.14 LTR using WinGet; installer hash verification and installation succeeded.
 - Added source discovery through `QGIS_PLUGINPATH` and an isolated development profile launcher.
@@ -213,7 +213,7 @@
 
 Define and implement the first real farming workflow. Add its operating instructions and validation evidence with the implementation.
 
-## 15 October 2026 - agricultural machinery import inspection foundation
+## 15 October 2026 - Deere GS3 import inspection foundation
 
 - Added isolated, packaged `deere_preview.py` service and developer CLI; no shared
   hierarchy/schema or GUI changes in this workstream.
@@ -228,7 +228,7 @@ Define and implement the first real farming workflow. Add its operating instruct
   extracted module also inspected the live NAS sample successfully with no
   metadata issues and unchanged hashes.
 - Development package built outside the repository; not installed into QGIS.
-  No Import button, GeoPackage writes, ZIP source support, machinery decoder or
+  No Import button, GeoPackage writes, ZIP source support, Deere decoder or
   season-data import is implemented. See docs/IMPORTS.md for next steps.
 
 ## 15 October 2026 - Data In local source dialog (0.7.0)
@@ -242,7 +242,7 @@ Define and implement the first real farming workflow. Add its operating instruct
 - Readable selections open as native linked map layers; vectors are read-only.
   Repeat adds skip existing sources, and the map refreshes/zooms. Originals are
   retained; managed GeoPackage copying is not part of this version.
-- machinery exports preview machine-ID relationships and guidance catalogue metadata.
+- Deere exports preview machine-ID relationships and guidance catalogue metadata.
   The supplied NAS sample passed the new scanner: five files, one export,
   client/farm/field/curved guidance hierarchy, no warnings, unchanged SHA-256
   inventory. The rendered native Qt dialog was visually checked against it.
@@ -250,7 +250,7 @@ Define and implement the first real farming workflow. Add its operating instruct
   stages. The source/preview record contract leaves these separate from the UI.
 - Verification completed: scripts/check.ps1 passed syntax/metadata, plugin
   lifecycle/Simple view, farm workflows, hierarchy/default-workspace checks,
-  eight machinery metadata tests and Data In integration checks. All workflow tests
+  eight Deere metadata tests and Data In integration checks. All workflow tests
   passed again against the extracted 0.7.0 ZIP; exact packaged bytes matched
   source, including the bundled user guide.
 - Built dist/ag_tech_tooling-0.7.0.zip. The active QGIS session was left running;

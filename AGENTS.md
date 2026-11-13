@@ -36,4 +36,4 @@ Build farmer-friendly, open-source tooling that simplifies agricultural workflow
 
 ## Product name and release compatibility
 
-The product name changed to Ag-GIS on 15 October 2026. Use Ag-GIS for new visible labels and documentation. Retain the ag_tech_tooling plugin ID and existing farm-data paths. Private releases live in JamRov/Ag-GIS. Package recorded tested snapshots while shared source work is in progress; do not implicitly include later unverified edits in an existing release.
+The user renamed the product Ag-GIS on 15 October 2026. Use Ag-GIS for new visible labels and documentation. Retain the ag_tech_tooling plugin ID and existing farm-data paths. Private releases live in JamRov/Ag-GIS. Package recorded tested snapshots while shared source work is in progress; do not implicitly include later unverified edits in an existing release.
