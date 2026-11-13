@@ -138,6 +138,10 @@ class FeedbackDialog(QDialog):
         for label, callback in (("Open GitHub form…", self.open_issue), ("Save report…", self.save_report),
                                 ("Copy report", self.copy_report), ("Email draft…", self.email_report)):
             button = QPushButton(label)
+            # Clean tooltip: remove trailing ellipsis from label for tooltip text (if present)
+            tooltip_text = label[:-2] if label.endswith('…') else label
+            button.setToolTip(tooltip_text)
+            button.setAccessibleName(label)
             button.clicked.connect(callback)
             actions.addWidget(button)
         layout.addLayout(actions)
