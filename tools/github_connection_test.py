@@ -7,7 +7,8 @@ import sys
 
 def main():
     root = Path(os.environ['AGGIS_CONNECTION_SCRATCH']).resolve()
-    assert root.is_relative_to(Path('C:/temp/AppData/Local/tool/cache/scratch').resolve())
+    base = Path(os.environ['AGGIS_CONNECTION_SCRATCH_BASE']).resolve(strict=True)
+    assert root != base and root.is_relative_to(base) and root.name.startswith('aggis-connection-')
     assert (root / 'SYNTHETIC-ONLY').read_text() == 'connection-v1'
     plugin = Path(os.environ['AGGIS_CONNECTION_PLUGIN']).resolve()
     os.environ['QT_QPA_PLATFORM'] = 'offscreen'

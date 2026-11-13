@@ -10,7 +10,7 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('C:/temp/AppData/Local/tool/cache/scratch')
+
 
 
 def main():
@@ -21,7 +21,8 @@ def main():
     plugin = args.plugin_root.resolve()
     out = (args.evidence or ROOT / '.aggis-agent/evidence' / ('connection-' + uuid.uuid4().hex)).resolve()
     out.mkdir(parents=True, exist_ok=False)
-    scratch = Path(tempfile.mkdtemp(prefix='aggis-connection-', dir=BASE))
+    base = Path(os.environ['TMPDIR']).resolve(strict=True)
+    scratch = Path(tempfile.mkdtemp(prefix='aggis-connection-', dir=base)).resolve()
     (scratch / 'SYNTHETIC-ONLY').write_text('connection-v1')
     temp = scratch / 'runtime-temp'
     temp.mkdir()
@@ -32,7 +33,8 @@ def main():
                     'tempfile.tempdir=str(p)\ns=sys.argv[1];sys.path.insert(0,str(Path(s).parent));'
                     'sys.argv=[s];runpy.run_path(s,run_name="__main__")\n')
     env = dict(os.environ, PYTHONFAULTHANDLER='1', PYTHONDONTWRITEBYTECODE='1',
-               AGGIS_CONNECTION_SCRATCH=str(scratch), AGGIS_CONNECTION_PLUGIN=str(plugin))
+               AGGIS_CONNECTION_SCRATCH=str(scratch), AGGIS_CONNECTION_PLUGIN=str(plugin),
+               AGGIS_CONNECTION_SCRATCH_BASE=str(base))
     for key in ('QGIS_AUTH_PASSWORD_FILE', 'QGIS_AUTH_DB_URI', 'PYQGIS_STARTUP'):
         env.pop(key, None)
     command = ['C:/Program Files/QGIS 3.44.14/bin/python-qgis-ltr.bat', str(shim), str(script)]
