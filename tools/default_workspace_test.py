@@ -17,6 +17,7 @@ from ag_tech_tooling.workspace_defaults import projects_directory, create_defaul
 from ag_tech_tooling.farm_project import validate_farm
 from ag_tech_tooling.hierarchy_dialog import sync_tree, show_field
 from ag_tech_tooling.farm_dialog import FarmActions
+from ag_tech_tooling.background_maps import PROVIDERS
 from osgeo import gdal
 
 app = QgsApplication([], False)
@@ -56,8 +57,8 @@ with tempfile.TemporaryDirectory(prefix="agtech-default-test-") as temporary, Ex
         assert nodes[field["id"]].parent() is nodes[farm["id"]]
         assert nodes[season["id"]].parent().name() == "Seasons"
         assert nodes[season["id"]].parent().parent() is nodes[field["id"]]
-        assert len(singleton.mapLayers()) == 3
-        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values())
+        assert len(singleton.mapLayers()) == 3 + len(PROVIDERS)
+        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values() if hasattr(layer, "featureCount"))
         other_client = store.add_record(root, "client", "Client 2", organisation["id"])
         other_farm = store.add_record(root, "farm", "Farm 1", other_client)
         other_field = store.add_record(root, "field", "Field 1", other_farm)
@@ -66,14 +67,14 @@ with tempfile.TemporaryDirectory(prefix="agtech-default-test-") as temporary, Ex
         assert nodes[other_client].parent() is nodes[organisation["id"]]
         assert nodes[other_field].parent() is nodes[other_farm]
         show_field(root, other_field)
-        assert len(singleton.mapLayers()) == 3, "Reuse three views across all fields"
-        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values())
+        assert len(singleton.mapLayers()) == 3 + len(PROVIDERS), "Reuse three views across all fields"
+        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values() if hasattr(layer, "featureCount"))
         _, nodes = sync_tree(root)
         whole = nodes["whole:" + other_field]
         assert len(whole.findLayers()) == 3 and not nodes["whole:" + field["id"]].findLayers()
         store.rename_record(root, "client", other_client, "Second Client")
         assert sync_tree(root)[1][other_client].name() == "Second Client"
-        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values())
+        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values() if hasattr(layer, "featureCount"))
         assert singleton.write()
         singleton.clear()
         assert singleton.read(str(root / "Farm.qgz"))
@@ -105,7 +106,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-default-test-") as temporary, Ex
         with patch.object(QDialog, "exec", side_effect=AssertionError("Quick New must not open a form")):
             actions.new()
         assert Path(singleton.fileName()).parent.name == "My Farm Data 3"
-        assert len(singleton.mapLayers()) == 3
+        assert len(singleton.mapLayers()) == 3 + len(PROVIDERS)
         third = Path(singleton.fileName()).parent
         third_rows = store.records(third)
         extra = store.add_record(third, "field", "Field 2", third_rows["farm"][0]["id"])
@@ -114,8 +115,8 @@ with tempfile.TemporaryDirectory(prefix="agtech-default-test-") as temporary, Ex
         app.processEvents()
         iface.view.setCurrentNode(third_nodes[extra])
         assert singleton.readEntry("AgTechTooling", "selected_field")[0] == extra, iface.messages
-        assert len(singleton.mapLayers()) == 3
-        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values())
+        assert len(singleton.mapLayers()) == 3 + len(PROVIDERS)
+        assert all(layer.featureCount() == 0 for layer in singleton.mapLayers().values() if hasattr(layer, "featureCount"))
         guidance = next(layer for layer in singleton.mapLayers().values() if layer.name() == "Guidance Lines")
         assert guidance.startEditing()
         iface.view.setCurrentNode(third_nodes[third_rows["field"][0]["id"]])

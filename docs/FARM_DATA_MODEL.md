@@ -131,3 +131,12 @@ Verified automated foundation checks cover same-named farms/fields under differe
 - [PTx: Initial Organization Creation and Management](https://www.ptxag.com/us/en/resources/product-resources/farmengage-initial-organization-creation-management.html).
 
 The 0.6.0 native Layers tree mirrors the complete management hierarchy using stable group properties. Selecting any field branch switches the shared reference views to that field; no table per field/season is created. Use Manage Data for persistent record renames. Default labels are placeholders, not inferred ownership or a real crop season.
+
+## Managed dataset extension — 0.9.0
+
+`agtech_datasets` now indexes managed vector tables and relative raster files with
+field/type/provenance metadata (catalogue version 1, core farm schema remains 2).
+Imports preserve heterogeneous source attributes in individual dataset tables;
+these are not per-field/year schemas. See MANAGED_DATA.md for copying, recovery,
+filtering, typed reference roles and storage limits. Dataset-season relationships,
+shared multi-field scope and history lineage remain future schema work.

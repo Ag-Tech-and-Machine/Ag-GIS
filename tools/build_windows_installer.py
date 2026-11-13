@@ -40,6 +40,9 @@ def main():
     source_root = args.source_from.resolve() if args.source_from else ROOT
     if args.source_from and not (source_root / "SOURCE-SNAPSHOT.json").is_file():
         raise ValueError("--source-from requires a recorded source snapshot")
+    for asset in ("installer/Launch.cs", "installer/Ag-GIS.ico", "plugins/ag_tech_tooling/branding.py"):
+        if not (source_root / asset).is_file():
+            raise ValueError("Snapshot predates branding assets; capture and validate a new source snapshot: " + asset)
     roots = [source_root / name for name in ("plugins", "tools", "scripts", "installer", "docs")]
     sources = sorted([p for directory in roots for p in directory.rglob("*")
                       if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
@@ -85,7 +88,7 @@ def main():
             shutil.copy2(package, snapshot / "dist" / package.name)
         print("Reused successful source/extracted-plugin checks: all plugin and test inputs are byte-identical", flush=True)
     else:
-        result = subprocess.run([POWERSHELL, "-NoProfile", "-File", str(snapshot / "scripts/check.ps1"),
+        result = subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(snapshot / "scripts/check.ps1"),
                                  "-QgisRoot", str(args.qgis_root)], capture_output=True, text=True, env=environment)
         (build / "validation.log").write_text(result.stdout + result.stderr, encoding="utf-8")
         print(result.stdout, flush=True)
@@ -102,8 +105,9 @@ def main():
     for name in ("Install.ps1", "install_profile.py", "Setup.cs", "Launch.cs", "Ag-GIS.ico"):
         shutil.copy2(snapshot / "installer" / name, bundle / name)
     compiler = Path(r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe")
-    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", str(bundle / "Setup.cs")], check=True)
-    subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll", f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:exe", "/platform:anycpu", f"/out:{bundle / 'Setup.exe'}", f"/win32icon:{bundle / 'Ag-GIS.ico'}", str(bundle / "Setup.cs")], check=True)
+    subprocess.run([str(compiler), "/nologo", "/target:winexe", "/platform:anycpu", "/reference:System.Windows.Forms.dll", "/reference:System.Drawing.dll",
+                    f"/win32icon:{bundle / 'Ag-GIS.ico'}", f"/out:{bundle / 'Ag-GIS.exe'}", str(bundle / "Launch.cs")], check=True)
     shutil.copy2(snapshot / "LICENSE", bundle / "LICENSE.txt")
     shutil.copy2(snapshot / "SOURCE-SNAPSHOT.json", bundle / "SOURCE-SNAPSHOT.json")
     with ZipFile(bundle / "Ag-GIS-source.zip", "w", ZIP_DEFLATED) as archive:
@@ -111,13 +115,13 @@ def main():
             archive.write(snapshot / name, name)
         archive.write(snapshot / "SOURCE-SNAPSHOT.json", "SOURCE-SNAPSHOT.json")
     (bundle / "README.txt").write_text(
-        f"Ag-GIS {version} offline Windows installer\n\n"
+        f"Ag-GIS {version} offline Windows installer\nFarming in view. Built on open source tools.\n\n"
         "1. Extract ALL files to a local folder. Keep Setup.exe beside the other files.\n"
         "2. Save your map and close QGIS. Double-click Setup.exe as your normal user.\n"
-        "3. If QGIS 3.44.14 is missing, approve the Windows administrator prompt; setup installs it silently.\n"
-        "4. Open Ag-GIS from the Start menu, or open QGIS normally.\n\n"
-        "Other profile: powershell -NoProfile -File .\\Install.ps1 -Profile profile_name\n"
-        "Verify without installing: powershell -NoProfile -File .\\Install.ps1 -VerifyOnly\n"
+        "3. If QGIS 3.44.14 is missing, complete its official wizard and administrator prompt.\n"
+        "4. Open Ag-GIS from Start, or open QGIS normally. Both use the selected QGIS profile.\n\n"
+        "Other profile: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -Profile profile_name\n"
+        "Verify without installing: powershell -NoProfile -ExecutionPolicy Bypass -File .\\Install.ps1 -VerifyOnly\n"
         "Recovery copies: %APPDATA%\\QGIS\\QGIS3\\profiles\\<profile>\\ag-tech-install-backups.\n"
         "Close QGIS before restoring the backed-up plugin folder and QGIS3.ini.\n"
         "To uninstall only this plugin use QGIS Manage and Install Plugins. Farm files remain separate.\n"
@@ -134,7 +138,7 @@ def main():
                 "qgisHashSource": "https://github.com/microsoft/winget-pkgs/blob/master/manifests/o/OSGeo/QGIS_LTR/3.44.14/OSGeo.QGIS_LTR.installer.yaml",
                 "files": [{"path": p.name, "sha256": sha(p)} for p in sorted(bundle.iterdir())]}
     (bundle / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    subprocess.run([POWERSHELL, "-NoProfile", "-File", str(bundle / "Install.ps1"), "-VerifyOnly"], check=True, env=environment)
+    subprocess.run([POWERSHELL, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(bundle / "Install.ps1"), "-VerifyOnly"], check=True, env=environment)
     output = build.parent / f"{bundle.name}-{stamp}.zip"
     with ZipFile(output, "w", ZIP_STORED) as archive:
         for path in sorted(bundle.iterdir()):

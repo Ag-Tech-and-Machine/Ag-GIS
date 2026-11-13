@@ -111,7 +111,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-hierarchy-test-") as temporary:
     outsider = QgsVectorLayer("Point?crs=EPSG:7855", "User data", "memory")
     project.addMapLayer(outsider)
     show_field(root, north)
-    assert len(project.mapLayers()) == 4
+    assert len(project.mapLayers()) == 8
     guidance = next(layer for layer in project.mapLayers().values() if layer.name() == "Guidance Lines")
     feature = QgsFeature(guidance.fields())
     feature["field_id"], feature["id"], feature["name"], feature["revision"] = north, "line1", "AB 1", "1"
@@ -119,7 +119,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-hierarchy-test-") as temporary:
     assert guidance.dataProvider().addFeatures([feature])[0]
     assert guidance.featureCount() == 1
     show_field(root, other_field)
-    assert len(project.mapLayers()) == 4 and guidance.featureCount() == 0
+    assert len(project.mapLayers()) == 8 and guidance.featureCount() == 0
     show_field(root, north)
     assert guidance.featureCount() == 1 and outsider.id() in project.mapLayers()
     assert project.readEntry("AgTechTooling", "selected_field")[0] == north
@@ -133,7 +133,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-hierarchy-test-") as temporary:
     assert validate_farm(root)["version"] == 2
     assert project.read(str(root / "Farm.qgz"))
     show_field(root, north)
-    assert len(project.mapLayers()) == 3, "Moving/reopening must not duplicate managed layers"
+    assert len(project.mapLayers()) == 7, "Moving/reopening must not duplicate managed layers"
     project.clear()
 
     legacy = create_farm(parent, "Legacy", crs)

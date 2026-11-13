@@ -3,8 +3,9 @@
 from pathlib import Path, PurePosixPath
 from zipfile import ZipFile, BadZipFile
 
-from qgis.core import QgsFeedback, QgsProviderRegistry, QgsMapLayerType
+from qgis.core import QgsFeedback, QgsProviderRegistry, QgsMapLayerType, QgsWkbTypes
 from .deere_preview import inspect_export
+from .pctgdp_preview import inspect_project, PreviewCancelled
 
 
 MAX_FILES = 10000
@@ -69,43 +70,64 @@ def scan_local(source, feedback=None, progress=None):
                 "format": layer.driverName() or layer.providerKey(), "source": label,
                 "uri": layer.uri(), "provider": layer.providerKey(),
                 "layer_type": "vector" if layer.type() == QgsMapLayerType.VectorLayer else "raster",
+                "representation": ({QgsWkbTypes.PointGeometry: "point", QgsWkbTypes.LineGeometry: "line",
+                    QgsWkbTypes.PolygonGeometry: "polygon", QgsWkbTypes.NullGeometry: "table"}.get(
+                        QgsWkbTypes.geometryType(layer.wkbType()), "unknown") if layer.type() == QgsMapLayerType.VectorLayer else "raster"),
                 "status": "Ready — field checked when importing"})
         if not layers:
-            warning(label, "No readable map layers found by QGIS")
+            warning(label, "No readable map layers found")
 
     def archive(path):
         # Validate before asking providers to look inside. No files are extracted.
         try:
             with ZipFile(path) as archive_file:
-                entries = archive_file.infolist()
-                if len(entries) > MAX_FILES or sum(e.file_size for e in entries) > MAX_ARCHIVE_BYTES:
-                    warning(path.name, "Archive exceeds preview limits (10,000 entries / 512 MiB); unpack a smaller selection")
-                    return
-                for entry in entries:
-                    name = entry.filename.replace("\\", "/")
-                    parts = PurePosixPath(name)
-                    if parts.is_absolute() or ".." in parts.parts or ":" in name or entry.flag_bits & 1:
-                        warning(path.name, "Unsafe or encrypted archive; not scanned")
-                        return
-                machine = any(("/" + e.filename.lower().replace("\\", "/")).endswith("/rcd/eic/setup.fds") for e in entries)
+                from .archive_sources import validated_members
+                entries = list(validated_members(archive_file, check,
+                    max_entries=MAX_FILES, max_bytes=MAX_ARCHIVE_BYTES).values())
+                machine = any(
+                    PurePosixPath(e.filename).suffix.lower() in {'.fds', '.spatialcatalog'}
+                    and '/rcd/eic/' in ('/' + e.filename.lower().replace('\\', '/'))
+                    for e in entries if not e.is_dir())
                 if machine:
-                    result["items"].append({"kind": "machine_archive", "name": path.stem,
-                        "format": "Deere GS3 RCD", "source": str(path),
-                        "status": "Unpack this archive to preview its farm structure"})
+                    check()
+                    metadata = inspect_export(path, cancelled=feedback.isCanceled)
+                    check()
+                    if metadata['format'] == 'deere_gs3_rcd':
+                        # Setup/catalogue preview has no operation records to classify.
+                        # Preserve metadata until a verified adapter supplies them.
+                        
+                        result['items'].append({'kind': 'deere', 'name': path.stem,
+                            'format': 'Deere GS3 RCD ZIP', 'source': str(path),
+                            'metadata': metadata, 'status': 'Farm structure found; guidance decoder needed'})
+                        for issue in metadata['issues']:
+                            warning(path.name, issue['message'])
+                    else:
+                        warning(path.name, 'No recognised Deere setup or spatial catalogue found')
                 for entry in entries:
                     check()
                     if not entry.is_dir() and PurePosixPath(entry.filename).suffix.lower() in GIS_EXTENSIONS:
                         probe(f"/vsizip/{path.as_posix()}/{entry.filename}", f"{path.name} / {entry.filename}")
                     elif PurePosixPath(entry.filename).suffix.lower() == ".zip":
                         warning(entry.filename, "Nested archive; unpack it to scan")
-        except (BadZipFile, OSError) as error:
+        except (BadZipFile, OSError, ValueError, RuntimeError) as error:
+            check()
             warning(path.name, f"Cannot read archive ({error})")
 
     def inspect_file(path):
         check()
         result["files_scanned"] += 1
         progress(f"Checking {path.name}")
-        if path.suffix.lower() == ".zip":
+        if path.suffix.lower() == ".pctgdp":
+            try:
+                metadata = inspect_project(path, cancelled=feedback.isCanceled)
+                result["items"].append({"kind": "pctgdp", "name": path.stem,
+                    "format": "PCT GDP project", "source": str(path), "metadata": metadata,
+                    "status": "Project identified — decoder verification needed"})
+            except PreviewCancelled:
+                raise ScanCancelled()
+            except (OSError, ValueError, BadZipFile, RuntimeError) as error:
+                warning(path.name, f"Cannot preview PCT GDP project ({error})")
+        elif path.suffix.lower() == ".zip":
             archive(path)
         elif path.suffix.lower() in GIS_EXTENSIONS:
             probe(str(path), str(path))
