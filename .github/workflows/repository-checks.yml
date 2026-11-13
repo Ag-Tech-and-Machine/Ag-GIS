@@ -25,7 +25,7 @@ jobs:
         run: python tools/check_repository.py
       - name: Check plugin metadata
         run: python tools/check_plugin.py
-      - name: Check local agent decision workflow
+      - name: Check public agent guidance (documentation only)
         run: python tools/agent_ops_test.py
       - name: Construct development ZIP (not a release)
         run: python tools/build_plugin.py
