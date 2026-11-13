@@ -38,6 +38,8 @@ class NewFarmDialog(QDialog):
         row.addWidget(self.location)
         browse = QPushButton("Browse…")
         browse.setIcon(icon("open"))
+        browse.setToolTip("Choose a local parent folder")
+        browse.setProperty("aria-label", "Browse for save location")
         browse.clicked.connect(self.browse)
         row.addWidget(browse)
         self.crs = QgsProjectionSelectionWidget()
