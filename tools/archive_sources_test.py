@@ -1,4 +1,5 @@
 """Synthetic shared ZIP safety and adapter contract; no customer exports."""
+
 import io
 import os
 from pathlib import Path
@@ -65,10 +66,12 @@ class ArchiveTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'limits'):
             self.inventory(['a'], max_bytes=3)
         calls = []
+
         def cancel():
             calls.append(True)
             if len(calls) == 3:
                 raise RuntimeError('cancelled during inventory')
+
         with self.assertRaisesRegex(RuntimeError, 'cancelled'):
             self.inventory(['a', 'b', 'c'], check=cancel)
 
