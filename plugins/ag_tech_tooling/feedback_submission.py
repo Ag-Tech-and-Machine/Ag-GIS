@@ -19,7 +19,7 @@ from qgis.PyQt.QtCore import QUrl, Qt, QIODevice
 from qgis.PyQt.QtGui import QDesktopServices
 from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
     QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPlainTextEdit,
-    QPushButton, QVBoxLayout, QWidget)
+    QPushButton, QCheckBox, QComboBox, QVBoxLayout, QWidget)
 
 # GitHub API settings - these must match the GitHub App configuration
 GITHUB_API_BASE = "https://api.github.com"
