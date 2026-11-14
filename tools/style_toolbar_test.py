@@ -1,5 +1,9 @@
 """Default 294px native toolbar constructor and real overflow contract."""
-import os,sys,json,traceback,hashlib
+import os
+import sys
+import json
+import traceback
+import hashlib
 from pathlib import Path
 from qgis.core import QgsProject,QgsApplication,QgsVectorLayer,QgsMapLayerStyle
 from qgis.PyQt.QtCore import Qt,QTimer,QObject,QPoint
