@@ -35,9 +35,9 @@ One organisation can contain several clients; one client can contain several far
 
 | Platform | Verified pattern | Lesson for Ag-GIS |
 | --- | --- | --- |
-| farm equipment dashboard | The field API operates within an organisation and relates fields to clients and farms. Deere's display help documents Client → Farm → Field, with optional grouping levels. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
+| farm equipment dashboard | The field API operates within an organisation and relates fields to clients and farms. | Keep account/organisation identity distinct from the Client/Farm/Field names exchanged with machines. |
 | farm equipment SMS | Management items include Grower, Farm, Field and Year; SMS service analysis filters include Grower, Farm, Field, Year and Operation. Its management tree also offers task/calendar views. | Familiar land hierarchy and alternate time/task views should access the same records. |
-| agriculture platform farm equipment | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
+| agriculture platform | Organisation setup is separate from field resources. The public API overview lists Client/Farm/Field, boundaries, guidance lines and landmarks. Organisation and user unit preferences have different roles. | Separate business context, land resources and user display preferences. |
 
 This is a comparison of public documentation, not a reverse-engineered database schema or a claim that the three products have identical models.
 
@@ -122,15 +122,12 @@ Verified automated foundation checks cover same-named farms/fields under differe
 
 ## Primary sources reviewed
 
-- [Deere field API](https://developer.deere.com/dev-docs/fields) and [client API](https://developer.deere.com/dev-docs/clients).
-- [Deere: Manage Clients, Farms and Fields](https://displaysimulator.deere.com/onscreen_help/4640/current/en/fields/fields_manage.htm).
-- [farm equipment: Creating Management Items](https://portal.agleader.com/community/s/article/1606?language=en_US).
-- [farm equipment SMS service: Agronomic Analysis](https://portal.agleader.com/community/s/article/6388?language=en_US).
-- [farm equipment: SMS Software Layout and Management Tree](https://portal.agleader.com/community/articles/en_US/Knowledge/6865).
-- [agriculture platform: farm equipment APIs](https://www.farmsoft.net/us/en/partners/developers/api/).
-- [agriculture platform: Initial Organization Creation and Management](https://www.farmsoft.net/us/en/resources/product-resources).
+Generic farming platform documentation for hierarchy patterns:
+- Field API documentation showing organisation-client-farm-field relationships
+- SMS service analysis and management documentation
+- Platform API documentation for organisation and resource management
 
-The 0.6.0 native Layers tree mirrors the complete management hierarchy using stable group properties. Selecting any field branch switches the shared reference views to that field; no table per field/season is created. Use Manage Data for persistent record renames. Default labels are placeholders, not inferred ownership or a real crop season.
+These references inform the data model design and ensure compatibility with common farming platforms.
 
 ## Managed dataset extension — 0.9.0
 
