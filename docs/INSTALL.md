@@ -144,7 +144,7 @@ Earlier increment (preserved):
 
 **22 October bounded Edit Style acceptance:** exact candidate `2ef5641d` now has executed isolated branded Simple View managed-edit/Cancel/Apply, menu Save Style, native Save Map, warm/catalogue recovery and deferred plugin-reload proof (40 assertions); automatic cold project/style restoration and catalogue recovery pass 14 core assertions. Normal installation is still NOT performed. Cold post-recovery Save Map child visibility/control remains open; native QAction cleanup is not button acceptance. Default-width Edit Style discoverability required a scratch dock resize. See `.aggis-agent/evidence/20261022-branded-style/verify.py` (bounded evidence exit 0, `--require-full` exit 1) and WORK_LOG. Preserve normal sessions and the historical synthetic process identified in its snapshot; no forcekill/discard.
 
-Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Older private-repository instructions below describe the earlier setup. Public feedback remains at https://github.com/JamRov/Ag-GIS-Feedback/issues .
+Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Older private-repository instructions below describe the earlier setup. Public feedback is at https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues .
 
 # Installation and setup
 
