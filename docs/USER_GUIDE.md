@@ -2,7 +2,7 @@
 
 **Farming in view · Built on open source tools**
 
-Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Older private-repository instructions below describe the earlier setup. Public feedback remains at https://github.com/JamRov/Ag-GIS-Feedback/issues .
+Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Public feedback is at https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues .
 
 # Ag-GIS — user guide
 
@@ -261,7 +261,7 @@ Use **Feedback** on the toolbar to report a problem, suggest an improvement or a
 Whole Map and post-import zoom use native coordinate-aware extents of the farm datasets, excluding the world background. A new empty map starts at its coordinate system area of use (worldwide for a global CRS); selecting mapped field data zooms in. Existing saved map extents are retained.
 
 
-Public feedback tracker: https://github.com/JamRov/Ag-GIS-Feedback/issues . Product source and release downloads are public in Ag-Tech-and-Machine/Ag-GIS. Anyone can read feedback; posting needs a GitHub account. Reports and attachments are public, so remove farm/customer details before sharing. Save/email remains available without GitHub.
+Public feedback tracker: https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues . Product source and release downloads are public in Ag-Tech-and-Machine/Ag-GIS. Anyone can read feedback; posting needs a GitHub account. Reports and attachments are public, so remove farm/customer details before sharing. Save/email remains available without GitHub.
 
 ## Background choices on the left — 0.12.0
 

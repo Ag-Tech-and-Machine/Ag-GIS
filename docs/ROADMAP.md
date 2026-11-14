@@ -28,4 +28,4 @@ These online services are not implemented or available for purchase. Local work 
 
 ## How people guide this
 
-Start with a safe example and the farming task in [Ag-GIS Feedback](https://github.com/JamRov/Ag-GIS-Feedback/issues). Maintainers explain accepted, deferred and declined changes. Votes and commercial interest inform priorities; they do not override data integrity, user control or maintainability. Code/documentation changes are proposed through pull requests. See [CONTRIBUTING.md](../CONTRIBUTING.md).
+Start with a safe example and the farming task in [Ag-GIS issues](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues). Maintainers explain accepted, deferred and declined changes. Votes and commercial interest inform priorities; they do not override data integrity, user control or maintainability. Code/documentation changes are proposed through pull requests. See [CONTRIBUTING.md](../CONTRIBUTING.md).

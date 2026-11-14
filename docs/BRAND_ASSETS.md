@@ -15,7 +15,7 @@ Keep the public repository's first impression aligned with the product rather th
 1. Use the original lockup at the top of README and the square symbol where a small icon is required. Include the exact supporting line **Built on open source tools** in readable text.
 2. Proposed repository description: **Farmer-friendly mapping and farm-data workflows. Built on open source tools. In development.**
 3. Proposed topics: `agriculture`, `farm-management`, `gis`, `mapping`, `open-source`, `desktop-application`. Keep QGIS in technical implementation documentation; a product topic list must not claim unimplemented integrations.
-4. Keep source/releases at **Ag-Tech-and-Machine/Ag-GIS** and feedback at **JamRov/Ag-GIS-Feedback**. Do not move/rename the feedback tracker as a branding side effect; preserve existing links.
+4. Keep source/releases at **Ag-Tech-and-Machine/Ag-GIS** and feedback at **Ag-Tech-and-Machine/Ag-GIS**. Do not move/rename the feedback tracker as a branding side effect; preserve existing links.
 5. Review a dedicated social-preview export before uploading it. Changing repository metadata, social preview or an organisation avatar requires explicit approval and read-back verification. These are proposed settings, not changes already made.
 6. Publish a focused branding/documentation change only after reviewing its diff and all linked-file dependencies. The shared checkout contains unrelated feature work; do not bulk-stage or publish it. Keep internal plugin IDs, existing farm-data paths, licences and technical requirements stable.
 

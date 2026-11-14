@@ -1,6 +1,6 @@
 # Feedback, bugs and support
 
-Ag-GIS uses the public [Ag-GIS Feedback tracker](https://github.com/JamRov/Ag-GIS-Feedback/issues) as the work record. Anyone can read reports; posting requires a GitHub account. Product source and installer releases remain in the private JamRov/Ag-GIS repository. A saved report or email draft becomes tracked only after somebody submits an issue and receives its number.
+Ag-GIS uses the public [Ag-GIS Feedback tracker](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues) as the work record. Anyone can read reports; posting requires a GitHub account.
 
 ## Submit from Ag-GIS (no login needed)
 
@@ -66,7 +66,7 @@ Without GitHub access or connectivity:
 ## View and follow reported issues
 
 1. Click **View reported issues** in the dialog footer
-2. This opens [Ag-GIS-Feedback issues](https://github.com/JamRov/Ag-GIS-Feedback/issues)
+2. This opens [Ag-GIS issues](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues)
 3. Search for your Report ID or issue number
 4. Add details, comments, or confirm the fix
 
@@ -84,13 +84,13 @@ Without GitHub access or connectivity:
 
 ## Work through reports
 
-1. Review the **New** queue: [new reports](https://github.com/JamRov/Ag-GIS-Feedback/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+new%22+-label%3Averification). Acknowledge the farming task, check for duplicates, reproduce it with a safe example and confirm the affected version. Label the type **bug / enhancement / question**.
+1. Review the **New** queue: [new reports](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+new%22+-label%3Averification). Acknowledge the farming task, check for duplicates, reproduce it with a safe example and confirm the affected version. Label the type **bug / enhancement / question**.
 2. Choose a priority: **priority: urgent** for data loss or blocked work without a workaround; **priority: normal** for a scheduled improvement; **priority: low** for minor changes with alternatives. Priority is a maintainer decision, separate from the user's stated impact.
 3. Apply exactly one status label: **status: needs information**, **status: planned**, **status: in progress**, or **status: ready to test**. New/reopened issues start at **status: new**. The triage workflow removes other status labels after a new status is selected and preserves unrelated labels. Closing removes active status labels; native GitHub closed/reason records the outcome.
 4. Assign an owner when work is accepted. Put a short acceptance checklist in the issue: reproduce → implement → source/extracted-package tests → release link/version → verify the user's workflow. Use a milestone when grouping a release is useful. Link the private fix/PR to the public issue internally; publish only a safe summary. Use Related issue rather than auto-closing keywords until acceptance is verified.
 5. Move a released fix to **ready to test**. Record the tested release, exact outcome and any remaining limitation. Close when acceptance is demonstrated; use **not planned** or link the original for a duplicate rather than implying a fix exists. Reopen if the user's problem persists. A code change or successful build alone does not prove the user's workflow is fixed.
 
-Queue filters: [planned](https://github.com/JamRov/Ag-GIS-Feedback/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+planned%22), [in progress](https://github.com/JamRov/Ag-GIS-Feedback/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+in+progress%22), [ready to test](https://github.com/JamRov/Ag-GIS-Feedback/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+ready+to+test%22), [urgent](https://github.com/JamRov/Ag-GIS-Feedback/issues?q=is%3Aissue+is%3Aopen+label%3A%22priority%3A+urgent%22). GitHub Issues is the source of truth; no second database or automatic fix agent is introduced.
+Queue filters: [planned](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+planned%22), [in progress](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+in+progress%22), [ready to test](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+ready+to+test%22), [urgent](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues?q=is%3Aissue+is%3Aopen+label%3A%22priority%3A+urgent%22). GitHub Issues is the source of truth; no second database or automatic fix agent is introduced.
 
 ## Log an emailed/saved report
 

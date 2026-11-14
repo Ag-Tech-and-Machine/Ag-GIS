@@ -194,7 +194,7 @@ Earlier increment (preserved):
 
 **22 October branded style test handoff:** `.aggis-agent/evidence/20261022-branded-style/` binds exact 57-entry `2ef5641d` to 40 final warm native assertions and 14 automatic-cold core assertions, retained desktop pixels and independent QGZ/GeoPackage/style-history/source readback. Both final native/launcher exits 0. `py .aggis-agent/evidence/20261022-branded-style/verify.py` verifies the bounded partial result; `--require-full` intentionally fails the open cold post-recovery visible Save Map control gate. Native QAction clean-save cleanup is explicitly separate from button proof. Wait for deferred Simple View restoration after plugin restart; choose the unique visible `spinSize`, not the first hidden child. Preserve retained failed harness receipts and synthetic PID/HWND in snapshot.json. No normal installation or runtime-source change; do not infer delivery or full acceptance.
 
-Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Older private-repository instructions below describe the earlier setup. Public feedback remains at https://github.com/JamRov/Ag-GIS-Feedback/issues .
+Source and releases are public at https://github.com/Ag-Tech-and-Machine/Ag-GIS . Public downloads do not require repository membership. Older private-repository instructions below describe the earlier setup. Public feedback is at https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues .
 
 # Development and tooling
 

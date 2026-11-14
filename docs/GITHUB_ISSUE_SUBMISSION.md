@@ -26,7 +26,7 @@ Ag-GIS now supports direct issue submission to GitHub without requiring users to
 
 3. **GitHub API Integration**
    - Base URL: `https://api.github.com`
-   - Repository: `JamRov/Ag-GIS-Feedback`
+   - Repository: `Ag-Tech-and-Machine/Ag-GIS`
    - Authentication: Bearer token in Authorization header
 
 ### Token Storage
@@ -79,7 +79,7 @@ expiry = 2026-12-31T00:00:00Z
 ### Creating an Issue
 
 ```python
-POST https://api.github.com/repos/JamRov/Ag-GIS-Feedback/issues
+POST https://api.github.com/repos/Ag-Tech-and-Machine/Ag-GIS/issues
 Authorization: Bearer <token>
 Accept: application/vnd.github.v3+json
 X-GitHub-Api-Version: 2022-11-28
@@ -97,7 +97,7 @@ X-GitHub-Api-Version: 2022-11-28
 {
   "number": 123,
   "title": "Issue title",
-  "html_url": "https://github.com/JamRov/Ag-GIS-Feedback/issues/123"
+  "html_url": "https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues/123"
 }
 ```
 

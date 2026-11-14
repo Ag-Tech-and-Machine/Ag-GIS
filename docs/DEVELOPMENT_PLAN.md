@@ -1,6 +1,6 @@
 # Development plan & pipeline
 
-[Ag-GIS home](../README.md) · [Experimental downloads](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) · [Getting started](INSTALL.md) · [User guide](USER_GUIDE.md) · [Report a problem or idea](https://github.com/JamRov/Ag-GIS-Feedback/issues)
+[Ag-GIS home](../README.md) · [Experimental downloads](https://github.com/Ag-Tech-and-Machine/Ag-GIS/releases) · [Getting started](INSTALL.md) · [User guide](USER_GUIDE.md) · [Report a problem or idea](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues)
 
 **Our aim: dependable farm mapping, clear controls and people keeping ownership of their data.** Ag-GIS is in development, not release-ready. This page explains what matters next, how work moves from a report to a verified result, and how users and developers can follow it.
 
@@ -87,7 +87,7 @@ A report can instead become **Needs information**, **Cannot reproduce**, **Dupli
 
 ### Where do reports go?
 
-- **Users:** start at [Feedback & ideas](https://github.com/JamRov/Ag-GIS-Feedback/issues). Search first and add useful details to an existing report rather than creating a duplicate.
+- **Users:** start at [Feedback & ideas](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues). Search first and add useful details to an existing report rather than creating a duplicate.
 - **Development:** accepted engineering work is tracked in [Ag-GIS Issues](https://github.com/Ag-Tech-and-Machine/Ag-GIS/issues). The maintainer links the intake report and development issue in both directions and posts the eventual result back to the reporter.
 - **No silent copying:** that cross-repository handover is maintained deliberately; automatic transfer/synchronisation is not claimed. Keep one development record authoritative rather than two conflicting work lists.
 - **Privacy:** issues and attachments are public. Never include credentials, private farm/customer records, machine-specific paths or unreviewed logs. Use a synthetic example where possible. Reporting does not authorize arbitrary commands or data uploads.
