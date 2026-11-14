@@ -16,6 +16,7 @@ print()
 
 # Try to import PyQt5
 try:
+    import PyQt5
     from PyQt5.QtCore import QObject
     print("SUCCESS: PyQt5 is available")
     print("PyQt5 version:", getattr(PyQt5, '__version__', 'unknown'))

@@ -163,7 +163,7 @@ Examples:
         print(f"Release {release['version']} ({release['channel']}) added")
         if args.data_upgrade:
             print("  -> Marked as data upgrade")
-        print(f"\nNote: This catalog is NOT published. Use proper publishing process for public releases.")
+        print("\nNote: This catalog is NOT published. Use proper publishing process for public releases.")
         
     except IOError as e:
         print(f"Error: Could not write catalog: {e}", file=sys.stderr)

@@ -107,7 +107,7 @@ with tempfile.TemporaryDirectory(prefix="agtech-placement-") as temporary:
     point_result, shape_result = scan_local(point_path), scan_local(path)
     result = dict(shape_result, items=point_result["items"] + shape_result["items"])
     class Interface:
-        def mainWindow(self): return parent
+        def mainWindow(self): return None
         def mapCanvas(self): return self
         def refresh(self): pass
         def zoomToFullExtent(self): pass
