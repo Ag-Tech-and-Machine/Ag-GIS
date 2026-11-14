@@ -1,0 +1,103 @@
+{
+ "counts": {
+  "G-60 control without tooltip or accessible name": 16
+ },
+ "findings": [
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 68,
+   "detail": "self.action"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 85,
+   "detail": "about"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 95,
+   "detail": "action"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 107,
+   "detail": "whole"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 113,
+   "detail": "options"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 117,
+   "detail": "update_action"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 121,
+   "detail": "feedback_action"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 130,
+   "detail": "settings"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/plugin.py",
+   "line": 139,
+   "detail": "github_action"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 133,
+   "detail": "d.check"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 134,
+   "detail": "d.cancel"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 135,
+   "detail": "d.download"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 138,
+   "detail": "d.offline"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 140,
+   "detail": "d.save"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 507,
+   "detail": "review"
+  },
+  {
+   "rule": "G-60 control without tooltip or accessible name",
+   "file": "plugins/ag_tech_tooling/updates.py",
+   "line": 508,
+   "detail": "later"
+  }
+ ]
+}

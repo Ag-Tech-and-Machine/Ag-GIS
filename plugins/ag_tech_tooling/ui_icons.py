@@ -40,3 +40,7 @@ def decorate_buttons(buttons):
     for button in buttons.buttons():
         role = buttons.buttonRole(button)
         button.setIcon(icon("cancel" if role in (QDialogButtonBox.RejectRole, QDialogButtonBox.NoRole) else "ok"))
+        # Add tooltip and accessible name based on the button's text
+        text = button.text()
+        button.setToolTip(text)
+        button.setAccessibleName(text)

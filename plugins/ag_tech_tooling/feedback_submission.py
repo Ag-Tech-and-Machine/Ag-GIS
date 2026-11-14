@@ -260,12 +260,18 @@ class FeedbackSubmissionDialog(QDialog):
         self.submit_btn.setEnabled(self.github_token is not None)
         self.submit_btn.clicked.connect(self.submit_report)
         self.submit_btn.setStyleSheet("font-weight: bold;")
+        self.submit_btn.setToolTip("Submit your report to GitHub")
+        self.submit_btn.setAccessibleName("Submit report button")
         
         self.copy_btn = QPushButton("Copy report")
         self.copy_btn.clicked.connect(self.copy_report)
+        self.copy_btn.setToolTip("Copy report text to clipboard")
+        self.copy_btn.setAccessibleName("Copy report button")
         
         self.email_btn = QPushButton("Email draft…")
         self.email_btn.clicked.connect(self.email_report)
+        self.email_btn.setToolTip("Open email client with report draft")
+        self.email_btn.setAccessibleName("Email report button")
         
         actions_layout = QHBoxLayout()
         actions_layout.addWidget(self.submit_btn)
@@ -277,11 +283,15 @@ class FeedbackSubmissionDialog(QDialog):
         footer_layout = QHBoxLayout()
         tracker_btn = QPushButton("View reported issues")
         tracker_btn.clicked.connect(lambda: self.open_url(ISSUES_URL))
+        tracker_btn.setToolTip("View all reported issues on GitHub")
+        tracker_btn.setAccessibleName("View reported issues button")
         footer_layout.addWidget(tracker_btn)
         footer_layout.addStretch()
         
         close_btn = QPushButton("Close")
         close_btn.clicked.connect(self.reject)
+        close_btn.setToolTip("Close the feedback dialog")
+        close_btn.setAccessibleName("Close feedback dialog button")
         footer_layout.addWidget(close_btn)
         layout.addLayout(footer_layout)
         
