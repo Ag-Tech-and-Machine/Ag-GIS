@@ -36,11 +36,12 @@ class FarmTreeDelegate(QStyledItemDelegate):
         super().__init__(view)
         self.view = view
         self.native = view.itemDelegate()
-        self.connections = ((self.native.commitData, self.commitData.emit),
-                            (self.native.closeEditor, self.closeEditor.emit),
-                            (self.native.sizeHintChanged, self.sizeHintChanged.emit))
-        for signal, callback in self.connections:
-            signal.connect(callback)
+        if self.native:
+            self.connections = ((self.native.commitData, self.commitData.emit),
+                               (self.native.closeEditor, self.closeEditor.emit),
+                               (self.native.sizeHintChanged, self.sizeHintChanged.emit))
+            for signal, callback in self.connections:
+                signal.connect(callback)
 
     def kind(self, index):
         node = self.view.index2node(index)
@@ -69,8 +70,22 @@ class FarmTreeDelegate(QStyledItemDelegate):
         style.drawControl(QStyle.CE_ItemViewItem, decorated, painter, decorated.widget)
 
     def sizeHint(self, option, index):
-        size = self.native.sizeHint(option, index)
-        return QSize(size.width(), max(26, size.height())) if self.kind(index) else size
+        kind = self.kind(index)
+        if not kind:
+            if self.native:
+                try:
+                    return self.native.sizeHint(option, index)
+                except (TypeError, AttributeError):
+                    return QSize(0, 0)
+            return QSize(0, 0)
+        if self.native:
+            try:
+                size = self.native.sizeHint(option, index)
+            except (TypeError, AttributeError):
+                size = QSize(0, 0)
+        else:
+            size = QSize(0, 0)
+        return QSize(size.width(), max(26, size.height()))
 
     def helpEvent(self, event, view, option, index):
         kind = self.kind(index)
@@ -79,19 +94,38 @@ class FarmTreeDelegate(QStyledItemDelegate):
             if isinstance(node, QgsLayerTreeLayer) and node.layer().customProperty("AgTechTooling/original_name"):
                 QToolTip.showText(event.globalPos(), escape(node.layer().customProperty("AgTechTooling/original_name")), view)
                 return True
-            return self.native.helpEvent(event, view, option, index)
+            if self.native:
+                try:
+                    return self.native.helpEvent(event, view, option, index)
+                except (TypeError, AttributeError):
+                    return True
+            return True
         node = self.view.index2node(index)
         QToolTip.showText(event.globalPos(), f"<b>{KINDS[kind][1]}</b><br>{escape(node.name())}", view)
         return True
 
     def editorEvent(self, event, model, option, index):
-        return self.native.editorEvent(event, model, option, index)
+        if self.native:
+            try:
+                return self.native.editorEvent(event, model, option, index)
+            except (TypeError, AttributeError):
+                return True
+        return True
 
     def createEditor(self, parent, option, index):
-        return self.native.createEditor(parent, option, index)
+        if self.native:
+            try:
+                return self.native.createEditor(parent, option, index)
+            except (TypeError, AttributeError):
+                return None
+        return None
 
     def setEditorData(self, editor, index):
-        self.native.setEditorData(editor, index)
+        if self.native:
+            try:
+                self.native.setEditorData(editor, index)
+            except (TypeError, AttributeError):
+                pass
 
     def setModelData(self, editor, model, index):
         node = self.view.index2node(index)
@@ -116,17 +150,18 @@ class FarmTreeDelegate(QStyledItemDelegate):
             except (ValueError, RuntimeError, OSError, sqlite3.Error) as error:
                 QMessageBox.warning(self.view, "Could not rename dataset", str(error))
                 return
-        self.native.setModelData(editor, model, index)
+        self.native.setModelData(editor, model, index) if self.native else None
 
     def updateEditorGeometry(self, editor, option, index):
-        self.native.updateEditorGeometry(editor, option, index)
+        self.native.updateEditorGeometry(editor, option, index) if self.native else None
 
     def destroyEditor(self, editor, index):
-        self.native.destroyEditor(editor, index)
+        self.native.destroyEditor(editor, index) if self.native else None
 
     def close(self):
-        for signal, callback in self.connections:
-            signal.disconnect(callback)
+        if self.connections:
+            for signal, callback in self.connections:
+                signal.disconnect(callback)
 
 
 class FarmBrowser(QObject):
