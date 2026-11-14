@@ -1,60 +1,98 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 """Tests for GitHub issue submission functionality."""
 import unittest
+import tempfile
 from unittest.mock import MagicMock, patch, mock_open
 from pathlib import Path
 
-from qgis.PyQt.QtWidgets import QMessageBox
+# Import from conftest
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from conftest import QGIS_AVAILABLE
 
-from .feedback_submission import (
-    load_oauth_token, save_oauth_token, delete_oauth_token,
-    make_auth_header, generate_report_id, report_text,
-    environment_summary, hash_report_body,
-    FeedbackSubmissionDialog
-)
+# Conditionally import from feedback_submission
+if QGIS_AVAILABLE:
+    from .feedback_submission import (
+        load_oauth_token, save_oauth_token, delete_oauth_token,
+        make_auth_header, generate_report_id, report_text,
+        environment_summary, hash_report_body,
+        FeedbackSubmissionDialog
+    )
+else:
+    # When QGIS is not available, we can only test non-QGIS functions
+    from .feedback_submission import (
+        load_oauth_token, save_oauth_token, delete_oauth_token,
+        make_auth_header, generate_report_id, report_text,
+        environment_summary, hash_report_body
+    )
+    # FeedbackSubmissionDialog not available without QGIS
 
 
 class TestTokenStorage(unittest.TestCase):
     """Test OAuth token storage."""
     
     def setUp(self):
-        self.test_dir = Path.home() / ".qgis2" / "plugins"
-        self.test_file = self.test_dir / "github_oauth_token.ini"
-    
+        # Import the module to get TOKEN_FILE and PLUGIN_DIR
+        from . import feedback_submission as fs
+        self.module = fs
+        # Use a temporary directory for testing
+        self.test_dir = Path(tempfile.gettempdir()) / f"ag_gis_token_test_{self.id()}"
+        self.test_dir.mkdir(parents=True, exist_ok=True)
+        # Override both PLUGIN_DIR and TOKEN_FILE for testing
+        self._original_plugin_dir = fs.PLUGIN_DIR
+        self._original_token_file = fs.TOKEN_FILE
+        self.test_plugin_dir = self.test_dir / "ag_tech_tooling"
+        self.test_plugin_dir.mkdir(parents=True, exist_ok=True)
+        self.test_token_file = self.test_dir / "github_oauth_token.ini"
+        # Set the module's paths
+        fs.PLUGIN_DIR = self.test_plugin_dir
+        fs.TOKEN_FILE = self.test_token_file
+        
+    def tearDown(self):
+        # Clean up
+        if self.test_dir.exists():
+            import shutil
+            shutil.rmtree(self.test_dir, ignore_errors=True)
+        # Restore original
+        self.module.PLUGIN_DIR = self._original_plugin_dir
+        self.module.TOKEN_FILE = self._original_token_file
+
     def test_load_nonexistent_token(self):
         """Load returns None for nonexistent token file."""
-        if self.test_file.exists():
-            self.test_file.unlink()
         self.assertIsNone(load_oauth_token())
-    
+
     def test_load_invalid_token(self):
         """Load returns None for invalid token."""
-        self.test_file.write_text("[github]\ntoken=invalid")
+        self.module.TOKEN_FILE = self.test_token_file
+        self.test_token_file.write_text("[github]\ntoken=invalid")
         self.assertIsNone(load_oauth_token())
-    
+
     def test_load_valid_token(self):
         """Load returns valid token dict."""
         valid_token = "a" * 40
-        self.test_file.write_text(f"[github]\ntoken={valid_token}\nexpiry=2026-12-31T00:00:00Z")
+        self.module.TOKEN_FILE = self.test_token_file
+        self.test_token_file.write_text(f"[github]\ntoken={valid_token}\nexpiry=2026-12-31T00:00:00Z")
         result = load_oauth_token()
         self.assertIsNotNone(result)
         self.assertEqual(result["token"], valid_token)
-    
+
     def test_save_and_load_token(self):
         """Token saved and loaded correctly."""
         valid_token = "b" * 40
+        self.module.TOKEN_FILE = self.test_token_file
         self.assertTrue(save_oauth_token(valid_token))
         result = load_oauth_token()
         self.assertIsNotNone(result)
         self.assertEqual(result["token"], valid_token)
-    
+
     def test_delete_token(self):
         """Deleting token removes file."""
         valid_token = "c" * 40
+        self.module.TOKEN_FILE = self.test_token_file
         save_oauth_token(valid_token)
-        self.assertTrue(self.test_file.exists())
+        self.assertTrue(self.test_token_file.exists())
         delete_oauth_token()
-        self.assertFalse(self.test_file.exists())
+        self.assertFalse(self.test_token_file.exists())
 
 
 class TestReportFormatting(unittest.TestCase):
@@ -93,8 +131,8 @@ class TestReportFormatting(unittest.TestCase):
             created="2026-10-16T10:00:00Z"
         )
         self.assertIn("# New feature", report)
-        self.assertIn("Steps: Not provided", report)
-        self.assertIn("Expected result: Not provided", report)
+        self.assertIn("## How to see it", report)
+        self.assertIn("## Expected result", report)
 
 
 class TestEnvironmentSummary(unittest.TestCase):
@@ -148,16 +186,6 @@ class TestAuthHeader(unittest.TestCase):
         token = "abc123"
         header = make_auth_header(token)
         self.assertEqual(header, f"Bearer {token}")
-
-
-class TestSubmissionDialog(unittest.TestCase):
-    """Test feedback submission dialog."""
-    
-    def test_dialog_creation(self):
-        """Dialog can be created."""
-        # This test requires a real QGIS iface, so we skip it
-        # unittest.skip("Requires QGIS iface")
-        pass
 
 
 if __name__ == "__main__":

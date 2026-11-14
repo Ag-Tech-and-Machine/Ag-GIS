@@ -14,12 +14,18 @@ from urllib.parse import quote
 import uuid
 from typing import Optional, Tuple
 
-from qgis.core import Qgis
-from qgis.PyQt.QtCore import QUrl, Qt, QIODevice
-from qgis.PyQt.QtGui import QDesktopServices
-from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPlainTextEdit,
-    QPushButton, QVBoxLayout, QWidget)
+# Lazy import QGIS - will fail gracefully if QGIS not installed
+QGIS_AVAILABLE = False
+try:
+    from qgis.core import Qgis
+    from qgis.PyQt.QtCore import QUrl, Qt, QIODevice
+    from qgis.PyQt.QtGui import QDesktopServices
+    from qgis.PyQt.QtWidgets import (QApplication, QDialog, QFormLayout,
+        QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPlainTextEdit,
+        QPushButton, QVBoxLayout, QWidget)
+    QGIS_AVAILABLE = True
+except ImportError as e:
+    QGIS_ERROR = str(e)
 
 # GitHub API settings - these must match the GitHub App configuration
 GITHUB_API_BASE = "https://api.github.com"
@@ -41,7 +47,7 @@ TOKEN_FILE = PLUGIN_DIR / "github_oauth_token.ini"
 
 def ensure_plugin_dir():
     """Create plugin settings directory if it doesn't exist."""
-    PLUGIN_DIR.mkdir(parents=True, exist_ok=True)
+    TOKEN_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 
 def load_oauth_token() -> Optional[dict]:
@@ -83,11 +89,11 @@ def save_oauth_token(token: str, expiry: str = "") -> bool:
     
     try:
         config = configparser.ConfigParser()
-        config["github"] = {
-            "token": token,
-            "expiry": expiry or ""
-        }
-        TOKEN_FILE.write_text(config.read_string(config["github"]), encoding="utf-8")
+        config.add_section("github")
+        config.set("github", "token", token)
+        config.set("github", "expiry", expiry or "")
+        with open(TOKEN_FILE, "w", encoding="utf-8") as f:
+            config.write(f)
         return True
     except Exception:
         return False
@@ -143,8 +149,10 @@ def hash_report_body(body: str) -> str:
     return hashlib.md5(body.encode("utf-8")).hexdigest()[:8]
 
 
-class FeedbackSubmissionDialog(QDialog):
-    """Dialog for submitting feedback directly via GitHub API."""
+if QGIS_AVAILABLE:
+    class FeedbackSubmissionDialog(QDialog):
+        """Dialog for submitting feedback directly via GitHub API."""
+        # Class implementation follows...
     
     def __init__(self, iface):
         super().__init__(iface.mainWindow())
