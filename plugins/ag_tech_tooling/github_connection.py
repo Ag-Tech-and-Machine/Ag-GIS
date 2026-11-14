@@ -17,23 +17,29 @@ class ConnectionDialog(QDialog):
         self.setWindowTitle('Ag-GIS — GitHub Connection')
         self.setMinimumWidth(450)
         layout = QVBoxLayout(self)
-        self.notice = QLabel('Ag-GIS and agent instructions work offline without sign-in. '
+        self.notice = QLabel('Ag-GIS and agent instructions work offline without sign-in. '\
                              'No farm records or reports are sent by this window.', self)
         self.notice.setWordWrap(True)
+        self.notice.setToolTip('Offline mode notice: Ag-GIS works without GitHub sign-in')
         layout.addWidget(self.notice)
-        self.status = QLabel('GitHub sign-in is unavailable: app registration and '
+        self.status = QLabel('GitHub sign-in is unavailable: app registration and '\
                              'diagnostic-safe connection checks are not complete.', self)
         self.status.setWordWrap(True)
+        self.status.setToolTip('GitHub connection status: sign-in unavailable')
         layout.addWidget(self.status)
         self.user_code = QLabel('', self)
         self.user_code.setTextFormat(Qt.PlainText)
+        self.user_code.setToolTip('Authentication code displayed here')
         layout.addWidget(self.user_code)
         row = QHBoxLayout()
         self.connect_button = QPushButton('Connect', self)
         self.connect_button.setEnabled(False)
+        self.connect_button.setToolTip('Start GitHub connection process')
         self.cancel_button = QPushButton('Cancel connection', self)
         self.cancel_button.setEnabled(False)
+        self.cancel_button.setToolTip('Cancel the current connection attempt')
         self.close_button = QPushButton('Close', self)
+        self.close_button.setToolTip('Close the connection dialog')
         self.close_button.clicked.connect(self.reject)
         for button in (self.connect_button, self.cancel_button, self.close_button):
             row.addWidget(button)
