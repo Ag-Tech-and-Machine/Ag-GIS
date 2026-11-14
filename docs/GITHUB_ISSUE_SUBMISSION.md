@@ -175,6 +175,7 @@ Manual testing required in QGIS environment:
 - `docs/FEEDBACK.md` - Updated with no-login submission flow
 - `docs/ARCHITECTURE.md` - Updated with token persistence note
 - `docs/USER_COMMITMENTS.md` - Updated with direct submission capability
+- `docs/USER_GUIDE.md` - For general feedback submission instructions
 
 ## Security Considerations
 
