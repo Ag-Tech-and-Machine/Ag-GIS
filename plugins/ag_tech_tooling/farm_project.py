@@ -22,9 +22,8 @@ TABLE = "agtech_farm"
 def validate_name(name):
     name = name.strip()
     if (not name or len(name) > 100 or re.search(r'[<>:"/\\|?*]', name)
-    if (not name or len(name) > 100 or re.search(r'[<>:"/\\|?*\x00-\x1f]', name)
             or name.endswith((".", " ")) or name in {".", ".."}
-            or re.fullmatch(r"(?i:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?", name)):
+            or re.fullmatch(r"(?i:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\\..*)?", name)):
         raise ValueError("Use a farm name of 1–100 characters without reserved filename characters.")
     return name
 
